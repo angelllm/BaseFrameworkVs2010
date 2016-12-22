@@ -1,0 +1,15 @@
+﻿//商品索引与搜索
+lh.CreateGoodsIndex(true);
+lh.SearchGoodsIndex("apple");
+v.Put("list", lh.plist);
+#foreach($item in $list)
+$item.product_name
+#end
+
+//文章索引与搜索
+lh.CreateIndex(true);
+lh.SearchIndex("asp");
+v.Put("list", lh.list);
+#foreach($item in $list)
+$item.article_title
+#end

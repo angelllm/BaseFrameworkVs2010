@@ -1,0 +1,16 @@
+F:\工作空间\Solution\BaseFramework\TemplateHelper\bin\Debug\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework\TemplateHelper\bin\Debug\TemplateHelper.pdb
+F:\工作空间\Solution\BaseFramework\TemplateHelper\bin\Debug\NVelocity.dll
+F:\工作空间\Solution\BaseFramework\TemplateHelper\obj\Debug\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework\TemplateHelper\obj\Debug\TemplateHelper.pdb
+F:\工作空间\Solution\BaseFramework\TemplateHelper\obj\Debug\TemplateHelper.csprojResolveAssemblyReference.cache
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\TemplateHelper\bin\Debug\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\TemplateHelper\bin\Debug\TemplateHelper.pdb
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\TemplateHelper\bin\Debug\NVelocity.dll
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\TemplateHelper\obj\Debug\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\TemplateHelper\obj\Debug\TemplateHelper.pdb
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\TemplateHelper\bin\Debug\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\TemplateHelper\bin\Debug\TemplateHelper.pdb
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\TemplateHelper\bin\Debug\NVelocity.dll
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\TemplateHelper\obj\Debug\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\TemplateHelper\obj\Debug\TemplateHelper.pdb

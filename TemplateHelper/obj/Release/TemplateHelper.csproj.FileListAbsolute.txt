@@ -1,0 +1,6 @@
+F:\工作空间\Solution\BaseFramework\TemplateHelper\bin\Release\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework\TemplateHelper\bin\Release\TemplateHelper.pdb
+F:\工作空间\Solution\BaseFramework\TemplateHelper\bin\Release\NVelocity.dll
+F:\工作空间\Solution\BaseFramework\TemplateHelper\obj\Release\TemplateHelper.csprojResolveAssemblyReference.cache
+F:\工作空间\Solution\BaseFramework\TemplateHelper\obj\Release\TemplateHelper.dll
+F:\工作空间\Solution\BaseFramework\TemplateHelper\obj\Release\TemplateHelper.pdb
