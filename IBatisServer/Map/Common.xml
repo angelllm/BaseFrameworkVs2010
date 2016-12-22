@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="common" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="common" type="llm.Model.common,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="common" id="GetEveryCountModel">
+            <result column="article_total" property="article_total" />
+            <result column="type_total" property="type_total" />
+            <result column="acticle_type_total" property="acticle_type_total" />
+            <result column="link_total" property="link_total" />
+            <result column="member_total" property="member_total" />
+            <result column="banner_total" property="banner_total" />
+            <result column="commite_total" property="commite_total" />
+        </resultMap>
+    </resultMaps>
+
+    <statements>
+
+        <select id="GetEveryCount" resultMap="GetEveryCountModel" >
+            <![CDATA[
+            select COUNT(1) as article_total ,
+            (select COUNT(1) as n from sys_type    ) as type_total ,
+            (select COUNT(1) as n from sys_type where type_cid = (
+                    select top 1 dict_id from sys_dict where dict_code = 'article'
+                ) 
+            ) as acticle_type_total ,
+            (select COUNT(1) as n from sys_page where page_type_id in (
+                    select  type_id from sys_type where type_code = 'link'
+                ) 
+             ) as link_total ,
+             (select COUNT(1) as n from sys_member 
+             ) as member_total ,
+              (select COUNT(1) as n from sys_page where page_type_id in (
+                    select  type_id from sys_type where type_code = 'banner'
+                ) 
+             ) as banner_total 
+             ,
+              (select COUNT(1) as n from sys_commite where commite_ref_id = 0
+             ) as commite_total 
+             
+            from sys_article  
+            ]]>
+        </select>
+
+    </statements>
+
+</sqlMap>
+

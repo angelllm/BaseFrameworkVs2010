@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="article" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="article" type="llm.Model.article,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="article" id="GetModelList">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_shut_title" property="article_shut_title"  nullValue=""/>
+            <result column="article_title_color" property="article_title_color"  nullValue=""/>
+            <result column="article_is_bold" property="article_is_bold" />
+            <result column="article_is_italic" property="article_is_italic" />
+            <result column="article_is_top" property="article_is_top" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_guid" property="article_guid" />
+            <result column="article_ref_url" property="article_ref_url"  nullValue=""/>
+            <result column="article_html_url" property="article_html_url"  nullValue=""/>
+            <result column="article_seo_desc" property="article_seo_desc"  nullValue=""/>
+            <result column="article_seo_kw" property="article_seo_kw"  nullValue=""/>
+            <result column="article_summary" property="article_summary" nullValue="" />
+            <result column="article_tag" property="article_tag"  nullValue=""/>
+            <result column="article_source" property="article_source"  nullValue=""/>
+            <result column="article_remark" property="article_remark"  nullValue=""/>
+            <result column="article_content" property="article_content" nullValue="" />
+            <result column="article_type" property="article_type" />
+            <result column="article_cid" property="article_cid"  nullValue=""/>
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_image" property="article_image"  nullValue=""/>
+            <result column="article_type_name" property="article_type_name"  nullValue=""/>
+        </resultMap>
+
+        <resultMap class="article" id="Model">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_shut_title" property="article_shut_title"  nullValue=""/>
+            <result column="article_title_color" property="article_title_color"  nullValue=""/>
+            <result column="article_is_bold" property="article_is_bold" />
+            <result column="article_is_italic" property="article_is_italic" />
+            <result column="article_is_top" property="article_is_top" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_guid" property="article_guid" />
+            <result column="article_ref_url" property="article_ref_url"  nullValue=""/>
+            <result column="article_html_url" property="article_html_url"  nullValue=""/>
+            <result column="article_seo_desc" property="article_seo_desc"  nullValue=""/>
+            <result column="article_seo_kw" property="article_seo_kw"  nullValue=""/>
+            <result column="article_summary" property="article_summary" nullValue="" />
+            <result column="article_tag" property="article_tag"  nullValue=""/>
+            <result column="article_source" property="article_source"  nullValue=""/>
+            <result column="article_remark" property="article_remark"  nullValue=""/>
+            <result column="article_content" property="article_content" nullValue="" />
+            <result column="article_type" property="article_type" />
+            <result column="article_cid" property="article_cid"  nullValue=""/>
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_image" property="article_image"  nullValue=""/>
+            <result column="article_type_name" property="article_type_name"  nullValue=""/>
+            <result column="article_like" property="article_like"  nullValue="0"/>
+        </resultMap>
+
+        <resultMap class="article" id="GetModelList2">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_shut_title" property="article_shut_title" />
+            <result column="article_title_color" property="article_title_color" />
+            <result column="article_is_bold" property="article_is_bold" />
+            <result column="article_is_italic" property="article_is_italic" />
+            <result column="article_is_top" property="article_is_top" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_guid" property="article_guid" />
+            <result column="article_ref_url" property="article_ref_url" />
+            <result column="article_html_url" property="article_html_url" />
+            <result column="article_seo_desc" property="article_seo_desc" />
+            <result column="article_seo_kw" property="article_seo_kw" />
+            <result column="article_summary" property="article_summary" />
+            <result column="article_tag" property="article_tag" />
+            <result column="article_source" property="article_source" />
+            <result column="article_remark" property="article_remark" />
+            <result column="article_content" property="article_content" />
+            <result column="article_type" property="article_type" />
+            <result column="article_cid" property="article_cid" />
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_image" property="article_image" />
+            <result column="type_name" property="type_name" nullValue="" />
+            <result column="content_count" property="content_count" />
+            
+        </resultMap>
+
+        <resultMap class="article" id="GetModelList3">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_shut_title" property="article_shut_title" nullValue="" />
+            <result column="article_title_color" property="article_title_color" />
+            <result column="article_is_bold" property="article_is_bold" />
+            <result column="article_is_italic" property="article_is_italic" />
+            <result column="article_is_top" property="article_is_top" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_guid" property="article_guid" />
+            <result column="article_ref_url" property="article_ref_url" />
+            <result column="article_html_url" property="article_html_url" />
+            <result column="article_seo_desc" property="article_seo_desc" />
+            <result column="article_seo_kw" property="article_seo_kw" />
+            <result column="article_summary" property="article_summary" nullValue="" />
+            <result column="article_tag" property="article_tag" />
+            <result column="article_source" property="article_source" />
+            <result column="article_remark" property="article_remark" />
+            <result column="article_content" property="article_content" />
+            <result column="article_type" property="article_type" />
+            <result column="article_cid" property="article_cid" />
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_image" property="article_image" />
+            <result column="content_count" property="content_count" />
+        </resultMap>
+
+        <resultMap class="article" id="GetModelList4">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_remark" property="article_remark" />
+            <result column="article_type" property="article_type" />
+            <result column="article_cid" property="article_cid" />
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_image" property="article_image" />
+            <result column="content_count" property="content_count" />
+        </resultMap>
+
+        <resultMap class="article" id="GetByPageUseTopModel">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_remark" property="article_remark" />
+            <result column="article_type" property="article_type" />
+            <result column="article_type_name" property="article_type_name" />
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_is_top" property="article_is_top" />
+            <result column="article_like" property="article_like"  nullValue="0"/>
+            <result column="article_image" property="article_image" />
+            <result column="counts" property="article_cid" />
+        </resultMap>
+
+        <resultMap class="article" id="GetByPageUseTopModelForLand">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_pv" property="article_pv" />
+            <result column="article_remark" property="article_remark" />
+            <result column="article_type" property="article_type" />
+            <result column="article_type_name" property="article_type_name" />
+            <result column="article_time" property="article_time" />
+            <result column="article_status" property="article_status" />
+            <result column="article_tag" property="article_tag" />
+            <result column="article_title_color" property="article_title_color" />
+            <result column="article_content" property="article_content" />
+            <result column="article_like" property="article_like"  nullValue="0" />
+            <result column="commite_count" property="commite_count"  nullValue="0" />
+            <result column="article_ref_url" property="article_ref_url" />
+            <result column="article_image" property="article_image" />
+            <result column="article_is_top" property="article_is_top" />`
+            <result column="counts" property="article_cid" />
+        </resultMap>
+
+        <resultMap class="article" id="TotalAndNewCountModel">
+            <result column="total" property="article_total" />
+            <result column="new" property="article_new" />
+        </resultMap>
+
+        <resultMap class="article" id="GetArchivesModel">
+            <result column="year" property="year" />
+            <result column="month" property="month" />
+            <result column="count" property="count" />
+        </resultMap>
+
+        <resultMap class="article" id="GetPrevNextModel">
+            <result column="article_id" property="article_id" />
+            <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_pv" property="article_pv" />
+        </resultMap>
+        
+        <resultMap class="article" id="GetLastUpdateTimeModel">
+            <result column="article_time" property="article_last_time" />
+            <result column="article_count" property="article_total" />
+            <result column="commite_count" property="commite_count" />
+            <result column="tag_count" property="article_new" />
+        </resultMap>
+
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="PageSplitParam">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+            <parameter property="strwhere"/>
+        </parameterMap>
+    </parameterMaps>
+    
+    <statements>
+        <select id="GetLastUpdateTime" resultMap="GetLastUpdateTimeModel">
+            <![CDATA[
+                select CONVERT(varchar(12) ,(select top 1 MAX(article_time)   from sys_article) , 111 ) as article_time,
+                (select COUNT(1) from sys_article where article_status = 1) as article_count,
+                (select COUNT(1) from sys_commite where commite_status = 1) as commite_count,
+                (select COUNT(1) from sys_article_tag ) as tag_count 
+            ]]>
+        </select>
+        
+        <!--上一页下一页-->
+        <select id="GetPrevNext" resultMap="GetPrevNextModel" parameterClass="int">
+            <![CDATA[
+                select top 1 -1 as article_pv,article_id,article_title from (select top 1 article_id,article_title 
+                from sys_article where  article_id < $article_id$ order by article_id desc) as t1   
+                union
+                select * from (
+                select top 1 1 as article_pv,article_id,article_title from sys_article where  article_id > $article_id$
+                order by article_id asc
+                ) as t2
+            ]]>
+        </select>
+        
+        
+        <!--文章归档查询-->
+        <select id="GetArchives" resultMap="GetArchivesModel">
+            <![CDATA[
+                select year(article_time) as year,month(article_time) as month,count(article_time) as count
+                from sys_article where article_status = 1
+                group by month(article_time),year(article_time) 
+                order By year(article_time) desc,month(article_time) desc
+            ]]>
+        </select>
+        
+        <select id="GetModelListByPageUseTop" resultMap="GetByPageUseTopModel" parameterMap="PageSplitParam" >
+            <![CDATA[
+                select (select COUNT(1) from sys_article where 1=1 $strwhere$ ) as counts,  * from
+                (
+                select top $pagesize$ * from sys_article where article_id in(
+                select article_id from (select top $pageindex$ article_id from sys_article where 1 = 1 $strwhere$ order by article_id  desc) as t
+                )   
+                order by article_id asc
+                ) as tt where 1 = 1 $strwhere$ order by article_id desc
+            ]]>
+        </select>
+
+        <select id="GetModelListByPageUseTopForLand" resultMap="GetByPageUseTopModelForLand" parameterMap="PageSplitParam" >
+            <![CDATA[
+                select (select COUNT(1) from sys_article where 1=1 $strwhere$ ) as counts,(select count(1) from sys_commite where commite_article_id = article_id and commite_ref_id  = 0) as commite_count,  * from
+                (
+                select top $pagesize$ 
+                 *
+                from sys_article where article_id in(
+                select article_id from (select top $pageindex$ article_id from sys_article where 1 = 1 $strwhere$  order by article_id  desc) as t
+                )   
+                order by article_id asc
+                ) as tt where 1 = 1 $strwhere$ order by article_id desc
+            ]]>
+        </select>
+   
+        
+        <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+            $sql$
+        </select>
+        <select id="GetModelListByPage" resultMap="GetModelList2">
+            $sql$
+        </select>
+        <select id="GetModelListByPage2" resultMap="GetModelList3">
+            $sql$
+        </select>
+      <select id="GetModelListByPage3" resultMap="GetModelList4">
+        $sql$
+      </select>
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [article_id],[article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image],[article_type_name] FROM [sys_article]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+        <select id="GetTopModelList" resultMap="GetModelList" parameterClass="int" >
+            <![CDATA[
+        SELECT top $top$ [article_id],[article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image],[article_type_name] FROM [sys_article]
+		WHERE  article_status = 1 and article_type not in (select type_id from sys_type where type_parent = 73)  order by article_id desc
+        ]]>
+        </select>
+        
+        <select id="GetModelListWhere2" resultMap="GetModelList2" parameterClass="System.String" >
+            <![CDATA[
+        SELECT (select count(1) from sys_commite where commite_article_id = art.article_id) as [content_count],  [article_id],[article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image] FROM [sys_article] as art
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+                SELECT COUNT(1) FROM [sys_article]
+            ]]>
+        </select>
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [article_id],[article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image],[article_type_name] FROM [sys_article]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="Model" resultClass="article" parameterClass="int">
+            <![CDATA[
+        select top 1 [article_id],[article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image],[article_type_name],[article_like]
+        from sys_article
+        WHERE [article_id] = #article_id#
+        ]]>
+        </select>
+        <select id="GetTotalCountAndNewCount" resultMap="TotalAndNewCountModel" resultClass="article" remapResults="true">
+            <![CDATA[ select COUNT(1) as total ,(select COUNT(1) as n from sys_article where DATEDIFF(DAY,article_time,GETDATE()) < 7  ) as new from sys_article   ]]>
+        </select>
+        <select id="GetListByPage" resultMap="GetModelList2"  parameterClass="string" resultClass="article" remapResults="true">
+            <![CDATA[ $sql$ ]]>
+        </select>
+        <select id="GetListByPage2" resultMap="GetModelList2"  parameterClass="string" resultClass="article" remapResults="true">
+        <![CDATA[ $sql$ ]]>
+        </select>
+        <insert id="Add"  parameterclass="article" >
+            <selectKey property="article_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_article([article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image],[article_type_name],[article_like])
+        values (#article_title#,#article_shut_title#,#article_title_color#,#article_is_bold#,#article_is_italic#,#article_is_top#,#article_pv#,#article_guid#,#article_ref_url#,#article_html_url#,#article_seo_desc#,#article_seo_kw#,#article_summary#,#article_tag#,#article_source#,#article_remark#,#article_content#,#article_type#,#article_cid#,#article_time#,#article_status#,#article_image#,#article_type_name#,#article_like#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="article" >
+            <![CDATA[
+        insert into sys_article([article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_status],[article_image])
+        values (#article_title#,#article_shut_title#,#article_title_color#,#article_is_bold#,#article_is_italic#,#article_is_top#,#article_pv#,#article_guid#,#article_ref_url#,#article_html_url#,#article_seo_desc#,#article_seo_kw#,#article_summary#,#article_tag#,#article_source#,#article_remark#,#article_content#,#article_type#,#article_cid#,#article_status#,#article_image#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="article">
+            <![CDATA[ 
+      update 
+      sys_article 
+      set [article_title] = #article_title#,[article_shut_title] = #article_shut_title#,[article_title_color] = #article_title_color#,[article_is_bold] = #article_is_bold#,[article_is_italic] = #article_is_italic#,[article_is_top] = #article_is_top#,[article_pv] = #article_pv#,[article_guid] = #article_guid#,[article_ref_url] = #article_ref_url#,[article_html_url] = #article_html_url#,[article_seo_desc] = #article_seo_desc#,[article_seo_kw] = #article_seo_kw#,[article_summary] = #article_summary#,[article_tag] = #article_tag#,[article_source] = #article_source#,[article_remark] = #article_remark#,[article_content] = #article_content#,[article_type] = #article_type#,[article_cid] = #article_cid#,[article_time] = #article_time#,[article_status] = #article_status#,[article_image] = #article_image#,[article_type_name] = #article_type_name#,[article_like] = #article_like#
+	  where [article_id] = #article_id#
+      ]]>
+        </update>
+
+        <update id="UpdateLike"  parameterclass="article">
+            <![CDATA[ 
+      update 
+      sys_article 
+      set [article_like] = #article_like#
+	  where [article_id] = #article_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="article">
+            <![CDATA[ 
+        delete from sys_article 
+        where [article_id] = #article_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_article_InsertUpdate" parameterClass="article">
+            <![CDATA[ 
+		IF EXISTS(SELECT [article_id] FROM [sys_article] WHERE [article_id] = #article_id#)
+		BEGIN
+			UPDATE [sys_article] SET [article_title] = #article_title#,[article_shut_title] = #article_shut_title#,[article_title_color] = #article_title_color#,[article_is_bold] = #article_is_bold#,[article_is_italic] = #article_is_italic#,[article_is_top] = #article_is_top#,[article_pv] = #article_pv#,[article_guid] = #article_guid#,[article_ref_url] = #article_ref_url#,[article_html_url] = #article_html_url#,[article_seo_desc] = #article_seo_desc#,[article_seo_kw] = #article_seo_kw#,[article_summary] = #article_summary#,[article_tag] = #article_tag#,[article_source] = #article_source#,[article_remark] = #article_remark#,[article_content] = #article_content#,[article_type] = #article_type#,[article_cid] = #article_cid#,[article_time] = #article_time#,[article_status] = #article_status#,[article_image] = #article_image#
+				WHERE [article_id] = #article_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_article] ([article_title],[article_shut_title],[article_title_color],[article_is_bold],[article_is_italic],[article_is_top],[article_pv],[article_guid],[article_ref_url],[article_html_url],[article_seo_desc],[article_seo_kw],[article_summary],[article_tag],[article_source],[article_remark],[article_content],[article_type],[article_cid],[article_time],[article_status],[article_image]) 
+				VALUES (#article_title#,#article_shut_title#,#article_title_color#,#article_is_bold#,#article_is_italic#,#article_is_top#,#article_pv#,#article_guid#,#article_ref_url#,#article_html_url#,#article_seo_desc#,#article_seo_kw#,#article_summary#,#article_tag#,#article_source#,#article_remark#,#article_content#,#article_type#,#article_cid#,#article_time#,#article_status#,#article_image#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

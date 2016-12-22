@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="commite" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="commite" type="llm.Model.commite,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="commite" id="GetModelList">
+            <result column="commite_id" property="commite_id" />
+            <result column="commite_ip" property="commite_ip" />
+            <result column="commite_article_id" property="commite_article_id" />
+            <result column="commite_ref_id" property="commite_ref_id" />
+            <result column="commite_content" property="commite_content" nullvalue=""/>
+            <result column="commite_uid" property="commite_uid" />
+            <result column="commite_uname" property="commite_uname" />
+            <result column="commite_uhead" property="commite_uhead" />
+            <result column="commite_time" property="commite_time" />
+            <result column="commite_status" property="commite_status" />
+            <result column="commite_email" property="commite_email" />
+            <result column="commite_url" property="commite_url" />
+        </resultMap>
+        <resultMap class="commite" id="GetCommiteListModel">
+            <result column="commite_id" property="commite_id" />
+            <result column="commite_ip" property="commite_ip" />
+            <result column="commite_article_id" property="commite_article_id" /> 
+            <result column="commite_content" property="commite_content" nullvalue="" />
+            <result column="commite_uid" property="commite_uid" />
+            <result column="commite_uname" property="commite_uname" />
+            <result column="commite_uhead" property="commite_uhead" />
+            <result column="commite_time" property="commite_time" />
+            <result column="commite_status" property="commite_status" />
+            <!--column="commite_id" 表示用列名‘commite_id’作为方法GetReplyList方法的参数从而返回commite属性中的List对象-->
+            <result column="commite_id" property="List"  select="commite.GetReplyList" param="commite_id" />
+            <result column="commite_email" property="commite_email" />
+            <result column="commite_url" property="commite_url" />
+           
+        </resultMap>
+        <resultMap class="commite" id="GetByPageUseTopModel">
+            <result column="commite_id" property="commite_id" />
+            <result column="commite_ip" property="commite_ip" />
+            <result column="commite_article_id" property="commite_article_id" />
+            <result column="commite_content" property="commite_content" nullvalue="" />
+            <result column="commite_uid" property="commite_uid" />
+            <result column="commite_uname" property="commite_uname" />
+            <result column="commite_uhead" property="commite_uhead" />
+            <result column="commite_time" property="commite_time" />
+            <result column="commite_status" property="commite_status" />
+            <result column="counts" property="commite_total" />
+            <result column="commite_email" property="commite_email" />
+            <result column="commite_url" property="commite_url" />
+        </resultMap>
+
+        <resultMap class="commite" id="TotalAndNewCountModel">
+            <result column="total" property="commite_total" />
+            <result column="new" property="commite_new" />
+        </resultMap>
+
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+        <parameterMap class="System.Collections.IDictionary" id="PageSplitParam">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+            <parameter property="strwhere"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+        <select id="GetModelListByPageUseTop" resultMap="GetByPageUseTopModel" parameterMap="PageSplitParam" >
+            <![CDATA[
+            select (select COUNT(1) from sys_commite where 1=1 $strwhere$ ) as counts,  * from
+            (
+            select top $pagesize$ * from sys_commite where commite_id in(
+            select commite_id from (select top $pageindex$ commite_id from sys_commite order by commite_id  desc) as t
+            )   
+            order by commite_id asc
+            ) as tt where 1 = 1 $strwhere$ order by commite_id desc
+        ]]>
+        </select>
+        <select id="GetTotalCountAndNewCount" resultMap="TotalAndNewCountModel" resultClass="commite" remapResults="true" parameterClass="System.String">
+            <![CDATA[ select COUNT(1) as total ,(select COUNT(1) as n from sys_commite where DATEDIFF(DAY,commite_time,GETDATE()) < 7 and commite_ref_id = 0 $strWhere$   ) as new from sys_commite where commite_ref_id = 0 $strWhere$  ]]>
+        </select>
+
+        <select id="GetCommiteList" resultMap="GetCommiteListModel" resultClass="commite" parameterClass="int">
+            <![CDATA[
+        select  [commite_id],[commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status] ,[commite_email],[commite_url]
+        from sys_commite 
+        WHERE [commite_status] = 1 and commite_ref_id = 0 and [commite_article_id] = $commite_article_id$ order by [commite_id] asc
+        ]]>
+        </select>
+
+        <select id="GetReplyList" resultMap="GetModelList" resultClass="commite" parameterClass="int">
+            <![CDATA[
+        select  [commite_id],[commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status] ,[commite_email],[commite_url]
+        from sys_commite 
+        WHERE [commite_ref_id] = $commite_id$
+        ]]>
+        </select>
+
+        <select id="GetTopList" resultMap="GetModelList" resultClass="commite" parameterClass="int">
+            <![CDATA[
+        select top $top$ [commite_id],[commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status] ,[commite_email],[commite_url]
+        from sys_commite 
+        WHERE [commite_status] = 1 order by [commite_id] desc
+        ]]>
+        </select>
+
+        <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+            $sql$
+        </select>
+
+        <select id="GetModelListByPage" resultMap="GetModelList">
+            $sql$
+        </select>
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [commite_id],[commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status] ,[commite_email],[commite_url] FROM sys_commite
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_commite] where commite_article_id = $id$
+        ]]>
+        </select>
+        
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [commite_id],[commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status] FROM sys_commite
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="commite" parameterClass="int">
+            <![CDATA[
+        select top 1 [commite_id],[commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status],[commite_email],[commite_url]
+        from sys_commite
+        WHERE [commite_id] = #commite_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+      
+
+        <select id="GetMaxcommite_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(commite_id) FROM [sys_commite]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.commite_id
+         )AS Row, T.*  from sys_commite T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="commite" >
+            <selectKey property="commite_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_commite([commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status],[commite_email],[commite_url])
+        values (#commite_ip#,#commite_article_id#,#commite_ref_id#,#commite_content#,#commite_uid#,#commite_uname#,#commite_uhead#,#commite_time#,#commite_status#,#commite_email#,#commite_url#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="commite" >
+            <![CDATA[
+        insert into sys_commite([commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status],[commite_email],[commite_url])
+        values (#commite_ip#,#commite_article_id#,#commite_ref_id#,#commite_content#,#commite_uid#,#commite_uname#,#commite_uhead#,#commite_time#,#commite_status#,#commite_email#,#commite_url#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="commite">
+            <![CDATA[ 
+      update 
+      sys_commite 
+      set [commite_ip] = #commite_ip#,[commite_article_id] = #commite_article_id#,[commite_ref_id] = #commite_ref_id#,[commite_content] = #commite_content#,[commite_uid] = #commite_uid#,[commite_uname] = #commite_uname#,[commite_uhead] = #commite_uhead#,[commite_time] = #commite_time#,[commite_status] = #commite_status# ,[commite_email]=#commite_email#,[commite_url]=#commite_url#
+	  where [commite_id] = #commite_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="commite">
+            <![CDATA[ 
+        delete from sys_commite 
+        where [commite_id] = #commite_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_commite_InsertUpdate" parameterClass="commite">
+            <![CDATA[ 
+		IF EXISTS(SELECT [commite_id] FROM sys_commite WHERE [commite_id] = #commite_id#)
+		BEGIN
+			UPDATE sys_commite SET [commite_ip] = #commite_ip#,[commite_article_id] = #commite_article_id#,[commite_ref_id] = #commite_ref_id#,[commite_content] = #commite_content#,[commite_uid] = #commite_uid#,[commite_uname] = #commite_uname#,[commite_uhead] = #commite_uhead#,[commite_time] = #commite_time#,[commite_status] = #commite_status#
+				WHERE [commite_id] = #commite_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO sys_commite ([commite_ip],[commite_article_id],[commite_ref_id],[commite_content],[commite_uid],[commite_uname],[commite_uhead],[commite_time],[commite_status]) 
+				VALUES (#commite_ip#,#commite_article_id#,#commite_ref_id#,#commite_content#,#commite_uid#,#commite_uname#,#commite_uhead#,#commite_time#,#commite_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

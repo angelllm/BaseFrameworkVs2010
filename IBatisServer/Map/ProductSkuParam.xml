@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_sku_param" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_sku_param" type="llm.Model.product_sku_param,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_sku_param" id="GetModelList">
+            <result column="param_id" property="param_id" />
+            <result column="param_product_type_id" property="param_product_type_id" />
+            <result column="param_mid" property="param_mid" />
+            <result column="param_name" property="param_name" />
+            <result column="param_guid" property="param_guid" />
+            <result column="param_code_name" property="param_code_name" />
+            <result column="param_remark" property="param_remark" />
+            <result column="param_type" property="param_type" />
+            <result column="param_status" property="param_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [param_id],[param_product_type_id],[param_mid],[param_name],[param_guid],[param_code_name],[param_remark],[param_type],[param_status] FROM [sys_product_sku_param]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [param_id],[param_product_type_id],[param_mid],[param_name],[param_guid],[param_code_name],[param_remark],[param_type],[param_status] FROM [sys_product_sku_param]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_sku_param" parameterClass="int">
+            <![CDATA[
+        select top 1 [param_id],[param_product_type_id],[param_mid],[param_name],[param_guid],[param_code_name],[param_remark],[param_type],[param_status]
+        from sys_product_sku_param
+        WHERE [param_id] = #param_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product_sku_param]
+        ]]>
+        </select>
+
+        <select id="GetMaxparam_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(param_id) FROM [sys_product_sku_param]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.param_id
+         )AS Row, T.*  from sys_product_sku_param T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_sku_param" >
+            <selectKey property="param_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_sku_param([param_product_type_id],[param_mid],[param_name],[param_guid],[param_code_name],[param_remark],[param_type],[param_status])
+        values (#param_product_type_id#,#param_mid#,#param_name#,#param_guid#,#param_code_name#,#param_remark#,#param_type#,#param_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_sku_param" >
+            <![CDATA[
+        insert into sys_product_sku_param([param_product_type_id],[param_mid],[param_name],[param_guid],[param_code_name],[param_remark],[param_type],[param_status])
+        values (#param_product_type_id#,#param_mid#,#param_name#,#param_guid#,#param_code_name#,#param_remark#,#param_type#,#param_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_sku_param">
+            <![CDATA[ 
+      update 
+      sys_product_sku_param 
+      set [param_product_type_id] = #param_product_type_id#,[param_mid] = #param_mid#,[param_name] = #param_name#,[param_guid] = #param_guid#,[param_code_name] = #param_code_name#,[param_remark] = #param_remark#,[param_type] = #param_type#,[param_status] = #param_status#
+	  where [param_id] = #param_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_sku_param">
+            <![CDATA[ 
+        delete from sys_product_sku_param 
+        where [param_id] = #param_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_sku_param_InsertUpdate" parameterClass="product_sku_param">
+            <![CDATA[ 
+		IF EXISTS(SELECT [param_id] FROM [sys_product_sku_param] WHERE [param_id] = #param_id#)
+		BEGIN
+			UPDATE [sys_product_sku_param] SET [param_product_type_id] = #param_product_type_id#,[param_mid] = #param_mid#,[param_name] = #param_name#,[param_guid] = #param_guid#,[param_code_name] = #param_code_name#,[param_remark] = #param_remark#,[param_type] = #param_type#,[param_status] = #param_status#
+				WHERE [param_id] = #param_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_sku_param] ([param_product_type_id],[param_mid],[param_name],[param_guid],[param_code_name],[param_remark],[param_type],[param_status]) 
+				VALUES (#param_product_type_id#,#param_mid#,#param_name#,#param_guid#,#param_code_name#,#param_remark#,#param_type#,#param_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

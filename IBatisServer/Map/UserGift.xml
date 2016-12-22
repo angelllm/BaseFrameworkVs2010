@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="userGift" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<alias>
+		<typeAlias alias="UserGift" type="llm.Model.UserGift,Model" />
+	</alias>
+	<resultMaps>
+		<resultMap class="UserGift" id="GetModelList">
+			<result column="gift_id" property="gift_id" />
+			<result column="gift_name" property="gift_name" />
+			<result column="gift_path" property="gift_path" />
+			<result column="gift_mid" property="gift_mid" />
+			<result column="gift_mname" property="gift_mname" />
+			<result column="gift_remark" property="gift_remark" />
+		</resultMap>
+	</resultMaps>
+	<statements>
+
+
+
+		<select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+			<![CDATA[
+        SELECT [gift_id],[gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark] FROM [dbo].[userGift]
+		WHERE  $strWhere$
+        ]]>
+		</select>
+
+
+		<select id="GetModelList" resultMap="GetModelList">
+			<![CDATA[
+         SELECT [gift_id],[gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark] FROM [dbo].[userGift]
+        ]]>
+		</select>
+
+		<select id="GetModelById" resultMap="GetModelList" resultClass="UserGift" parameterClass="int">
+			<![CDATA[
+        select top 1 [gift_id],[gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark]
+        from userGift
+        WHERE [gift_id] = #gift_id#
+        ]]>
+		</select>
+		
+		<select id="GetModelByMid" resultMap="GetModelList" resultClass="UserGift" parameterClass="int">
+			<![CDATA[
+        select top 1 [gift_id],[gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark]
+        from userGift
+        WHERE [gift_mid] = #gift_mid#
+        ]]>
+		</select>
+		
+		
+
+		<select id="Sql" parameterClass="string" remapResults="true">
+			$sql$
+		</select>
+
+		<insert id="Add"  parameterclass="UserGift" >
+			<selectKey property="gift_id" type="post" resultClass="int">
+				${selectKey}
+			</selectKey>
+			<![CDATA[
+        insert into userGift([gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark])
+        values (#gift_name#,#gift_path#,#gift_mid#,#gift_mname#,#gift_remark#)
+        ]]>
+		</insert>
+
+		<insert id="Add2"  parameterclass="UserGift" >
+			<![CDATA[
+        insert into userGift([gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark])
+        values (#gift_name#,#gift_path#,#gift_mid#,#gift_mname#,#gift_remark#)
+        ]]>
+		</insert>
+
+		<update id="Update"  parameterclass="UserGift">
+			<![CDATA[ 
+      update 
+      userGift 
+      set [gift_name] = #gift_name#,[gift_path] = #gift_path#,[gift_mid] = #gift_mid#,[gift_mname] = #gift_mname#,[gift_remark] = #gift_remark#
+	  where [gift_id] = #gift_id#
+      ]]>
+		</update>
+
+		<delete id="Delete" parameterclass="UserGift">
+			<![CDATA[ 
+        delete from userGift 
+        where [gift_id] = #gift_id#
+        ]]>
+		</delete>
+
+
+		<insert id="userGift_InsertUpdate" parameterClass="UserGift">
+			<![CDATA[ 
+		IF EXISTS(SELECT [gift_id] FROM [dbo].[userGift] WHERE [gift_id] = #gift_id#)
+		BEGIN
+			UPDATE [dbo].[userGift] SET [gift_name] = #gift_name#,[gift_path] = #gift_path#,[gift_mid] = #gift_mid#,[gift_mname] = #gift_mname#,[gift_remark] = #gift_remark#
+				WHERE [gift_id] = #gift_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [dbo].[userGift] ([gift_name],[gift_path],[gift_mid],[gift_mname],[gift_remark]) 
+				VALUES (#gift_name#,#gift_path#,#gift_mid#,#gift_mname#,#gift_remark#)
+		END
+        ]]>
+		</insert>
+
+
+	</statements>
+
+</sqlMap>
+

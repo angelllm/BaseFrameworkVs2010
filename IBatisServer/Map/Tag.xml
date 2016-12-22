@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="article_tag" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="article_tag" type="llm.Model.article_tag,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="article_tag" id="GetModelList">
+            <result column="tag_id" property="tag_id" />
+            <result column="tag_name" property="tag_name" />
+            <result column="tag_type_id" property="tag_type_id" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+        <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+            $sql$
+        </select>
+
+        <select id="GetModelListByPage" resultMap="GetModelList">
+            $sql$
+        </select>
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [tag_id],[tag_name],[tag_type_id] FROM sys_article_tag
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [tag_id],[tag_name],[tag_type_id] FROM sys_article_tag
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="article_tag" parameterClass="int">
+            <![CDATA[
+        select top 1 [tag_id],[tag_name],[tag_type_id]
+        from sys_article_tag
+        WHERE [tag_id] = #tag_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_article_tag]
+        ]]>
+        </select>
+
+        <select id="GetMaxtag_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(tag_id) FROM [sys_article_tag]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.tag_id
+         )AS Row, T.*  from sys_article_tag T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="article_tag" >
+            <selectKey property="tag_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_article_tag([tag_name],[tag_type_id])
+        values (#tag_name#,#tag_type_id#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="article_tag" >
+            <![CDATA[
+        insert into sys_article_tag([tag_name],[tag_type_id])
+        values (#tag_name#,#tag_type_id#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="article_tag">
+            <![CDATA[ 
+      update 
+      sys_article_tag 
+      set [tag_name] = #tag_name#,[tag_type_id] = #tag_type_id#
+	  where [tag_id] = #tag_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="article_tag">
+            <![CDATA[ 
+        delete from sys_article_tag 
+        where [tag_id] = #tag_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_article_tag_InsertUpdate" parameterClass="article_tag">
+            <![CDATA[ 
+		IF EXISTS(SELECT [tag_id] FROM sys_article_tag WHERE [tag_id] = #tag_id#)
+		BEGIN
+			UPDATE sys_article_tag SET [tag_name] = #tag_name#,[tag_type_id] = #tag_type_id#
+				WHERE [tag_id] = #tag_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO sys_article_tag ([tag_name],[tag_type_id]) 
+				VALUES (#tag_name#,#tag_type_id#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

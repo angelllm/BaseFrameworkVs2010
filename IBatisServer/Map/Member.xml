@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="member" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<alias>
+		<typeAlias alias="member" type="llm.Model.member,Model" />
+	</alias>
+	<resultMaps>
+		<resultMap class="member" id="GetModelList">
+			<result column="member_id" property="member_id" />
+			<result column="member_name" property="member_name" />
+			<result column="member_login_ame" property="member_login_ame" />
+			<result column="member_nick_name" property="member_nick_name" />
+			<result column="member_pwd" property="member_pwd" />
+			<result column="member_safe_pwd" property="member_safe_pwd" />
+			<result column="member_opera_pwd" property="member_opera_pwd" />
+			<result column="member_company" property="member_company" />
+			<result column="member_email" property="member_email" />
+			<result column="member_zhaohui" property="member_zhaohui" />
+			<result column="member_real_name" property="member_real_name" />
+			<result column="member_phone" property="member_phone" />
+			<result column="member_qq" property="member_qq" />
+			<result column="member_reg_time" property="member_reg_time" />
+			<result column="member_modify_time" property="member_modify_time" />
+			<result column="member_login_time" property="member_login_time" />
+			<result column="member_login_out_time" property="member_login_out_time" />
+			<result column="member_status" property="member_status" />
+			<result column="member_level" property="member_level" />
+			<result column="member_integral" property="member_integral" />
+			<result column="member_integral_use" property="member_integral_use" />
+			<result column="member_type" property="member_type" />
+			<result column="member_face" property="member_face" />
+			<result column="member_shop_id" property="member_shop_id" />
+			<result column="member_phone_last_four" property="member_phone_last_four" />
+			<result column="member_baby_name" property="member_baby_name" />
+			<result column="member_baby_age" property="member_baby_age" />
+			<result column="member_baby_sex" property="member_baby_sex" />
+			<result column="member_baby_birdthday" property="member_baby_birdthday" />
+		</resultMap>
+        
+		<resultMap class="member" id="GetListByPage">
+			<!--<result property="Card" column="Card" select="GetCardByMid"/>-->
+			<result column="member_id" property="member_id" />
+			<result column="member_name" property="member_name" />
+			<result column="member_login_ame" property="member_login_ame" />
+			<result column="member_nick_name" property="member_nick_name" />
+			<result column="member_pwd" property="member_pwd" />
+			<result column="member_safe_pwd" property="member_safe_pwd" />
+			<result column="member_opera_pwd" property="member_opera_pwd" />
+			<result column="member_company" property="member_company" />
+			<result column="member_email" property="member_email" />
+			<result column="member_zhaohui" property="member_zhaohui" />
+			<result column="member_real_name" property="member_real_name" />
+			<result column="member_phone" property="member_phone" />
+			<result column="member_qq" property="member_qq" />
+			<result column="member_reg_time" property="member_reg_time" />
+			<result column="member_modify_time" property="member_modify_time" />
+			<result column="member_login_time" property="member_login_time" />
+			<result column="member_login_out_time" property="member_login_out_time" />
+			<result column="member_status" property="member_status" />
+			<result column="member_level" property="member_level" />
+			<result column="member_integral" property="member_integral" />
+			<result column="member_integral_use" property="member_integral_use" />
+			<result column="member_type" property="member_type" />
+			<result column="member_face" property="member_face" />
+			<result column="member_shop_id" property="member_shop_id" />
+			<result column="member_phone_last_four" property="member_phone_last_four" />
+			<result column="member_baby_name" property="member_baby_name" />
+			<result column="member_baby_age" property="member_baby_age" />
+			<result column="member_baby_sex" property="member_baby_sex" />
+			<result column="member_baby_birdthday" property="member_baby_birdthday" />
+		</resultMap>
+        <resultMap class="member" id="GetModel">
+            <result column="member_id" property="member_id" />
+            <result column="member_name" property="member_name" />
+            <result column="member_login_ame" property="member_login_ame" />
+            <result column="member_nick_name" property="member_nick_name" />
+            <result column="member_pwd" property="member_pwd" />
+            <result column="member_safe_pwd" property="member_safe_pwd" />
+            <result column="member_opera_pwd" property="member_opera_pwd" />
+            <result column="member_company" property="member_company" />
+            <result column="member_email" property="member_email" />
+            <result column="member_zhaohui" property="member_zhaohui" />
+            <result column="member_real_name" property="member_real_name" />
+            <result column="member_phone" property="member_phone" />
+            <result column="member_qq" property="member_qq" />
+            <result column="member_reg_time" property="member_reg_time" />
+            <result column="member_modify_time" property="member_modify_time" />
+            <result column="member_login_time" property="member_login_time" />
+            <result column="member_login_out_time" property="member_login_out_time" />
+            <result column="member_status" property="member_status" />
+            <result column="member_level" property="member_level" />
+            <result column="member_integral" property="member_integral" />
+            <result column="member_integral_use" property="member_integral_use" />
+            <result column="member_type" property="member_type" />
+            <result column="member_face" property="member_face" />
+            <result column="member_shop_id" property="member_shop_id" />
+            <result column="member_phone_last_four" property="member_phone_last_four" />
+            <result column="member_baby_name" property="member_baby_name" />
+            <result column="member_baby_age" property="member_baby_age" />
+            <result column="member_baby_sex" property="member_baby_sex" />
+            <result column="member_baby_birdthday" property="member_baby_birdthday" />
+            <result column="member_time" property="member_time" />
+            <result column="member_number" property="member_number" />
+            <result column="member_tel" property="member_tel" />
+            <result column="member_work" property="member_work" />
+            <result column="member_school" property="member_school" />
+            <result column="member_birthday" property="member_birthday" />
+            <result column="member_remark" property="member_remark" />
+            <result column="member_upload" property="member_upload" />
+            
+        </resultMap>
+        <resultMap class="member" id="GetByPageUseTopModel">
+            <result column="member_id" property="member_id" />
+            <result column="member_name" property="member_name" />
+            <result column="member_login_ame" property="member_login_ame" />
+            <result column="member_nick_name" property="member_nick_name" />
+            <result column="member_pwd" property="member_pwd" />
+            <result column="member_safe_pwd" property="member_safe_pwd" />
+            <result column="member_opera_pwd" property="member_opera_pwd" />
+            <result column="member_company" property="member_company" />
+            <result column="member_email" property="member_email" />
+            <result column="member_zhaohui" property="member_zhaohui" />
+            <result column="member_real_name" property="member_real_name" />
+            <result column="member_phone" property="member_phone" />
+            <result column="member_qq" property="member_qq" />
+            <result column="member_reg_time" property="member_reg_time" />
+            <result column="member_modify_time" property="member_modify_time" />
+            <result column="member_login_time" property="member_login_time" />
+            <result column="member_login_out_time" property="member_login_out_time" />
+            <result column="member_status" property="member_status" />
+            <result column="member_level" property="member_level" />
+            <result column="member_integral" property="member_integral" />
+            <result column="member_integral_use" property="member_integral_use" />
+            <result column="member_type" property="member_type" />
+            <result column="member_face" property="member_face" />
+            <result column="member_shop_id" property="member_shop_id" />
+            <result column="member_time" property="member_time" />
+            <result column="counts" property="member_baby_age" /> 
+        </resultMap>
+
+        <resultMap class="member" id="TotalAndNewCountModel">
+            <result column="total" property="member_total" />
+            <result column="new" property="member_new" />
+        </resultMap>
+        
+	</resultMaps>
+    
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="PageSplitParam">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+            <parameter property="strwhere"/>
+        </parameterMap>
+    </parameterMaps>
+    
+    
+	<statements>
+        <select id="GetModelListByPageUseTop" resultMap="GetByPageUseTopModel" parameterMap="PageSplitParam" >
+            <![CDATA[
+                select (select COUNT(1) from sys_member where 1=1 $strwhere$ ) as counts,  * from
+                (
+                select top $pagesize$ * from sys_member where member_id in(
+                select member_id from (select top $pageindex$ member_id from sys_member order by member_id  desc) as t
+                )   
+                order by member_id asc
+                ) as tt where 1 = 1 $strwhere$ order by member_id desc
+            ]]>
+        </select>
+        <select id="GetTotalCountAndNewCount" resultMap="TotalAndNewCountModel" resultClass="member" remapResults="true" parameterClass="System.String">
+            <![CDATA[ select COUNT(1) as total ,(select COUNT(1) as n from sys_member where DATEDIFF(DAY,member_time,GETDATE()) < 7  $strWhere$   ) as new from sys_member where 1=1 $strWhere$  ]]>
+        </select>
+
+        <select id="GetModelByName" resultMap="GetModel" resultClass="member" parameterClass="int">
+            <![CDATA[
+        select top 1 [member_id],[member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday],[member_time],[member_number],[member_tel],[member_work],[member_school],[member_birthday],[member_remark],[member_upload]
+        from sys_member
+        WHERE [member_name] = #member_name#
+        ]]>
+        </select>
+
+        <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+            $sql$
+        </select>
+        <select id="GetModelListByPage" resultMap="GetModelList">
+            $sql$
+        </select>
+
+		<select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+			<![CDATA[
+        SELECT [member_id],[member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday] FROM [dbo].[sys_member]
+		WHERE  $strWhere$
+        ]]>
+		</select>
+
+		<select id="GetCardByMid" resultMap="GetModelList" resultClass="member" parameterClass="int">
+			<![CDATA[
+        select top 1 [card_id],[card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname]
+        from userCard
+        WHERE [card_id] = #card_id#
+        ]]>
+		</select>
+		
+		<select id="GetModelList" resultMap="GetModelList">
+			<![CDATA[
+         SELECT [member_id],[member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday] FROM [dbo].[sys_member]
+        ]]>
+		</select>
+
+		<select id="GetModelById" resultMap="GetModel" resultClass="member" parameterClass="int">
+			<![CDATA[
+        select top 1 [member_id],[member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday],[member_time],[member_number],[member_tel],[member_work],[member_school],[member_birthday],[member_remark],[member_upload]
+        from sys_member
+        WHERE [member_id] = #member_id#
+        ]]>
+		</select>
+
+		<select id="GetModelByPhone" resultMap="GetModel" resultClass="member" parameterClass="int">
+			<![CDATA[
+        select top 1 [member_id],[member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday],[member_time],[member_number],[member_tel],[member_work],[member_school],[member_birthday],[member_remark],[member_upload]
+        from sys_member
+        WHERE [member_phone] = #member_phone#
+        ]]>
+		</select> 
+
+		<select id="Sql" parameterClass="string" remapResults="true"  resultMap="GetListByPage">
+			$sql$
+		</select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+			select count(1)  from sys_member 
+			 
+			]]>
+        </select>
+
+		<insert id="Add"  parameterclass="member" >
+			<selectKey property="member_id" type="post" resultClass="int">
+				${selectKey}
+			</selectKey>
+			<![CDATA[
+			insert into sys_member([member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday],[member_time],[member_number],[member_tel],[member_work],[member_school],[member_birthday],[member_remark],[member_upload])
+			values (#member_name#,#member_login_ame#,#member_nick_name#,#member_pwd#,#member_safe_pwd#,#member_opera_pwd#,#member_company#,#member_email#,#member_zhaohui#,#member_real_name#,#member_phone#,#member_qq#,#member_reg_time#,#member_modify_time#,#member_login_time#,#member_login_out_time#,#member_status#,#member_level#,#member_integral#,#member_integral_use#,#member_type#,#member_face#,#member_shop_id#,#member_phone_last_four#,#member_baby_name#,#member_baby_age#,#member_baby_sex#,#member_baby_birdthday#,#member_time#,#member_number#,#member_tel#,#member_work#,#member_school#,#member_birthday#,#member_remark#,#member_upload#)
+			]]>
+		</insert>
+
+		<insert id="Add2"  parameterclass="member" >
+			<![CDATA[
+			insert into sys_member([member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday])
+			values (#member_name#,#member_login_ame#,#member_nick_name#,#member_pwd#,#member_safe_pwd#,#member_opera_pwd#,#member_company#,#member_email#,#member_zhaohui#,#member_real_name#,#member_phone#,#member_qq#,#member_reg_time#,#member_modify_time#,#member_login_time#,#member_login_out_time#,#member_status#,#member_level#,#member_integral#,#member_integral_use#,#member_type#,#member_face#,#member_shop_id#,#member_phone_last_four#,#member_baby_name#,#member_baby_age#,#member_baby_sex#,#member_baby_birdthday#)
+			]]>
+		</insert>
+
+		<update id="Update"  parameterclass="member">
+			<![CDATA[ 
+      update 
+      sys_member 
+      set [member_name] = #member_name#,[member_login_ame] = #member_login_ame#,[member_nick_name] = #member_nick_name#,[member_pwd] = #member_pwd#,[member_safe_pwd] = #member_safe_pwd#,[member_opera_pwd] = #member_opera_pwd#,[member_company] = #member_company#,[member_email] = #member_email#,[member_zhaohui] = #member_zhaohui#,[member_real_name] = #member_real_name#,[member_phone] = #member_phone#,[member_qq] = #member_qq#,[member_reg_time] = #member_reg_time#,[member_modify_time] = #member_modify_time#,[member_login_time] = #member_login_time#,[member_login_out_time] = #member_login_out_time#,[member_status] = #member_status#,[member_level] = #member_level#,[member_integral] = #member_integral#,[member_integral_use] = #member_integral_use#,[member_type] = #member_type#,[member_face] = #member_face#,[member_shop_id] = #member_shop_id#,[member_phone_last_four] = #member_phone_last_four#,[member_baby_name] = #member_baby_name#,[member_baby_age] = #member_baby_age#,[member_baby_sex] = #member_baby_sex#,[member_baby_birdthday] = #member_baby_birdthday# ,[member_time] = #member_time#,[member_number] = #member_number#,[member_tel]=#member_tel#,[member_work]=#member_work#,[member_school]=#member_school#,[member_birthday]=#member_birthday#,[member_remark]=#member_remark#,[member_upload]=#member_upload#
+	  where [member_id] = #member_id#
+      ]]>
+		</update>
+
+		<delete id="Delete" parameterclass="member">
+			<![CDATA[ 
+        delete from sys_member 
+        where [member_id] = #member_id#
+        ]]>
+		</delete>
+
+
+		<insert id="sys_member_InsertUpdate" parameterClass="member">
+			<![CDATA[ 
+		IF EXISTS(SELECT [member_id] FROM [dbo].[sys_member] WHERE [member_id] = #member_id#)
+		BEGIN
+			UPDATE [dbo].[sys_member] SET [member_name] = #member_name#,[member_login_ame] = #member_login_ame#,[member_nick_name] = #member_nick_name#,[member_pwd] = #member_pwd#,[member_safe_pwd] = #member_safe_pwd#,[member_opera_pwd] = #member_opera_pwd#,[member_company] = #member_company#,[member_email] = #member_email#,[member_zhaohui] = #member_zhaohui#,[member_real_name] = #member_real_name#,[member_phone] = #member_phone#,[member_qq] = #member_qq#,[member_reg_time] = #member_reg_time#,[member_modify_time] = #member_modify_time#,[member_login_time] = #member_login_time#,[member_login_out_time] = #member_login_out_time#,[member_status] = #member_status#,[member_level] = #member_level#,[member_integral] = #member_integral#,[member_integral_use] = #member_integral_use#,[member_type] = #member_type#,[member_face] = #member_face#,[member_shop_id] = #member_shop_id#,[member_phone_last_four] = #member_phone_last_four#,[member_baby_name] = #member_baby_name#,[member_baby_age] = #member_baby_age#,[member_baby_sex] = #member_baby_sex#,[member_baby_birdthday] = #member_baby_birdthday#
+				WHERE [member_id] = #member_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [dbo].[sys_member] ([member_name],[member_login_ame],[member_nick_name],[member_pwd],[member_safe_pwd],[member_opera_pwd],[member_company],[member_email],[member_zhaohui],[member_real_name],[member_phone],[member_qq],[member_reg_time],[member_modify_time],[member_login_time],[member_login_out_time],[member_status],[member_level],[member_integral],[member_integral_use],[member_type],[member_face],[member_shop_id],[member_phone_last_four],[member_baby_name],[member_baby_age],[member_baby_sex],[member_baby_birdthday]) 
+				VALUES (#member_name#,#member_login_ame#,#member_nick_name#,#member_pwd#,#member_safe_pwd#,#member_opera_pwd#,#member_company#,#member_email#,#member_zhaohui#,#member_real_name#,#member_phone#,#member_qq#,#member_reg_time#,#member_modify_time#,#member_login_time#,#member_login_out_time#,#member_status#,#member_level#,#member_integral#,#member_integral_use#,#member_type#,#member_face#,#member_shop_id#,#member_phone_last_four#,#member_baby_name#,#member_baby_age#,#member_baby_sex#,#member_baby_birdthday#)
+		END
+        ]]>
+		</insert>
+
+
+	</statements>
+
+</sqlMap>
+

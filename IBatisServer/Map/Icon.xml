@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="icon" xmlns="http://ibatis.apache.org/mapping" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+
+  <alias>
+    <typeAlias alias="icon" type="llm.Model.icon,Model" />
+  </alias>
+  
+  <resultMaps>
+    
+    <resultMap id="GetModelList" class="icon">
+        <result property="icon_id" column="icon_id" />
+        <result property="icon_name" column="icon_name" />
+        <result property="icon_image" column="icon_image" />
+        <result property="icon_position_x" column="icon_position_x" />
+        <result property="icon_position_y" column="icon_position_y" />
+        <result property="icon_status" column="icon_status" />
+        <result property="icon_resize" column="icon_resize" />
+        <result property="icon_tpl" column="icon_tpl" />
+        <result property="icon_init_w" column="icon_init_w" />
+        <result property="icon_init_h" column="icon_init_h" />
+        <result property="icon_url" column="icon_url" />
+        <result property="icon_css" column="icon_css" />
+        <result property="icon_item_css" column="icon_item_css" />
+        <result property="icon_background_image" column="icon_background_image" />
+    </resultMap>
+
+    <resultMap id="GetModelById" class="icon">
+        <result property="icon_id" column="icon_id" />
+        <result property="icon_name" column="icon_name" />
+        <result property="icon_image" column="icon_image" />
+        <result property="icon_position_x" column="icon_position_x" />
+        <result property="icon_position_y" column="icon_position_y" />
+        <result property="icon_status" column="icon_status" />
+        <result property="icon_resize" column="icon_resize" />
+        <result property="icon_tpl" column="icon_tpl" />
+        <result property="icon_init_w" column="icon_init_w" />
+        <result property="icon_init_h" column="icon_init_h" />
+        <result property="icon_url" column="icon_url" />
+        <result property="icon_css" column="icon_css" />
+        <result property="icon_item_css" column="icon_item_css" />
+        <result property="icon_background_image" column="icon_background_image" />
+    </resultMap>
+    
+  </resultMaps>
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+        </parameterMap>
+    </parameterMaps>
+  <statements>
+
+      <select id="GetCount"  resultClass="int" >
+          <![CDATA[
+            SELECT COUNT(1) FROM [sys_icon]
+        ]]>
+      </select>
+      
+      <select id="GetModelListSql" resultMap="GetModelList" parameterClass="System.String" >
+          <![CDATA[ $sql$ ]]>
+      </select>
+      <select id="GetModelListByPage" resultMap="GetModelList" parameterMap="pageinfo" >
+          <![CDATA[ select top $pagesize$ * from ( select top $pageindex$ * from sys_icon order by icon_id desc) as f order by icon_id asc]]>
+      </select>
+    <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+        <![CDATA[
+        select icon_id,icon_name,icon_image,icon_position_x,icon_position_y,icon_status,icon_resize,icon_tpl,icon_init_w,icon_init_h,icon_url,icon_css,icon_item_css,icon_background_image,icon_adv_css from sys_icon
+        where 1=1 $strWhere$
+        ]]>
+    </select>
+
+    <select id="GetModelList" resultMap="GetModelList">
+        <![CDATA[
+        select icon_id,icon_name,icon_image,icon_position_x,icon_position_y,icon_status,icon_resize,icon_tpl,icon_init_w,icon_init_h,icon_url,icon_css,icon_item_css,icon_background_image,icon_adv_css from sys_icon
+        ]]>
+    </select>
+
+    <select id="GetModelById" resultMap="GetModelById" resultClass="icon" parameterClass="int">
+        select top 1 icon_id,icon_name,icon_image,icon_position_x,icon_position_y,icon_status,icon_resize,icon_tpl,icon_init_w,icon_init_h,icon_url,icon_css,icon_item_css,icon_background_image,icon_adv_css  from sys_icon where icon_id=#icon_id#
+    </select>
+    
+    <insert id="InsertIcon"  parameterclass="icon" >
+      <selectKey property="icon_id" type="post" resultClass="int">
+        ${selectKey}
+      </selectKey>
+        insert into sys_icon(icon_name,icon_image,icon_position_x,icon_position_y,icon_status,icon_resize,icon_tpl,icon_init_w,icon_init_h,icon_url,icon_css,icon_item_css,icon_background_image,icon_adv_css)
+        values (
+        #icon_name#,#icon_image#,#icon_position_x#,#icon_position_y#,#icon_status#,#icon_resize#,#icon_tpl#,#icon_init_w#,#icon_init_h#,#icon_url#,#icon_css#,#icon_item_css#,#icon_background_image#,#icon_adv_css#
+        )
+    </insert>
+      <insert id="InsertIcon2"  parameterclass="icon" >
+         
+          insert into sys_icon(icon_name,icon_image,icon_position_x,icon_position_y,icon_status,icon_resize,icon_tpl,icon_init_w,icon_init_h,icon_url,icon_css,icon_item_css,icon_background_image,icon_adv_css)
+          values (
+          #icon_name#,#icon_image#,#icon_position_x#,#icon_position_y#,#icon_status#,#icon_resize#,#icon_tpl#,#icon_init_w#,#icon_init_h#,#icon_url#,#icon_css#,#icon_item_css#,#icon_background_image#,#icon_adv_css#
+          )
+      </insert>
+    <update id="UpdateIcon"  parameterclass="icon">
+      <![CDATA[ update sys_icon set  
+			icon_name=#icon_name#,
+			icon_image=#icon_image#,
+			icon_position_x=#icon_position_x#,
+			icon_position_y=#icon_position_y#,
+			icon_status=#icon_status#,
+			icon_resize=#icon_resize#,
+			icon_tpl=#icon_tpl#,
+			icon_init_w=#icon_init_w#,
+			icon_init_h=#icon_init_h#,
+			icon_url=#icon_url#,
+			icon_css=#icon_css#,
+			icon_item_css=#icon_item_css#,
+			icon_background_image=#icon_background_image#,
+			icon_adv_css=#icon_adv_css#
+			where icon_id=#icon_id# ]]>
+    </update>
+
+    <delete id="DeleteIcon" parameterclass="icon">
+       <![CDATA[ 
+        delete from sys_icon
+        where
+        icon_id = #icon_id#
+        ]]>
+    </delete>
+
+      <!--调用查询类型的存储过程-->
+
+
+      <!--直接执行select语句-->
+      <!--
+    <statement id="ExecuteSelectSql"  parameterClass="string" remapResults="true" resultMap="SelectAllResult">
+      $sql$
+      -->
+      <!--<![CDATA[   $sql$   ]]>-->
+      <!--
+    </statement>
+
+    -->
+      <!--直接执行select count 语句-->
+      <!--
+    <statement id="ExecuteSelectCountSql"  parameterClass="string" remapResults="true" resultClass="int">
+      $sql$
+      -->
+      <!--<![CDATA[   $sql$   ]]>-->
+      <!--
+    </statement>
+
+    -->
+      <!--直接执行insert语句-->
+      <!--
+    <statement id="ExecuteInsertSql"  parameterClass="string" remapResults="true" resultClass="int">
+      $sql$
+      -->
+      <!--<![CDATA[   $sql$   ]]>-->
+      <!--
+    </statement>-->
+
+
+  </statements>
+</sqlMap>

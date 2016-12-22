@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product" type="llm.Model.product,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product" id="GetModelList">
+            <result column="product_id" property="product_id" />
+            <result column="product_name" property="product_name" />
+            <result column="product_sn" property="product_sn" />
+            <result column="product_color" property="product_color" />
+            <result column="product_guid" property="product_guid" />
+            <result column="product_type_id" property="product_type_id" />
+            <result column="product_mid" property="product_mid" />
+            <result column="product_type_name" property="product_type_name" />
+            <result column="product_image" property="product_image" />
+            <result column="product_image_list" property="product_image_list" />
+            <result column="product_sku_path" property="product_sku_path" />
+            <result column="product_param" property="product_param" />
+            <result column="product_content" property="product_content" />
+            <result column="product_size" property="product_size" />
+            <result column="product_price" property="product_price" />
+            <result column="product_price_sku" property="product_price_sku" />
+            <result column="product_min_price" property="product_min_price" />
+            <result column="product_max_price" property="product_max_price" />
+            <result column="product_time" property="product_time" />
+            <result column="product_status" property="product_status" />
+        </resultMap>
+        <resultMap class="product" id="GetModelList3">
+            <result column="product_id" property="product_id" />
+            <result column="product_name" property="product_name" />
+            <result column="product_sn" property="product_sn" />
+            <result column="product_color" property="product_color" />
+            <result column="product_guid" property="product_guid" />
+            <result column="product_type_id" property="product_type_id" />
+            <result column="product_mid" property="product_mid" />
+            <result column="product_type_name" property="product_type_name" />
+            <result column="product_image" property="product_image" />
+            <result column="product_image_list" property="product_image_list" />
+            <result column="product_sku_path" property="product_sku_path" />
+            <result column="product_param" property="product_param" />
+            <result column="product_content" property="product_content" />
+            <result column="product_size" property="product_size" />
+            <result column="product_price" property="product_price" />
+            <result column="product_price_sku" property="product_price_sku" />
+            <result column="product_min_price" property="product_min_price" />
+            <result column="product_max_price" property="product_max_price" />
+            <result column="product_time" property="product_time" />
+            <result column="product_status" property="product_status" />
+            <result column="product_tag" property="product_tag" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+      <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+        $sql$
+      </select>
+      <select id="GetModelListByPage" resultMap="GetModelList">
+        $sql$
+      </select>
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [product_id],[product_name],[product_sn],[product_color],[product_guid],[product_type_id],[product_mid],[product_type_name],[product_image],[product_image_list],[product_sku_path],[product_param],[product_content],[product_size],[product_price],[product_price_sku],[product_min_price],[product_max_price],[product_time],[product_status] FROM [sys_product]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [product_id],[product_name],[product_sn],[product_color],[product_guid],[product_type_id],[product_mid],[product_type_name],[product_image],[product_image_list],[product_sku_path],[product_param],[product_content],[product_size],[product_price],[product_price_sku],[product_min_price],[product_max_price],[product_time],[product_status] FROM [sys_product]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList3" resultClass="product" parameterClass="int">
+            <![CDATA[
+        select top 1 [product_id],[product_name],[product_sn],[product_color],[product_guid],[product_type_id],[product_mid],[product_type_name],[product_image],[product_image_list],[product_sku_path],[product_param],[product_content],[product_size],[product_price],[product_price_sku],[product_min_price],[product_max_price],[product_time],[product_status],[product_tag]
+        from sys_product
+        WHERE [product_id] = #product_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product]
+        ]]>
+        </select>
+
+        <select id="GetMaxproduct_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(product_id) FROM [sys_product]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.product_id
+         )AS Row, T.*  from sys_product T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product" >
+            <selectKey property="product_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product([product_name],[product_sn],[product_color],[product_guid],[product_type_id],[product_mid],[product_type_name],[product_image],[product_image_list],[product_sku_path],[product_param],[product_content],[product_size],[product_price],[product_price_sku],[product_min_price],[product_max_price],[product_time],[product_status])
+        values (#product_name#,#product_sn#,#product_color#,#product_guid#,#product_type_id#,#product_mid#,#product_type_name#,#product_image#,#product_image_list#,#product_sku_path#,#product_param#,#product_content#,#product_size#,#product_price#,#product_price_sku#,#product_min_price#,#product_max_price#,#product_time#,#product_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product" >
+            <![CDATA[
+        insert into sys_product([product_name],[product_sn],[product_color],[product_guid],[product_type_id],[product_mid],[product_type_name],[product_image],[product_image_list],[product_sku_path],[product_param],[product_content],[product_size],[product_price],[product_price_sku],[product_min_price],[product_max_price],[product_time],[product_status])
+        values (#product_name#,#product_sn#,#product_color#,#product_guid#,#product_type_id#,#product_mid#,#product_type_name#,#product_image#,#product_image_list#,#product_sku_path#,#product_param#,#product_content#,#product_size#,#product_price#,#product_price_sku#,#product_min_price#,#product_max_price#,#product_time#,#product_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product">
+            <![CDATA[ 
+      update 
+      sys_product 
+      set [product_name] = #product_name#,[product_sn] = #product_sn#,[product_color] = #product_color#,[product_guid] = #product_guid#,[product_type_id] = #product_type_id#,[product_mid] = #product_mid#,[product_type_name] = #product_type_name#,[product_image] = #product_image#,[product_image_list] = #product_image_list#,[product_sku_path] = #product_sku_path#,[product_param] = #product_param#,[product_content] = #product_content#,[product_size] = #product_size#,[product_price] = #product_price#,[product_price_sku] = #product_price_sku#,[product_min_price] = #product_min_price#,[product_max_price] = #product_max_price#,[product_time] = #product_time#,[product_status] = #product_status#
+	  where [product_id] = #product_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product">
+            <![CDATA[ 
+        delete from sys_product 
+        where [product_id] = #product_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_InsertUpdate" parameterClass="product">
+            <![CDATA[ 
+		IF EXISTS(SELECT [product_id] FROM [sys_product] WHERE [product_id] = #product_id#)
+		BEGIN
+			UPDATE [sys_product] SET [product_name] = #product_name#,[product_sn] = #product_sn#,[product_color] = #product_color#,[product_guid] = #product_guid#,[product_type_id] = #product_type_id#,[product_mid] = #product_mid#,[product_type_name] = #product_type_name#,[product_image] = #product_image#,[product_image_list] = #product_image_list#,[product_sku_path] = #product_sku_path#,[product_param] = #product_param#,[product_content] = #product_content#,[product_size] = #product_size#,[product_price] = #product_price#,[product_price_sku] = #product_price_sku#,[product_min_price] = #product_min_price#,[product_max_price] = #product_max_price#,[product_time] = #product_time#,[product_status] = #product_status#
+				WHERE [product_id] = #product_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product] ([product_name],[product_sn],[product_color],[product_guid],[product_type_id],[product_mid],[product_type_name],[product_image],[product_image_list],[product_sku_path],[product_param],[product_content],[product_size],[product_price],[product_price_sku],[product_min_price],[product_max_price],[product_time],[product_status]) 
+				VALUES (#product_name#,#product_sn#,#product_color#,#product_guid#,#product_type_id#,#product_mid#,#product_type_name#,#product_image#,#product_image_list#,#product_sku_path#,#product_param#,#product_content#,#product_size#,#product_price#,#product_price_sku#,#product_min_price#,#product_max_price#,#product_time#,#product_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

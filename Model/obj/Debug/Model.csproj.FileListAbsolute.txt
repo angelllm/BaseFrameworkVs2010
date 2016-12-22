@@ -1,0 +1,13 @@
+F:\工作空间\Solution\BaseFramework\Model\bin\Debug\Model.dll
+F:\工作空间\Solution\BaseFramework\Model\bin\Debug\Model.pdb
+F:\工作空间\Solution\BaseFramework\Model\obj\Debug\Model.dll
+F:\工作空间\Solution\BaseFramework\Model\obj\Debug\Model.pdb
+F:\工作空间\Solution\BaseFramework\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\Model\bin\Debug\Model.dll
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\Model\bin\Debug\Model.pdb
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\Model\obj\Debug\Model.dll
+F:\工作空间\Solution\BaseFramework-v2.0.0.1\Model\obj\Debug\Model.pdb
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\Model\bin\Debug\Model.dll
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\Model\bin\Debug\Model.pdb
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\Model\obj\Debug\Model.dll
+F:\工作空间\Solution\BaseFramework-v2.1.0.0\Model\obj\Debug\Model.pdb

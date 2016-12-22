@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_sku_value" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_sku_value" type="llm.Model.product_sku_value,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_sku_value" id="GetModelList">
+            <result column="value_id" property="value_id" />
+            <result column="value_sku_id" property="value_sku_id" />
+            <result column="value_def_value_id" property="value_def_value_id" />
+            <result column="value_image" property="value_image" />
+            <result column="value_status" property="value_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [value_id],[value_sku_id],[value_def_value_id],[value_image],[value_status] FROM [sys_product_sku_value]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [value_id],[value_sku_id],[value_def_value_id],[value_image],[value_status] FROM [sys_product_sku_value]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_sku_value" parameterClass="int">
+            <![CDATA[
+        select top 1 [value_id],[value_sku_id],[value_def_value_id],[value_image],[value_status]
+        from sys_product_sku_value
+        WHERE [value_id] = #value_id#
+        ]]>
+        </select>
+        <select id="GetModelBySkuId" resultMap="GetModelList" resultClass="product_sku_value" parameterClass="int">
+            <![CDATA[
+        select top 1 [value_id],[value_sku_id],[value_def_value_id],[value_image],[value_status]
+        from sys_product_sku_value
+        WHERE [value_sku_id] = #value_sku_id#
+        ]]>
+        </select>
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product_sku_value]
+        ]]>
+        </select>
+
+        <select id="GetMaxvalue_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(value_id) FROM [sys_product_sku_value]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.value_id
+         )AS Row, T.*  from sys_product_sku_value T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_sku_value" >
+            <selectKey property="value_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_sku_value([value_sku_id],[value_def_value_id],[value_image],[value_status])
+        values (#value_sku_id#,#value_def_value_id#,#value_image#,#value_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_sku_value" >
+            <![CDATA[
+        insert into sys_product_sku_value([value_sku_id],[value_def_value_id],[value_image],[value_status])
+        values (#value_sku_id#,#value_def_value_id#,#value_image#,#value_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_sku_value">
+            <![CDATA[ 
+      update 
+      sys_product_sku_value 
+      set [value_sku_id] = #value_sku_id#,[value_def_value_id] = #value_def_value_id#,[value_image] = #value_image#,[value_status] = #value_status#
+	  where [value_id] = #value_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_sku_value">
+            <![CDATA[ 
+        delete from sys_product_sku_value 
+        where [value_id] = #value_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_sku_value_InsertUpdate" parameterClass="product_sku_value">
+            <![CDATA[ 
+		IF EXISTS(SELECT [value_id] FROM [sys_product_sku_value] WHERE [value_id] = #value_id#)
+		BEGIN
+			UPDATE [sys_product_sku_value] SET [value_sku_id] = #value_sku_id#,[value_def_value_id] = #value_def_value_id#,[value_image] = #value_image#,[value_status] = #value_status#
+				WHERE [value_id] = #value_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_sku_value] ([value_sku_id],[value_def_value_id],[value_image],[value_status]) 
+				VALUES (#value_sku_id#,#value_def_value_id#,#value_image#,#value_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

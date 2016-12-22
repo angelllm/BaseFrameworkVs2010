@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="admin" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="admin" type="llm.Model.admin,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="admin" id="GetModelList">
+            <result column="admin_id" property="admin_id" />
+            <result column="admin_name" property="admin_name" />
+            <result column="admin_pwd" property="admin_pwd" />
+            <result column="admin_time" property="admin_time" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [admin_id],[admin_name],[admin_pwd],[admin_time] FROM [dbo].[sys_admin]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [admin_id],[admin_name],[admin_pwd],[admin_time] FROM [dbo].[sys_admin]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="admin" parameterClass="int">
+            <![CDATA[
+        select top 1 [admin_id],[admin_name],[admin_pwd],[admin_time]
+        from sys_admin
+        WHERE [admin_id] = #admin_id#
+        ]]>
+        </select>
+
+        <select id="GetModelByName" resultMap="GetModelList" resultClass="admin" parameterClass="int">
+            <![CDATA[
+        select top 1 [admin_id],[admin_name],[admin_pwd],[admin_time]
+        from sys_admin
+        WHERE [admin_name] = #admin_name#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [dbo].[sys_admin]
+        ]]>
+        </select>
+
+        <select id="GetMaxadmin_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(admin_id) FROM [dbo].[sys_admin]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.admin_id
+         )AS Row, T.*  from sys_admin T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select> 
+        <insert id="Add"  parameterclass="admin" >
+            <selectKey property="admin_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_admin([admin_name],[admin_pwd],[admin_time])
+        values (#admin_name#,#admin_pwd#,#admin_time#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="admin" >
+            <![CDATA[
+        insert into sys_admin([admin_name],[admin_pwd],[admin_time])
+        values (#admin_name#,#admin_pwd#,#admin_time#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="admin">
+            <![CDATA[ 
+      update 
+      sys_admin 
+      set [admin_name] = #admin_name#,[admin_pwd] = #admin_pwd#,[admin_time] = #admin_time#
+	  where [admin_id] = #admin_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="admin">
+            <![CDATA[ 
+        delete from sys_admin 
+        where [admin_id] = #admin_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_admin_InsertUpdate" parameterClass="admin">
+            <![CDATA[ 
+		IF EXISTS(SELECT [admin_id] FROM [dbo].[sys_admin] WHERE [admin_id] = #admin_id#)
+		BEGIN
+			UPDATE [dbo].[sys_admin] SET [admin_name] = #admin_name#,[admin_pwd] = #admin_pwd#,[admin_time] = #admin_time#
+				WHERE [admin_id] = #admin_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [dbo].[sys_admin] ([admin_name],[admin_pwd],[admin_time]) 
+				VALUES (#admin_name#,#admin_pwd#,#admin_time#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

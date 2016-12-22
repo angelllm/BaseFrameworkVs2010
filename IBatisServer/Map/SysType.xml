@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="sys_type" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="sys_type" type="llm.Model.sys_type,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="sys_type" id="GetModelList">
+            <result column="type_id" property="type_id" />
+            <result column="type_name" property="type_name" />
+            <result column="type_guid" property="type_guid" />
+            <result column="type_parent" property="type_parent" />
+            <result column="type_depth" property="type_depth" />
+            <result column="type_parent_name" property="type_parent_name" nullValue=""/> 
+            <result column="type_path" property="type_path" />
+            <result column="type_image" property="type_image" />
+            <result column="type_image_list" property="type_image_list" />
+            <result column="type_summary" property="type_summary" />
+            <result column="type_detail" property="type_detail" />
+            <result column="type_content" property="type_content" />
+            <result column="type_url" property="type_url" />
+            <result column="type_status" property="type_status" />
+            <result column="type_cid" property="type_cid" />
+            <result column="type_cid_name" property="type_cid_name" />
+            <result column="type_order" property="type_order" />
+            <result column="type_time" property="type_time" />
+            <result column="type_position" property="type_position" />
+            <result column="type_dict_code" property="type_dict_code" nullValue="" />
+            <result column="type_code" property="type_code" nullValue="" />
+            <result column="type_role" property="type_role" nullValue="" />
+            <result column="IsSigle" property="IsSigle"  />
+            
+        </resultMap>
+        <resultMap class="sys_type" id="GetModelList2">
+            <result column="type_id" property="type_id" />
+            <result column="type_name" property="type_name" />
+            <result column="type_guid" property="type_guid" />
+            <result column="type_parent" property="type_parent" />
+            <result column="type_depth" property="type_depth" />
+            <result column="type_parent_name" property="type_parent_name" nullValue=""/>
+            <result column="type_path" property="type_path" />
+            <result column="type_image" property="type_image" />
+            <result column="type_image_list" property="type_image_list" />
+            <result column="type_summary" property="type_summary" />
+            <result column="type_detail" property="type_detail" />
+            <result column="type_content" property="type_content" />
+            <result column="type_url" property="type_url" />
+            <result column="type_status" property="type_status" />
+            <result column="type_cid" property="type_cid" />
+            <result column="type_cid_name" property="type_cid_name" />
+            <result column="type_order" property="type_order" />
+            <result column="type_time" property="type_time" />
+            <result column="type_position" property="type_position" />
+            <result column="type_dict_code" property="type_dict_code" nullValue="" />
+            <result column="type_code" property="type_code" nullValue="" />
+            <result column="type_role" property="type_role" nullValue="" />
+            <result column="IsSigle" property="IsSigle"  />
+            <result column="photo_count" property="photo_count"  />
+        </resultMap>
+        
+        <resultMap class="sys_type" id="GetList">
+            <result column="type_id" property="type_id" />
+            <result column="type_name" property="type_name" />
+            <result column="type_guid" property="type_guid" />
+            <result column="type_parent" property="type_parent" /> 
+            <result column="type_depth" property="type_depth" />
+            <result column="type_parent_name" property="type_parent_name" nullValue=""/>
+            <result column="type_path" property="type_path" />
+            <result column="type_image" property="type_image" />
+            <result column="type_image_list" property="type_image_list" />
+            <result column="type_summary" property="type_summary" />
+            <result column="type_detail" property="type_detail" />
+            <result column="type_content" property="type_content" />
+            <result column="type_url" property="type_url" />
+            <result column="type_status" property="type_status" />
+            <result column="type_cid" property="type_cid" />
+            <result column="type_cid_name" property="type_cid_name" />
+            <result column="type_order" property="type_order" />
+            <result column="type_time" property="type_time" />
+            <result column="type_position" property="type_position" />
+            <result column="type_dict_code" property="type_dict_code" nullValue="" />
+            <result column="type_code" property="type_code" nullValue="" />
+            <result column="type_role" property="type_role" nullValue="" />
+            <result column="IsSigle" property="IsSigle"  />
+        </resultMap>
+
+        <resultMap class="sys_type" id="GetByPageUseTopModel">
+            <result column="type_id" property="type_id" />
+            <result column="type_name" property="type_name" />
+            <result column="type_guid" property="type_guid" />
+            <result column="type_parent" property="type_parent" />
+            <result column="type_depth" property="type_depth" />
+            <result column="type_parent_name" property="type_parent_name" nullValue=""/>
+            <result column="type_path" property="type_path" />
+            <result column="type_image" property="type_image" />
+            <result column="type_image_list" property="type_image_list" />
+            <result column="type_summary" property="type_summary" />
+            <result column="type_detail" property="type_detail" />
+            <result column="type_content" property="type_content" />
+            <result column="type_url" property="type_url" />
+            <result column="type_status" property="type_status" />
+            <result column="type_cid" property="type_cid" />
+            <result column="type_cid_name" property="type_cid_name" />
+            <result column="type_order" property="type_order" />
+            <result column="type_time" property="type_time" />
+            <result column="type_position" property="type_position" />
+            <result column="type_dict_code" property="type_dict_code" nullValue="" />
+            <result column="type_code" property="type_code" nullValue="" />
+            <result column="type_role" property="type_role" nullValue="" />
+            <result column="counts" property="IsSigle"  />
+        </resultMap>
+        
+        <resultMap class="sys_type" id="TotalAndNewCountModel">
+            <result column="total" property="total" />
+            <result column="new" property="new_count" />
+        </resultMap>
+
+        <resultMap class="sys_type" id="GetlListWithArticleCountModel">
+            <result column="type_id" property="type_id" />
+            <result column="type_name" property="type_name" />
+            <result column="article_count" property="article_count" />
+        </resultMap>
+
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo2">
+            <parameter property="andwhere"/>
+            <parameter property="wherename"/>
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+        
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+        </parameterMap>
+
+        <parameterMap class="System.Collections.IDictionary" id="PageSplitParam">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+            <parameter property="strwhere"/>
+        </parameterMap>
+        
+    </parameterMaps>
+    
+    <statements>
+
+        <select id="GetlListWithArticleCount" resultMap="GetlListWithArticleCountModel" parameterClass="System.String" >
+            <![CDATA[
+        SELECT (select count(1) from sys_article where article_type =  type_id and article_status = 1) as article_count, [type_id],[type_name] 
+        FROM [sys_type]
+        as ty
+		WHERE  $strWhere$
+        ]]>
+        </select>
+        
+        <select id="GetModelListByPageUseTop" resultMap="GetByPageUseTopModel" parameterMap="PageSplitParam" >
+            <![CDATA[
+                select (select COUNT(1) from sys_type where 1=1 $strwhere$ ) as counts,  * from
+                (
+                select top $pagesize$ * from sys_type where type_id in(
+                select type_id from (select top $pageindex$ type_id from sys_type where 1 = 1 $strwhere$ order by type_id  desc) as t
+                )   $strwhere$
+                order by type_id asc
+                ) as tt where 1 = 1 $strwhere$ order by type_id desc
+            ]]>
+        </select>
+        
+        <select id="GetTotalCountAndNewCount" resultMap="TotalAndNewCountModel" resultClass="sys_type" remapResults="true" parameterClass="System.String">
+            <![CDATA[ select COUNT(1) as total ,(select COUNT(1) as n from sys_type where DATEDIFF(DAY,type_time,GETDATE()) < 7  $strWhere$ ) as new from sys_type WHERE 1=1  $strWhere$  ]]>
+        </select>
+        
+        
+        <select id="GetModelListByPage" resultMap="GetModelList" parameterMap="pageinfo" >
+            <![CDATA[ select top $pagesize$ * from ( select top $pageindex$ * from sys_type order by type_id desc) as f order by type_id asc]]>
+        </select>
+        
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position],[type_dict_code],[type_code],[type_role],[IsSigle] FROM [sys_type]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+        <select id="GetModelListWithPhotoWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT (select count(1) from sys_photo where type_id =  photo_type_id) as photo_count, [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position],[type_dict_code],[type_code],[type_role],[IsSigle] FROM [sys_type]
+        as ty
+		WHERE  $strWhere$
+        ]]>
+        </select>
+        <select id="GetListWhere" >
+            <![CDATA[
+        SELECT [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position] FROM [sys_type]
+        ]]>
+        </select>
+        <select id="GetListWhere2">
+            <![CDATA[
+        SELECT  [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position],[type_dict_code],[type_code],[type_role],[IsSigle] FROM [sys_type]
+	    where $where$
+        ]]>
+        </select>
+        <select id="GetModelList" resultMap="GetModelList">
+         <![CDATA[
+         SELECT [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position] FROM [sys_type]
+        ]]>
+        </select>
+        <select id="GetModelList2" resultMap="GetModelList2">
+            <![CDATA[
+         SELECT (select count(1) from sys_article as art where article_type in (select type_id from [sys_type] as st where st.type_id = ty.type_id or st.type_parent = ty.type_id)) as photo_count, [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position],[type_dict_code],[type_code],[type_role],[IsSigle]
+         FROM [sys_type] as ty
+         where $strWhere$
+        ]]>
+        </select>
+        <select id="GetModelById" resultMap="GetModelList" resultClass="sys_type" parameterClass="int">
+        <![CDATA[
+        select top 1 [type_id],[type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position],[type_dict_code],[type_code],[type_role],[IsSigle]
+        from sys_type
+        WHERE [type_id] = #type_id#
+        ]]>
+        </select>
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+                SELECT COUNT(1) FROM [sys_type]
+            ]]>
+        </select>
+        <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+            $sql$
+        </select>
+        <select id="GetModelListByPage2" resultMap="GetModelList">
+            $strSql$
+        </select>
+        
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+        
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="sys_type.pageinfo2">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.type_id desc
+         )AS Row, T.*  from sys_type T
+         WHERE 1=1  
+         and type_path like ?
+         and type_name like ?   
+          ) TT
+         WHERE TT.Row between ? and ?  
+         ]]>
+        </select>
+        
+        <insert id="Add"  parameterclass="sys_type" >
+            <selectKey property="type_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_type([type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_dict_code],[type_code],[type_role],[IsSigle],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position])
+        values (#type_name#,#type_guid#,#type_parent#,#type_depth#,#type_parent_name#,#type_dict_code#,#type_code#,#type_role#,#IsSigle#,#type_path#,#type_image#,#type_image_list#,#type_summary#,#type_detail#,#type_content#,#type_url#,#type_status#,#type_cid#,#type_cid_name#,#type_order#,#type_time#,#type_position#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="sys_type" >
+            <![CDATA[
+        insert into sys_type([type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_dict_code],[type_code],[type_role],[IsSigle],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position])
+        values (#type_name#,#type_guid#,#type_parent#,#type_depth#,#type_parent_name#,#type_dict_code#,#type_code#,#type_role#,#IsSigle#,#type_path#,#type_image#,#type_image_list#,#type_summary#,#type_detail#,#type_content#,#type_url#,#type_status#,#type_cid#,#type_cid_name#,#type_order#,#type_time#,#type_position#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="sys_type">
+            <![CDATA[ 
+      update 
+      sys_type 
+      set [type_name] = #type_name#,[type_guid] = #type_guid#,[type_parent] = #type_parent#,[type_depth] = #type_depth#,[type_parent_name] = #type_parent_name#,[type_dict_code] = #type_dict_code#,[type_code] = #type_code#,[type_role] = #type_role#,[type_path] = #type_path#,[type_image] = #type_image#,[type_image_list] = #type_image_list#,[type_summary] = #type_summary#,[type_detail] = #type_detail#,[type_content] = #type_content#,[type_url] = #type_url#,[type_status] = #type_status#,[type_cid] = #type_cid#,[type_cid_name] = #type_cid_name#,[type_order] = #type_order#,[type_time] = #type_time#,[type_position] = #type_position#
+	  where [type_id] = #type_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="sys_type">
+            <![CDATA[ 
+        delete from sys_type 
+        where [type_id] = #type_id# or type_parent = #type_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_type_InsertUpdate" parameterClass="sys_type">
+            <![CDATA[ 
+		IF EXISTS(SELECT [type_id] FROM [sys_type] WHERE [type_id] = #type_id#)
+		BEGIN
+			UPDATE [sys_type] SET [type_name] = #type_name#,[type_guid] = #type_guid#,[type_parent] = #type_parent#,[type_depth] = #type_depth#,[type_parent_name] = #type_parent_name#,[type_path] = #type_path#,[type_image] = #type_image#,[type_image_list] = #type_image_list#,[type_summary] = #type_summary#,[type_detail] = #type_detail#,[type_content] = #type_content#,[type_url] = #type_url#,[type_status] = #type_status#,[type_cid] = #type_cid#,[type_cid_name] = #type_cid_name#,[type_order] = #type_order#,[type_time] = #type_time#,[type_position] = #type_position#
+				WHERE [type_id] = #type_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_type] ([type_name],[type_guid],[type_parent],[type_depth],[type_parent_name],[type_path],[type_image],[type_image_list],[type_summary],[type_detail],[type_content],[type_url],[type_status],[type_cid],[type_cid_name],[type_order],[type_time],[type_position]) 
+				VALUES (#type_name#,#type_guid#,#type_parent#,#type_depth#,#type_parent_name#,#type_path#,#type_image#,#type_image_list#,#type_summary#,#type_detail#,#type_content#,#type_url#,#type_status#,#type_cid#,#type_cid_name#,#type_order#,#type_time#,#type_position#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="photo" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="photo" type="llm.Model.photo,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="photo" id="GetModelList">
+            <result column="photo_id" property="photo_id" />
+            <result column="photo_title" property="photo_title" />
+            <result column="photo_image" property="photo_image" />
+            <result column="photo_remark" property="photo_remark" />
+            <result column="photo_order" property="photo_order" />
+            <result column="photo_pv" property="photo_pv" />
+            <result column="photo_type_id" property="photo_type_id" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [photo_id],[photo_title],[photo_image],[photo_remark],[photo_order],[photo_pv],[photo_type_id] FROM [sys_photo]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [photo_id],[photo_title],[photo_image],[photo_remark],[photo_order],[photo_pv],[photo_type_id] FROM [sys_photo]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="photo" parameterClass="int">
+            <![CDATA[
+        select top 1 [photo_id],[photo_title],[photo_image],[photo_remark],[photo_order],[photo_pv],[photo_type_id]
+        from sys_photo
+        WHERE [photo_id] = #photo_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_photo]
+        ]]>
+        </select>
+
+        <select id="GetMaxphoto_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(photo_id) FROM [sys_photo]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.photo_id
+         )AS Row, T.*  from sys_photo T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="photo" >
+            <selectKey property="photo_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_photo([photo_title],[photo_image],[photo_remark],[photo_order],[photo_pv],[photo_type_id])
+        values (#photo_title#,#photo_image#,#photo_remark#,#photo_order#,#photo_pv#,#photo_type_id#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="photo" >
+            <![CDATA[
+        insert into sys_photo([photo_title],[photo_image],[photo_remark],[photo_order],[photo_pv],[photo_type_id])
+        values (#photo_title#,#photo_image#,#photo_remark#,#photo_order#,#photo_pv#,#photo_type_id#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="photo">
+            <![CDATA[ 
+      update 
+      sys_photo 
+      set [photo_title] = #photo_title#,[photo_image] = #photo_image#,[photo_remark] = #photo_remark#,[photo_order] = #photo_order#,[photo_pv] = #photo_pv#,[photo_type_id] = #photo_type_id#
+	  where [photo_id] = #photo_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="photo">
+            <![CDATA[ 
+        delete from sys_photo 
+        where [photo_id] = #photo_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_photo_InsertUpdate" parameterClass="photo">
+            <![CDATA[ 
+		IF EXISTS(SELECT [photo_id] FROM [sys_photo] WHERE [photo_id] = #photo_id#)
+		BEGIN
+			UPDATE [sys_photo] SET [photo_title] = #photo_title#,[photo_image] = #photo_image#,[photo_remark] = #photo_remark#,[photo_order] = #photo_order#,[photo_pv] = #photo_pv#,[photo_type_id] = #photo_type_id#
+				WHERE [photo_id] = #photo_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_photo] ([photo_title],[photo_image],[photo_remark],[photo_order],[photo_pv],[photo_type_id]) 
+				VALUES (#photo_title#,#photo_image#,#photo_remark#,#photo_order#,#photo_pv#,#photo_type_id#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

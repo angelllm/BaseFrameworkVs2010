@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_image" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_image" type="llm.Model.product_image,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_image" id="GetModelList">
+            <result column="image_id" property="image_id" />
+            <result column="image_title" property="image_title" />
+            <result column="image_path" property="image_path" />
+            <result column="image_order" property="image_order" />
+            <result column="param_product_id" property="param_product_id" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [image_id],[image_title],[image_path],[image_order],[param_product_id] FROM [sys_product_image]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [image_id],[image_title],[image_path],[image_order],[param_product_id] FROM [sys_product_image]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_image" parameterClass="int">
+            <![CDATA[
+        select top 1 [image_id],[image_title],[image_path],[image_order],[param_product_id]
+        from sys_product_image
+        WHERE [image_id] = #image_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product_image]
+        ]]>
+        </select>
+
+        <select id="GetMaximage_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(image_id) FROM [sys_product_image]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.image_id
+         )AS Row, T.*  from sys_product_image T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_image" >
+            <selectKey property="image_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_image([image_title],[image_path],[image_order],[param_product_id])
+        values (#image_title#,#image_path#,#image_order#,#param_product_id#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_image" >
+            <![CDATA[
+        insert into sys_product_image([image_title],[image_path],[image_order],[param_product_id])
+        values (#image_title#,#image_path#,#image_order#,#param_product_id#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_image">
+            <![CDATA[ 
+      update 
+      sys_product_image 
+      set [image_title] = #image_title#,[image_path] = #image_path#,[image_order] = #image_order#,[param_product_id] = #param_product_id#
+	  where [image_id] = #image_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_image">
+            <![CDATA[ 
+        delete from sys_product_image 
+        where [image_id] = #image_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_image_InsertUpdate" parameterClass="product_image">
+            <![CDATA[ 
+		IF EXISTS(SELECT [image_id] FROM [sys_product_image] WHERE [image_id] = #image_id#)
+		BEGIN
+			UPDATE [sys_product_image] SET [image_title] = #image_title#,[image_path] = #image_path#,[image_order] = #image_order#,[param_product_id] = #param_product_id#
+				WHERE [image_id] = #image_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_image] ([image_title],[image_path],[image_order],[param_product_id]) 
+				VALUES (#image_title#,#image_path#,#image_order#,#param_product_id#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="sysPage" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="page" type="llm.Model.page,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="page" id="GetModelList">
+            <result column="page_id" property="page_id" />
+            <result column="page_title" property="page_title"  nullValue=""/>
+            <result column="page_name" property="page_name" nullValue="" />
+            <result column="page_image" property="page_image" nullValue="" />
+            <result column="page_url" property="page_url" nullValue="" />
+            <result column="page_url_type" property="page_url_type" nullValue="" />
+            <result column="page_content" property="page_content" nullValue="" />
+            <result column="page_remark" property="page_remark" nullValue="" />
+            <result column="page_description" property="page_description" nullValue="" />
+            <result column="page_keywords" property="page_keywords" nullValue="" />
+            <result column="page_order" property="page_order"  />
+            <result column="page_pv" property="page_pv"  />
+            <result column="page_status" property="page_status" />
+            <result column="page_type_id" property="page_type_id" />
+        </resultMap>
+        <resultMap class="page" id="GetModel">
+            <result column="page_id" property="page_id" />
+            <result column="page_title" property="page_title"  nullValue=""/>
+            <result column="page_name" property="page_name" nullValue="" />
+            <result column="page_image" property="page_image" nullValue="" />
+            <result column="page_url" property="page_url" nullValue="" />
+            <result column="page_url_type" property="page_url_type" nullValue="" />
+            <result column="page_content" property="page_content" nullValue="" />
+            <result column="page_remark" property="page_remark" nullValue="" />
+            <result column="page_description" property="page_description" nullValue="" />
+            <result column="page_keywords" property="page_keywords" nullValue="" />
+            <result column="page_order" property="page_order"  />
+            <result column="page_pv" property="page_pv"  />
+            <result column="page_status" property="page_status" />
+            <result column="page_type_id" property="page_type_id" />
+            <result column="page_footer" property="page_footer" nullValue=""  />
+            <result column="page_contact" property="page_contact" nullValue=""  />
+            <result column="page_time" property="page_time" nullValue=""  />
+        </resultMap>
+        <resultMap class="page" id="GetModelList2">
+            <result column="page_id" property="page_id" />
+            <result column="page_title" property="page_title"  nullValue=""/>
+            <result column="page_name" property="page_name"  nullValue=""/>
+            <result column="page_image" property="page_image"  nullValue=""/>
+            <result column="page_url" property="page_url" nullValue="" />
+            <result column="page_url_type" property="page_url_type"  nullValue=""/>
+            <result column="page_content" property="page_content"  nullValue=""/>
+            <result column="page_remark" property="page_remark" nullValue="" />
+            <result column="page_description" property="page_description" nullValue="" />
+            <result column="page_keywords" property="page_keywords" nullValue="" />
+            <result column="page_order" property="page_order" />
+            <result column="page_pv" property="page_pv" />
+            <result column="page_status" property="page_status" />
+            <result column="page_type_id" property="page_type_id" />
+            <result column="type_cid" property="type_cid" />
+        </resultMap>
+        
+        <resultMap class="page" id="GetByPageUseTopModel">
+            <result column="page_id" property="page_id" />
+            <result column="page_title" property="page_title"  nullValue=""/>
+            <result column="page_name" property="page_name"  nullValue=""/>
+            <result column="page_image" property="page_image"  nullValue=""/>
+            <result column="page_url" property="page_url" nullValue="" />
+            <result column="page_url_type" property="page_url_type"  nullValue=""/>
+            <result column="page_remark" property="page_remark" nullValue="" />
+            <result column="page_order" property="page_order" />
+            <result column="page_status" property="page_status" />
+            <result column="counts" property="page_pv" /> 
+        </resultMap>
+
+        <resultMap class="page" id="TotalAndNewCountModel">
+            <result column="total" property="page_total" />
+            <result column="new" property="page_new" />
+        </resultMap>
+
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+        <parameterMap class="System.Collections.IDictionary" id="PageSplitParam">
+            <parameter property="pagesize"/>
+            <parameter property="pageindex"/>
+            <parameter property="strwhere"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+        
+        <select id="GetModelListByPageUseTop" resultMap="GetByPageUseTopModel" parameterMap="PageSplitParam" >
+            <![CDATA[
+                select (select COUNT(1) from sys_page where 1=1 $strwhere$ ) as counts,  * from
+                (
+                select top $pagesize$ * from sys_page where page_id in(
+                select page_id from (select top $pageindex$ page_id from sys_page order by page_pv asc) as t
+                )   
+                order by page_pv asc
+                ) as tt where 1 = 1 $strwhere$ order by page_pv asc
+            ]]>
+        </select>
+        <select id="GetTotalCountAndNewCount" resultMap="TotalAndNewCountModel" resultClass="sys_type" remapResults="true" parameterClass="System.String">
+            <![CDATA[ select COUNT(1) as total ,(select COUNT(1) as n from sys_page where DATEDIFF(DAY,page_time,GETDATE()) < 7  $strWhere$   ) as new from sys_page where 1=1 $strWhere$  ]]>
+        </select>
+        <select id="GetPageinfoCount"  resultClass="int" parameterClass="string">
+            $sql$
+        </select>
+        <select id="GetModelListByPage" resultMap="GetModelList">
+            $strSql$
+        </select>
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id] FROM [sys_page]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModel">
+            <![CDATA[
+         SELECT [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id],[page_footer],[page_contact] FROM [sys_page]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModel" resultClass="page" parameterClass="int">
+            <![CDATA[
+        select top 1 [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id],[page_footer],[page_contact],[page_time]
+        from sys_page
+        WHERE [page_id] = #page_id#
+        ]]>
+        </select>
+
+        <select id="GetModelByTypeId" resultMap="GetModel" resultClass="page" parameterClass="int">
+            <![CDATA[
+        select top 1 [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id],[page_footer],[page_contact]
+        from sys_page
+        WHERE [page_type_id] = #page_type_id#
+        ]]>
+        </select>
+
+        <select id="GetModelByTypeCode" resultMap="GetModel" resultClass="page" parameterClass="string">
+            <![CDATA[
+        select top 1 [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id],[page_footer],[page_contact],[page_time]
+        from sys_page where page_type_id = (select TYPE_ID from sys_type where type_code = #page_type_code#)
+        ]]>
+        </select>
+        
+
+        <select id="GetModelByType" resultMap="GetModelList" resultClass="page" parameterClass="int">
+            <![CDATA[
+        select top 1 [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id]
+        from [sys_page] 
+        WHERE [page_type_id] = #page_type_id#
+        ]]>
+        </select>
+        <select id="GetModelList2" resultMap="GetModelList"  parameterClass="int">
+            <![CDATA[
+         SELECT [page_id],[page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id] FROM 
+          [sys_page] 
+         WHERE [page_type_id] = #page_type_id# and [page_status] = 1
+         order by page_order asc
+        ]]>
+        </select>
+        
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_page]
+        ]]>
+        </select>
+
+        <select id="GetMaxpage_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(page_id) FROM [sys_page]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.page_id
+         )AS Row, T.*  from sys_page T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="page" >
+            <selectKey property="page_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_page([page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id],[page_footer],[page_contact],[page_time])
+        values (#page_title#,#page_name#,#page_image#,#page_url#,#page_url_type#,#page_content#,#page_remark#,#page_description#,#page_keywords#,#page_order#,#page_pv#,#page_status#,#page_type_id#,#page_footer#,#page_contact#,#page_time#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="page" >
+            <![CDATA[
+        insert into sys_page([page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id],[page_footer],[page_contact])
+        values (#page_title#,#page_name#,#page_image#,#page_url#,#page_url_type#,#page_content#,#page_remark#,#page_description#,#page_keywords#,#page_order#,#page_pv#,#page_status#,#page_type_id#,#page_footer#,#page_contact#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="page">
+            <![CDATA[ 
+      update 
+      sys_page 
+      set [page_title] = #page_title#,[page_name] = #page_name#,[page_image] = #page_image#,[page_url] = #page_url#,[page_url_type] = #page_url_type#,[page_content] = #page_content#,[page_remark] = #page_remark#,[page_description] = #page_description#,[page_keywords] = #page_keywords#,[page_order] = #page_order#,[page_pv] = #page_pv#,[page_status] = #page_status#,[page_type_id] = #page_type_id#,[page_footer] = #page_footer#,[page_contact] = #page_contact# ,[page_time] = #page_time#   
+	  where [page_id] = #page_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="page">
+            <![CDATA[ 
+        delete from sys_page 
+        where [page_id] = #page_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_page_InsertUpdate" parameterClass="page">
+            <![CDATA[ 
+		IF EXISTS(SELECT [page_id] FROM [sys_page] WHERE [page_id] = #page_id#)
+		BEGIN
+			UPDATE [sys_page] SET [page_title] = #page_title#,[page_name] = #page_name#,[page_image] = #page_image#,[page_url] = #page_url#,[page_url_type] = #page_url_type#,[page_content] = #page_content#,[page_remark] = #page_remark#,[page_description] = #page_description#,[page_keywords] = #page_keywords#,[page_order] = #page_order#,[page_pv] = #page_pv#,[page_status] = #page_status#,[page_type_id] = #page_type_id#
+				WHERE [page_id] = #page_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_page] ([page_title],[page_name],[page_image],[page_url],[page_url_type],[page_content],[page_remark],[page_description],[page_keywords],[page_order],[page_pv],[page_status],[page_type_id]) 
+				VALUES (#page_title#,#page_name#,#page_image#,#page_url#,#page_url_type#,#page_content#,#page_remark#,#page_description#,#page_keywords#,#page_order#,#page_pv#,#page_status#,#page_type_id#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="dict" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="dict" type="llm.Model.dict,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="dict" id="GetModelList">
+            <result column="dict_id" property="dict_id" />
+            <result column="dict_name" property="dict_name" />
+            <result column="dict_guid" property="dict_guid" />
+            <result column="dict_code" property="dict_code" nullValue="" />
+            <result column="dict_pid" property="dict_pid" />
+            <result column="dict_status" property="dict_status" />
+        </resultMap>
+    </resultMaps>
+    <statements>
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [dict_id],[dict_name],[dict_guid],[dict_code],[dict_pid],[dict_status] FROM [sys_dict]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+        
+        <select id="GetListWhere" resultMap="GetModelList" >
+            <![CDATA[
+        SELECT [dict_id],[dict_name],[dict_guid],[dict_code],[dict_pid],[dict_status] FROM [sys_dict]
+		
+        ]]>
+        </select>
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [dict_id],[dict_name],[dict_guid],[dict_code],[dict_pid],[dict_status] FROM [sys_dict]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="dict" parameterClass="int">
+            <![CDATA[
+        select top 1 [dict_id],[dict_name],[dict_code],[dict_guid],[dict_pid],[dict_status]
+        from sys_dict
+        WHERE [dict_id] = #dict_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <insert id="Add"  parameterclass="dict" >
+            <selectKey property="dict_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_dict([dict_name],[dict_guid],[dict_code],[dict_pid],[dict_status])
+        values (#dict_name#,#dict_guid#,#dict_code#,#dict_pid#,#dict_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="dict" >
+            <![CDATA[
+        insert into sys_dict([dict_name],[dict_guid],[dict_code],[dict_pid],[dict_status])
+        values (#dict_name#,#dict_guid#,#dict_code#,#dict_pid#,#dict_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="dict">
+            <![CDATA[ 
+      update 
+      sys_dict 
+      set [dict_name] = #dict_name#,[dict_guid] = #dict_guid#,[dict_code] = #dict_code#,[dict_pid] = #dict_pid#,[dict_status] = #dict_status#
+	  where [dict_id] = #dict_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="dict">
+            <![CDATA[ 
+        delete from sys_dict 
+        where [dict_id] = #dict_id# or dict_pid = #dict_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_dict_InsertUpdate" parameterClass="dict">
+            <![CDATA[ 
+		IF EXISTS(SELECT [dict_id] FROM [sys_dict] WHERE [dict_id] = #dict_id#)
+		BEGIN
+			UPDATE [sys_dict] SET [dict_name] = #dict_name#,[dict_guid] = #dict_guid#,[dict_pid] = #dict_pid#,[dict_status] = #dict_status#
+				WHERE [dict_id] = #dict_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_dict] ([dict_name],[dict_guid],[dict_pid],[dict_status]) 
+				VALUES (#dict_name#,#dict_guid#,#dict_pid#,#dict_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

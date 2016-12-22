@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_type_attr" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_type_attr" type="llm.Model.product_type_attr,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_type_attr" id="GetModelList">
+            <result column="attr_id" property="attr_id" />
+            <result column="attr_product_type_id" property="attr_product_type_id" />
+            <result column="attr_mid" property="attr_mid" />
+            <result column="attr_name" property="attr_name" />
+            <result column="attr_guid" property="attr_guid" />
+            <result column="attr_code_name" property="attr_code_name" />
+            <result column="attr_remark" property="attr_remark" />
+            <result column="attr_type" property="attr_type" />
+            <result column="attr_status" property="attr_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [attr_id],[attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status] FROM [sys_product_type_attr]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [attr_id],[attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status] FROM [sys_product_type_attr]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_type_attr" parameterClass="int">
+            <![CDATA[
+        select top 1 [attr_id],[attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status]
+        from sys_product_type_attr
+        WHERE [attr_id] = #attr_id#
+        ]]>
+        </select>
+
+        <select id="GetModelByAttrGuid" resultMap="GetModelList" resultClass="product_type_attr" parameterClass="int">
+            <![CDATA[
+        select top 1 [attr_id],[attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status]
+        from sys_product_type_attr
+        WHERE [attr_guid] = #attr_guid#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [product_type_attr]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.attr_id
+         )AS Row, T.*  from product_type_attr T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_type_attr" >
+            <selectKey property="attr_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_type_attr([attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status])
+        values (#attr_product_type_id#,#attr_mid#,#attr_name#,#attr_guid#,#attr_code_name#,#attr_remark#,#attr_type#,#attr_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_type_attr" >
+            <![CDATA[
+        insert into sys_product_type_attr([attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status])
+        values (#attr_product_type_id#,#attr_mid#,#attr_name#,#attr_guid#,#attr_code_name#,#attr_remark#,#attr_type#,#attr_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_type_attr">
+            <![CDATA[ 
+      update 
+      sys_product_type_attr 
+      set [attr_product_type_id] = #attr_product_type_id#,[attr_mid] = #attr_mid#,[attr_name] = #attr_name#,[attr_guid] = #attr_guid#,[attr_code_name] = #attr_code_name#,[attr_remark] = #attr_remark#,[attr_type] = #attr_type#,[attr_status] = #attr_status#
+	  where [attr_id] = #attr_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_type_attr">
+            <![CDATA[ 
+        delete from sys_product_type_attr 
+        where [attr_id] = #attr_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_type_attr_InsertUpdate" parameterClass="product_type_attr">
+            <![CDATA[ 
+		IF EXISTS(SELECT [attr_id] FROM [sys_product_type_attr] WHERE [attr_id] = #attr_id#)
+		BEGIN
+			UPDATE [sys_product_type_attr] SET [attr_product_type_id] = #attr_product_type_id#,[attr_mid] = #attr_mid#,[attr_name] = #attr_name#,[attr_guid] = #attr_guid#,[attr_code_name] = #attr_code_name#,[attr_remark] = #attr_remark#,[attr_type] = #attr_type#,[attr_status] = #attr_status#
+				WHERE [attr_id] = #attr_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_type_attr] ([attr_product_type_id],[attr_mid],[attr_name],[attr_guid],[attr_code_name],[attr_remark],[attr_type],[attr_status]) 
+				VALUES (#attr_product_type_id#,#attr_mid#,#attr_name#,#attr_guid#,#attr_code_name#,#attr_remark#,#attr_type#,#attr_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

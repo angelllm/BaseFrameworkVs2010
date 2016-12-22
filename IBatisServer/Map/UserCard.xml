@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="userCard" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<alias>
+		<typeAlias alias="UserCard" type="llm.Model.UserCard,Model" />
+	</alias>
+	<resultMaps>
+		<resultMap class="UserCard" id="GetModelList">
+			<result column="card_id" property="card_id" />
+			<result column="card_num" property="card_num" />
+			<result column="card_name" property="card_name" />
+			<result column="card_total_count" property="card_total_count" />
+			<result column="card_price" property="card_price" />
+			<result column="card_type" property="card_type" />
+			<result column="card_remark" property="card_remark" />
+			<result column="card_status" property="card_status" />
+			<result column="card_start_time" property="card_start_time" />
+			<result column="card_end_time" property="card_end_time"/>
+			<result column="card_delay_time" property="card_delay_time" />
+			<result column="card_is_count" property="card_is_count" />
+			<result column="card_count" property="card_count" />
+			<result column="card_ative_count" property="card_ative_count" />
+			<result column="card_mid" property="card_mid" />
+			<result column="card_mname" property="card_mname" />
+		</resultMap>
+	</resultMaps>
+	<statements>
+
+
+
+		<select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+			<![CDATA[
+        SELECT [card_id],[card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname] FROM [dbo].[userCard]
+		WHERE  $strWhere$
+        ]]>
+		</select>
+
+
+		<select id="GetModelList" resultMap="GetModelList">
+			<![CDATA[
+         SELECT [card_id],[card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname] FROM [dbo].[userCard]
+        ]]>
+		</select>
+
+		<select id="GetModelById" resultMap="GetModelList" resultClass="UserCard" parameterClass="int">
+			<![CDATA[
+        select top 1 [card_id],[card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname]
+        from userCard
+        WHERE [card_id] = #card_id#
+        ]]>
+		</select>
+		
+		<select id="GetModelByMid" resultMap="GetModelList" resultClass="UserCard" parameterClass="int">
+			<![CDATA[
+        select top 1 [card_id],[card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname]
+        from userCard
+        WHERE [card_mid] = #card_mid#
+        ]]>
+		</select>
+		
+
+		<select id="Sql" parameterClass="string" remapResults="true">
+			$sql$
+		</select>
+
+		<insert id="Add"  parameterclass="UserCard" >
+      <selectKey property="card_id" type="post" resultClass="int">
+        ${selectKey}
+      </selectKey>
+        <![CDATA[
+        insert into userCard([card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname])
+        values (#card_num#,#card_name#,#card_total_count#,#card_price#,#card_type#,#card_remark#,#card_status#,#card_start_time#,#card_end_time#,#card_delay_time#,#card_is_count#,#card_count#,#card_ative_count#,#card_mid#,#card_mname#)
+        ]]>
+    </insert>
+    
+    <insert id="Add2"  parameterclass="UserCard" >
+        <![CDATA[
+        insert into userCard([card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname])
+        values (#card_num#,#card_name#,#card_total_count#,#card_price#,#card_type#,#card_remark#,#card_status#,#card_start_time#,#card_end_time#,#card_delay_time#,#card_is_count#,#card_count#,#card_ative_count#,#card_mid#,#card_mname#)
+        ]]>
+    </insert>
+    
+
+		<update id="Update"  parameterclass="UserCard">
+			<![CDATA[ 
+      update 
+      userCard 
+      set [card_num] = #card_num#,[card_name] = #card_name#,[card_total_count] = #card_total_count#,[card_price] = #card_price#,[card_type] = #card_type#,[card_remark] = #card_remark#,[card_status] = #card_status#,[card_start_time] = #card_start_time#,[card_end_time] = #card_end_time#,[card_delay_time] = #card_delay_time#,[card_is_count] = #card_is_count#,[card_count] = #card_count#,[card_ative_count] = #card_ative_count#,[card_mid] = #card_mid#,[card_mname] = #card_mname#
+	  where [card_id] = #card_id#
+      ]]>
+		</update>
+
+		<delete id="Delete" parameterclass="UserCard">
+			<![CDATA[ 
+        delete from userCard 
+        where [card_id] = #card_id#
+        ]]>
+		</delete>
+
+
+		<insert id="userCard_InsertUpdate" parameterClass="UserCard">
+			<![CDATA[ 
+		IF EXISTS(SELECT [card_id] FROM [dbo].[userCard] WHERE [card_id] = #card_id#)
+		BEGIN
+			UPDATE [dbo].[userCard] SET [card_num] = #card_num#,[card_name] = #card_name#,[card_total_count] = #card_total_count#,[card_price] = #card_price#,[card_type] = #card_type#,[card_remark] = #card_remark#,[card_status] = #card_status#,[card_start_time] = #card_start_time#,[card_end_time] = #card_end_time#,[card_delay_time] = #card_delay_time#,[card_is_count] = #card_is_count#,[card_count] = #card_count#,[card_ative_count] = #card_ative_count#,[card_mid] = #card_mid#,[card_mname] = #card_mname#
+				WHERE [card_id] = #card_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [dbo].[userCard] ([card_num],[card_name],[card_total_count],[card_price],[card_type],[card_remark],[card_status],[card_start_time],[card_end_time],[card_delay_time],[card_is_count],[card_count],[card_ative_count],[card_mid],[card_mname]) 
+				VALUES (#card_num#,#card_name#,#card_total_count#,#card_price#,#card_type#,#card_remark#,#card_status#,#card_start_time#,#card_end_time#,#card_delay_time#,#card_is_count#,#card_count#,#card_ative_count#,#card_mid#,#card_mname#)
+		END
+        ]]>
+		</insert>
+
+
+	</statements>
+
+</sqlMap>
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_sku_param_list" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_sku_param_list" type="llm.Model.product_sku_param_list,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_sku_param_list" id="GetModelList">
+            <result column="list_id" property="list_id" />
+            <result column="list_param_id" property="list_param_id" />
+            <result column="list_name" property="list_name" />
+            <result column="list_status" property="list_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [list_id],[list_param_id],[list_name],[list_status] FROM [sys_product_sku_param_list]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+        <select id="GetMax"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(list_id) FROM [sys_product_sku_param_list]
+            ]]>
+        </select>
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [list_id],[list_param_id],[list_name],[list_status] FROM [sys_product_sku_param_list]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_sku_param_list" parameterClass="int">
+            <![CDATA[
+        select top 1 [list_id],[list_param_id],[list_name],[list_status]
+        from sys_product_sku_param_list
+        WHERE [list_id] = #list_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product_sku_param_list]
+        ]]>
+        </select>
+
+        <select id="GetMaxlist_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(list_id) FROM [sys_product_sku_param_list]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.list_id
+         )AS Row, T.*  from sys_product_sku_param_list T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_sku_param_list" >
+            <selectKey property="list_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_sku_param_list([list_param_id],[list_name],[list_status])
+        values (#list_param_id#,#list_name#,#list_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_sku_param_list" >
+            <![CDATA[
+        insert into sys_product_sku_param_list([list_param_id],[list_name],[list_status])
+        values (#list_param_id#,#list_name#,#list_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_sku_param_list">
+            <![CDATA[ 
+      update 
+      sys_product_sku_param_list 
+      set [list_param_id] = #list_param_id#,[list_name] = #list_name#,[list_status] = #list_status#
+	  where [list_id] = #list_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_sku_param_list">
+            <![CDATA[ 
+        delete from sys_product_sku_param_list 
+        where [list_id] = #list_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_sku_param_list_InsertUpdate" parameterClass="product_sku_param_list">
+            <![CDATA[ 
+		IF EXISTS(SELECT [list_id] FROM [sys_product_sku_param_list] WHERE [list_id] = #list_id#)
+		BEGIN
+			UPDATE [sys_product_sku_param_list] SET [list_param_id] = #list_param_id#,[list_name] = #list_name#,[list_status] = #list_status#
+				WHERE [list_id] = #list_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_sku_param_list] ([list_param_id],[list_name],[list_status]) 
+				VALUES (#list_param_id#,#list_name#,#list_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

@@ -1,0 +1,9 @@
+F:\工作空间\Solution\BaseFramework\DBUtility\bin\Debug\llm.DBUtility.dll
+F:\工作空间\Solution\BaseFramework\DBUtility\bin\Debug\llm.DBUtility.pdb
+F:\工作空间\Solution\BaseFramework\DBUtility\bin\Debug\MySql.Data.dll
+F:\工作空间\Solution\BaseFramework\DBUtility\bin\Debug\System.Data.SQLite.DLL
+F:\工作空间\Solution\BaseFramework\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+F:\工作空间\Solution\BaseFramework\DBUtility\obj\Debug\llm.DBUtility.dll
+F:\工作空间\Solution\BaseFramework\DBUtility\obj\Debug\llm.DBUtility.pdb
+F:\工作空间\Solution\BaseFramework\DBUtility\bin\Debug\IBatisNet.Common.dll
+F:\工作空间\Solution\BaseFramework\DBUtility\bin\Debug\IBatisNet.DataMapper.dll

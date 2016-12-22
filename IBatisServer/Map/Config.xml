@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="config" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="config" type="llm.Model.config,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="config" id="GetModelList">
+            <result column="config_id" property="config_id" />
+            <result column="config_code" property="config_code" />
+            <result column="config_name" property="config_name" />
+            <result column="config_value" property="config_value" />
+            <result column="config_type" property="config_type" />
+            <result column="config_status" property="config_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [config_id],[config_code],[config_name],[config_value],[config_type],[config_status] FROM [sys_config]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [config_id],[config_code],[config_name],[config_value],[config_type],[config_status] FROM [sys_config]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="config" parameterClass="int">
+            <![CDATA[
+        select top 1 [config_id],[config_code],[config_name],[config_value],[config_type],[config_status]
+        from sys_config
+        WHERE [config_id] = #config_id#
+        ]]>
+        </select>
+        <select id="GetModelByCode" resultMap="GetModelList" resultClass="config" parameterClass="string">
+            <![CDATA[
+        select top 1 [config_id],[config_code],[config_name],[config_value],[config_type],[config_status]
+        from sys_config
+        WHERE [config_code] = #config_code#
+        ]]>
+        </select>
+
+        
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_config]
+        ]]>
+        </select>
+
+        <select id="GetMaxconfig_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(config_id) FROM [sys_config]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.config_id
+         )AS Row, T.*  from sys_config T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="config" >
+            <selectKey property="config_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_config([config_code],[config_name],[config_value],[config_type],[config_status])
+        values (#config_code#,#config_name#,#config_value#,#config_type#,#config_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="config" >
+            <![CDATA[
+        insert into sys_config([config_code],[config_name],[config_value],[config_type],[config_status])
+        values (#config_code#,#config_name#,#config_value#,#config_type#,#config_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="config">
+            <![CDATA[ 
+      update 
+      sys_config 
+      set [config_code] = #config_code#,[config_name] = #config_name#,[config_value] = #config_value#,[config_type] = #config_type#,[config_status] = #config_status#
+	  where [config_id] = #config_id#
+      ]]>
+        </update>
+        
+
+        <delete id="Delete" parameterclass="config">
+            <![CDATA[ 
+        delete from sys_config 
+        where [config_id] = #config_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_config_InsertUpdate" parameterClass="config">
+            <![CDATA[ 
+		IF EXISTS(SELECT [config_id] FROM [sys_config] WHERE [config_id] = #config_id#)
+		BEGIN
+			UPDATE [sys_config] SET [config_code] = #config_code#,[config_name] = #config_name#,[config_value] = #config_value#,[config_type] = #config_type#,[config_status] = #config_status#
+				WHERE [config_id] = #config_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_config] ([config_code],[config_name],[config_value],[config_type],[config_status]) 
+				VALUES (#config_code#,#config_name#,#config_value#,#config_type#,#config_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

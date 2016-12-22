@@ -1,0 +1,13 @@
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisServer.dll
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisServer.pdb
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisNet.Common.dll
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisNet.DataMapper.dll
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\Model.dll
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\Castle.DynamicProxy.dll
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\Model.pdb
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisNet.Common.pdb
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisNet.Common.xml
+F:\工作空间\Solution\BaseFramework\IBatisServer\bin\Release\IBatisNet.DataMapper.xml
+F:\工作空间\Solution\BaseFramework\IBatisServer\obj\Release\IBatisServer.csprojResolveAssemblyReference.cache
+F:\工作空间\Solution\BaseFramework\IBatisServer\obj\Release\IBatisServer.dll
+F:\工作空间\Solution\BaseFramework\IBatisServer\obj\Release\IBatisServer.pdb

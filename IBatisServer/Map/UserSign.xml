@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="userSign" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<alias>
+		<typeAlias alias="UserSign" type="llm.Model.UserSign,Model" />
+	</alias>
+	<resultMaps>
+		<resultMap class="UserSign" id="GetModelList">
+			<result column="sign_id" property="sign_id" />
+			<result column="sign_mid" property="sign_mid" />
+			<result column="sign_mname" property="sign_mname" />
+			<result column="sign_ip" property="sign_ip" />
+			<result column="sign_time" property="sign_time" />
+		</resultMap>
+	</resultMaps>
+	<statements>
+
+
+
+		<select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+			<![CDATA[
+        SELECT [sign_id],[sign_mid],[sign_mname],[sign_ip],[sign_time] FROM [dbo].[userSign]
+		WHERE  $strWhere$
+        ]]>
+		</select>
+
+
+		<select id="GetModelList" resultMap="GetModelList">
+			<![CDATA[
+         SELECT [sign_id],[sign_mid],[sign_mname],[sign_ip],[sign_time] FROM [dbo].[userSign]
+        ]]>
+		</select>
+
+		<select id="GetModelById" resultMap="GetModelList" resultClass="UserSign" parameterClass="int">
+			<![CDATA[
+        select top 1 [sign_id],[sign_mid],[sign_mname],[sign_ip],[sign_time]
+        from userSign
+        WHERE [sign_id] = #sign_id#
+        ]]>
+		</select>
+		<select id="GetModelByMid" resultMap="GetModelList" resultClass="UserSign" parameterClass="int">
+			<![CDATA[
+        select top 1 [sign_id],[sign_mid],[sign_mname],[sign_ip],[sign_time]
+        from userSign
+        WHERE [sign_mid] = #sign_mid#
+        ]]>
+		</select>
+
+    <select id="GetCount"  resultClass="int" >
+      <![CDATA[
+			select count(1)  from usersign 
+			where year(getdate()) = year(sign_time) and
+			month(getdate()) = month(sign_time) and
+			day(getdate()) = day(sign_time) and
+			sign_mid = #sign_mid#
+			]]>
+    </select>
+
+		<select id="GetQianDao"  resultClass="int" >
+			<![CDATA[
+			select count(1)  from usersign 
+			where year(getdate()) = year(sign_time) and
+			month(getdate()) = month(sign_time) and
+			day(getdate()) = day(sign_time) and
+			sign_mid = #sign_mid#
+			]]>
+		</select>
+
+		<select id="Sql" parameterClass="string" remapResults="true">
+			$sql$
+		</select>
+
+		<insert id="Add"  parameterclass="UserSign" >
+			<selectKey property="sign_id" type="post" resultClass="int">
+				${selectKey}
+			</selectKey>
+			<![CDATA[
+        insert into userSign([sign_mid],[sign_mname],[sign_ip],[sign_time])
+        values (#sign_mid#,#sign_mname#,#sign_ip#,#sign_time#)
+        ]]>
+		</insert>
+
+		<insert id="Add2"  parameterclass="UserSign" >
+			<![CDATA[
+        insert into userSign([sign_mid],[sign_mname],[sign_ip],[sign_time])
+        values (#sign_mid#,#sign_mname#,#sign_ip#,#sign_time#)
+        ]]>
+		</insert>
+
+		<update id="Update"  parameterclass="UserSign">
+			<![CDATA[ 
+      update 
+      userSign 
+      set [sign_mid] = #sign_mid#,[sign_mname] = #sign_mname#,[sign_ip] = #sign_ip#,[sign_time] = #sign_time#
+	  where [sign_id] = #sign_id#
+      ]]>
+		</update>
+
+		<delete id="Delete" parameterclass="UserSign">
+			<![CDATA[ 
+        delete from userSign 
+        where [sign_id] = #sign_id#
+        ]]>
+		</delete>
+
+
+		<insert id="userSign_InsertUpdate" parameterClass="UserSign">
+			<![CDATA[ 
+		IF EXISTS(SELECT [sign_id] FROM [dbo].[userSign] WHERE [sign_id] = #sign_id#)
+		BEGIN
+			UPDATE [dbo].[userSign] SET [sign_mid] = #sign_mid#,[sign_mname] = #sign_mname#,[sign_ip] = #sign_ip#,[sign_time] = #sign_time#
+				WHERE [sign_id] = #sign_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [dbo].[userSign] ([sign_mid],[sign_mname],[sign_ip],[sign_time]) 
+				VALUES (#sign_mid#,#sign_mname#,#sign_ip#,#sign_time#)
+		END
+        ]]>
+		</insert>
+
+
+	</statements>
+
+</sqlMap>
+

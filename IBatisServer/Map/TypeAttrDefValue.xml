@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_type_attr_def_value" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_type_attr_def_value" type="llm.Model.product_type_attr_def_value,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_type_attr_def_value" id="GetModelList">
+            <result column="value_id" property="value_id" />
+            <result column="value_attr_id" property="value_attr_id" />
+            <result column="value_name" property="value_name" />
+            <result column="value_status" property="value_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [value_id],[value_attr_id],[value_name],[value_status] FROM [sys_product_type_attr_def_value]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [value_id],[value_attr_id],[value_name],[value_status] FROM [sys_product_type_attr_def_value]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_type_attr_def_value" parameterClass="int">
+            <![CDATA[
+        select top 1 [value_id],[value_attr_id],[value_name],[value_status]
+        from sys_product_type_attr_def_value
+        WHERE [value_id] = #value_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product_type_attr_def_value]
+        ]]>
+        </select>
+
+        <select id="GetMaxvalue_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(value_id) FROM [sys_product_type_attr_def_value]
+        ]]>
+        </select>
+        
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.value_id
+         )AS Row, T.*  from product_type_attr_def_value T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_type_attr_def_value" >
+            <selectKey property="value_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_type_attr_def_value([value_attr_id],[value_name],[value_status])
+        values (#value_attr_id#,#value_name#,#value_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_type_attr_def_value" >
+            <![CDATA[
+        insert into sys_product_type_attr_def_value([value_attr_id],[value_name],[value_status])
+        values (#value_attr_id#,#value_name#,#value_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_type_attr_def_value">
+            <![CDATA[ 
+      update 
+      sys_product_type_attr_def_value 
+      set [value_attr_id] = #value_attr_id#,[value_name] = #value_name#,[value_status] = #value_status#
+	  where [value_id] = #value_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_type_attr_def_value">
+            <![CDATA[ 
+        delete from sys_product_type_attr_def_value 
+        where [value_id] = #value_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_type_attr_def_value_InsertUpdate" parameterClass="product_type_attr_def_value">
+            <![CDATA[ 
+		IF EXISTS(SELECT [value_id] FROM [sys_product_type_attr_def_value] WHERE [value_id] = #value_id#)
+		BEGIN
+			UPDATE [sys_product_type_attr_def_value] SET [value_attr_id] = #value_attr_id#,[value_name] = #value_name#,[value_status] = #value_status#
+				WHERE [value_id] = #value_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_type_attr_def_value] ([value_attr_id],[value_name],[value_status]) 
+				VALUES (#value_attr_id#,#value_name#,#value_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+

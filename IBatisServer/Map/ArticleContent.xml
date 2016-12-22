@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="article_content" xmlns="http://ibatis.apache.org/mapping" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <typeAlias alias="article_content" type="llm.Model.article_content,Model" />
+  </alias>
+	<resultMaps>
+		<resultMap class="article_content" id="GetModelList">
+			<result column="content_id" property="content_id" />
+			<result column="content_article_id" property="content_article_id" />
+			<result column="content_order" property="content_order" nullvalue="0" />
+			<result column="content_title" property="content_title" nullvalue="" />
+			<result column="content_content" property="content_content" />
+		</resultMap>
+	</resultMaps>
+	<statements>
+    
+ 
+    
+    <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+        <![CDATA[
+        SELECT [content_id],[content_article_id],[content_order],[content_title],[content_content] FROM [sys_article_content]
+		WHERE  $strWhere$
+        ]]>
+    </select>
+    
+    
+    <select id="GetModelList" resultMap="GetModelList">
+        <![CDATA[
+         SELECT [content_id],[content_article_id],[content_order],[content_title],[content_content] FROM [sys_article_content]
+        ]]>
+    </select>
+    
+    <select id="GetModelById" resultMap="GetModelList" resultClass="article_content" parameterClass="int">
+        <![CDATA[
+        select top 1 [content_id],[content_article_id],[content_order],[content_title],[content_content]
+        from sys_article_content
+        WHERE [content_id] = #content_id#
+        ]]>
+    </select>
+    
+    <select id="Sql" parameterClass="string" remapResults="true">
+        $sql$
+    </select>
+    
+    <insert id="Add"  parameterclass="article_content" >
+      <selectKey property="content_id" type="post" resultClass="int">
+        ${selectKey}
+      </selectKey>
+        <![CDATA[
+        insert into sys_article_content([content_article_id],[content_order],[content_title],[content_content])
+        values (#content_article_id#,#content_order#,#content_title#,#content_content#)
+        ]]>
+    </insert>
+    
+    <insert id="Add2"  parameterclass="article_content" >
+        <![CDATA[
+        insert into sys_article_content([content_article_id],[content_order],[content_title],[content_content])
+        values (#content_article_id#,#content_order#,#content_title#,#content_content#)
+        ]]>
+    </insert>
+    
+    <update id="Update"  parameterclass="article_content">
+      <![CDATA[ 
+      update 
+      sys_article_content 
+      set [content_article_id] = #content_article_id#,[content_order] = #content_order#,[content_title] = #content_title#,[content_content] = #content_content#
+	  where [content_id] = #content_id#
+      ]]>
+    </update>
+    
+    <delete id="Delete" parameterclass="article_content">
+       <![CDATA[ 
+        delete from sys_article_content 
+        where [content_id] = #content_id#
+        ]]>
+    </delete>
+
+
+	<insert id="sys_article_content_InsertUpdate" parameterClass="article_content">
+        <![CDATA[ 
+		IF EXISTS(SELECT [content_id] FROM [sys_article_content] WHERE [content_id] = #content_id#)
+		BEGIN
+			UPDATE [sys_article_content] SET [content_article_id] = #content_article_id#,[content_order] = #content_order#,[content_title] = #content_title#,[content_content] = #content_content#
+				WHERE [content_id] = #content_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_article_content] ([content_article_id],[content_order],[content_title],[content_content]) 
+				VALUES (#content_article_id#,#content_order#,#content_title#,#content_content#)
+		END
+        ]]>
+	</insert>
+
+
+	</statements>
+    
+</sqlMap> 
+    

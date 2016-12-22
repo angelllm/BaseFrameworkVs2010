@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="product_sku" xmlns="http://ibatis.apache.org/mapping"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <alias>
+        <typeAlias alias="product_sku" type="llm.Model.product_sku,Model" />
+    </alias>
+    <resultMaps>
+        <resultMap class="product_sku" id="GetModelList">
+            <result column="sku_id" property="sku_id" />
+            <result column="sku_product_id" property="sku_product_id" />
+            <result column="sku_code" property="sku_code" />
+            <result column="sku_price" property="sku_price" />
+            <result column="sku_count" property="sku_count" />
+            <result column="sku_name" property="sku_name" />
+            <result column="sku_path" property="sku_path" />
+            <result column="sku_status" property="sku_status" />
+        </resultMap>
+    </resultMaps>
+
+    <parameterMaps>
+        <parameterMap class="System.Collections.IDictionary" id="pageinfo">
+            <parameter property="startindex"/>
+            <parameter property="endindex"/>
+        </parameterMap>
+    </parameterMaps>
+
+    <statements>
+
+
+
+        <select id="GetModelListWhere" resultMap="GetModelList" parameterClass="System.String" >
+            <![CDATA[
+        SELECT [sku_id],[sku_product_id],[sku_code],[sku_price],[sku_count],[sku_name],[sku_path],[sku_status] FROM [sys_product_sku]
+		WHERE  $strWhere$
+        ]]>
+        </select>
+
+
+        <select id="GetModelList" resultMap="GetModelList">
+            <![CDATA[
+         SELECT [sku_id],[sku_product_id],[sku_code],[sku_price],[sku_count],[sku_name],[sku_path],[sku_status] FROM [sys_product_sku]
+        ]]>
+        </select>
+
+        <select id="GetModelById" resultMap="GetModelList" resultClass="product_sku" parameterClass="int">
+            <![CDATA[
+        select top 1 [sku_id],[sku_product_id],[sku_code],[sku_price],[sku_count],[sku_name],[sku_path],[sku_status]
+        from sys_product_sku
+        WHERE [sku_id] = #sku_id#
+        ]]>
+        </select>
+
+        <select id="Sql" parameterClass="string" remapResults="true">
+            $sql$
+        </select>
+
+        <select id="GetCount"  resultClass="int" >
+            <![CDATA[
+            SELECT COUNT(1) FROM [sys_product_sku]
+        ]]>
+        </select>
+
+        <select id="GetMaxsku_id"  resultClass="int" >
+            <![CDATA[
+            SELECT MAX(sku_id) FROM [sys_product_sku]
+        ]]>
+        </select>
+
+        <select id="GetListByPage"  resultMap="GetModelList" parameterMap="pageinfo">
+            <![CDATA[
+         SELECT * FROM (
+         SELECT ROW_NUMBER() OVER (
+         order by T.sku_id
+         )AS Row, T.*  from sys_product_sku T
+         WHERE 1=1
+          ) TT
+         WHERE TT.Row between ? and ?  
+        ]]>
+        </select>
+
+
+
+
+        <insert id="Add"  parameterclass="product_sku" >
+            <selectKey property="sku_id" type="post" resultClass="int">
+                ${selectKey}
+            </selectKey>
+            <![CDATA[
+        insert into sys_product_sku([sku_product_id],[sku_code],[sku_price],[sku_count],[sku_name],[sku_path],[sku_status])
+        values (#sku_product_id#,#sku_code#,#sku_price#,#sku_count#,#sku_name#,#sku_path#,#sku_status#)
+        ]]>
+        </insert>
+
+        <insert id="Add2"  parameterclass="product_sku" >
+            <![CDATA[
+        insert into sys_product_sku([sku_product_id],[sku_code],[sku_price],[sku_count],[sku_name],[sku_path],[sku_status])
+        values (#sku_product_id#,#sku_code#,#sku_price#,#sku_count#,#sku_name#,#sku_path#,#sku_status#)
+        ]]>
+        </insert>
+
+        <update id="Update"  parameterclass="product_sku">
+            <![CDATA[ 
+      update 
+      sys_product_sku 
+      set [sku_product_id] = #sku_product_id#,[sku_code] = #sku_code#,[sku_price] = #sku_price#,[sku_count] = #sku_count#,[sku_name] = #sku_name#,[sku_path] = #sku_path#,[sku_status] = #sku_status#
+	  where [sku_id] = #sku_id#
+      ]]>
+        </update>
+
+        <delete id="Delete" parameterclass="product_sku">
+            <![CDATA[ 
+        delete from sys_product_sku 
+        where [sku_id] = #sku_id#
+        ]]>
+        </delete>
+
+
+        <insert id="sys_product_sku_InsertUpdate" parameterClass="product_sku">
+            <![CDATA[ 
+		IF EXISTS(SELECT [sku_id] FROM [sys_product_sku] WHERE [sku_id] = #sku_id#)
+		BEGIN
+			UPDATE [sys_product_sku] SET [sku_product_id] = #sku_product_id#,[sku_code] = #sku_code#,[sku_price] = #sku_price#,[sku_count] = #sku_count#,[sku_name] = #sku_name#,[sku_path] = #sku_path#,[sku_status] = #sku_status#
+				WHERE [sku_id] = #sku_id#
+		END
+		ELSE
+		BEGIN
+			INSERT INTO [sys_product_sku] ([sku_product_id],[sku_code],[sku_price],[sku_count],[sku_name],[sku_path],[sku_status]) 
+				VALUES (#sku_product_id#,#sku_code#,#sku_price#,#sku_count#,#sku_name#,#sku_path#,#sku_status#)
+		END
+        ]]>
+        </insert>
+
+
+    </statements>
+
+</sqlMap>
+
