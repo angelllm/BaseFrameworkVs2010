@@ -1,8 +1,8 @@
 {
-  "name": "land-with-vue3",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "",
+  "name": "land-with-vue",
+  "version": "1.1.0",
+  "description": "llmztt.com with vue2",
+  "author": "aliks",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
