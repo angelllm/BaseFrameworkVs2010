@@ -1,4 +1,4 @@
-# land-with-vue3
+# land-with-vue
 
 > A Vue.js project
 
