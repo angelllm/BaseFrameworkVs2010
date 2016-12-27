@@ -227,22 +227,23 @@
             <!--commite-->
             <div id="respond" class="comment-respond">
               <h3 id="reply-title" class="comment-reply-title">
-                发表评论<small><div id="cancel-comment-reply-link"><i class="icon-remove-sign"></i></div></small>
+                发表评论
+                <small><div id="cancel-comment-reply-link"><i class="icon-remove-sign"></i></div></small>
               </h3>
-              <form :action="'/commite/'+art.article_id+'/'" method="post" id="commentform" class="comment-form">
+              <form method="post" id="commentform" class="comment-form">
                 
                 <p class="comment-form-comment">
-                  <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"  required="required"></textarea>
-                  <span class="error" style="display: none;">请填写评论</span>
+                  <textarea :value="form.content" v-model="form.content" id="comment" name="comment" cols="45" rows="8" aria-required="true"  required="required"></textarea>
+                  <span :class="{'error':true, 'hide':!form.isContent}">请填写评论</span>
                 </p>
-                <div id="loading" style="display: none;"><i class="fa fa-spinner fa-pulse"></i>正在提交, 請稍候...</div>
+                
                 <input type="hidden" name="commite_ref_id" value="0" />
 
                 <p class="comment-form-author">
                   <label for="commite_uname">姓名<span class="required">*</span></label>
-                  <input type="hidden" name="commite_uhead" value="$uface" />
-                  <input id="commite_uname" name="commite_uname" type="text" value="" size="30" aria-required="true" required="required">
-                  <span class="error" style="display: none;"> 请填写姓名</span>
+          
+                  <input id="commite_uname" name="commite_uname" type="text" v-model="form.name" :value="form.name" size="30" aria-required="true" required="required">
+                  <span :class="{'error':true, 'hide':!form.isName}"> 请填写姓名</span>
                 </p>
                 <p class="comment-form-email">
                   <label for="commite_email">
@@ -251,27 +252,31 @@
                       *
                     </span>
                   </label>
-                  <input id="commite_email" name="commite_email" type="text" value="" size="30" aria-describedby="email-notes"
+                  <input v-model="form.email" id="commite_email" name="commite_email" type="text" :value="form.email" size="30" aria-describedby="email-notes"
                   aria-required="true" required="required">
-                  <span class="error" style="display: none;"> 请填写电子邮件</span>
+                  <span :class="{'error':true, 'hide':!form.isEmail}"> 请填写电子邮件</span>
                 </p>
                 <p class="comment-form-url">
                   <label for="commite_url">
                     站点
                   </label>
-                  <input id="commite_url" name="commite_url" type="text" value="" size="30">
+                  <input v-model="form.site" id="commite_url" name="commite_url" type="text" :value="form.site" size="30">
                 </p>
                 <div class="unlock">
                  
                 </div>
                 <p class="form-submit">
-                  <input name="submit" type="button" id="submit" class="submit"  value="发表评论" >
+                  <input name="submit" type="button" id="submit" @click="submit" class="submit"  value="发表评论" >
                 </p> 
+                <p>
+                  <div :class="{'hide':!form.isLoad}" id="loading"><i class="fa fa-spinner fa-pulse"></i>正在提交, 請稍候...</div>
+                </p>
                 <div id="loading-submit"><span><i class="fa fa-spinner fa-pulse"></i>Loading...</span></div>
               </form>
             </div>
             <div class="clearfix"></div>
-            <div id="bulletin_box" class="commit-info hide">
+
+            <div id="bulletin_box" :class="{'commit-info':true, 'hide':!form.isSub}" >
                 <i class="fa fa-bell-o"></i>
                 <div id="bulletin">
                     <ul class="bulletin_list">
@@ -292,7 +297,7 @@ import Vue          from 'vue'
 import configs      from 'assets/common' 
 import moment       from 'moment' 
 import Func         from 'assets/Func' 
-//var SyntaxHighlighter = require('assets/plug/shCore.js')
+import axios        from 'axios'   
 
 export default {
   props:["base"],
@@ -325,7 +330,18 @@ export default {
        title:"",
        commitelist:[],
        dataUrl:configs.webPath,
-       params:{method:"getItem",id:this.$route.params.id}
+       params:{method:"getItem",id:this.$route.params.id},
+       form:{
+          name:"",
+          email:"",
+          site:"",
+          content:"",
+          isContent:false,
+          isName:false,
+          isEmail:false,
+          isSub:false,
+          isLoad:false
+       }
     }
   },
   mounted: function() {
@@ -389,6 +405,53 @@ export default {
          setTimeout(function(){
             SyntaxHighlighter.highlight()
          },2000) 
+      },
+      submit:function(event){
+
+         event.target.removeAttribute("disabled") 
+         this.form.isContent = false
+         this.form.isName = false
+         this.form.isEmail = false
+         this.form.isLoad = true
+         this.form.isSub = false
+         
+         if (this.form.content == "" || this.form.content.length < 6) {
+            this.form.isContent = true
+         }
+         else if (this.form.name == "" ) {
+            this.form.isName = true
+         }
+         else if (this.form.email == "") {
+            this.form.isEmail = true
+         }else{
+            var _this = this
+            event.target.disabled = true 
+            axios({
+              url:configs.webPath,
+              method: 'POST',
+              headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'contentType': "application/x-www-form-urlencoded"
+              },
+              params:Object.assign({method:"addCommit",id:this.art.article_id},this.form)
+            })
+            .then(function (response) {
+                _this.form.isSub = true
+                _this.form.isLoad = false
+                event.target.removeAttribute("disabled")
+                for(var key in _this.form){
+                    if ( typeof(_this.form[key]) === "string")
+                       _this.form[key] = ""
+                }
+            })
+            .catch(function (error) {
+                _this.form.isSub = false
+                _this.form.isLoad = false
+                event.target.removeAttribute("disabled")
+                console.log(error);
+            })  
+         }
+ 
       }
   } 
 

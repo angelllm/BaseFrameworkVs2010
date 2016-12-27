@@ -64,9 +64,9 @@ function getPath(){
 
 module.exports = {
 	path: getPath(),
-    /*webPath:"http://www.llmztt.com/Api/Result",
-    webPost:"http://www.llmztt.com/Api/Post",*/
-    webPath:"http://localhost:9999/Api/Result",
-    webPost:"http://localhost:9999/Api/Post",
+    webPath:"http://www.llmztt.com/Api/Result",
+    webPost:"http://www.llmztt.com/Api/Post",
+    /*webPath:"http://localhost:9999/Api/Result",
+    webPost:"http://localhost:9999/Api/Post",*/
     imageURl:"http://www.llmztt.com"
 }

@@ -22,6 +22,7 @@ export default {
 		)
     },
     postViewWebData:function(dataUrl,params){
+    	return
     	
     	axios({
     		url:dataUrl,
@@ -33,12 +34,12 @@ export default {
     		params:params,
     		data:params
     	})
-    	.then(function (response) {
+    	/*.then(function (response) {
     		return response.data 
 		})
 		.catch(function (error) {
 		    console.log(error);
-		}) 
+		}) */
 
     }
 }
