@@ -35,10 +35,10 @@
               </h2>
               <ul>
                   <div style="width:130px;float:left;">
-                      <li v-if="index < 5" v-for="(type ,index ) in typeList" class="cat-item"><router-link :to="'/category/'+type.type_name+'/'">{{type.type_name}} </router-link> ({{type.article_count}})</li>
+                      <li v-if="index < 7" v-for="(type ,index ) in typeList" class="cat-item"><router-link :to="'/category/'+type.type_name+'/'">{{type.type_name}} </router-link> ({{type.article_count}})</li>
                   </div>
                   <div style="width:130px;float:left;">
-                      <li v-if="index >= 5" v-for="(type ,index ) in typeList" class="cat-item"><router-link :to="'/category/'+type.type_name+'/'">{{type.type_name}} </router-link> ({{type.article_count}})</li>
+                      <li v-if="index >= 7" v-for="(type ,index ) in typeList" class="cat-item"><router-link :to="'/category/'+type.type_name+'/'">{{type.type_name}} </router-link> ({{type.article_count}})</li>
                   </div>
               </ul> 
             </div>

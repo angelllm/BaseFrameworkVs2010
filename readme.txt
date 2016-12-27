@@ -134,3 +134,8 @@ git commit -m "version 2.1.0.0"
 git remote add origin https://coding.net/aliks/land-with-vue.git
 git push origin master
 输入coding.net的用户名和密码 数据就同步了
+
+touch README
+git add README 
+git commit -m 'first commit'
+git push origin master

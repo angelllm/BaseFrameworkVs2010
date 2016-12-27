@@ -23,5 +23,28 @@ export default {
             }) 
         })
 
+    },
+    postViewWebData:function(dataUrl,params){
+        var _this = this
+        return new Promise(function (resolve, reject) {    
+            Vue.http.post(dataUrl,{body:params}, {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                emulateJSON: true
+            })
+            .then(function(response) {
+                resolve(response.data) 
+            }, function(response) {
+                console.log('fail ' + response.status + "," + response.statusText)
+            })
+            .catch(function(response) {
+                console.log(response)
+            })
+            .finally(function(){
+
+            }) 
+        })
+
     }
 }

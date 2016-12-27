@@ -23,7 +23,7 @@ export default {
     return { 
       list:[],
       dataUrl:configs.webPath,
-      params:{method:"getArticleList",pagesize:100,pageindex:1,q:'',tag:''} 
+      params:{method:"getArticleLists",pagesize:100,pageindex:1,q:'',tag:''} 
     }
   },
   mounted: function() {
@@ -42,6 +42,15 @@ export default {
             data.forEach(function(item){
                 item.article_time  = moment(item.article_time).format('YYYY-MM-DD h:mm:ss')
                 item.article_image = configs.imageURl + item.article_image
+                /*var _type = item.article_shut_title
+                var _typehtml = []
+                if (_type) {
+                    $.each(_type.split(","),function(idx,it){
+                        var _typeitem = it.split("|")
+                        _typehtml.push("<span class=\"label label-default\"><i class=\"fa fa-tag\"></i> "+_typeitem[1]+"</span>")
+                    })
+                    item.article_type_name = _typehtml.join(" ")
+                }*/
             }) 
             _this.list = data
             document.title = (_this.params.q == "" ? "文章列表" : (_this.params.q == "C" ? "C#" : _this.params.q) ) + "-" + _this.base.page_title

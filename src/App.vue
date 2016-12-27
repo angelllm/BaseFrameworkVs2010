@@ -28,7 +28,7 @@ export default {
        dataUrl : configs.webPath,
        typeList:[],
        base:{},
-       params1:{method:"typeList"},
+       params1:{method:"typeLists"},
        params2:{method:"getBase"},
     }
   },
@@ -39,7 +39,8 @@ export default {
     })
     Func.getViewWebData(this.dataUrl,this.params2).then(function(data){
         _this.base = data
-        document.title = data.page_title
+        var _sourcetitle = document.title
+        document.title = data.page_title || _sourcetitle
         document.getElementsByTagName('meta')[1].content = data.page_keywords
         document.getElementsByTagName('meta')[2].content = data.page_description
     })

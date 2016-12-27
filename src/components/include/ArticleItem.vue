@@ -97,11 +97,12 @@
                   <!--tag like-->
                   <ul class="bottom_meta">
                       <li class="meta_tabs" data-bind="art.article_tag">
+                          <router-link :title="types.split('|')[1]" class="fa fa-bookmark " v-if="art.article_shut_title" :to="'/category/'+types.split('|')[1]" v-for="types in art.article_shut_title.split(',')">{{types.split("|")[1]}}</router-link>
                           <router-link v-for="tag in art.article_tag.split(',')" :to="'/tag/'+tag+'/'"  :title="tag" class="content-img" rel="bookmark">{{tag}}</router-link>
                       </li>
                       <!-- 喜欢按钮 -->
                       <li id="like_btn">
-                        <a href="javascript:;" @click="addLive(art.article_id)" class="jm-post-like" title="Like"><i class="fa fa-heart-o"></i>&nbsp;{{art.article_like}}</a>              
+                        <a href="javascript:;"  v-on:click.once="addLike(art)" class="jm-post-like" title="Like"><i class="fa fa-heart-o"></i><em>{{art.article_like}}</em><em :class="art.article_is_bold ? 'like' : 'hide'">+1</em></a>                           
                       </li>
                       <div class="clearfix"></div>
                   </ul> 
@@ -336,8 +337,14 @@ export default {
   },
   methods:{
       
-      addLive:function(id){
-         //console.log(id)
+      addLike:function(art){
+        if (art.article_is_bold) {
+            return
+        }
+        Func.getViewWebData(configs.webPath,{method:"addLike",id:art.article_id}).then(function(data){
+            art.article_like ++
+            art.article_is_bold = true
+        }) 
       }
       ,
       reply:function(id){

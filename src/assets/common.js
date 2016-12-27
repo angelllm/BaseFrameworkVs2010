@@ -34,7 +34,7 @@ var vm = new Vue({
                     $(".widget_tag_cloud").css({
                         'position':'fixed',
                         'top':'55px',
-                        //'z-index':'9999',
+                        'z-index':'9999',
                         'width':_widget_tag_cloud_width+'px'
                     })
                 }else{
@@ -64,6 +64,9 @@ function getPath(){
 
 module.exports = {
 	path: getPath(),
-    webPath:"http://www.llmztt.com/Vue2/Result",
+    /*webPath:"http://www.llmztt.com/Api/Result",
+    webPost:"http://www.llmztt.com/Api/Post",*/
+    webPath:"http://localhost:9999/Api/Result",
+    webPost:"http://localhost:9999/Api/Post",
     imageURl:"http://www.llmztt.com"
 }

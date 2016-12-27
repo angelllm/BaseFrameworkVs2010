@@ -43,11 +43,12 @@
                     <!-- 文章mate -->   
                     <ul class="bottom_meta">
                         <li class="meta_tabs">
-                            <router-link v-for="tag in art.article_tag.split(',')" :to="'/tag/'+tag+'/'"  :title="tag" class="content-img" rel="bookmark">{{tag}}</router-link> 
+                            <router-link :title="types.split('|')[1]" class="fa fa-bookmark " v-if="art.article_shut_title" :to="'/category/'+types.split('|')[1]" v-for="types in art.article_shut_title.split(',')">{{types.split("|")[1]}}</router-link>
+                            <router-link v-if="art.article_tag" v-for="tag in art.article_tag.split(',')" :to="'/tag/'+tag+'/'"  :title="tag" class="" rel="tag">{{tag}}</router-link> 
                         </li>
                         <!-- 喜欢按钮 --> 
                         <li id="like_btn">
-                            <a href="javascript:;" @click="addLive(art.article_id)" class="jm-post-like" title="Like"><i class="fa fa-heart-o"></i>&nbsp;{{art.article_like}}</a>                           
+                            <a href="javascript:;"  v-on:click.once="addLike(art)" class="jm-post-like" title="Like"><i class="fa fa-heart-o"></i><em>{{art.article_like}}</em><em :class="art.article_is_bold ? 'like' : 'hide'">+1</em></a>                           
                         </li>   
                         <div class="clearfix"></div>
                     </ul>    
@@ -55,13 +56,14 @@
                 </div>
             </article>      
         </div>
-        <div v-if="isLoading" class="ias-trigger ias-trigger-next" @click="nextPage"><a>加载更多</a></div>
+        <div v-if="!isLoading && hasLoading" class="ias-trigger ias-trigger-next" @click="nextPage"><a>{{loadingText}}</a></div>
     </div>
 </template>
 
 <script>
 import Vue         from 'vue' 
 import configs     from 'assets/common'  
+import Func        from 'assets/Func'  
  
  
 export default {
@@ -69,22 +71,33 @@ export default {
   data: function() {
     return { 
       path: configs.path, 
-     
+      hasLoading:true,
+      pageindex:1,
+      loadingTextArr:["\u52a0\u8f7d\u66f4\u591a","\u6ca1\u6709\u66f4\u591a\u4e86"],
+      loadingText:""
     }
   },
   mounted: function() {
-     
+     this.loadingText = this.loadingTextArr[0]
   },
   created: function() {
       
   },
   methods:{
-    addLive:function(id){
-        console.log("click addlive:"+id)
+
+    addLike:function(art){
+        if (art.article_is_bold) {
+            return
+        }
+        Func.getViewWebData(configs.webPath,{method:"addLike",id:art.article_id}).then(function(data){
+            art.article_like ++
+            art.article_is_bold = true
+        }) 
     }
     ,
-    nextPage:function(id){
-        console.log("click nextPage:"+id)
+    nextPage:function(){
+        this.loadingText = this.loadingTextArr[1]
+        this.pageindex++
     }
   } 
 

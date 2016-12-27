@@ -19,7 +19,9 @@ export default {
   ,
   mounted:function(){
 	//this.$nextTick(function(){})
-    rainBanner()
+    //rainBanner()
+    initBanner(1)
+    rain(bannerlist[0])
   }
 }
 

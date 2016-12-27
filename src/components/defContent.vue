@@ -1,8 +1,5 @@
 <template>
-    <div class="box">
-        <article-list :list="topList" :is-loading="true"></article-list>
-        <article-list :list="list" :is-loading="false"></article-list>
-    </div>
+    <article-list :list="list" :is-loading="true"></article-list>
 </template>
 
 
@@ -12,6 +9,7 @@ import configs          from 'assets/common'
 import moment           from 'moment' 
 import ArticleList      from 'components/include/Article'
 import Func             from 'assets/Func' 
+//import axios            from 'axios'    
  
 export default {
   props:["base"],
@@ -20,7 +18,7 @@ export default {
       dataUrl:configs.webPath,
       list:[],
       topList:[],
-      params1:{method:"getArticleList",pagesize:100,pageindex:1,w:''},
+      params1:{method:"getArticleLists",pagesize:100,pageindex:1,w:''},
       params2:{method:"getTopArticleList",pagesize:100,pageindex:1,w:''}  
     }
   },
@@ -33,14 +31,28 @@ export default {
           }) 
           _this.list = data
       })
-      Func.getViewWebData(this.dataUrl,this.params2).then(function(data){
-          data.forEach(function(item){
+
+      /*
+      //axios get
+      axios({
+          url:_this.dataUrl,
+          method: 'GET', 
+          params:_this.params1 
+      })
+      .then(function (response) {
+          console.log(response.data) 
+          response.data.forEach(function(item){
               item.article_time  = moment(item.article_time).format('YYYY-MM-DD h:mm:ss')
               item.article_image = configs.imageURl + item.article_image
           }) 
-          _this.topList = data
+          _this.list = response.data
       })
-      document.title =  _this.base.page_title
+      .catch(function (error) { 
+          console.log(error)
+      }) */ 
+      
+      var _sourcetitle = document.title
+      document.title =  _this.base.page_title || _sourcetitle
   },
   created: function() {
       

@@ -9,8 +9,25 @@
                     <div class="header-menu-wrapper arrow-up-right">
                         <ul class="header-menu-list">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page"><router-link to="/">Home</router-link></li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><router-link to="/list/">Artcile</router-link></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><router-link to="/about/">About</router-link></li> 
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><router-link to="/About/">About</router-link></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                                <a href="http://www.llmztt.com/vue2/#/" target="_blank">Version</a>
+                                <div class="dropdown">
+                                    <div class="dropdown-wrapper arrow-up-left" style="padding-left: 468.734px;">
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                <a href="http://www.llmztt.com/vue2/#/" target="_blank">Vue2版本</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                <a href="http://www.llmztt.com/angular2/#/" target="_blank">Angular2版本</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                <a href="http://www.llmztt.com/react2/#/" target="_blank">React2版本</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li> 
                         </ul>
                     </div>      
                 </nav>      
