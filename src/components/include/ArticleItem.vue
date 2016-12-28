@@ -387,7 +387,7 @@ export default {
                   }) 
                   _this.commitelist       = _data 
               }else{
-                 _this.$router.push("/")
+                 _this.$router.push("/404")
               }
           }) 
       },

@@ -65,6 +65,16 @@ const router = new VueRouter({
       path: '/archive/:archive',
       component: (resolve) => require(['components/listContent'], resolve),
       meta: { scrollToTop: true }
+    },
+    {
+      path: '/404',
+      component: (resolve) => require(['components/NotFound'], resolve),
+      meta: { scrollToTop: true }
+    },
+    {
+      path: '*',
+      component: (resolve) => require(['components/NotFound'], resolve),
+      meta: { scrollToTop: true }
     }
   ]
 })  
