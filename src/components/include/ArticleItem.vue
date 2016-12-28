@@ -16,32 +16,18 @@
                             </router-link>
                           </h1>
                           <ul class="top_meta top-ul">
-                            <li class="mate-cat">
-                              <i class="fa fa-folder-open-o">
-                              </i> 
-                              {{art.article_type_name}}
-                            </li>
-                            <li class="mate-time">
-                              <i class="fa fa-clock-o">
-                              </i>
-                              发表于{{art.article_guid}}前 ({{art.article_time}})
-                            </li>
-                            <li class="mate-view">
-                              <i class="fa fa-eye">
-                              </i>
-                              {{art.article_pv}}次浏览
-                            </li>
-                            <li class="mate-com">
-                              <i class="fa fa-comments-o">
-                              </i>
-                              <router-link :to="'/view/'+art.article_id+'/'" title="comments">
-                                {{art.commite_count}}条评论 
-                              </router-link>
-                            </li>
-                            <li>
-                            </li>
-                            <div class="clearfix"></div>
-                          </ul>
+                              <li class="mate-cat" >
+                                  <i class="fa fa-folder-open-o"></i>
+                                  <router-link v-for="types in art.article_shut_title.split(',')" :to="'/category/'+types.split('|')[1]" rel="category tag"> #{{types.split('|')[1]}}</router-link>
+                              </li>
+                              <div class="clearfix" v-if="art.article_shut_title.split(',').length >= 2"></div>
+                              <li class="mate-time"><i class="fa fa-clock-o"></i>发表于{{art.article_guid}}前 ({{art.article_time }})</li>
+                              <li class="mate-view"><i class="fa fa-eye"></i>{{art.article_pv}}次浏览</li>
+                              <li class="mate-com"><i class="fa fa-comments-o"></i><router-link :to="'/view/'+art.article_id+'/'" title="comments">{{art.commite_count}}条评论</router-link></li>                        
+                              <li></li>                                   
+                              <div class="clearfix" ></div>
+                          </ul>   
+                         
                         </header>
                         <div class="post-content post-content-view">
                           <div class="audio-wrapper content">
@@ -97,7 +83,7 @@
                   <!--tag like-->
                   <ul class="bottom_meta">
                       <li class="meta_tabs" data-bind="art.article_tag">
-                          <router-link :title="types.split('|')[1]" class="fa fa-bookmark " v-if="art.article_shut_title" :to="'/category/'+types.split('|')[1]" v-for="types in art.article_shut_title.split(',')">{{types.split("|")[1]}}</router-link>
+                          <!-- <router-link :title="types.split('|')[1]" class="fa fa-bookmark " v-if="art.article_shut_title" :to="'/category/'+types.split('|')[1]" v-for="types in art.article_shut_title.split(',')">{{types.split("|")[1]}}</router-link> -->
                           <router-link v-for="tag in art.article_tag.split(',')" :to="'/tag/'+tag+'/'"  :title="tag" class="content-img" rel="bookmark">{{tag}}</router-link>
                       </li>
                       <!-- 喜欢按钮 -->
@@ -160,7 +146,7 @@
                           </a>
                         </span>
                         <span class="comment-reply">
-                          <a rel="nofollow" class="comment-reply-link" @click="reply(item.commite_id)" href="#respond" :aria-label="'回复给'+item.commite_uname">
+                          <a rel="nofollow" class="comment-reply-link" @click="reply(item.commite_id)" href="javascript:;" :aria-label="'回复给'+item.commite_uname">
                             回复
                           </a>
                         </span>
@@ -336,6 +322,7 @@ export default {
           email:"",
           site:"",
           content:"",
+          commite_id:"",
           isContent:false,
           isName:false,
           isEmail:false,
@@ -364,7 +351,10 @@ export default {
       }
       ,
       reply:function(id){
-         //console.log(id)
+         window.scrollTo(0,document.getElementById("commentform").offsetTop)
+         document.getElementById("comment").focus()
+         this.form.commite_id = id
+         return false 
       },
       getItem:function(id){
           var _this = this
@@ -381,7 +371,7 @@ export default {
                       var _content = item.content_content
                       _content.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, function (match,src) {
                           if (src.indexOf(_url) == -1 && src.indexOf(_url.replace("www.","")) == -1) {
-                             item.content_content = _content.replace().replace(src,_url + src)
+                             item.content_content = _content.replace(src,_url + src)
                           }
                       })
                   })
@@ -412,7 +402,7 @@ export default {
          this.form.isContent = false
          this.form.isName = false
          this.form.isEmail = false
-         this.form.isLoad = true
+         this.form.isLoad = false
          this.form.isSub = false
          
          if (this.form.content == "" || this.form.content.length < 6) {
@@ -426,6 +416,7 @@ export default {
          }else{
             var _this = this
             event.target.disabled = true 
+            this.form.isLoad = true
             axios({
               url:configs.webPath,
               method: 'POST',
@@ -440,7 +431,7 @@ export default {
                 _this.form.isLoad = false
                 event.target.removeAttribute("disabled")
                 for(var key in _this.form){
-                    if ( typeof(_this.form[key]) === "string")
+                    if (typeof(_this.form[key]) === "string")
                        _this.form[key] = ""
                 }
             })
@@ -448,7 +439,7 @@ export default {
                 _this.form.isSub = false
                 _this.form.isLoad = false
                 event.target.removeAttribute("disabled")
-                console.log(error);
+                console.log(error)
             })  
          }
  

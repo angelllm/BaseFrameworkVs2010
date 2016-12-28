@@ -14,21 +14,25 @@
                                 <router-link :style="'color:'+art.article_title_color" :to="'/view/'+art.article_id+'/'" :data-tooltip="art.article_title" :css-color="art.article_title_color" class="simptip-smooth simptip-movable simptip-position-right">{{art.article_title}}</router-link>
                             </h2>
                         </header>       
-                        <a class="featured-image pjax" :href="'/land/view/'+art.article_id+'/'" :title="art.article_title">
+                        <router-link class="featured-image" :to="'/view/'+art.article_id+'/'" :title="art.article_title">
                             <img width="150" height="150"  :src="art.article_image==null?'/Template/wp/images/no-image.jpg':art.article_image" class="attachment-thumbnail size-thumbnail wp-post-image" />                 
-                        </a>    
+                        </router-link>    
                         <div class="post-content">
                             <ul class="top_meta">
-                                <li class="mate-cat"><i class="fa fa-folder-open-o"></i><a :href="'/list-0-'+art.article_type+'-0-0/'" rel="category tag">{{art.article_type_name}}</a></li>
+                                <li class="mate-cat" >
+                                    <i class="fa fa-folder-open-o"></i>
+                                    <router-link v-for="types in art.article_shut_title.split(',')" :to="'/category/'+types.split('|')[1]" rel="category tag"> #{{types.split('|')[1]}}</router-link>
+                                </li>
+                                <div class="clearfix" v-if="art.article_shut_title.split(',').length >= 2"></div>
                                 <li class="mate-time"><i class="fa fa-clock-o"></i>发表于{{art.article_guid}}前 ({{art.article_time }})</li>
                                 <li class="mate-view"><i class="fa fa-eye"></i>{{art.article_pv}}次浏览</li>
-                                <li class="mate-com"><i class="fa fa-comments-o"></i><a class="pjax" :href="'/view/'+art.article_id+'/'" title="comments">{{art.commite_count}}条评论</a></li>                        
+                                <li class="mate-com"><i class="fa fa-comments-o"></i><router-link :to="'/view/'+art.article_id+'/'" title="comments">{{art.commite_count}}条评论</router-link></li>                        
                                 <li></li>                                   
-                                <div class="clearfix"></div>
+                                <div class="clearfix" ></div>
                             </ul>       
                             <div class="audio-wrapper content">
                               <div v-html="art.article_content"></div> 
-                              <div class="read_more"><a :href="'/view/'+art.article_id+'/'">阅读更多</a></div>
+                              <div class="read_more"><router-link :to="'/view/'+art.article_id+'/'">阅读更多</router-link></div>
                             </div>
                         </div>
                         <!-- post content -->   
@@ -43,7 +47,7 @@
                     <!-- 文章mate -->   
                     <ul class="bottom_meta">
                         <li class="meta_tabs">
-                            <router-link :title="types.split('|')[1]" class="fa fa-bookmark " v-if="art.article_shut_title" :to="'/category/'+types.split('|')[1]" v-for="types in art.article_shut_title.split(',')">{{types.split("|")[1]}}</router-link>
+                            <!-- <router-link :title="types.split('|')[1]" class="fa fa-bookmark " v-if="art.article_shut_title" :to="'/category/'+types.split('|')[1]" v-for="types in art.article_shut_title.split(',')">{{types.split("|")[1]}}</router-link> -->
                             <router-link v-if="art.article_tag" v-for="tag in art.article_tag.split(',')" :to="'/tag/'+tag+'/'"  :title="tag" class="" rel="tag">{{tag}}</router-link> 
                         </li>
                         <!-- 喜欢按钮 --> 
