@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>hello my love</title>
+    <link href="love.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body ms-controller="love">
+    
+    <div id="loading">
+        <div class="warpper">
+            <label>正在加载...</label>
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+    <div id="welcome">
+        <section id="todoapp">
+            <header id="header">
+                <h1>surprised</h1>
+                <input id="new-todo"
+                       autofocus
+                       autocomplete="off"
+                       type="password"
+                       placeholder="请输入私密码"
+                       ms-on-keydown="pass"
+                       >
+            </header>
+        </section>
+    </div>
+    <div id="temp"></div>
+    <div id="video-box">
+        <video  width="320" height="240" controls="controls" preload="auto" autoplay=""  ></video>
+    </div>
+    <!-- <div id="imglist" style="display: none;" >
+      <img ms-attr-id="img-{{$index}}" ms-repeat="mergeImgList" ms-src="el" >
+    </div> -->
+    <div id="map"></div>  
+    <!-- <div id="ww" ms-on-click="stopAny" style="width: 100px;height:25px;background: rgba(0,0,0,.7);z-index: 99;position: fixed;left:0;top:0;">
+        结束动画        
+    </div> -->
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=qxRHDbG278mrmoUm9qaAUwHP"></script>
+    <script type="text/javascript">
+        seajs.use(["module/love/love"])
+         // map.setMapType(BMAP_PERSPECTIVE_MAP);     //修改地图类型为3D地图  
+         // map.setCurrentCity("北京市");  //设置当前城市  
+    </script>
+
+</body>
+</html>

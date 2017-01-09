@@ -1,0 +1,51 @@
+
+<div id="about">
+    <p class="me_content">一个什么都想做，但什么都没成功纠结的狮子座，会程序、会前端、会android,会微信开发、会切图，不会PS，会吃，不会玩，会聊，不会泡妹子，幻想着写书、流浪、冒险、养两只猫、过闲云野鹤的日子...</p>
+    <div class="social_link">
+        <ul class="clearfix">
+            <li><a href="javascript:void(0)" class="tooltip tooltip-bottom" data-tooltip="一个不玩微博的前端" target="_black"><i class="fa fa-weibo"></i></a></li>
+            <li><a href="javascript:void(0)" class="tooltip tooltip-bottom" data-tooltip="QQ:574589608"><i class="fa fa-qq"></i></a></li>
+            <li><a href="javascript:void(0)" class="tooltip tooltip-bottom" data-tooltip="这个暂时没有"><i class="fa fa-weixin"></i></a></li>
+            <li><a href="javascript:void(0)" class="tooltip tooltip-bottom" data-tooltip="这个有但先放着" target="_black"><i class="fa fa-github"></i></a></li>
+            <li><a href="javascript:void(0)" class="tooltip tooltip-bottom" data-tooltip="这个真没有" target="_black"><i class="fa fa-dribbble"></i></a></li>
+        </ul>
+    </div>
+</div>
+<div id="widget" class="widgets">
+    <aside id="cs_widget_comment-2" class="widget cs_widget_comment">
+        <h5 class="widget-title"><span>最新评论</span></h5>
+        <div class="textwidget" id="comment-list">
+            <ul>
+                <li class="colbox" *ngFor="let c of commite">
+                    <p class="col avatar-box avatar"><img src="http://llmztt.com/assets/images/User-5S.png" class="avatar avatar-64 ajax_gif" height="64" width="64"></p>
+                    <p class="col comment_box"><a class="with-tooltip" [routerLink]="'/view/'+c.commite_id+'/#comment-1'" ><span class="s_name">{{c.commite_uname}}:</span><span class="s_desc">{{c.commite_content}}</span></a></p>
+                </li> 
+            </ul>
+        </div>
+    </aside>
+   
+    <aside id="efanblogstat-2" class="widget widget_blogstat">
+        <h5 class="widget-title"><span>博客统计</span></h5>
+        <ul>
+            <li>日志总数：{{blogstat.article_count}} 篇</li>
+            <li>评论数目：{{blogstat.commite_count}} 条</li>
+            <li>建站日期：{{blogstat.web_time}}</li>
+            <li>运行天数：{{blogstat.web_daycount}} 天</li>
+            <li>标签总数：{{blogstat.tag_count}} 个</li>
+            <li>最后更新：{{blogstat.last_updatetime}}</li>
+        </ul>
+    </aside>
+    <aside id="tag_cloud-2" class="widget widget_tag_cloud">
+        <h5 class="widget-title"><span>标签</span></h5>
+        <div class="tagcloud">
+        	<a *ngFor="let tag of tagList" [routerLink]="'/tag/'+tag.tag_name+'/'" class="tag-link-31 tag-link-position-1 with-tooltip">{{tag.tag_name}}</a>
+        </div>
+    </aside>
+    <aside id="categories-2" class="widget widget_categories" style="visibility: visible;">
+        <h5 class="widget-title"><span>分类目录</span></h5>
+        <ul>
+            <li *ngFor="let type of typeList" class="cat-item"><a [routerLink]="'/category/'+type.type_name+'/'">{{type.type_name}}</a></li>
+        </ul>
+    </aside>
+     
+</div>

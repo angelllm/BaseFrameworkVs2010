@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content {width:348px; height:190px; border:6px solid #d9d9d9; margin:100px auto 0 auto; background:#f1f1f1;}
+.informationicon {width:180px; height:50px;  font-size:16px; color:#7d7d7d; margin-top:68px; margin-left:110px; float:left;}
+.wordspace { width:100px; height:30px; margin-top:-30px; font-size:16px; color:#7d7d7d; display:block; margin-left:160px; float:left;}
+.JumpPage{width:100%; float:left; text-align:center; margin-top:10px;}
+.JumpPage a:hover{text-decoration:underline;}
+
+.errorPrompt{margin-left:30px; line-height:50px; font-size:16px; color:#7D7D7D; margin-top:50px;}
+.errorPrompt img{float:left;}
+.closeWindow{float:right; background:url(../images/close_2.jpg) no-repeat; width:21px; height:20px; text-indent:-9999px; overflow:hidden; cursor:pointer;}
+.JumpPage b{font-size:12px; text-decoration:underline;}
+.JumpPage b:hover{color:#CC0000;}

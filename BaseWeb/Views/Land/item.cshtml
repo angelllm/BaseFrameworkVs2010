@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Menu";
+    if (Request.Headers["X-PJAX"] != null && bool.Parse(Request.Headers["X-PJAX"]))
+    {
+        Layout = null;
+        <h2>PJAX</h2>
+    }
+    else{
+        <h2>item</h2>
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+

@@ -1,0 +1,18 @@
+.break { clear:both; }
+#wrapper { width:800px; margin:40px auto; }
+#dj { width:760px; margin:0 auto; margin-top:30px;}
+.center { margin:0 auto; width:128px; }
+#playbutton { text-align:center; cursor:pointer; width:128px; }
+
+.vinyl { width:370px; height:370px; float:left; margin:0 5px; }
+#vinyl1 { background-image:url("../images/vinyl1.png"); margin-left: 25%; }
+#vinyl2 { background-image:url("../images/vinyl2.png"); }
+
+.needle { width:50px; height:76px; position:absolute; background-image:url("../images/needle.png"); z-index:99; }
+#needle1 { margin-left:62%; }
+#buttons { z-index:9999; clear:both; }
+#buttons img { cursor:pointer; }
+#buttons div { float:left; margin-top:25px; }
+#leftbtns { margin-left:60px; }
+#rightbtns { margin-left:120px; }
+.slider{width:777px;height:500px;background:url("../images/wood_bg.jpg") repeat-x 50% 50%;margin: 0 auto;-web-kit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}

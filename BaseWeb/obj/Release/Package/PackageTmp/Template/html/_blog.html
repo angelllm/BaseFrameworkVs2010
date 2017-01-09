@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <noscript><iframe src=*.html></iframe></noscript>
+  <meta charset="utf-8" />
+  #foreach($config in $tjson.tconfig("base"))
+  #foreach($c in $pjson.pconfig($config.type_id))
+  <title>$c.page_title</title>
+  <meta name="description" content="$c.page_description" />
+  <meta name="keywords" content="$c.page_keywords" />
+  #end
+  #end
+  <meta name="author" content="llm" />
+  <meta name="Copyright" content="http://www.llmztt.com/index/" />
+  <meta name="power" content="llmÔÆ" />  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="$path/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/app.css" type="text/css" />  
+  
+  <!--[if lt IE 9]>
+    <script src="$path/js/ie/html5shiv.js"></script>
+    <script src="$path/js/ie/respond.min.js"></script>
+    <script src="$path/js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside bg-info dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="icon-list"></i>
+        </a>
+        #foreach($config in $tjson.tconfig("base"))
+            #foreach($c in $pjson.pconfig($config.type_id))
+                <a href="$c.page_url/index/"  class="navbar-brand text-lt">
+                    <i class="icon-earphones"></i>
+                    <img src="$path/images/logo.png" alt="$c.page_title" class="hide">
+                    <span class="hidden-nav-xs m-l-sm">ALIKS</span>
+                </a>
+            #end 
+        #end
+        
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+          <i class="icon-settings"></i>
+        </a>
+      </div>      <ul class="nav navbar-nav hidden-xs">
+        <li>
+          <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
+            <i class="fa fa-indent text"></i>
+            <i class="fa fa-dedent text-active"></i>
+          </a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
+            </span>
+            <input type="text" class="form-control input-sm no-border rounded" placeholder="Search article...">
+          </div>
+        </div>
+      </form>
+      <div class="navbar-right ">
+        <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+          #*
+          <li class="hidden-xs">
+            <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
+              <i class="icon-bell"></i>
+              <span class="badge badge-sm up bg-danger count">2</span>
+            </a>
+            <section class="dropdown-menu aside-xl animated fadeInUp">
+              <section class="panel bg-white">
+                <div class="panel-heading b-light bg-light">
+                  <strong>You have <span class="count">2</span> notifications</strong>
+                </div>
+                <div class="list-group list-group-alt">
+                  <a href="#" class="media list-group-item">
+                    <span class="pull-left thumb-sm">
+                      <img src="$path/images/a0.png" alt="..." class="img-circle">
+                    </span>
+                    <span class="media-body block m-b-none">
+                      Use awesome animate.css<br>
+                      <small class="text-muted">10 minutes ago</small>
+                    </span>
+                  </a>
+                  <a href="#" class="media list-group-item">
+                    <span class="media-body block m-b-none">
+                      1.0 initial released<br>
+                      <small class="text-muted">1 hour ago</small>
+                    </span>
+                  </a>
+                </div>
+                <div class="panel-footer text-sm">
+                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                </div>
+              </section>
+            </section>
+          </li>*#
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="$path/images/a0.png" alt="...">
+              </span>
+              LLM.ALIKS <b class="caret"></b>
+            </a>
+            #*
+            <ul class="dropdown-menu animated fadeInRight">            
+              <li>
+                <span class="arrow top"></span>
+                <a href="#">Settings</a>
+              </li>
+              <li>
+                <a href="profile.html">Profile</a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="badge bg-danger pull-right">3</span>
+                  Notifications
+                </a>
+              </li>
+              <li>
+                <a href="docs.html">Help</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+              </li>
+            </ul>*#
+          </li>
+        </ul>
+      </div>      
+    </header>
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-black dk aside hidden-print" id="nav">          
+          <section class="vbox">
+            <section class="w-f-md scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+
+                <!-- nav -->                 
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav bg clearfix">
+                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                      Menu
+                    </li>
+                    <li>
+                      <a href="/index/">
+                        <i class="icon-home icon text-success "></i>
+                        <span class="font-bold">Home</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/index/list/">
+                        <i class="icon-list icon text-info"></i>
+                        <span class="font-bold">Article</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/index/about/">
+                        <i class="icon-user icon text-primary-lter"></i>
+                        <span class="font-bold">About</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/index/contact/">
+                        <i class="icon-bubbles icon  text-info-dker"></i>
+                        <span class="font-bold">Contact</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/index/game/" data-target="#content" data-el="#bjax-el" data-replace="true">
+                        <i class="icon-paper-plane icon  text-primary"></i>
+                        <span class="font-bold">Game</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/index/music/" data-target="#content" data-el="#bjax-el" data-replace="true">
+                        <i class="icon-playlist icon text-success-lter"></i>
+                        <span class="font-bold">Music</span>
+                      </a>
+                    </li>
+                    <li class="m-b hidden-nav-xs"></li>
+                  </ul>
+                  <ul class="nav" data-ride="collapse">
+                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                      Categories
+                    </li>
+                    #foreach($item in $tjson.tconfig("cate"))
+                    #if($item.type_parent == 0)
+                    <li #if( ($velocityCount==1 && $cur == "") || $curparent==$item.type_id) class="active"  #end>
+                      <a href="javascript:;" class="auto">
+                        <span class="pull-right text-muted">
+                          <i class="fa fa-angle-left text"></i>
+                          <i class="fa fa-angle-down text-active"></i>
+                        </span>
+                        <i class="icon-screen-desktop icon">
+                        </i>
+                        <span>$item.type_name</span>
+                      </a>
+                      #foreach($it in $tjson.tconfig("cate"))
+                      #if($it.type_parent == $item.type_id )
+                      <ul class="nav dk text-sm">
+                        <li #if($cur==$it.type_id) class="active"  #end>
+                          <a href="/index/list/?t=$it.type_id" class="auto">                                                        
+                            <i class="fa fa-angle-right text-xs"></i>
+                            <span>$it.type_name</span>
+                          </a>
+                        </li>
+                      </ul>
+                      #end
+                      #end
+                    </li>
+                    #end
+                    #end
+                  </ul>
+                  
+                </nav>
+                <!-- / nav -->
+              </div>
+            </section>
+            
+            <footer class="footer hidden-xs no-padder text-center-nav-xs">
+              <div class="bg hidden-xs ">
+                  <div class="dropdown dropup wrapper-sm clearfix">
+                    <a  class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="thumb-sm avatar pull-left m-l-xs">                        
+                        <img src="$path/images/sf.jpg" class="dker" alt="ALIKS">
+                        <i class="on b-black"></i>
+                      </span>
+                      <span class="hidden-nav-xs clear">
+                        <span class="block m-l">
+                          <strong class="font-bold text-lt">LLM.ALIKS</strong> 
+                          <b class="caret"></b>
+                        </span>
+                        <span class="text-muted text-xs block m-l">Art Forever</span>
+                      </span>
+                    </a>
+                    #*
+                    <ul class="dropdown-menu animated fadeInRight aside text-left">                      
+                      <li>
+                        <span class="arrow bottom hidden-nav-xs"></span>
+                        <a href="#">Settings</a>
+                      </li>
+                      <li>
+                        <a href="profile.html">Profile</a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="badge bg-danger pull-right">3</span>
+                          Notifications
+                        </a>
+                      </li>
+                      <li>
+                        <a href="docs.html">Help</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+                      </li>
+                    </ul>*#
+                  </div>
+                </div>            </footer>
+          </section>
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable wrapper-lg">
+              <div class="row">
+                <div class="col-sm-9">
+                  <div class="blog-post">        
+                    #foreach($item in $list)                               
+                    <div class="post-item">
+                      #if($item.article_image!="")
+                      <div class="post-media">
+                        <img src="$item.article_image" class="img-full">
+                      </div>
+                      #end
+                      <div class="caption wrapper-lg">
+                        <h2 class="post-title"><a href="/index/view/$item.article_id/">$item.article_title</a></h2>
+                        <div class="post-sum">
+                            $item.article_content
+                            #if($item.article_shut_title != "")
+                            <h3>$item.article_shut_title</h3>
+                            #end
+                            #if($item.article_summary != "")
+                            <p>$item.article_summary</p>
+                            #end
+                        </div>
+                        <div class="line line-lg"></div>
+                        <div class="text-muted">
+                          <i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">ALIKS</a>
+                          <i class="fa fa-clock-o icon-muted"></i> $item.article_time
+                          <a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> $item.content_count comments</a>
+                        </div>
+                      </div>
+                    </div>
+                    #end
+                    
+                  </div>
+                  <div class="text-center m-t-lg m-b-lg">
+                    <ul class="pagination pagination-md">
+                        $pageinfo
+                    </ul>
+                  </div>
+                  <h4 class="m-t-lg m-b">3 Feedback</h4>
+                  <section class="comment-list block">
+                    <article id="comment-id-1" class="comment-item">
+                      <a class="pull-left thumb-sm">
+                        <img src="$path/images/a0.png" class="img-circle">
+                      </a>
+                      <section class="comment-body m-b">
+                        <header>
+                          <a><strong>LLM.ALIKS</strong></a>
+                          <label class="label bg-info m-l-xs">Editor</label> 
+                          <span class="text-muted text-xs block m-t-xs">
+                            24 minutes ago
+                          </span>
+                        </header>
+                        <div class="m-t-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum.</div>
+                      </section>
+                    </article>
+                    <!-- .comment-reply -->
+                    <article id="comment-id-2" class="comment-item comment-reply">
+                      <a class="pull-left thumb-sm">
+                        <img src="$path/images/a1.png" class="img-circle">
+                      </a>
+                      <section class="comment-body m-b">
+                        <header>
+                          <a href="#"><strong>LLM.ALIKS</strong></a>
+                          <label class="label bg-dark m-l-xs">Admin</label> 
+                          <span class="text-muted text-xs block m-t-xs">
+                            26 minutes ago
+                          </span>
+                        </header>
+                        <div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
+                      </section>
+                    </article>
+                    <!-- / .comment-reply -->
+                    <article id="comment-id-2" class="comment-item">
+                      <a class="pull-left thumb-sm">
+                        <img src="$path/images/a2.png" class="img-circle">
+                      </a>
+                      <section class="comment-body m-b">
+                        <header>
+                          <a href="#"><strong>LLM.ALIKS</strong></a>
+                          <label class="label bg-dark m-l-xs">Admin</label> 
+                          <span class="text-muted text-xs block m-t-xs">
+                            26 minutes ago
+                          </span>
+                        </header>
+                        <blockquote class="m-t">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                        <div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
+                      </section>
+                    </article>
+                  </section>
+                  <h4 class="m-t-lg m-b">Leave a message</h4>
+                  <form id="ajax-form" action="/index/feedback/">
+                    <div class="form-group pull-in clearfix">
+                      <div class="col-sm-6">
+                        <label>Your name</label>
+                        <input type="text" class="form-control" placeholder="Name">
+                      </div>
+                      <div class="col-sm-6">
+                        <label >Email</label>
+                        <input type="email" class="form-control" placeholder="Enter email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Comment</label>
+                      <textarea class="form-control" rows="5" placeholder="Type your comment"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success">Submit comment</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-sm-3">
+                  <h5 class="font-bold">Categories</h5>
+                  <ul class="list-group">
+                    #foreach($item in $tjson.tconfig("cate"))
+                    #if($item.type_parent == 0)
+                    <li class="list-group-item">
+                        <a href="/index/list/?t=$item.type_id">
+                        <span class="badge pull-right">$item.photo_count</span>
+                        $item.type_name
+                        </a>
+                    </li> 
+                    #end
+                    #end 
+                  </ul>
+                  <div class="tags m-b-lg l-h-2x">
+                    #foreach($item in $taglist)
+                    <a href="/index/list/?tag=$item.tag_name" class="label bg-primary">$item.tag_name</a>
+                    #end
+                  </div>
+                  <h5 class="font-bold">Recent Posts</h5>
+                  <div>
+                   #foreach($item int $clist)
+                   #if($velocityCount>1)
+                   <div class="line"></div>
+                   #end
+                    <article class="media #if($velocityCount>1)  m-t-none #end" >
+                      <a class="pull-left thumb thumb-wrapper m-t-xs">
+                        <img src="$path/images/m1.jpg">
+                      </a>
+                      <div class="media-body">                        
+                        <a href="#" class="font-semibold">$item.commite_content</a>
+                        <div class="text-xs block m-t-xs"><a>Travel</a> $item.commite_time</div>
+                      </div>
+                    </article>
+                   #end
+
+                    
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>    
+  </section>
+  <script src="$path/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="$path/js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="$path/js/app.js"></script>  
+  <script src="$path/js/slimscroll/jquery.slimscroll.min.js"></script>
+  
+  <script src="$path/js/app.plugin.js"></script>
+
+
+</body>
+</html>

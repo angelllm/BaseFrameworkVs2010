@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>商品添加 - 网站管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.config.js" type="text/javascript"></script>
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <script charset="utf-8"src="/Content/js/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+    <script src="/Content/js/colorpicker/js/colorpicker2.js" type="text/javascript"></script>
+    <link href="/Content/js/colorpicker/css/colorpicker.css" rel="stylesheet" type="text/css" />
+    <script src="/content/js/uploadify/jquery.uploadify-3.1.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/jquery.form.js" type="text/javascript"></script>
+    <link href="/content/js/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <script src="/Admins/Content/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div id="containter">
+    #parse("include/left.cshtml" )
+    <div id="right-containter">
+       #parse("include/top.cshtml" )
+       
+       <div class="nav-menu">
+            <a href="/Admin/ProductManage/" id="btnAdd"> 返回商品列表 </a>
+       </div>
+       <div id="color-image-upload">
+            <form id="upload" method="post" action="/Admin/doUpload/2/" enctype="multipart/form-data">
+			    <div id="drop" style="margin:0;padding:0;">
+				    <a>浏览</a>
+				    <input type="file" name="upl" multiple="multiple" />
+			    </div>
+			    <ul></ul>
+		    </form>
+            <link rel="stylesheet" type="text/css" href="/Admins/Content/js/ajax_upload/assets/css/style.css" />
+            <script type="text/javascript" src="/Admins/Content/js/ajax_upload/assets/js/jquery.fileupload2.js"></script>
+            <script type="text/javascript" src="/Admins/Content/js/ajax_upload/assets/js/script.js"></script>
+            <script type="text/javascript" src="/Admins/Content/js/ajax_upload/assets/js/jquery.iframe-transport.js"></script>
+            <script type="text/javascript" src="/Admins/Content/js/ajax_upload/assets/js/jquery.knob.js"></script>
+            <script type="text/javascript" src="/Admins/Content/js/ajax_upload/assets/js/jquery.ui.widget.js"></script>
+            <input type="hidden" id="ajax_file_set_obj" />                                    
+        </div>
+       <div id="box" style="overflow:auto;">
+       <form action="/Admin/productEditDo/" method="post" id="product-add-form">
+       <div id="temp-modify" style="position:relative;">
+         
+           <div id="edit-win">
+                    <ul>
+		                <li><a href="#tabs-1">基础设置</a></li>
+		                <li><a href="#tabs-2">其他设置</a></li>
+		                <li><a href="#tabs-3">参数设置</a></li>
+                        <li><a href="#tabs-4">商品详情</a></li>
+                        <li><a href="#tabs-5">组图设置</a></li>
+	                </ul>
+	                <div id="tabs-1">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>商品名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="product_name" value="$model.product_name"  name="product_name" class="txt title title2" />
+                                        <input type="hidden" id="product_id" name="product_id" value="$model.product_id" /> 
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div id="customWidget" style="height:auto;">
+					                    <div id="colorSelector2" style="left:670px"><div id="color-panel"></div></div>
+	                                    <div id="colorpickerHolder2">
+	                                    </div>
+				                    </div> 
+                                    <input type="hidden" id="product_type_id"  name="product_type_id" value="$model.product_type_id" />
+                                    <input type="hidden" id="product_name_color"  name="product_name_color" value="" />
+                                    <input type="hidden" id="product_sku"  name="product_sku" value="$model.product_sku_path" />
+                                    <input type="hidden" id="product_param"  name="product_param" value="$model.product_param" />
+                                    <input type="hidden" id="product_image"  name="product_image" value="$model.product_image_list" />
+                                    <input type="hidden" id="product_price"  name="product_price" value="$model.product_price" />
+                                    <input type="hidden" id="product_price_sku"  name="product_price_sku" value="$model.product_price_sku" />
+                                    <input type="hidden" id="product_size"  name="product_size" value="$model.product_size" />
+                                    <input type="hidden" id="product_store"  name="product_store" value="$model.product_store" />
+
+                                </div>
+                                <div class="row-item" style="height:auto;">
+                                    <font>颜色/尺寸:</font>
+                                    <div class="input title title2" style="width:90%;">
+                                        <link rel="stylesheet" type="text/css" href="/Admins/Content/productAdd.css" />
+                                        <ul class="sku-nav">
+                                            <li>颜色</li>
+                                            #foreach($sku in $skulist)
+                                            <li>$sku.param_name</li>
+                                            #end
+                                        </ul>
+                                        <div id="color-area">
+                                            <ul>
+                                                <li id="5650" data="5650" ><input type="checkbox" /><em class="em1"></em><small>军绿色</small><input value="军绿色" class="color-txt" type="text" /> </li>
+                                                <li id="5651" data="5651" ><input type="checkbox" /><em class="em2"></em><small>红色</small><input value="红色" class="color-txt" type="text" /> </li>
+                                                <li id="5652" data="5652" ><input type="checkbox" /><em class="em3"></em><small>天蓝色</small><input value="天蓝色" class="color-txt" type="text" /> </li>
+                                                <li id="5653" data="5653" ><input type="checkbox" /><em class="em4"></em><small>巧克力色</small><input value="巧克力色" class="color-txt" type="text" /> </li>
+                                                <li id="5654" data="5654" ><input type="checkbox" /><em class="em5"></em><small>桔色</small><input value="桔色" class="color-txt" type="text" /> </li>
+                                                <li id="5655" data="5655" ><input type="checkbox" /><em class="em6"></em><small>深卡其布色</small><input value="深卡其布色" class="color-txt" type="text" /> </li>
+                                                <li id="5656" data="5656" ><input type="checkbox" /><em class="em7"></em><small>深灰色</small><input value="深灰色" class="color-txt" type="text" /> </li>
+                                                <li id="5657" data="5657" ><input type="checkbox" /><em class="em8"></em><small>深紫色</small><input value="深紫色" class="color-txt" type="text" /> </li>
+                                                <li id="5658" data="5658" ><input type="checkbox" /><em class="em9"></em><small>深蓝色</small><input value="深蓝色" class="color-txt" type="text" /> </li>
+                                                <li id="5659" data="5659"><input type="checkbox" /><em class="ema"></em><small>白色</small><input value="白色" class="color-txt" type="text" /> </li>
+                                                <li id="5660" data="5660"><input type="checkbox" /><em class="emb"></em><small>粉红色</small><input value="粉红色" class="color-txt" type="text" /> </li>
+                                                <li id="5661" data="5661"><input type="checkbox" /><em class="emc"></em><small>紫罗兰</small><input value="紫罗兰" class="color-txt" type="text" /> </li>
+                                                <li id="5662" data="5662"><input type="checkbox" /><em class="emd"></em><small>紫色</small><input value="紫色" class="color-txt" type="text" /> </li>
+                                                <li id="5663" data="5663"><input type="checkbox" /><em class="eme"></em><small>花色</small><input value="花色" class="color-txt" type="text" /> </li>
+                                                <li id="5664" data="5664"><input type="checkbox" /><em class="emf"></em><small>绿色</small><input value="绿色" class="color-txt" type="text" /> </li>
+                                                <li id="5665" data="5665"><input type="checkbox" /><em class="emg"></em><small>蓝色</small><input value="蓝色" class="color-txt" type="text" /> </li>
+                                                <li id="5666" data="5666"><input type="checkbox" /><em class="emh"></em><small>褐色</small><input value="褐色" class="color-txt" type="text" /> </li>
+                                                <li id="5667" data="5667"><input type="checkbox" /><em class="emi"></em><small>透明</small><input value="透明" class="color-txt" type="text" /> </li>
+                                                <li id="5668" data="5668"><input type="checkbox" /><em class="emj"></em><small>酒红色</small><input value="酒红色" class="color-txt" type="text" /> </li>
+                                                <li id="5669" data="5669"><input type="checkbox" /><em class="emk"></em><small>浅灰色</small><input value="浅灰色" class="color-txt" type="text" /> </li>
+                                                <li id="5670" data="5670"><input type="checkbox" /><em class="eml"></em><small>浅绿色</small><input value="浅绿色" class="color-txt" type="text" /> </li>
+                                                <li id="5671" data="5671"><input type="checkbox" /><em class="emm"></em><small>浅黄色</small><input value="浅黄色" class="color-txt" type="text" /> </li>
+                                                <li id="5672" data="5672"><input type="checkbox" /><em class="emn"></em><small>黑色</small><input value="黑色" class="color-txt" type="text" /> </li>
+                                                <li id="5673" data="5673"><input type="checkbox" /><em class="emo"></em><small>黄色</small><input value="黄色" class="color-txt" type="text" /> </li>
+                                                <div class="clear"></div>
+                                            </ul>
+                                        </div>
+                                        <script type="text/javascript">
+                                            __sku_param_array = new Array();
+                                        </script>
+                                        #foreach($sku in $skulist)
+                                        <script type="text/javascript">
+                                            __sku_param_array.push("sku-area-$velocityCount");
+                                        </script>
+                                        <div class="sku-param" id="sku-area-$velocityCount" index="$velocityCount">
+                                            <ul>
+                                                #foreach($item in $p.getSkuList($sku.param_id))
+                                                <li id="$item.list_id" data="$item.list_id" ><input type="checkbox" /><small>$item.list_name</small><input value="$item.list_name" class="size-txt" type="text" /> </li>
+                                                #end
+                                                <div class="clear"></div>
+                                            </ul>
+                                        </div>
+                                        #end
+                                        <div id="sku-warpper">
+                                            <div id="color-image">
+                                                <ul><li>颜色</li><li>图片</li><li>操作</li></ul>
+                                                <div class="nothing">请选择颜色</div>
+                                            </div> 
+                                            <div class="clear"></div>
+                                            <div id="sku-color-size">
+                                                <ul>
+                                                    <li>颜色分类</li>
+                                                    #foreach($sku in $skulist)
+                                                    <li>$sku.param_name</li>
+                                                    #end
+                                                    <li>* 价格</li>
+                                                    <li>* 数量</li>
+                                                    <li>商家编码</li>
+                                                    <li style="width:30px;">操作</li>
+                                                    <div class="clear"></div>
+                                                </ul>
+                                                <div class="nothing">请选择尺码</div>  
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                            </div>
+       
+                       </div>
+                
+                    </div>
+	                <div id="tabs-2">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>标签:</font>
+                                    <div class="input title title2" style="position:relative;">
+                                        <input type="text" id="product_tag" name="product_tag" class="txt title title2" value="$model.product_tag" />
+                                        <div id="tag" class="tag">
+                                            <div class="tag-waper">
+                                            #foreach($tag in $taglist)
+                                            <q><a>$tag.tag_name</a><del data="$tag.tag_id"></del></q>
+                                            #end
+                                            <span>
+                                                <input type="text" id="txtTag" placeholder="添加标签" />
+                                                <b class="btns">确定</b>
+                                                <p><b class="btnPL">批量管理</b></p>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>是否上架:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" value="1" checked="checked" id="product_status" name="product_status" class = "switch-input"/>
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+	                <div id="tabs-3">
+                        <div class="edit-win">
+                            <div class="waper">
+                                #foreach($item in $list)
+                                <div class="row-item">
+                                    <font>$item.attr_name:</font>
+                                    <div class="input">
+                                        <select data="$item.attr_name" class="chosen-select w350" id="ddl_$item.attr_id">
+                                            #foreach ($def in $p.getDefList($item.attr_id))
+                                                <option value="$def.value_id">$def.value_name</option>
+                                            #end
+                                        </select>
+                                        <input type="hidden" id="hf_$item.attr_id" name="hf_$item.attr_id" value="0" /> 
+                                    </div>
+                                    <div class="clear"></div>
+                                    
+                                </div>
+                               #end
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tabs-4">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>商品详情:</font>
+                                    <div class="input title">
+                                        <textarea id="product_content" name="product_content">$model.product_content</textarea>
+                                        <script type="text/javascript">
+                                            var editor_a = new baidu.editor.ui.Editor({ initialFrameWidth: 700 });
+                                            editor_a.render('product_content'); 
+                                        </script> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tabs-5">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <!-- sortable -->
+                                    <script src="/Admins/Content//js/jquery.ui.widget.js" type="text/javascript"></script>
+                                    <script src="/Admins/Content//js/jquery.ui.core.js" type="text/javascript"></script>
+                                    <script src="/Admins/Content//js/jquery.ui.mouse.js" type="text/javascript"></script>
+                                    <script src="/Admins/Content//js/jquery.ui.sortable.js" type="text/javascript"></script>
+                                    <script src="/Admins/Content//js/jquery-ui.js" type="text/javascript"></script>                                    <div class="input title title2">
+                                        <h3 class="h3">组图设置</h3>
+                                        <div id="image-list">
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-a">主图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-b">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-c">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-d">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-e">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                          
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-1">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-2">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-3">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-4">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="image-list-warpper">
+                                                <div class="image-list-icon image-upload" id="image-list-5">详情图</div>
+                                                <div class="image-list-icon image-list-item"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn fix-btn" style="position:static;">
+                        ##<input type="button" value=" 保 存 " id="btnSave" style="" class="g-btn" />
+                        <input type="submit" value=" 保 存 " id="btnSave" style="" class="g-btn" />
+                    </div>
+        
+           </div>
+       </div>
+       </form>
+       </div>
+       <script type="text/javascript">
+           var _set = "<div class=\"set-area\" id=\"{0}\">" +
+                    "<h2>批量操作</h2>" +
+                    "<ul>" +
+                         "<li>" +
+                            "<p>价格:</p>" +
+                            "<p><input type=\"radio\" name=\"rblPrice\" />同颜色价格相同</p>" +
+                            #foreach($sku in $skulist)  
+                            "<p><input type=\"radio\" name=\"rblPrice\" />同$sku.param_name价格相同</p>" +
+                            #end  
+                         "</li>" +
+                         "<li>" +
+                            "<p>数量:</p>" +
+                            "<p><input type=\"radio\" name=\"rblCount\" />同颜色分类数量相同</p>" +
+                            #foreach($sku in $skulist)  
+                            "<p><input type=\"radio\" name=\"rblCount\" />同$sku.param_name数量相同</p>" +
+                            #end 
+                           
+                         "</li>" +
+                         "<div class=\"clear\"></div>" +
+                    "</ul>" +
+                    "<center><input id=\"btnSet\" type=\"button\" value=\" 设 置 \" /><input id=\"btnChance\" type=\"button\" value=\" 取 消 \" /></center>" +
+               "</div>";
+       </script>
+       <script src="/Admins/Content/js/product_comm.js" type="text/javascript"></script>
+       <script type="text/javascript">
+           var _tag = '$model.product_tag';
+           jQuery.each(_tag.split(','), function (i, it) {
+               tag.push(it);
+           });
+       </script>
+       <script src="/Content/js/chosen.jquery.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Content/js/prism.js" type="text/javascript" charset="utf-8"></script>
+       #if($skulist.Count == 1)
+       <script src="/Admins/Content/js/product_sku1_add.js" type="text/javascript"></script>
+       <script src="/Admins/Content/js/product_sku1_edit.js" type="text/javascript"></script>
+       <link rel="stylesheet" type="text/css" href="/Admins/Content/productSku1Add.css" />
+       #elseif($skulist.Count == 2)
+       <script src="/Admins/Content/js/product_sku2_add.js" type="text/javascript"></script>
+       <script src="/Admins/Content/js/product_sku2_edit.js" type="text/javascript"></script>
+       <link rel="stylesheet" type="text/css" href="/Admins/Content/productSku2Add.css" />
+       #elseif($skulist.Count == 3)
+       <script src="/Admins/Content/js/product_sku3_add.js" type="text/javascript"></script>
+       <script src="/Admins/Content/js/product_sku3_edit.js" type="text/javascript"></script>
+       <link rel="stylesheet" type="text/css" href="/Admins/Content/productSku3Add.css" />
+       #end
+    
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

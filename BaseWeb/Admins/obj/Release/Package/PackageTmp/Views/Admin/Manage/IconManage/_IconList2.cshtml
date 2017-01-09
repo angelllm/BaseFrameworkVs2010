@@ -1,0 +1,124 @@
+﻿ 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>网站设置 - 尚酷电子后台</title>
+    <script src="/Content/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/artDialog.source.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+<body>
+
+<div id="containter">
+    
+    #parse("include/left.cshtml" )
+    <div id="right-containter">
+       
+       #parse("include/top.cshtml" )
+       <div class="nav-menu">
+            <a href="/Icon/Add/" id="btnAddIcon"> 添加桌面图标 </a>
+       </div>
+       <table class="tbl" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="guid">编号</th>
+                    <th class="normal">背景图片</th>
+                    <th class="normal">菜单名称</th>
+                    <th class="normal">专属样式</th>
+                    <th class="normal">图标样式</th>
+                    <th class="bit">坐标X</th>
+                    <th class="bit">坐标Y</th>
+                    <th class="bit">可拖拉</th>
+                    <th class="normal">初始宽</th>
+                    <th class="normal">初始高</th>
+                    <th class="normal">操作路径</th>
+                    <th class="normal">状态</th>
+                    <th class="opear">操作</th>
+                </tr>
+             </thead>
+             <tbody>
+                 #foreach($item in $list)
+                    <tr class="data" data="$item.icon_id" data-title="$item.icon_name">
+                        <td class="select">$item.icon_id</td>
+                        <td class="guid">$item.icon_image</td>
+                        <td class="normal">$item.icon_name</td>
+                        <td class="normal">$item.icon_css</td>
+                        <td class="normal">$item.icon_item_css</td>
+                        <td class="bit">$item.icon_position_x</td>
+                        <td class="bit">$item.icon_position_y</td>
+                        <td class="bit">
+                            <label class="switch">
+                              <input 
+                                col="resize"
+                                data="$item.icon_id"
+                                type="checkbox" 
+                                class="switch-input" 
+                                #if($item.icon_resize == "True")
+	                                checked="checked"
+                                #end
+                              >
+                              <span class="switch-label" data-on="On" data-off="Off"></span>
+                              <span class="switch-handle"></span>
+                            </label>
+                        </td>
+                        <td class="normal">$item.icon_init_w</td>
+                        <td class="normal">$item.icon_init_h</td>
+                        <td class="normal">$item.icon_url</td>
+                        <td class="normal">
+                            <label class="switch">
+                              <input 
+                                col="status"
+                                data="$item.icon_id"
+                                type="checkbox" 
+                                class="switch-input" 
+                                #if ($item.icon_status == 1)
+                                   checked="checked"
+                                #end
+                              >
+                              <span class="switch-label" data-on="On" data-off="Off"></span>
+                              <span class="switch-handle"></span>
+                            </label>
+                        </td>
+                        <td class="opear">
+                            <span>
+                                <label>操作</label>
+                                <div class="opear-control">
+                                    <a class="control-modify" data-title="$item.icon_name" data="$item.icon_id" href="javascript:void(0)"> 修 改 </a>
+                                    <a href="javascript:void(0)"> 删 除 </a>
+                                    <a class="control-stop" href="javascript:void(0)"> 禁 用 </a>
+                                    <a class="control-copy" data="$item.icon_id" href="javascript:void(0)"> 复 制 </a>
+                                </div>
+                            </span>
+                        </td>
+                    </tr> 
+
+                 #end
+                     
+                       
+                    
+                      
+             </tbody>
+       </table>
+
+       <div class="pageinfo" id="pageinfo" runat="server"></div>
+
+
+   
+
+
+    <script src="/Admins/Content/js/icon_list.js" type="text/javascript"></script>
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>添加网站设置 - 网站管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.config.js" type="text/javascript"></script>
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <script charset="utf-8"src="/Content/js/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+    <script src="/content/js/uploadify/jquery.uploadify-3.1.js" type="text/javascript"></script>
+    <link href="/content/js/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <script src="/Admins/Content/js/jquery.form.js" type="text/javascript"></script>
+</head>
+ 
+<body>
+
+<div id="containter">
+    #parse("include/PageLeft.cshtml" )
+    <div id="right-containter">
+       #parse("include/top.cshtml" )
+       <input type="hidden" id="hfTid" value="$id" />
+       <input type="hidden" id="hfBind" value="$val" />
+       <div class="nav-menu">
+            <a href="/Admin/PageList/$id" id="btnAdd"> 返回列表 </a>
+       </div>
+       <form action='/Admin/PageAddDo/#if($id!="")$id #end' method="post" id="ajax-form">
+       <div id="temp-modify" style="position:relative;">
+           <div id="edit-win">
+                    <ul>
+		                <li><a href="#tabs-1">基础设置</a></li>
+		                <li><a href="#tabs-2">内容设置</a></li>
+		                <li><a href="#tabs-3">图片设置</a></li>
+	                </ul>
+	                <div id="tabs-1">
+                        
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>类型:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType">
+                                            #foreach ($type in $list)
+                                                <option value="$type.type_id|$type.type_position">$type.type_name</option>
+                                            #end
+                                        </select>
+                                        <input type="hidden" id="page_type_id" name="page_type_id" value="" /> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_name"  name="page_name" class="txt title" />
+                                        <input type="hidden" id="page_id" name="page_id" /> 
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                                <div class="row-item">
+                                    <font>链接:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_url" name="page_url" class="txt title" /> 
+                                    弹出
+                                    </div>  
+                                    
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" id="cbkIsTarget" name="cbkIsTarget" checked  class = "switch-input"/>
+                                          <input type="hidden" id="page_url_type" name="page_url_type" value="1" /> 
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                   
+                                    
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>排序:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_order" name="page_order" class="txt title" /> 
+                                    </div>  
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                <div class="row-item">
+                                    <font>备注:</font>
+                                    <div class="input">
+                                        <textarea id="page_remark" name="page_remark" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> 
+
+                            </div> 
+                       </div>
+
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>网站标题:</font>
+                                    <div class="input title">
+                                        <textarea id="page_title" name="page_title" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                                <div class="row-item">
+                                    <font>网站介绍:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <textarea id="page_description" name="page_description" class = "area title"></textarea>
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>网站关键词:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <textarea id="page_keywords" name="page_keywords" class = "area title"></textarea>
+                                    </div>  
+                                    <div class="clear"></div>
+                                </div> 
+                            </div> 
+                       </div>
+                        
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" id="cbkStatus" name="cbkStatus" checked class = "switch-input"/>
+                                          <input type="hidden" id="page_status" name="page_status" value="1" />
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div> 
+                            </div>
+                        </div>
+
+                    </div>
+	                <div id="tabs-2">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>详细内容:</font>
+                                    <div class="input title">
+                                        <textarea id="page_content" name="page_content"></textarea>
+                                        <script type="text/javascript">
+                                            var editor_a = new baidu.editor.ui.Editor({ initialFrameWidth: 600 });
+                                            editor_a.render('page_content'); 
+                                        </script> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+	                <div id="tabs-3">
+                        <div class="edit-win">
+                            <div class="waper">
+                                
+                                <div class="row-item">
+                                    <font>图片:</font>
+                                    <div class="input" style="width:auto;">
+                                        <input type="hidden" id="hfImage" name="hfImage" />
+                                        <div id="fileQueue" style="display:inline"></div>
+                                        <input type="file" name="file_upload" id="file_upload" />
+                                        <div id="qid"></div> 
+                                        <span id="ImageShow" style="display:block"></span>
+                                        <style type="text/css">
+                                            .uploadify-queue-item .cancel a {
+                                            background: url('/content/js/uploadify/uploadify-cancel.png') 0 0 no-repeat;
+                                            float: right;
+                                            height: 16px;
+                                            text-indent: -9999px;
+                                            width: 16px;
+                                            }
+                                        </style> 
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn" >
+                        <input type="submit"  value="添加并返回" style="width:180px;height:60px;line-height:50px;display:block;" id="btnSave" />
+                    </div>
+               
+           </div>
+       </div>
+       </form>
+       
+       <script src="/Content/js/chosen.jquery.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Content/js/prism.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Admins/Content/js/page_add.js" type="text/javascript"></script>
+       <script type="text/javascript">
+
+
+       </script>
+
+        
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>我的音乐 - $base.page_title</title>
+	<meta charset="UTF-8" />
+        <meta name="keywords" content="$base.page_keywords" />
+	<meta name="description" content="$base.page_description" />  
+	#parse("include/base.htm")
+ </head>
+	
+<body class="home blog ajax_load loading_style1 wp_box leftbar_open" ms-controller="page">	
+		
+	#parse("include/header.htm")
+    <div id="wp_box" class="container"  ms-important="box">  
+	    #parse("include/leftbar.htm")      
+	    <div id="wrapper" class="toggle-wrapper">
+		    <div id="main">
+		        ##parse("include/home/music-banner.htm")
+                ##parse("include/home/notice.htm")
+		        <!-- content -->		
+		        <div id="content">
+		            #parse("include/music/music.htm")
+		        </div>
+                <!-- content -->
+	        </div>
+            <!-- main -->
+		    <!-- 右侧边栏 -->
+		    <div class="rightbar">
+			    #parse("include/rightbar.htm")
+		    </div>	
+	    </div><!-- wrapper -->
+	    <div class="clearfix"></div>
+    </div><!-- wp_box -->
+    
+	#parse("include/footer.htm")
+    
+    <script src="$path/js/sea.js"></script>
+    <script src="$path/js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/common/common.min", "module/home/home.min", "module/music/jquery.music.min"], function (a, b, d) {
+            MUSIC = d
+            avalon.vmodels["box"].MusicInit()
+            avalon.scan(document.getElementById("content"), avalon.vmodels["box"])
+        })
+    </script>
+					 
+
+			
+         
+	
+			
+	
+</body>
+</html>

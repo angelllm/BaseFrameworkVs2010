@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>llm小屋</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="http://zhw-island.com/xmlrpc.php" />
+	<link rel="shortcut icon" href="#" title="Favicon">	
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" type="text/css" href="$path/themes/ie.css" media="screen"/>
+		<script type="text/javascript" src="$path/js/vendor/plug/ie-html5.js"></script>
+	<![endif]-->
+    <link rel='stylesheet' id='style-css'  href='$path/themes/style.css?ver=0.9' type='text/css' media='screen' />
+    <link rel='stylesheet' id='font-awesome-css-css'  href='$path/themes/font-awesome.css?ver=0.3' type='text/css' media='screen' />
+    <link rel='stylesheet' id='Link1'  href='$path/themes/switcher.css?ver=0.9' type='text/css' media='screen' />
+
+ </head>
+	
+<body class="home blog ajax_load loading_style1 wp_box leftbar_open">	
+		
+
+	#parse("include/header.htm")
+	    
+    
+    <div id="wp_box" class="container">    
+    
+		<!-- 左侧边栏 -->	
+		<div class="leftbar_bg"></div>
+		<div class="leftbar">
+			<!-- 左菜单 -->
+			<div class="left_menu">
+				<ul class="menu_link"><li><a href="http://zhw-island.com/category/diary/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="日志"><i class="fa fa-book"></i><span>日志</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/wordpress/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="Wordpress"><i class="fa fa-wordpress"></i><span>Wordpress</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/design/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="设计"><i class="fa fa-paper-plane"></i><span>设计</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/code/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="代码"><i class="fa fa-code"></i><span>代码</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/music/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="音乐"><i class="fa fa-music"></i><span>音乐</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/share/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="分享"><i class="fa fa-share-alt"></i><span>分享</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/untitled/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="无题"><i class="fa fa-anchor"></i><span>无题</span><div class="clearfix"></div></a></li></ul>			</div>
+		</div>
+			
+			
+	        <div class="wrapper_bg"></div>
+	          
+        
+	<div id="wrapper" class="toggle-wrapper">
+		<div id="main">
+		
+	 
+		<!-- 调用幻灯片 -->
+		   <div id="header_slider" class=" fadeInDown animated ">
+                  <div class="slider">
+                    <ul class="lightSlider">
+                      <li>
+                        <a href="#">
+                          <img class=" " src="$path/images/theme-lazycat-1.png"/>
+                          <p>自适应Wordpress主题LazyCat </p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+	 
+			<div id="bulletin_box">
+			    <i class="fa fa-bell-o"></i>
+			    <div id="bulletin">
+				    <ul class="bulletin_list">
+                        <li>妹子免费领主题活动已停止。</li>
+                        <li>Island和Lazycat合并，以后统称为Island，售价依然88元，可谓加量不加价</li>
+                    </ul>	
+			    </div>
+			    <a href="#" class="bulletin_remove"><i class="fa fa-close"></i></a>
+		    </div>
+			
+				
+		<!-- content -->		
+		<div id="content">
+		<div class="posts  fadeInDown animated">
+				
+			<article class="post post-3253 type-post status-publish format-aside has-post-thumbnail sticky hentry category-wordpress tag-teahouse tag-wordpress post_format-post-format-aside">
+				<div class="post-sticky with-tooltip" data-tooltip="置顶文章"></div>
+					 	
+	            <div class="box-wrap">
+		            <div class="box">
+		                <header>
+			                <h2 class="entry-title"><a href="http://zhw-island.com/wordpress/teahouse-rebuild.html" title="Teahouse重制版发布了">Teahouse重制版发布了</a></h2>
+		                </header>		
+		                <a class="featured-image" href="http://zhw-island.com/wordpress/teahouse-rebuild.html" title="Teahouse重制版发布了">
+			                <img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/09/teahouse-250x250-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="teahouse-250x250" />					
+                        </a>	
+		                <div class="post-content">
+				
+			                <ul class="top_meta">
+				                <li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+				                <li class="mate-time"><i class="fa fa-clock-o"></i>发表于 5个月前 (09-07)</li>
+				                <li class="mate-view"><i class="fa fa-eye"></i>1144次浏览</li>
+				                <li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/teahouse-rebuild.html#comments-title" title="comments">40条评论</a></li>						
+				                <li></li>									
+				                <div class="clearfix"></div>
+			                </ul>		
+			                <div class="content">
+				                <p>Teahouse依然是免费维护更新，感谢依然使用Teahouse的用户们。 演示：http://zhw-island.com/teahouse/ 注意：初次使用时，可导入主题目录下的demo.txt到</p>
+                                <div class="read_more"><a href="http://zhw-island.com/wordpress/teahouse-rebuild.html">阅读更多</a></div>
+			                </div>
+				
+		                </div><!-- post content -->	
+		                <div class="clearfix"></div>
+		            </div><!-- box -->
+
+					            <!-- 文章mate -->	
+		            <ul class="bottom_meta">
+			            <li class="meta_tabs">
+                            <a href="http://zhw-island.com/tag/teahouse" rel="tag">teahouse</a> 
+                            <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a>
+                        </li>									<!-- 喜欢按钮 -->	
+			            <li id="like_btn">
+				            <a href="#" class="jm-post-like" data-post_id="3253" title="Like"><i class="fa fa-heart-o"></i>&nbsp;55</a>							
+			            </li>	
+			            <div class="clearfix"></div>
+		            </ul>	
+											
+		            <div class="clearfix"></div>
+	            </div>
+            </article>
+											
+        </div>
+			
+			<!-- 分页 -->
+								
+					<div class="post-nav">
+						<div class="post-nav-inside">
+							<div class="post-nav-left"></div>
+							<div class="post-nav-right"><a href="http://zhw-island.com/page/2" >下一页</a></div>	
+						</div>
+					</div>
+										
+			
+			<!-- 评论 -->
+					</div><!-- content -->
+		
+		<!-- 页脚 -->
+		 
+	
+	</div><!-- main -->
+		<!-- 右侧边栏 -->
+		<div class="rightbar">
+					<div class="about_me">
+                
+           				<div class="me_img">
+					<div class="me_avatar">
+						<img src="http://zhw-island.com/wp-content/uploads/2015/06/default-avatar.png">
+					</div>
+				</div>
+				<span class="me_name">
+					@老赵				</span>
+                    
+                
+				<p class="me_content">
+					Hi，老赵其实不老，只是个九零后文艺青年，也是一名手游UI设计师，也是手机App设计师，也是Web前端设计师，爱互联网，爱美术，爱游戏，爱电影，爱音乐，爱萝莉，爱御姐...				</p>
+				<div class="social">
+					<ul class="social_link"><li><a href="http://weibo.com/qq717995589" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="微博：老赵-茶馆"target="_black"><i class="fa fa-weibo"></i></a></li><li><a href="javascript:void(0)" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="QQ:717995589" ><i class="fa fa-qq"></i></a></li><li><a href="javascript:void(0)" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="微信：laozhaochaguan" ><i class="fa fa-wechat"></i></a></li><li><a href="https://github.com/zhw2590582" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="Github:zhw2590582"target="_black"><i class="fa fa-github"></i></a></li><li><a href="https://dribbble.com/HarveyZack" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="dribbble"target="_black"><i class="fa fa-dribbble"></i></a></li></ul>				</div>			
+			</div>
+						
+			<div class="sidebar-contentWrapper">
+			
+                <aside id="cs_widget_comment-2" class="widget cs_widget_comment">
+                    <h3 class="widget-title"><span>最新评论</span></h3>
+                    <div class="textwidget" id="comment-list">
+                        <ul>
+                            <li>
+                                <img class="avatar" height="64" width="64"> 
+                                <p class="s_r">
+                                    <a class="with-tooltip" href="#" data-tooltip="《聚会》上的评论">
+                                        <span class="s_name">locyoo:</span>
+                                        <span class="s_desc">毕业久了，经常联系的也就那几个</span>
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </aside>
+
+                <aside class="widget widget_categories">
+                    <h3 class="widget-title"><span>分类目录</span></h3>		
+                    <ul>
+	                    <li class="cat-item"><a href="#" >wordpress</a> (19)</li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </aside>
+
+                <aside class="widget widget_archive">
+                    <h3 class="widget-title"><span>文章归档</span></h3>		
+                    <ul>
+			            <li><a href='#'>2016年一月</a>&nbsp;(3)</li>
+		            </ul>
+		            <div class="clearfix"></div>
+                </aside>
+        
+                <aside class="widget widget_blogstat">
+                    <h3 class="widget-title">
+                    <span>博客统计</span></h3>
+                    <ul>
+                        <li>日志总数：36 篇</li>
+                        <li>评论数目：230 条</li>
+                        <li>建站日期：2012-05-18</li>
+                        <li>运行天数：1350 天</li>
+                        <li>标签总数：57 个</li>
+                        <li>最后更新：2016-1-28</li>
+                        </ul>
+                    <div class="clearfix"></div>
+                </aside>
+                <aside  class="widget widget_tag_cloud">
+                    <h3 class="widget-title"><span>标签</span></h3>
+                    <div class="tagcloud">
+                        <a href='#' title='17个话题' style='font-size: 13px;'>wordpress</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </aside>			
+
+            </div>
+			
+		</div>	
+		
+	</div><!-- wrapper -->
+	<div class="clearfix"></div>
+    </div><!-- wp_box -->
+	#parse("include/footer.htm")
+					 
+
+			
+         
+	
+			
+	
+</body>
+</html>

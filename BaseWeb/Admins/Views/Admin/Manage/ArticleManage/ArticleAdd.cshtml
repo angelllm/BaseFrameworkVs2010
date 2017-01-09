@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>文章添加 - 网站管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.source.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.config.js" type="text/javascript"></script>
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <script charset="utf-8"src="/Content/js/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+    <script src="/Content/js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
+    <link href="/Content/js/colorpicker/css/colorpicker.css" rel="stylesheet" type="text/css" />
+    <script src="/content/js/uploadify/jquery.uploadify-3.1.js" type="text/javascript"></script>
+    <link href="/content/js/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+<body>
+
+<div id="containter">
+    #parse("include/ArtcileLeft.cshtml" )
+    <div id="right-containter">
+       #parse("include/top.cshtml" ) 
+       <div class="nav-menu">
+            <a href="/Admin/ArticleManage/" id="btnAdd"> 返回文章列表 </a>
+       </div>
+       <form action="/Admin/ArticleAddDo/" method="post">
+       <div class="ui-widget">
+	        <div class="ui-state-highlight ui-corner-all ui-waper">
+		        <p><span class="ui-icon ui-icon-info ui-position"></span>
+		            <p class="ui-p-text">基础设置说明:网站文章系统,可添加多条,可删除,可做SEO,可图文,可内容分页!</br>
+                    1.标题可调色,点击后面小色快,选择颜色,点击确定,前后台就能看见标题颜色的变化,用于重要通知,也可随意!</br>
+                    2.优化设置是为了文章的对搜索引擎的友好表示而设定的,一般只需填写:KW(关键词)和DES(描述),摘要用于特殊情况,请根据站内情况而定!<br />
+                    3.短标题一般用于一个文章具有大小标题的情况,也可用于由于页面设计问题而带来的文章标题过长引起的页面偏移!<br />
+                    4.标题颜色是色块选择后的颜色的RGB数字,如果了解RGB请随意修改,反之...你懂的!<br />
+                    5.引用地址(复制内容的网址)和来源(哪家网站)用于文章出处,这东西说重要也重要,说不重要吧它就是个P,智者见智吧!<br />
+                    6.图片设置,用于图文新闻,请根据网站设计情况而定!<br />
+                    7.首页推荐,一般设计的首页会有一些特殊的文章需要显示,这时候就用到他了,请根据网站情况而定!<br />
+                    8.状态按钮为灰色的时候,这则新闻将不会在网站中出现,如真是为了不显示而设定那请把这则文章的静态化也取消了!<br />
+                    9.两个添加按钮:"直接提交并返回列表"为一般的文章添加方式,"提交并添加分页内容"为文章内容过长影响版面而设定,如您网站访问量大,还能增加PV!
+                    </p>
+                    <div class="clear"></div>
+                </p> 
+                <i class="ui-tip-close">关闭</i>
+	        </div>
+        </div>
+       <div id="temp-modify" style="position:relative;">
+       <div class="input-tip"><a>填写说明</a></div>
+       
+            <div id="edit-win">
+                    <ul>
+		                <li><a href="#tabs-1">基础设置</a></li>
+		                <li><a href="#tabs-2">优化设置</a></li>
+		                <li><a href="#tabs-3">其他设置</a></li>
+	                </ul>
+	                <div id="tabs-1">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>文章标题:</font>
+                                    <div class="input title">
+                                        <input type="text" id="article_title"  name="article_title" class="txt title" />
+                                        <input type="hidden" id="article_id" name="article_id" />
+                                     
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div id="customWidget" style="height:auto;">
+					                    <div id="colorSelector2"><div id="color-panel"></div></div>
+	                                    <div id="colorpickerHolder2">
+	                                    </div>
+				                    </div> 
+                                    <input type="hidden" id="article_title_color"  name="article_title_color" value="0" />
+                                </div>
+                                <div class="row-item">
+                                    <font>标签:</font>
+                                    <div class="input title " style="position:relative;">
+                                        <input type="text" id="article_tag" name="article_tag" class="txt title " />
+                                        <div id="tag" class="tag" style="top:-47px;right:-806px;">
+                                            <div class="tag-waper">
+                                            #foreach($tag in $taglist)
+                                            <q><a>$tag.tag_name</a><del data="$tag.tag_id"></del></q>
+                                            #end
+                                            <span>
+                                                <input type="text" id="txtTag" placeholder="添加标签" />
+                                                <b class="btns">确定</b>
+                                                <p><b class="btnPL">批量管理</b></p>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div>
+                                #*<div class="row-item">
+                                    <font>标签:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="article_tag" class="txt title" />
+
+                                        <select id="ddlTag"  multiple="multiple" class="chosen-select w350">
+                                              <option value="@tag.tag_name">@tag.tag_name</option>
+                                        </select>
+                                        <input type="hidden" id="article_tag" name="article_tag" value="0" /> 
+                                    </div>
+                                    <i>多标签请用","分割</i>
+                                    ##<i><a href="javascript:void()" class="tag-add">添加标签</a></i>
+                                    <div class="clear"></div>
+                                </div>*#
+                                <div class="row-item">
+                                    <font>分类:</font>
+                                    <div class="input">
+                                  
+                                        <select class="chosen-select w350" id="ddlType">
+                                            #foreach ($type in $list)
+                                                <option value="$type.type_id">$type.type_name</option>
+                                            #end
+                                        </select>
+                                         <input type="hidden" id="article_type" name="article_type" value="0" /> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                
+                                <div class="row-item">
+                                    <font>文章摘要:</font>
+                                    <div class="input title">
+                                        <textarea id="article_content" name="article_content"></textarea>
+                                        <script type="text/javascript">
+                                            var editor_a = new baidu.editor.ui.Editor({ initialFrameWidth: 600 });
+                                            editor_a.render('article_content'); 
+                                        </script> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="row-item">
+                                    <font>首页推荐:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" id="article_is_top" name="article_is_top" class = "switch-input" value="false"/>  
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" checked id="article_status" name="article_status" value="1" class = "switch-input"/>
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                            </div>
+       
+                       </div>
+                
+                    </div>
+	                <div id="tabs-2">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>摘要:</font>
+                                    <div class="input">
+                                        <textarea id="article_summary" name="article_summary" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>SEO KW:</font>
+                                    <div class="input">
+                                        <textarea id="article_seo_kw" name="article_seo_kw" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> 
+                                <div class="row-item">
+                                    <font>SEO DES:</font>
+                                    <div class="input">
+                                        <textarea id="article_seo_desc" name="article_seo_desc" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+	                <div id="tabs-3">
+                        <div class="edit-win">
+                            <div class="waper">
+                                
+                                <div class="row-item">
+                                    <font>短标题:</font>
+                                    <div class="input">
+                                        <input type="text" id="article_shut_title" name="article_shut_title" class="txt title" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>标题颜色:</font>
+                                    <div class="input">
+                                        <input type="text" id="article_title_color" name="article_title_color" class="txt title article_title_color" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>引用地址:</font>
+                                    <div class="input">
+                                        <input type="text" id="article_ref_url" name="article_ref_url" class="txt title" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>来源:</font>
+                                    <div class="input">
+                                        <input type="text" id="article_source" name="article_source" class="txt title" value = "本站自创"  />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>图片:</font>
+                                    <div class="input" style="width:auto;">
+                                        <input type="hidden" id="hfImage" name="hfImage" />
+                                        <div id="fileQueue" style="display:inline"></div>
+                                        <input type="file" name="file_upload" id="file_upload" />
+                                        <div id="qid"></div> 
+                                        <span id="ImageShow" style="display:block"></span>
+                                        <style type="text/css">
+                                            .uploadify-queue-item .cancel a {
+                                            background: url('/content/js/uploadify/uploadify-cancel.png') 0 0 no-repeat;
+                                            float: right;
+                                            height: 16px;
+                                            text-indent: -9999px;
+                                            width: 16px;
+                                            }
+                                        </style> 
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div>
+                                #*<div class="row-item">
+                                    <font>加粗:</font>
+                                    
+                                    <div class="input ck radio">
+                                        <label class="switch">
+                                        <input type="checkbox" id="article_is_bold" class = "switch-input"/>
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>是否斜体:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                        <input type="checkbox" id="article_is_italic" class = "switch-input"/>
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                 *#
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn" style="left:450px;top:179px;position:absolute;">
+                        <input type="hidden" id="hfSaveType" name="hfSaveType" value="0" />
+                        <input type="button" onclick="subs(0)" value="直接提交并返回列表" style="width:180px;height:60px;line-height:50px;display:block;" id="btnSave" />
+                        <input type="button" onclick="subs(1)" value="提交并添加分页内容" style="width:180px;height:60px;line-height:50px;display:block;margin-top:20px;" id="btnSaveContent" />
+                        <input type="submit" value="提 交" style="display:none;" id="btnSub" />
+                    </div>
+               
+           </div>
+       </div>
+       </form>
+       <script src="/Admins/Content/js/article_comm.js" type="text/javascript"></script>
+       <script src="/Content/js/chosen.jquery.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Content/js/prism.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Admins/Content/js/article_add.js" type="text/javascript"></script>
+       <script type="text/javascript">
+
+
+       </script>
+
+        
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

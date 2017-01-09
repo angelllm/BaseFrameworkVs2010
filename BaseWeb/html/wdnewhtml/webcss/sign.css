@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.sign-area { width:1000px;border:1px solid #bbdce6;margin:30px auto; }
+.sign-area h4{height:30px;line-height:30px;background:#cbe3ef;padding:0 0 0 10px;}
+.sign-area .sign-waper{margin:0 auto;text-align:center;width:450px }
+.sign-area .sign-waper .rowitem{height:60px;}
+.sign-area .sign-waper .rowitem label{width:100px;text-align:right;padding-right:10px;display:block;float:left;margin-top:10px;}
+.sign-area .sign-waper .rowitem .sign-u{width:290px;height:36px;line-height:36px;border:1px solid #d5d5d5;background:url(../webimage/sign_u.png) no-repeat;padding-left:30px;display:block;float:left;}
+.sign-area .sign-waper .rowitem .sign-p{width:290px;height:36px;line-height:36px;border:1px solid #d5d5d5;background:url(../webimage/sign_p.png) no-repeat;padding-left:30px;display:block;float:left;}
+.sign-area .sign-waper .rowitem .btn{width:260px;height:32px;line-height:32px;background:#64aef1;border:1px solid #5ca5e7;text-align:center;color:#fff;margin-left:31px;font-weight:bold;}
+.sign-area .sign-waper .rowitem .btn:hover{background:#ff8b00;border-color:#ff8b00;cursor:pointer;}
+
+.sign-area .content .btn{width:260px;height:32px;line-height:32px;background:#64aef1;border:1px solid #5ca5e7;text-align:center;color:#fff;margin-left:31px;font-weight:bold;}
+.sign-area .content .btn:hover{background:#ff8b00;border-color:#ff8b00;cursor:pointer;}
+
+.sign-area .content{border:0;margin-top: 30px;}
+
+.sign-area .select-waper{width:495px;float:left;height:550px;margin:10px 0;text-align:center;}
+.sign-area .rightborder{border-right:1px solid #cbe3ef;}
+.sign-area h6{font-size:22px;font-family:Î¢ÈíÑÅºÚ;margin:50px 0 80px 0;color:#5d717b;}
+.sign-area a{display:inline-block;width:130px;height:31px;line-height:31px;background:#ff8153;color:#fff;text-align:center;border-radius:2px;}
+.sign-area .mr50{margin-right:50px;}
+.sign-area a:hover{background:#15a4fa; }
+
+    
+    

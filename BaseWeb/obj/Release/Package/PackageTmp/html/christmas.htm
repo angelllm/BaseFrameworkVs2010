@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>给老婆大人的圣诞节礼物</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="christmas/christmassnow.js" type="text/javascript"></script>
+    <link href="christmas/christmaslights.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#snow').christmassnow({
+                snowflaketype: 23, // 1 to 25 types of flakes are available change the number from 1 to 25. each one contain different images.
+                snowflakesize: 2, //snowflakesize is 1 then it get the size of the image as random , if the snowflakesize is 2 means size of the image as custom
+                snowflakedirection: 1, // 1 means default no wind (top to bottom), 2 means random, 3 means left to right and 4 means  right to left
+                snownumberofflakes: 4, // number of flakes is user option
+                snowflakespeed: 10, // falling speed of flake 10 sec is default
+                flakeheightandwidth: 15 // if you are mention that option flakesize is 2 then this flakeheightandwidth should work values are in pixels 16*16.
+            });
+        });
+        </script>
+        <style type="text/css">
+            body{
+                width:100%;
+                height:100%;
+                background:url('christmas/background.jpg');
+                overflow:hidden;
+            }
+        </style>
+</head>
+<body>
+ <div id="loading">
+  <h2>loading...</h2>
+ </div>
+ <div id="lights"></div> <div id="snow"> <div class="drop"></div> <div id="gift-area"></div> </div> <div id="container">
+  <p><a href="#">
+    媳妇圣诞快乐
+  </a></p>
+</div>
+</div>
+ 
+    <script src="christmas/soundmanager2-nodebug-jsmin.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&2.6.0/build/animation/animation-min.js"></script>    <script src="christmas/christmaslights.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var urlBase = './';
+        soundManager.url = './';
+    </script> 
+    <link href="christmas/christmas.css" rel="stylesheet" type="text/css" />
+    <script src="christmas/christmas.js" type="text/javascript"></script></body>
+</html>

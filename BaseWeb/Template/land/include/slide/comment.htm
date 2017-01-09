@@ -1,0 +1,19 @@
+﻿<aside class="widget cs_widget_comment">
+                    <h3 class="widget-title"><span>最新评论</span></h3>
+                    <div class="textwidget" id="comment-list">
+                        <ul>
+                            #foreach($item in $commitelist)
+                            <li>
+                                <img src='$path/images/User-5S.png' class="avatar" height="64" width="64"> 
+                                <p class="s_r">
+                                    <a class="with-tooltip pjax" href='/land/view/$item.commite_article_id/' data-tooltip="$item.commite_content">
+                                        <span class="s_name">$item.commite_uname:</span>
+                                        <span class="s_desc">$item.commite_content</span>
+                                    </a>
+                                </p>
+                            </li>
+                            #end
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </aside>

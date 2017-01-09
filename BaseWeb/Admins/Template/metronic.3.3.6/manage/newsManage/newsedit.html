@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>管理后台</title>
+        #parse("include/meta.htm")
+        #parse("include/view-css.htm")
+        <link href="$path/themes/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css" />
+        <link href="$path/themes/bootstrap-modal.css" rel="stylesheet" type="text/css" />
+        <link href="$path/themes/jquery.minicolors.css" rel="stylesheet" type="text/css" />
+    </head>
+    <!-- END HEAD -->
+
+    <body ms-controller="page" class="page-container-bg-solid page-boxed wysihtml5-supported">
+        <!-- BEGIN HEADER -->
+        #parse("include/header.htm")
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="container llm-container">
+                        <div class="col-md-12 col-sm-12 col-xl-12 ">
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="/admin/">后台首页</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="/admin/newslist/">文章管理</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>文章编辑</span>
+                                </li>
+                            </ul>
+                            <div class="portlet light tasks-widget">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <i class="fa fa-list font-red"></i>
+                                        <span class="caption-subject font-red bold uppercase">文章管理</span>
+                                        <span class="caption-helper">文章编辑 </span>
+                                    </div>
+                                    <div class="actions">
+                                        <a href="/admin/newsadd/" class="btn-mt-6 btn btn-circle btn-default full-right">
+                                            <i class="fa fa-plus"></i> Add </a>
+                                        <a  href="javascript:history.go(-1)" data-original-title="" title="返回" class="btn-mt-6 btn btn-circle btn-default full-right btn-back">
+                                            <i class="fa fa-arrow-circle-left "></i> Back </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen full-right" href="javascript:;" data-original-title="" title="全屏"></a>
+                                        <div class="clear-fix"></div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                   
+                                    <div class="table-scrollable table-scrollable-borderless tab-content" ms-controller="box">
+                                       <div class="blockUI blockMsg blockElement text-center hide" id="loading"><div class="loading-message "><div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></div>
+                                       <form ms-controller="form" method="post" action="/admin/donewsedit/$model.article_id/" id="form_sample_2" class="form-horizontal" novalidate="novalidate">
+                                            <div class="form-body">
+                                                <div class="row">
+                                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                                    <ul class="nav nav-tabs tabs-left">
+                                                        <li class="active">
+                                                            <a href="#tab_6_1" data-toggle="tab"> 基础信息 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_2" data-toggle="tab"> 优化设置 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_3" data-toggle="tab"> 扩展功能 </a>
+                                                        </li>
+                                                         <li>
+                                                            <a href="#tab_6_4" data-toggle="tab"> 图文设置 </a>
+                                                        </li> 
+                                                        <li>
+                                                            <a href="#tab_6_5" data-toggle="tab"> 文章分页 </a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tab_6_1">
+                                                            <!--tab_6_1 start-->
+                                                            <div class="alert alert-danger display-hide">
+                                                                <button class="close" data-close="alert"></button> 填写有误，请检查后再提交！ </div>
+                                                            <div class="alert alert-success display-hide">
+                                                                <button class="close" data-close="alert"></button> 提交成功! </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">标题
+                                                                    <span class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa" title="请填写文章标题"></i>
+                                                                        <input style="color:$model.article_title_color" type="text" value="$model.article_title" class="form-control" name="article_title">
+                                                                        <input  name="article_title_color" data-position="bottom right" data-defaultValue='#if($model.article_title_color=="")#555#else$model.article_title_color#end' type="text" data-control="hue" class="form-control demo hide"> 
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">分类
+                                                                    <span></span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div> 
+                                                                        <input type="hidden" value="$model.article_type|$model.article_type_name" class="form-control" name="article_type"> 
+                                                                        <input type="hidden" value="$model.article_shut_title" data-def="$model.article_shut_title" class="form-control" name="article_type_list"> 
+                                                                        #*<select ms-on-change="selectType()" id="span_small" class="form-control select2">
+                                                                            #foreach ($type in $list)
+                                                                                <option #if($model.article_type == $type.type_id$) selected #end value="$type.type_id">$type.type_name</option>
+                                                                            #end
+                                                                        </select>*#
+
+                                                                        <div class="form-control height-auto">
+															                <div class="scroller" style="height:235px;overflow:scroll;overflow-x: hidden;" data-always-visible="1">
+																                <ul class="list-unstyled" id="typelist">
+                                                                                     
+                                                                                    #foreach ($type in $list)
+                                                                                    #if($type.type_parent == 0)
+																	                <li>
+																		                <label><input id="ipt-$type.type_id" ms-on-click="selectSelfAndChild" type="checkbox" name="categories" value="$type.type_id" /> $type.type_name</label>
+                                                                                        <ul class="list-unstyled">
+                                                                                            #foreach ($tp in $list)
+                                                                                            #if($tp.type_parent == $type.type_id)
+																			                <li>
+																				                <label><input id="ipt-$tp.type_id" ms-on-change="changeSelect" ms-on-click="selectParent" type="checkbox" name="categories[]" value="$tp.type_id"> $tp.type_name</label>
+																			                </li>                                                                                            #end                                                                                             #end                                                                                        </ul> 
+																	                </li>
+                                                                                    #end
+                                                                                    #end
+																                </ul>
+															                </div>
+														                </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">文章内容
+                                                                    <span class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea id="article_content" name="article_content">$model.article_content</textarea>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!--tab_6_1 end-->
+
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_2">
+                                                             <!--tab_6_2 start-->
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">摘要
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea name="article_summary" class="form-control" maxlength="225" rows="2" placeholder="文章摘要">$model.article_summary</textarea>
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">优化关键词
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea name="article_seo_kw" class="form-control" maxlength="225" rows="2" placeholder="优化关键词">$model.article_seo_kw</textarea>
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">优化说明
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea name="article_seo_desc" class="form-control" maxlength="300" rows="2" placeholder="优化说明">$model.article_seo_desc</textarea>
+                                                                </div>
+                                                             </div>
+                                                             <!--tab_6_2 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_3">
+                                                            <!--tab_6_3 start-->
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">标签</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input type="text" value="$model.article_tag" data-role="tagsinput" class="form-control" name="article_tag"> 
+                                                                        <div class="portlet box blue-hoki tag-wapper" style="z-index:99999;width:100%;display:none">
+                                                                            <div class="portlet-title">
+                                                                                <div class="caption">
+                                                                                    <i class="fa fa-tag"></i>Tags </div>
+                                                                                <div class="actions"> 
+                                                                                    <a data-target="#stack1" data-toggle="modal" href="javascript:;" class="btn btn-default btn-sm">
+                                                                                        <i class="fa fa-plus"></i> Add </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="portlet-body">
+                                                                                <div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
+                                                                                    #foreach($tag in $taglist)
+                                                                                    <a href="javascript:;"  class="btn default #if($velocityCount%2==0) green #elseif($velocityCount%3==0) red  #elseif($velocityCount%5==0)  purple btn-outline  #end">
+                                                                                        <span ms-on-click="appendTag">$tag.tag_name</span>
+                                                                                        <i class="fa fa-close" ms-on-click="delTag($tag.tag_id)"></i>
+                                                                                    </a> 
+                                                                                    #end
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id="stack1" class="modal modal-llm fade" tabindex="-1" data-focus-on="input:first">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                                                <h4 class="modal-title">标签添加</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p> 标签名</p>
+                                                                                <div class="form-group">
+                                                                                    <p style="margin-left:20px;">
+                                                                                        <input id="txtTag" class="form-control" type="text" data-tabindex="1"> 
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
+                                                                                <button type="button" class="btn green" ms-on-click="addTag" >Ok</button>
+                                                                            </div>
+                                                                        </div> 
+                                                                        <i class="fa fa-tags" style="left: 101%;top: -2px;cursor:pointer;" ms-on-click="showTags"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">引用地址</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input type="text" class="form-control" value="$model.article_ref_url" name="article_ref_url"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">来源</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input type="text" value="$model.article_source" class="form-control" name="article_source"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">置顶</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="" style="position:relative">
+                                                                        <label class="switch switch-html">
+                                                                          <input 
+                                                                            col="status"
+                                                                            data="$model.article_id"
+                                                                            data-bind="$model.article_is_top"
+                                                                            type="checkbox" 
+                                                                            class="switch-input" 
+                                                                            name="article_is_top"
+                                                                            ms-attr-value= "istop"
+                                                                            ms-attr-checked= "istop==1"
+                                                                            ms-on-click="changeTop"
+                                                                            id="article_is_top"
+                                                                          >
+                                                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                                                          <span class="switch-handle"></span>
+                                                                        </label>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">状态</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="" style="position:relative">
+                                                                        <label class="switch switch-html">
+                                                                          <input 
+                                                                            col="status"
+                                                                            data="$model.article_id"
+                                                                            data-bind="$model.article_status"
+                                                                            type="checkbox" 
+                                                                            class="switch-input" 
+                                                                            #if($model.article_status == 1) checked #end 
+                                                                            name="article_status"
+                                                                            ms-attr-value= "status"
+                                                                            ms-on-click="changeStatus"
+                                                                            id="article_status"
+                                                                          >
+                                                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                                                          <span class="switch-handle"></span>
+                                                                        </label>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+
+                                                            
+                                                            <!--tab_6_3 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_4">
+                                                             <!--tab_6_4 start-->
+                                                             <div class="fileinput fileinput-new fileinput-exists" data-provides="fileinput">
+                                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                    <img id="ImageShow"  ms-src="filepath" src="$model.article_image"  onerror="this.src='$path/images/noimage.png'" data-def="$path/images/noimage.png" alt="" /> 
+                                                                </div>
+                                                                <div>
+                                                                    <a ms-on-click="upload" href="javascript:;" class="btn default fileinput-exists pull-left file-btn-chance-file margin-right-10"> 上传图片 </a>
+                                                                    <a ms-if="filepath!=''" ms-on-click="clearFile" href="javascript:;" class="btn red fileinput-exists pull-left file-btn-chance-file" data-dismiss="fileinput"> 取消图片 </a>
+                                                                </div>
+                                                            </div>
+
+                                                             <div class="input hide">
+                                                                <input type="hidden" ms-attr-value="filepath" data-bind="$model.article_image" id="hfImage" name="hfImage" />
+                                                                <input type="hidden" value="filepath" />
+                                                                <div id="fileQueue" style="display:inline"></div>
+                                                                <div id="qid"></div> 
+                                                            </div> 
+                                                            <div class="clear"></div>
+                                                            <!--tab_6_4 end-->
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_5">
+                                                            <div class="form-group">
+                                                               
+                                                                <div class="col-md-10">
+                                                                    <div class="panel-group accordion" id="accordion1">
+
+                                                                        <div class="panel panel-default">
+                                                                            <div class="panel-heading">
+                                                                                <h4 class="panel-title">
+                                                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1">
+                                                                                        #set($indexs = $contentlist.Count + 1)
+                                                                                        $model.article_title #$indexs
+                                                                                    </a>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div id="collapse_1" class="panel-collapse in">
+                                                                                <div class="panel-body">
+                                                                                     <textarea name="article_page_content" id="article_page_content"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        #foreach($content in $contentlist)
+                                                                        
+                                                                        <div class="panel panel-default" id="panel-$content.content_id">
+                                                                            <div class="panel-heading">
+                                                                                <h4 class="panel-title" style="position:relative;">
+                                                                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_$content.content_id">
+                                                                                        #if($content.content_title == "")
+                                                                                        $model.article_title #$velocityCount
+                                                                                        #else
+                                                                                        $content.content_title
+                                                                                        #end
+                                                                                    </a>
+                                                                                    <div class="btn-group" style="position:absolute;top:1px;right:1px;">
+                                                                                        <a class="btn red" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
+                                                                                            <i class="fa fa-user"></i> Settings
+                                                                                            <i class="fa fa-angle-down"></i>
+                                                                                        </a>
+                                                                                        <ul class="dropdown-menu">
+                                                                                            <li>
+                                                                                                <a href="javascript:;" ms-on-click="modifyContent($content.content_id,$velocityCount)"><i class="fa fa-pencil"></i> Modify </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="javascript:;" ms-on-click="delContent($content.content_id,'panel-$content.content_id')"><i class="fa fa-trash-o"></i> Delete </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <div class="input-icon">
+                                                                                                    <i class="glyphicon glyphicon-header"></i>
+                                                                                                    <input ms-on-blur="modifyContentTitle($content.content_id)" value="$content.content_title" type="text" class="form-control" placeholder="标题"> 
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <div class="input-icon">
+                                                                                                    <i class="glyphicon glyphicon-sort-by-order"></i>
+                                                                                                    <input ms-on-blur="orderContent($content.content_id)" value="$content.content_order" type="text" class="form-control" placeholder="Order"> 
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div id="collapse_$content.content_id" class="panel-collapse collapse">
+                                                                                <div class="panel-body">
+                                                                                     <textarea name="article_list_content" id="txt-$velocityCount">
+                                                                                        $content.content_content
+                                                                                     </textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        #end
+                                                                         
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            </div>
+                                            <div class="form-actions">
+                                                <div class="row">
+                                                    <div class="col-md-offset-4 col-md-8 col-sm-offset-4 col-sm-8">
+                                                        <button type="submit" class="btn green"> 提 交 </button>
+                                                        <button type="reset" class="btn default"> 取 消 </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div id="color-image-upload hide">
+                                            <form id="upload" class="hide" method="post" action="/Ajax/AddImage/1/" enctype="multipart/form-data">
+			                                    <div id="drop" style="margin:0;padding:0;">
+				                                    <a>浏览</a>
+				                                    <input type="file" name="upl" multiple="multiple" />
+			                                    </div>
+			                                    <ul></ul>
+		                                    </form> 
+                                        </div>
+
+                                       
+                                               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                #parse("include/sidebar.htm")
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        #parse("include/footer.htm")
+        <!-- BEGIN INNER FOOTER -->
+        <script src="$path/js/sea.js" type="text/javascript"></script>
+        <script src="$path/js/config.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            seajs.use(["module/common/commonloading-list", "module/news/item", "module/news/edit"])
+        </script>
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿    <div class="foot_btn">
+		<ul>
+			<li class="mate-gotop">
+				<a href="javascript:;" ms-on-click="gototop" class="scrolltotop" title="回到顶部"><i class="fa fa-chevron-up"></i></a>
+			</li>	
+			<li class="mate-qrcode">
+				<a style="" title="二维码" href="javascript:void(0)" id="r-wx">
+				<i class="fa fa-qrcode"></i>
+					<div id="fi-wx-show" style="display: none;">
+						<img src="#">
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+		
+	<footer id="footer">
+      <section id="drawer">
+        <div id="drawer-inside" class="container clearfix columns3">
+          <div id="meta-2" class="widget widget_meta">
+            <h2 class="widgettitle">近期文章</h2>
+            <ul>
+              #foreach($newtitem int $newtoplist)
+              <li>
+                <a class="pjax" href="/land/view/$newtitem.article_id/" style="color:$newtitem.article_title_color" >$newtitem.article_title</a>
+              </li>
+              #end
+            </ul>
+            
+          </div>
+          <div id="recent-posts-2" class="widget widget_recent_entries">
+            <h2 class="widgettitle">
+              分类目录
+            </h2>
+            <ul>
+                <div style="width:130px;float:left;">
+                #set($a = "-0-0")
+                #foreach($item in $typelist)
+                #if($velocityCount <= 5)
+	            <li class="cat-item"><a class="pjax" href="/land/list-0-$item.type_id$a/" >$item.type_name </a> ($item.article_count)</li>
+                #end
+                #end
+                </div>
+                <div style="width:130px;float:left;">
+                #set($a = "-0-0")
+                #foreach($item in $typelist)
+                #if($velocityCount > 5)
+	            <li class="cat-item"><a class="pjax" href="/land/list-0-$item.type_id$a/" >$item.type_name </a> ($item.article_count)</li>
+                #end
+                #end
+                </div>
+
+            </ul>
+          </div>
+          <div id="categories-4" class="widget widget_categories" style="width:120px;">
+            <h2 class="widgettitle">功能</h2>
+            <ul>
+              <li>
+                <a href="javascript:;" ms-on-click="loginshow" data-bind="0">登录</a>
+              </li>
+              <li>
+                <a class="pjax" href="/land/list/">文章</a>
+              </li>
+              <li>
+                <a class="pjax" href="/land/about/">关于</a>
+              </li> 
+            </ul> 
+          </div>
+
+          <div id="categories-5" class="widget widget_categories" style="width:150px;">
+            <h2 class="widgettitle">友情链接</h2>
+            <ul>
+            
+             #foreach($link in $linklist)
+              <li>
+                <a href="$link.page_url" target="_blank">$link.page_name</a>
+              </li> 
+             #end
+            </ul> 
+          </div>
+        </div>
+      </section>
+      <div id="copyright">
+        <div class="copyright">
+          <!-- 版权信息 -->
+          $base.page_footer
+          
+        </div>
+      </div>
+    </footer>
+

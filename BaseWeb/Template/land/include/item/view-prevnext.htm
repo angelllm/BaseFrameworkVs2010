@@ -1,0 +1,22 @@
+﻿                        <div class="single post-nav ">
+                          <div class="post-nav-inside">
+                            <div class="post-nav-left overhide">
+                              #foreach($art in $prevnext)
+                              #if($art.article_pv == -1)   
+                              <a class="pjax overhide" title="$art.article_title" href="/land/view/$art.article_id/" rel="prev">
+                                $art.article_title
+                              </a>
+                              #end
+                              #end
+                            </div>
+                            <div class="post-nav-right overhide">
+                              #foreach($art in $prevnext)
+                              #if($art.article_pv == 1)   
+                              <a class="pjax overhide" title="$art.article_title" href="/land/view/$art.article_id/" rel="next">
+                                $art.article_title
+                              </a>
+                              #end
+                              #end
+                            </div>
+                          </div>
+                        </div>

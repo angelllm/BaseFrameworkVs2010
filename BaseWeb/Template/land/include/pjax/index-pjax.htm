@@ -1,0 +1,16 @@
+﻿                <center>
+                    <img src="$path/images/loading-dian.gif" alt="loading" />
+                    <p>正在加载...</p>
+                </center>
+                #parse("include/posts/article-top-item.htm")
+                <div id="app"></div>
+                
+		        #parse("include/posts/article-item.htm")
+                <div class="ias-trigger ias-trigger-next" on-ms-click="nextPage"><a>加载更多</a></div>
+                     
+                <!-- content -->
+                <script type="text/javascript">
+                    avalon.vmodels["box"].init()
+                    avalon.scan(document.getElementById("content"), avalon.vmodels["box"])
+                    setTimeout(function () {$('audio,video').mediaelementplayer()}, 1000)
+                </script>

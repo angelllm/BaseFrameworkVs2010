@@ -1,0 +1,40 @@
+
+#TypeName{background:#f3f3f3;border:1px solid #d9d8d8;width:100px;height:24px;line-height:24px;padding-left:5px;}
+label{display:inline-block;}
+.attr{height:24px;background:url(../content/images/i_type.gif) -47px -1px no-repeat;padding-left:25px;float:left;}
+#TypeAttrName,.txt{border:1px solid #d9d8d8;width:175px;height:24px;display:inline-block;float:left;margin-left:5px;margin-bottom:5px;padding-left:5px;}
+#attr-add{width:24px;height:24px;background:url(../content/images/i_type.gif) 2px 0px no-repeat;display:inline-block;border:1px solid #d9d8d8;float:left;border-left:0;}
+#attr-add:hover{background-position:2px -20px;}
+h4{font-size:18px;padding-bottom:0px;border-bottom:2px solid #0d70a7;}
+
+.attr-list{position:relative;}
+.attr-list p{color:#a9a9a9;}
+.attr-list .attr-warpper{width:190px;float:left;margin-bottom: 10px;}
+.attr-list label{float:left;height:24px;}
+.attr-list .attr-item{height:24px;border:1px solid #d9d8d8;width:115px;float:left;padding-left:5px;}
+.attr-list .drop{width:24px;height:24px;background:url(../content/images/i_type.gif) -22px 3px no-repeat;border:1px solid #d9d8d8;border-left:0;}
+.attr-list .drop:hover{background-position:-22px -11px;}
+.attr-list .kill{width:24px;height:24px;background:url(../content/images/i_type.gif) 2px 0px no-repeat;display:inline-block;border:1px solid #d9d8d8;float:left;border-left:0;}
+.attr-list .kill:hover{background-position:2px -20px;}
+.attr-list .attr-def-value{bottom:-24px;left:0;width:170px;display:none;border:1px solid #d9d8d8;border-top:0;}
+.attr-list .attr-value-add{height:34px;line-height:25px;background:url(../content/images/i_type.gif) -47px -4px no-repeat;padding-left:19px;margin-left:41px;cursor:pointer;}
+.attr-list .attr-value-add:hover{color:#ff0000;}
+.attr-list .attr-value-add-input{display:none;height:34px;line-height:25px;padding-top:10px;position:relative;}
+.attr-list .attr-value-add-input input{width:137px;border:0;padding-left:5px;}
+.attr-list .attr-value-add-input em{width:23px;height:23px;background:url(../content/images/i_type.gif) 2px 0px no-repeat;display:inline-block;border-left:1px solid #d9d8d8;position:absolute;right:-27px;top: 8px;overflow:hidden;}
+.attr-list .attr-value-add-input b{width:2px;height:24px;position:absolute;left:0px;top: 0px;background: #fdb35a;display:none;}
+.attr-list .attr-value-add-input em:hover{background-position:2px -20px;}
+
+.attr-list .attr-value-add-info{display:block;height:24px;padding-top:0px;}
+.attr-list .attr-value-add-info input{width:165px;height:24px;}
+.attr-list .attr-value-add-info:hover input{background:#f3f3f3;}
+.attr-list .attr-value-add-info:hover b{display:inline-block;}
+
+.attr-list .attr-value-add-input .attr-close{background:url(../content/images/i_close.png) no-repeat center center;border:0;right:1px;top:1px;-webkit-transition: -webkit-transform .3s linear;-moz-transition: -moz-transform .3s linear;-o-transition: -o-transform .3s linear;transition: transform .3s linear;}
+.attr-list .attr-value-add-input .attr-close:hover{background:url(../content/images/i_close_hover.png) no-repeat center center;border:0;transform: rotate(180deg);-ms-transform: rotate(180deg);-moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);}
+.xs-type{display:inline-block;margin:0 10px 10px 10px;padding:0 10px;border:1px solid #71be72;cursor:pointer;background:url(../content/images/i_copy.png) no-repeat 3px 4px;padding-left:23px;}
+.xs-type:hover{text-decoration:none;border-color:#4695d9;color:#ff0000;}
+.type-copy{border-color:#4695d9;}
+.type-copy:hover{border-color:#5aba5a;-webkit-transition:color 0.5s ease-in-out;color:#ff0000;}
+.dels{display:block;cursor:pointer;font-size:10px;}
+.dels:hover{color:#ff0000;}

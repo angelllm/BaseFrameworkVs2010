@@ -1,0 +1,21 @@
+@charset "utf-8";
+  
+  
+  
+.absolute{position:absolute;}  
+.aui_min { top:1px; right:65px; _z-index:1; width:25px; height:16px; _font-size:0; _line-height:0;  background:url(/Admins/Content/images/win/min.png); _background:url(/Admins/Content/images/win/min.png); } 
+.aui_max { top:1px; right:40px; _z-index:1; width:25px; height:16px; _font-size:0; _line-height:0;   background:url(/Admins/Content/images/win/max.png); _background:url(/Admins/Content/images/win/max.png); } 
+.aui_close{background:url(/Admins/Content/images/win/close.png); _background:url(/Admins/Content/images/win/close.png);width:43px; height:16px;top:1px; right:0; }
+
+.aui_min:hover{text-decoration:none;background:url(/Admins/Content/images/win/min-h.png); _background:url(/Admins/Content/images/win/min-h.png);}
+.aui_max:hover{text-decoration:none;background:url(/Admins/Content/images/win/max-h.png); _background:url(/Admins/Content/images/win/max-h.png);}
+.aui_close:hover{text-decoration:none;background:url(/Admins/Content/images/win/close-h.png); _background:url(/Admins/Content/images/win/close-h.png);}
+
+
+.aui_content {display: block;vertical-align:top;overflow:visible;}
+.aui_main{vertical-align:top;text-align:left;}
+
+
+
+
+

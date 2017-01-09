@@ -1,0 +1,1525 @@
+
+ 
+
+ 
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>老赵茶馆</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+	<meta name="keywords" content="wordpress,老赵，teahouse,island,音乐分享，电影分享，设计分享，前端技术" />
+	<meta name="description" content="Hi，老赵其实不老，只是个九零后文艺青年，也是一名手游UI设计师，也是手机App设计师，也是Web前端设计师，爱互联网，爱美术，爱游戏，爱电影，爱音乐，爱萝莉，爱御姐..." />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="http://zhw-island.com/xmlrpc.php" />
+	<link rel="shortcut icon" href="http://zhw-island.com/wp-content/uploads/2015/06/favicon.ico" title="Favicon">	
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" type="text/css" href="http://zhw-island.com/wp-content/themes/Island/css/ie.css" media="screen"/>
+		<script type="text/javascript" src="http://zhw-island.com/wp-content/themes/Island/js/ie-html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript">document.documentElement.className = 'js';</script>
+	<link rel="alternate" type="application/rss+xml" title="老赵茶馆 &raquo; Feed" href="http://zhw-island.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="老赵茶馆 &raquo; 评论Feed" href="http://zhw-island.com/comments/feed" />
+<link rel='stylesheet' id='style-css'  href='http://zhw-island.com/wp-content/themes/Island/style.css?ver=0.9' type='text/css' media='screen' />
+<link rel='stylesheet' id='font-awesome-css-css'  href='http://zhw-island.com/wp-content/themes/Island/cs-framework/assets/css/font-awesome.css?ver=0.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='switcher-css'  href='http://zhw-island.com/wp-content/themes/Island/skin/switcher.php?ver=0.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='logo-css'  href='http://zhw-island.com/wp-content/themes/Island/logo/logo.css?ver=0.3' type='text/css' media='screen' />
+<script type='text/javascript' src='http://zhw-island.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://zhw-island.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='https://api.w.org/' href='http://zhw-island.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://zhw-island.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://zhw-island.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.1" />
+<!-- 插件参数css --><style>
+	.loading_style1 .loading-bar{
+	  background:#db1e1e;
+	}
+
+	#banner{
+			background-image: url(http://zhw-island.com//wp-content/themes/Island/images/banner.jpg);
+            background-position: top center;
+            background-repeat:no-repeat;
+	}
+	
+	.cue-playlist, .cue-playlist .cue-skin-cuebar.mejs-container .mejs-controls .mejs-volume-button .mejs-volume-slider{
+		background-color:#000000;
+	}
+
+	.cue-skin-cuebar.mejs-container .mejs-layers , .cue-skin-cuebar.mejs-container .mejs-controls .mejs-time span , .mejs-previous button:before , .mejs-next button:before , .mejs-play button:before , .mejs-pause button:before , .mejs-mute button:before , .mejs-unmute button:before , .is-closed button:before , .is-open button:before{
+		color:#ffffff;
+	}
+
+	.cue-skin-cuebar.mejs-container .mejs-controls {
+		border-right-color: #000000;
+		border-left-color: #000000;
+	}	
+	
+	</style><!-- 自定义css --><style>#drawer ul.xoxo.blogroll li {
+    margin: 0 15px 5px 0;
+    float: left;
+}
+#drawer ul.xoxo.blogroll li:before , li.cat-item.cat-item-98{
+    display:none;
+}</style></head>
+	
+<body class="home blog ajax_load loading_style1 wp_box leftbar_open">	
+		
+
+	<header class="header fixed">
+		<div class="container clearfix">
+							<hgroup>	
+					<span class="logo-text "><a href="http://zhw-island.com/" title="老赵茶馆"><i class="icon-logo"></i></a></span>
+				</hgroup>
+				    <nav role="navigation" class="header-menu">  	
+			<div class="header-menu-wrapper arrow-up-right"><ul id="menu-%e8%8f%9c%e5%8d%951" class="header-menu-list"><li id="menu-item-3056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3056"><a href="http://zhw-island.com/friend">邻居</a></li>
+<li id="menu-item-3360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3360"><a href="http://zhw-island.com/message">留言</a></li>
+<li id="menu-item-3055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3055"><a href="http://zhw-island.com/archive">归档</a></li>
+<li id="menu-item-3359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3359"><a href="http://zhw-island.com/works">作品</a></li>
+<li id="menu-item-3054" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3054"><a href="http://zhw-island.com/about">关于</a></li>
+<li id="menu-item-3058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3058"><a href="#">主题</a>
+<div class="dropdown"><div class="dropdown-wrapper arrow-up-left"><ul class="sub-menu">
+	<li id="menu-item-3059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3059"><a href="http://zhw-island.com/teahouse/">Teahouse</a></li>
+	<li id="menu-item-3060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3060"><a href="http://zhw-island.com/wordpress/wordpress-island.html">Island</a></li>
+	<li id="menu-item-3061" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3061"><a href="http://zhw-island.com/lazycat/">LazyCat</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-3057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3057"><a href="#">更多</a>
+<div class="dropdown"><div class="dropdown-wrapper arrow-up-left"><ul class="sub-menu">
+	<li id="menu-item-3361" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3361"><a href="http://zhw-island.com/usage">使用说明</a></li>
+	<li id="menu-item-3358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3358"><a href="http://zhw-island.com/update">更新日志</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-3062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3062"><a>QQ群：284093657</a></li>
+</ul></div>	    </nav>		
+		
+		<!-- 切换皮肤 -->	
+		<div class="skin">皮 肤<ul class="clearfix">
+            <li class="skin1"><a href="http://zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin01.css"><span></span>复古</a></li>
+            <li class="skin2"><a href="http://zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin02.css"><span></span>酷黑</a></li>
+            <li class="skin3"><a href="http://zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin03.css"><span></span>清新</a></li>
+			</ul>
+		</div>
+		
+		
+			
+			<div class="member_login">
+										<div class="log-in-out dropel">
+					<a href="#" onclick="return false;" title="登录" class="login-toggle icon-login tooltip"><i class="fa fa-user"></i></a>
+					<div class="login_bg">
+						<div class="dropdown-wrapper arrow-up-left">
+							 
+							
+		<form name="login-form" id="login-form" action="http://zhw-island.com/wp-login.php" method="post">
+			
+			<p class="login-username">
+				<label for="user_login">用户名</label>
+				<input type="text" name="log" id="user_login" class="input" value="" size="20" />
+			</p>
+			<p class="login-password">
+				<label for="user_pass">密码</label>
+				<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" />
+			</p>
+			
+			
+			<p class="login-submit">
+				<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="登录" />
+				<input type="hidden" name="redirect_to" value="http://zhw-island.com/" />
+			</p>
+			
+		</form>							<p class="login-links clearfix">
+								<span class="alignleft">
+									<a href="http://zhw-island.com/wp-login.php?action=lostpassword&amp;redirect_to=http://zhw-island.com/wordpress/teahouse-rebuild.html">忘记密码</a>
+								</span>
+															</p>
+						</div>
+					</div>
+				</div>
+				
+		</div>		
+		
+		
+	
+		<!-- 搜索栏 -->	
+		<div id="searchbox">
+			<form method="get" id="searchform" action="http://zhw-island.com/">
+				<input type="text" class="search-text" name="s" value="搜索..." onfocus="if (this.value == '搜索...') {this.value = '';}" onblur="if (this.value == '') {this.value = '搜索...';}"  />
+				<i class="fa fa-search"></i>
+			</form>
+		</div>
+			
+	
+	<a id="menu-toggle" href="javascript:void(0)" class="menu-toggle"></a>
+	<div class="clearfix"></div>
+	</div>
+	</header>
+	
+	<nav role="navigation" class="mobile-nav">  	
+		<div class="menu-%e8%8f%9c%e5%8d%951-container"><ul id="menu-%e8%8f%9c%e5%8d%951-1" class="mobile-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3056"><a href="http://zhw-island.com/friend">邻居</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3360"><a href="http://zhw-island.com/message">留言</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3055"><a href="http://zhw-island.com/archive">归档</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3359"><a href="http://zhw-island.com/works">作品</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3054"><a href="http://zhw-island.com/about">关于</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3058"><a href="#">主题</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3059"><a href="http://zhw-island.com/teahouse/">Teahouse</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3060"><a href="http://zhw-island.com/wordpress/wordpress-island.html">Island</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3061"><a href="http://zhw-island.com/lazycat/">LazyCat</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3057"><a href="#">更多</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3361"><a href="http://zhw-island.com/usage">使用说明</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3358"><a href="http://zhw-island.com/update">更新日志</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3062"><a>QQ群：284093657</a></li>
+</ul></div>	</nav>		
+	
+			<div id="banner" class="with-tooltip"  data-tooltip="茶馆、岛、慵懒的猫...都是美好的时光..."></div>
+		<div class="banner_bg"></div>
+	    
+    
+    <div id="wp_box" class="container">    
+    
+		<!-- 左侧边栏 -->	
+		<div class="leftbar_bg"></div>
+		<div class="leftbar">
+			<!-- 左菜单 -->
+			<div class="left_menu">
+				<ul class="menu_link"><li><a href="http://zhw-island.com/category/diary/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="日志"><i class="fa fa-book"></i><span>日志</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/wordpress/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="Wordpress"><i class="fa fa-wordpress"></i><span>Wordpress</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/design/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="设计"><i class="fa fa-paper-plane"></i><span>设计</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/code/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="代码"><i class="fa fa-code"></i><span>代码</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/music/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="音乐"><i class="fa fa-music"></i><span>音乐</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/share/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="分享"><i class="fa fa-share-alt"></i><span>分享</span><div class="clearfix"></div></a></li><li><a href="http://zhw-island.com/category/untitled/" class="simptip-position-left simptip-smooth simptip-movable" data-tooltip="无题"><i class="fa fa-anchor"></i><span>无题</span><div class="clearfix"></div></a></li></ul>			</div>
+		</div>
+			
+			
+	        <div class="wrapper_bg"></div>
+	          
+        
+	<div id="wrapper" class="toggle-wrapper">
+		<div id="main">
+		
+	 
+		<!-- 调用幻灯片 -->
+		 <div id="header_slider" 	 class=" fadeInDown animated "> 	
+				<div class="slider">
+			<ul class="lightSlider"><li><a href="http://zhw-island.com/wordpress/wordpress-lazycat.html"><img class=" " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="http://zhw-island.com/wp-content/uploads/2015/07/theme-lazycat-1.png"/><p>自适应Wordpress主题LazyCat</p></a></li><li><a href="http://zhw-island.com/wordpress/wordpress-island.html"target="_black"><img class=" " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="http://zhw-island.com/wp-content/uploads/2015/07/theme-island.jpg"/><p>自适应WordPress主题Island</p></a></li><li><a href="http://zhw-island.com/wordpress/teahouse-heavy-plate-released.html"target="_black"><img class=" " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="http://zhw-island.com/wp-content/uploads/2015/07/teahouse.jpg"/><p>Retina自适应WordPress主题Teahouse（重制版）</p></a></li></ul>	
+		</div>
+				
+			
+		 </div>		
+	
+	 
+				<div id="bulletin_box">
+			<i class="fa fa-bell-o"></i>
+			<div id="bulletin">
+				<ul class="bulletin_list"><li>妹子免费领主题活动已停止。</li><li>Island和Lazycat合并，以后统称为Island，售价依然88元，可谓加量不加价</li></ul>	
+			</div>
+			<a href="#" class="bulletin_remove"><i class="fa fa-close"></i></a>
+		</div>
+			
+				
+		<!-- 文章内容 -->		
+		<div id="content">
+				<!-- 标题 -->
+							<div class="posts  fadeInDown animated">
+				
+												<article class="post post-3253 type-post status-publish format-aside has-post-thumbnail sticky hentry category-wordpress tag-teahouse tag-wordpress post_format-post-format-aside">
+										<div class="post-sticky with-tooltip" data-tooltip="置顶文章"></div>
+						
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/teahouse-rebuild.html" title="Teahouse重制版发布了">Teahouse重制版发布了</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/teahouse-rebuild.html" title="Teahouse重制版发布了">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/09/teahouse-250x250-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="teahouse-250x250" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 5个月前 (09-07)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>1144次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/teahouse-rebuild.html#comments-title" title="comments">40条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>Teahouse依然是免费维护更新，感谢依然使用Teahouse的用户们。 演示：http://zhw-island.com/teahouse/ 注意：初次使用时，可导入主题目录下的demo.txt到&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/teahouse-rebuild.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/teahouse" rel="tag">teahouse</a> <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3253" title="Like"><i class="fa fa-heart-o"></i>&nbsp;55</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3522 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress tag-kernl tag-wordpress tag-76 post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/kernl.html" title="WordPress插件和主题自动更新方案&#8211;Kernl">WordPress插件和主题自动更新方案&#8211;Kernl</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/kernl.html" title="WordPress插件和主题自动更新方案&#8211;Kernl">
+						<img width="240" height="240" src="http://zhw-island.com/wp-content/uploads/2016/01/oeBC6SyI_400x400.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="oeBC6SyI_400x400" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 7天前</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>95次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/kernl.html#comments-title" title="comments">1条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>我一直都在找更好更方便的主题自动更新的方案，之前一直使用的wp-updates.com是免费一个主题或者一个插件的，一切都挺好的，可惜经常挂掉。 然后又找到一个很小众化不知名刚起步的Kernl，作者在&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/kernl.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/kernl" rel="tag">Kernl</a> <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a> <a href="http://zhw-island.com/tag/%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0" rel="tag">自动更新</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3522" title="Like"><i class="fa fa-heart-o"></i>&nbsp;5</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3518 type-post status-publish format-aside has-post-thumbnail hentry category-diary tag-75 post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/diary/party.html" title="聚会">聚会</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/diary/party.html" title="聚会">
+						<img width="250" height="250" src="http://zhw-island.com/wp-content/uploads/2016/01/photo-1444703686981-a3abbc4d4fe3-250x250.jpeg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="photo-1444703686981-a3abbc4d4fe3" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/diary" rel="category tag">日志</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 2周前 (01-17)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>138次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/diary/party.html#comments-title" title="comments">1条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>话说每年都有同学聚会，先从小学聚会说起，小学时期我家族家教甚严，导致我很听话也很沉默，成绩中上的样子，反正在其他同学眼里就是书呆子的形象了，离开小学后都没和任何一个保持联系，所以小学聚会的话很尴尬的说&#8230;
+<div class="read_more"><a href="http://zhw-island.com/diary/party.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/%e8%81%9a%e4%bc%9a" rel="tag">聚会</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3518" title="Like"><i class="fa fa-heart-o"></i>&nbsp;7</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3503 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress tag-island tag-lazycat tag-wordpress post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/island_dev.html" title="Island和Lazycat合并，以后统称为Island">Island和Lazycat合并，以后统称为Island</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/island_dev.html" title="Island和Lazycat合并，以后统称为Island">
+						<img width="250" height="250" src="http://zhw-island.com/wp-content/uploads/2016/01/island-dev-250x250.jpeg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="island-dev" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 3周前 (01-07)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>312次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/island_dev.html#comments-title" title="comments">5条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>如题，别问为什么，因为我懒，懒得同时维护两个主题，这对用户们来说绝对是好消息了。 为什么我最近不更新日志了？额，因为感觉很多人认识我，以前旧的博客里我什么苦恼开心都写进去，因为没人知道我这个人，不用在&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/island_dev.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+					
+				<div class="clearfix"></div>
+				<div class="audio-wrapper">
+					<audio class="wp-audio-shortcode" preload="none" style="width: 100%">
+						<source type="audio/mpeg" src="http://7d9ki8.com1.z0.glb.clouddn.com/The_Cranberries_-_Dreams.mp3">
+					</audio>
+				</div>
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/island" rel="tag">island</a> <a href="http://zhw-island.com/tag/lazycat" rel="tag">lazycat</a> <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3503" title="Like"><i class="fa fa-heart-o"></i>&nbsp;7</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3459 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress category-code tag-wordpress tag-74 post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/wordpress-awaiting_comments.html" title="WordPress前端未审核留言提醒">WordPress前端未审核留言提醒</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/wordpress-awaiting_comments.html" title="WordPress前端未审核留言提醒">
+						<img width="250" height="234" src="http://zhw-island.com/wp-content/uploads/2015/10/awaiting_comments-e1446227809478-250x234.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="awaiting_comments" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a> <a href="http://zhw-island.com/category/code" rel="category tag">代码</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 3个月前 (10-30)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>188次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/wordpress-awaiting_comments.html#comments-title" title="comments">3条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>这个实用的小功能找了很久，终于在这里找到了答案。 他把提醒放到了标题里滚动显示了，我改成直接像多说一样显示，PHP代码如下： // 返回网站中未审核留言数 function get_not_audit&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/wordpress-awaiting_comments.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a> <a href="http://zhw-island.com/tag/%e5%9b%9e%e5%a4%8d%e6%8f%90%e9%86%92" rel="tag">回复提醒</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3459" title="Like"><i class="fa fa-heart-o"></i>&nbsp;17</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3355 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress tag-owl tag-wordpress tag-29 post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/wordpress-theme-owl.html" title="第四款主题&#8211;Owl">第四款主题&#8211;Owl</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/wordpress-theme-owl.html" title="第四款主题&#8211;Owl">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/10/p844776573-250x250-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="p844776573-250x250" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 3个月前 (10-25)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>332次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/wordpress-theme-owl.html#comments-title" title="comments">10条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>封面是刚刚看完的《下妻物语》，中岛哲也导演的电影实在太有日本风，很有意思的电影，纯推荐，与主题无关。 没想到什么好的主题名字，就直接叫Owl好了，中文意思就是猫头鹰，不过想想也知道网上肯定有同名的主题&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/wordpress-theme-owl.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+					
+				<div class="clearfix"></div>
+				<div class="audio-wrapper">
+					<audio class="wp-audio-shortcode" preload="none" style="width: 100%">
+						<source type="audio/mpeg" src="http://77g6f5.com1.z0.glb.clouddn.com/She-Said.mp3">
+					</audio>
+				</div>
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/owl" rel="tag">owl</a> <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a> <a href="http://zhw-island.com/tag/%e4%b8%8b%e5%a6%bb%e7%89%a9%e8%af%ad" rel="tag">下妻物语</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3355" title="Like"><i class="fa fa-heart-o"></i>&nbsp;13</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3343 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress category-code tag-wordpress tag-52 post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/wp-login-protector.html" title="WordPress 登录保护加强版">WordPress 登录保护加强版</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/wp-login-protector.html" title="WordPress 登录保护加强版">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/10/shield_1x-250x250-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="shield_1x-250x250" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a> <a href="http://zhw-island.com/category/code" rel="category tag">代码</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 3个月前 (10-17)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>188次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/wp-login-protector.html#comments-title" title="comments">4条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>事关自从添加了登录失败的邮件通知后，一直有人反馈说有机器人暴力破解，而收到一大堆邮件。不过实际上只要你的用户们和密码足够复杂，机器人没几万年也破解不了。 请看下面所谓的修改后台登录地址的保护方法： /&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/wp-login-protector.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a> <a href="http://zhw-island.com/tag/%e7%99%bb%e5%bd%95%e4%bf%9d%e6%8a%a4" rel="tag">登录保护</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3343" title="Like"><i class="fa fa-heart-o"></i>&nbsp;16</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3340 type-post status-publish format-aside has-post-thumbnail hentry category-share tag-csi tag-34 tag-53 post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/share/csi.html" title="CSI犯罪现场调查">CSI犯罪现场调查</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/share/csi.html" title="CSI犯罪现场调查">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/10/csi-img-250x250-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="csi-img-250x250" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/share" rel="category tag">分享</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 4个月前 (10-14)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>118次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/share/csi.html#comments-title" title="comments">2条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>今天看了《冰血暴》第二季第一集，还是原来的配方原来的味道，长长的铺垫，冷冷的调调，耐人寻味的故事，目测会比第一季精彩。 然后才知道《CSI》最终集已经又得看了，原来拍了15年了。《CSI》是我第一部看&#8230;
+<div class="read_more"><a href="http://zhw-island.com/share/csi.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/csi" rel="tag">csi</a> <a href="http://zhw-island.com/tag/csi%e7%8a%af%e7%bd%aa%e7%8e%b0%e5%9c%ba%e8%b0%83%e6%9f%a5" rel="tag">csi犯罪现场调查</a> <a href="http://zhw-island.com/tag/%e5%86%b0%e8%a1%80%e6%9a%b4" rel="tag">冰血暴</a> <a href="http://zhw-island.com/tag/%e7%be%8e%e5%89%a7" rel="tag">美剧</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3340" title="Like"><i class="fa fa-heart-o"></i>&nbsp;14</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3336 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress tag-island tag-wordpress post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/island-update.html" title="Island大版本更新了">Island大版本更新了</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/island-update.html" title="Island大版本更新了">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/07/theme-island-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="theme-island" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 4个月前 (10-10)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>184次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/island-update.html#comments-title" title="comments">4条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>时隔四个多月终于出新版本了，现在Island拥有Lazycat的所有新增的功能了，作为重写的开始版本，会有明显Bug，请加QQ群提交遇到的问题。 2015-10-10 V 1.0.8 -新增维护模式 &#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/island-update.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/island" rel="tag">island</a> <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3336" title="Like"><i class="fa fa-heart-o"></i>&nbsp;11</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3316 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress tag-github tag-wordpress tag-wppusher post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/github-wordpress.html" title="从GitHub或Bitbucket里自动同步更新你的主题或插件&#8211;Wppusher">从GitHub或Bitbucket里自动同步更新你的主题或插件&#8211;Wppusher</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/github-wordpress.html" title="从GitHub或Bitbucket里自动同步更新你的主题或插件&#8211;Wppusher">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/09/LZOMJGHY_400x400-250x250-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="LZOMJGHY_400x400-250x250" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 4个月前 (09-25)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>124次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/github-wordpress.html#comments-title" title="comments">1条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>Wppusher官网：Link 这个标题怎么理解呢！意思是wordpress主题或者插件的开发者，都喜欢使用Github来控制代码版本，但是每提交一次代码到Github后又要使用FTP上传或者后台上传&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/github-wordpress.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/github" rel="tag">github</a> <a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a> <a href="http://zhw-island.com/tag/wppusher" rel="tag">wppusher</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3316" title="Like"><i class="fa fa-heart-o"></i>&nbsp;16</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+												<article class="post post-3291 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress category-code tag-wordpress tag-message-push post_format-post-format-aside">
+											
+					 		
+	<!-- 日志 -->
+	
+	<div class="box-wrap">
+		<div class="box">
+		
+		<header>
+								
+				<h2 class="entry-title"><a href="http://zhw-island.com/wordpress/update_notice.html" title="给主题用户后台推送消息">给主题用户后台推送消息</a></h2>
+							
+			
+			
+							
+			
+		</header>		
+		
+
+			
+
+		
+			 
+									<a class="featured-image" href="http://zhw-island.com/wordpress/update_notice.html" title="给主题用户后台推送消息">
+						<img width="150" height="150" src="http://zhw-island.com/wp-content/uploads/2015/06/wordpress-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="wordpress" />					</a>	
+								
+					
+			<div class="post-content">
+				
+								<ul class="top_meta">
+					<li class="mate-cat"><i class="fa fa-folder-open-o"></i><a href="http://zhw-island.com/category/wordpress" rel="category tag">wordpress</a> <a href="http://zhw-island.com/category/code" rel="category tag">代码</a></li>
+					
+
+										
+					<li class="mate-time"><i class="fa fa-clock-o"></i>发表于 4个月前 (09-21)</li>
+										<li class="mate-view"><i class="fa fa-eye"></i>119次浏览</li>
+										<li class="mate-com"><i class="fa fa-comments-o"></i><a href="http://zhw-island.com/wordpress/update_notice.html#comments-title" title="comments">1条评论</a></li>						
+					<li></li>									
+					<div class="clearfix"></div>
+				</ul>
+									
+				
+				<div class="content">
+										
+											<p>事情是这样的，最近主题的后台更新推送的服务商wp-updates一直处于405状态，去到作者的推特一看，他解释的大意是：他已经把网站卖给一个不能公布名字的公司，他不再维护主题更新服务。这样的话我还好，&#8230;
+<div class="read_more"><a href="http://zhw-island.com/wordpress/update_notice.html">阅读更多</a></div>
+										
+								
+					
+					
+				
+				</div>
+				
+			</div><!-- post content -->	
+			
+				
+								
+								<script>
+					jQuery(document).ready(function($) {
+						$('.audio-wrapper audio').mediaelementplayer();
+					});
+				</script>				
+					
+
+	        			
+								
+
+
+			
+									
+					<div class="clearfix"></div>
+						</div><!-- box -->
+
+										<!-- 文章mate -->	
+					<ul class="bottom_meta">
+													<li class="meta_tabs"><a href="http://zhw-island.com/tag/wordpress" rel="tag">wordpress</a> <a href="http://zhw-island.com/tag/message-push" rel="tag">消息推送</a></li>
+																		<!-- 喜欢按钮 -->	
+						<li id="like_btn">
+															<a href="#" class="jm-post-like" data-post_id="3291" title="Like"><i class="fa fa-heart-o"></i>&nbsp;10</a>							
+													</li>	
+												<div class="clearfix"></div>
+					</ul>	
+											
+					<div class="clearfix"></div>
+					</div><!-- box wrap -->
+				</article><!-- article-->	
+											</div>
+			
+			<!-- 分页 -->
+								
+					<div class="post-nav">
+						<div class="post-nav-inside">
+							<div class="post-nav-left"></div>
+							<div class="post-nav-right"><a href="http://zhw-island.com/page/2" >下一页</a></div>	
+						</div>
+					</div>
+										
+			
+			<!-- 评论 -->
+					</div><!-- content -->
+		
+		<!-- 页脚 -->
+		 
+	
+	</div><!-- main -->
+		<!-- 右侧边栏 -->
+		<div class="rightbar">
+					<div class="about_me">
+                
+           				<div class="me_img">
+					<div class="me_avatar">
+						<img src="http://zhw-island.com/wp-content/uploads/2015/06/default-avatar.png">
+					</div>
+				</div>
+				<span class="me_name">
+					@老赵				</span>
+                    
+                
+				<p class="me_content">
+					Hi，老赵其实不老，只是个九零后文艺青年，也是一名手游UI设计师，也是手机App设计师，也是Web前端设计师，爱互联网，爱美术，爱游戏，爱电影，爱音乐，爱萝莉，爱御姐...				</p>
+				<div class="social">
+					<ul class="social_link"><li><a href="http://weibo.com/qq717995589" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="微博：老赵-茶馆"target="_black"><i class="fa fa-weibo"></i></a></li><li><a href="javascript:void(0)" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="QQ:717995589" ><i class="fa fa-qq"></i></a></li><li><a href="javascript:void(0)" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="微信：laozhaochaguan" ><i class="fa fa-wechat"></i></a></li><li><a href="https://github.com/zhw2590582" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="Github:zhw2590582"target="_black"><i class="fa fa-github"></i></a></li><li><a href="https://dribbble.com/HarveyZack" class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="dribbble"target="_black"><i class="fa fa-dribbble"></i></a></li></ul>				</div>			
+			</div>
+						
+			<div class="sidebar-contentWrapper">
+			<aside id="cs_widget_qr-2" class="widget cs_widget_qr"><h3 class="widget-title"><span>购买Island主题</span></h3><div class="textwidget"><div class="qr-text">后台：加我QQ索取</br>
+账号：demo</br>
+密码：demo</br>
+注意：此环境可供测试使用，请勿上传文件。</div><div class="qr-wrapper clearfix"><div class="qr-caption"><i class="fa fa-jpy"></i>88元</div><div class="qr-alipay"><a href="javascript:void(0)"></a><div class="qr-img"><img src="http://zhw-island.com/wp-content/uploads/2015/06/alipay1.png" />支付宝支付</div></div><div class="qr-weixin"><a href="javascript:void(0)"></a><div class="qr-img"><img src="http://zhw-island.com/wp-content/uploads/2015/06/weixin.png" />微信支付</div></div></div></div><div class="clearfix"></div></aside><aside id="cs_widget_comment-2" class="widget cs_widget_comment"><h3 class="widget-title"><span>最新评论</span></h3><div class="textwidget" id="comment-list"><ul><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/7f1db2964e32f907c7d4014e0a8ac6b9?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/diary/party.html#comment-681" data-tooltip="《聚会》上的评论"><span class="s_name">locyoo:</span><span class="s_desc">毕业久了，经常联系的也就那几个</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/0ce6530cf7f3cbbbd7b5001ff66571fa?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/teahouse-rebuild.html#comment-660" data-tooltip="《Teahouse重制版发布了》上的评论"><span class="s_name">浅野:</span><span class="s_desc">我的是非盈利网站，就是休闲的，所以有人不喜欢</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/0ce6530cf7f3cbbbd7b5001ff66571fa?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/teahouse-rebuild.html#comment-658" data-tooltip="《Teahouse重制版发布了》上的评论"><span class="s_name">浅野:</span><span class="s_desc">请问添加cue的背景音乐，可以打开博客就自动</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/21e900e11685a053cd6609cdfe1f69ec?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/message#comment-657" data-tooltip="《留言》上的评论"><span class="s_name">阿正:</span><span class="s_desc">服务器500，无解么 <img src="http://zhw-island.com/wp-content/themes/Island/images/smilies/icon_arrow.gif" alt=":arrow:" class="wp-smiley" style="height: 1em; max-height: 1em;" /></span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/7489081fd06f7ea6e3d08f8a57b5ff66?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/kernl.html#comment-656" data-tooltip="《Wordpress插件和主题自动更新方案--Kernl》上的评论"><span class="s_name">帅气小琦琦:</span><span class="s_desc">只要你不再挂  一切都好说</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/7489081fd06f7ea6e3d08f8a57b5ff66?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/island_dev.html#comment-650" data-tooltip="《Island和Lazycat合并，以后统称为Island》上的评论"><span class="s_name">帅气小琦琦:</span><span class="s_desc">还装深沉   <img src="http://zhw-island.com/wp-content/themes/Island/images/smilies/icon_evil.gif" alt=":evil:" class="wp-smiley" style="height: 1em; max-height: 1em;" /></span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/80d0dbd4c4bf242d1fdb3975b830a992?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/teahouse-rebuild.html#comment-647" data-tooltip="《Teahouse重制版发布了》上的评论"><span class="s_name">小菜菜:</span><span class="s_desc">赵总，可不可以搞一下二级下拉菜单</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/e323e158cc1b16465d87f035dae01544?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/island_dev.html#comment-619" data-tooltip="《Island和Lazycat合并，以后统称为Island》上的评论"><span class="s_name">kn007:</span><span class="s_desc">路过</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/b8eb94763e92e5321a9076e82437dcfa?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/message#comment-613" data-tooltip="《留言》上的评论"><span class="s_name">acrdik:</span><span class="s_desc"><img src="http://zhw-island.com/wp-content/themes/Island/images/smilies/icon_question.gif" alt=":?:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 请教下左下角的全站播放器怎么弄的</span></a></p></li><li><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="https://secure.gravatar.com/avatar/ff8e2976420d9d2be69849a513c9640f?s=64" class="avatar avatar-64" height="64" width="64"> <p class="s_r"><a class="with-tooltip" href="http://zhw-island.com/wordpress/island_dev.html#comment-610" data-tooltip="《Island和Lazycat合并，以后统称为Island》上的评论"><span class="s_name">in1874:</span><span class="s_desc">之前买的主题 key 貌似无法激活了，换了个</span></a></p></li></ul></div><div class="clearfix"></div></aside><aside id="categories-3" class="widget widget_categories"><h3 class="widget-title"><span>分类目录</span></h3>		<ul>
+	<li class="cat-item cat-item-3"><a href="http://zhw-island.com/category/wordpress" >wordpress</a> (19)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://zhw-island.com/category/code" >代码</a> (11)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://zhw-island.com/category/share" >分享</a> (6)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://zhw-island.com/category/diary" >日志</a> (7)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://zhw-island.com/category/music" >音乐</a> (2)
+</li>
+		</ul>
+<div class="clearfix"></div></aside><aside id="archives-3" class="widget widget_archive"><h3 class="widget-title"><span>文章归档</span></h3>		<ul>
+			<li><a href='http://zhw-island.com/2016/01'>2016年一月</a>&nbsp;(3)</li>
+	<li><a href='http://zhw-island.com/2015/10'>2015年十月</a>&nbsp;(5)</li>
+	<li><a href='http://zhw-island.com/2015/09'>2015年九月</a>&nbsp;(6)</li>
+	<li><a href='http://zhw-island.com/2015/08'>2015年八月</a>&nbsp;(6)</li>
+	<li><a href='http://zhw-island.com/2015/07'>2015年七月</a>&nbsp;(5)</li>
+	<li><a href='http://zhw-island.com/2015/06'>2015年六月</a>&nbsp;(11)</li>
+		</ul>
+		<div class="clearfix"></div></aside><aside id="efanblogstat-2" class="widget widget_blogstat"><h3 class="widget-title"><span>博客统计</span></h3><ul><li>日志总数：36 篇</li><li>评论数目：230 条</li><li>建站日期：2012-05-18</li><li>运行天数：1350 天</li><li>标签总数：57 个</li><li>最后更新：2016-1-28</li></ul><div class="clearfix"></div></aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title"><span>标签</span></h3><div class="tagcloud"><a href='http://zhw-island.com/tag/wordpress' class='tag-link-26' title='17个话题' style='font-size: 13px;'>wordpress</a>
+<a href='http://zhw-island.com/tag/lazycat' class='tag-link-20' title='5个话题' style='font-size: 13px;'>lazycat</a>
+<a href='http://zhw-island.com/tag/%e7%be%8e%e5%89%a7' class='tag-link-53' title='3个话题' style='font-size: 13px;'>美剧</a>
+<a href='http://zhw-island.com/tag/island' class='tag-link-18' title='3个话题' style='font-size: 13px;'>island</a>
+<a href='http://zhw-island.com/tag/teahouse' class='tag-link-25' title='2个话题' style='font-size: 13px;'>teahouse</a>
+<a href='http://zhw-island.com/tag/jquery' class='tag-link-19' title='2个话题' style='font-size: 13px;'>jQuery</a>
+<a href='http://zhw-island.com/tag/%e4%b8%8b%e5%a6%bb%e7%89%a9%e8%af%ad' class='tag-link-29' title='1个话题' style='font-size: 13px;'>下妻物语</a>
+<a href='http://zhw-island.com/tag/seven-cattle-cloud' class='tag-link-28' title='1个话题' style='font-size: 13px;'>七牛云</a>
+<a href='http://zhw-island.com/tag/wppusher' class='tag-link-27' title='1个话题' style='font-size: 13px;'>wppusher</a>
+<a href='http://zhw-island.com/tag/%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae' class='tag-link-32' title='1个话题' style='font-size: 13px;'>代码高亮</a>
+<a href='http://zhw-island.com/tag/%e4%ba%8c%e7%bb%b4%e7%a0%81' class='tag-link-30' title='1个话题' style='font-size: 13px;'>二维码</a>
+<a href='http://zhw-island.com/tag/%e5%86%b0%e8%a1%80%e6%9a%b4' class='tag-link-34' title='1个话题' style='font-size: 13px;'>冰血暴</a>
+<a href='http://zhw-island.com/tag/%e4%bd%bf%e5%91%bd%e5%8f%ac%e5%94%a4ol' class='tag-link-33' title='1个话题' style='font-size: 13px;'>使命召唤ol</a>
+<a href='http://zhw-island.com/tag/svg' class='tag-link-24' title='1个话题' style='font-size: 13px;'>svg</a>
+<a href='http://zhw-island.com/tag/logo' class='tag-link-21' title='1个话题' style='font-size: 13px;'>logo</a>
+<a href='http://zhw-island.com/tag/php' class='tag-link-23' title='1个话题' style='font-size: 13px;'>PHP</a>
+<a href='http://zhw-island.com/tag/codestar-framework' class='tag-link-11' title='1个话题' style='font-size: 13px;'>codestar framework</a>
+<a href='http://zhw-island.com/tag/ajax' class='tag-link-10' title='1个话题' style='font-size: 13px;'>ajax</a>
+<a href='http://zhw-island.com/tag/csi' class='tag-link-12' title='1个话题' style='font-size: 13px;'>csi</a>
+<a href='http://zhw-island.com/tag/csi%e7%8a%af%e7%bd%aa%e7%8e%b0%e5%9c%ba%e8%b0%83%e6%9f%a5' class='tag-link-13' title='1个话题' style='font-size: 13px;'>csi犯罪现场调查</a>
+<a href='http://zhw-island.com/tag/owl' class='tag-link-22' title='1个话题' style='font-size: 13px;'>owl</a>
+<a href='http://zhw-island.com/tag/icon-font' class='tag-link-17' title='1个话题' style='font-size: 13px;'>icon font</a>
+<a href='http://zhw-island.com/tag/github' class='tag-link-16' title='1个话题' style='font-size: 13px;'>github</a>
+<a href='http://zhw-island.com/tag/%e5%88%87%e6%8d%a2css' class='tag-link-35' title='1个话题' style='font-size: 13px;'>切换CSS</a>
+<a href='http://zhw-island.com/tag/%e5%88%b6%e4%bd%9c%e4%b8%bb%e9%a2%98' class='tag-link-36' title='1个话题' style='font-size: 13px;'>制作主题</a>
+<a href='http://zhw-island.com/tag/%e9%92%a2%e7%82%bc' class='tag-link-58' title='1个话题' style='font-size: 13px;'>钢炼</a>
+<a href='http://zhw-island.com/tag/%e8%b6%85%e6%84%9f%e7%8c%8e%e6%9d%80' class='tag-link-57' title='1个话题' style='font-size: 13px;'>超感猎杀</a>
+<a href='http://zhw-island.com/tag/%e8%8a%b1%e6%9c%ad' class='tag-link-55' title='1个话题' style='font-size: 13px;'>花札</a>
+<a href='http://zhw-island.com/tag/%e7%99%bb%e5%bd%95%e4%bf%9d%e6%8a%a4' class='tag-link-52' title='1个话题' style='font-size: 13px;'>登录保护</a>
+<a href='http://zhw-island.com/tag/%e9%9f%b3%e4%b9%90' class='tag-link-59' title='1个话题' style='font-size: 13px;'>音乐</a>
+<a href='http://zhw-island.com/tag/ma-luanshan' class='tag-link-60' title='1个话题' style='font-size: 13px;'>马峦山</a>
+<a href='http://zhw-island.com/tag/kernl' class='tag-link-79' title='1个话题' style='font-size: 13px;'>Kernl</a>
+<a href='http://zhw-island.com/tag/%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0' class='tag-link-76' title='1个话题' style='font-size: 13px;'>自动更新</a>
+<a href='http://zhw-island.com/tag/%e5%9b%9e%e5%a4%8d%e6%8f%90%e9%86%92' class='tag-link-74' title='1个话题' style='font-size: 13px;'>回复提醒</a>
+<a href='http://zhw-island.com/tag/%e8%81%9a%e4%bc%9a' class='tag-link-75' title='1个话题' style='font-size: 13px;'>聚会</a>
+<a href='http://zhw-island.com/tag/%e7%94%b5%e5%bd%b1' class='tag-link-51' title='1个话题' style='font-size: 13px;'>电影</a>
+<a href='http://zhw-island.com/tag/%e6%b8%b8%e6%88%8f' class='tag-link-50' title='1个话题' style='font-size: 13px;'>游戏</a>
+<a href='http://zhw-island.com/tag/%e5%ad%99%e5%ad%90%e4%bb%8e%e7%be%8e%e5%9b%bd%e6%9d%a5' class='tag-link-41' title='1个话题' style='font-size: 13px;'>孙子从美国来</a>
+<a href='http://zhw-island.com/tag/%e5%a4%8f%e5%a4%a9' class='tag-link-40' title='1个话题' style='font-size: 13px;'>夏天</a>
+<a href='http://zhw-island.com/tag/%e5%8a%a8%e7%94%bb' class='tag-link-38' title='1个话题' style='font-size: 13px;'>动画</a>
+<a href='http://zhw-island.com/tag/%e5%89%8d%e8%a8%80' class='tag-link-37' title='1个话题' style='font-size: 13px;'>前言</a>
+<a href='http://zhw-island.com/tag/%e5%b8%88%e5%82%85' class='tag-link-42' title='1个话题' style='font-size: 13px;'>师傅</a>
+<a href='http://zhw-island.com/tag/%e5%bf%83%e6%83%85' class='tag-link-43' title='1个话题' style='font-size: 13px;'>心情</a>
+<a href='http://zhw-island.com/tag/message-push' class='tag-link-49' title='1个话题' style='font-size: 13px;'>消息推送</a>
+<a href='http://zhw-island.com/tag/drug' class='tag-link-47' title='1个话题' style='font-size: 13px;'>毒枭</a>
+<a href='http://zhw-island.com/tag/%e6%a1%86%e6%9e%b6' class='tag-link-46' title='1个话题' style='font-size: 13px;'>框架</a>
+<a href='http://zhw-island.com/tag/%e6%85%b5%e6%87%92' class='tag-link-44' title='1个话题' style='font-size: 13px;'>慵懒</a></div>
+<div class="clearfix"></div></aside>			</div>
+			
+		</div>	
+		
+	</div><!-- wrapper -->
+	<div class="clearfix"></div>
+    </div><!-- wp_box -->
+			<div class="foot_btn">
+			<ul>
+				<li class="mate-gotop">
+							<a href="#totop" class="scrolltotop" title="回到顶部"><i class="fa fa-chevron-up"></i></a>
+						</li>	
+					
+					
+						
+						
+				
+												
+				
+				<li class="mate-qrcode">
+							<a style="" title="二维码" href="javascript:void(0)" id="r-wx">
+							<i class="fa fa-qrcode"></i>
+								<div id="fi-wx-show" style="display: none;">
+									<img src="http://zhw-island.com/wp-content/uploads/2015/06/qrcode1.png">
+								</div>
+							</a>
+						</li>	
+
+			</ul>
+		</div>
+		
+	<footer id="footer">
+					
+		
+		<section id="drawer">
+			<div id="drawer-inside" class="container clearfix columns3">
+				<div id="meta-2" class="widget widget_meta"><h2 class="widgettitle">功能</h2>
+			<ul>
+						<li><a href="http://zhw-island.com/wp-login.php">登录</a></li>
+			<li><a href="http://zhw-island.com/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://zhw-island.com/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widgettitle">近期文章</h2>
+		<ul>
+					<li>
+				<a href="http://zhw-island.com/wordpress/kernl.html">WordPress插件和主题自动更新方案&#8211;Kernl</a>
+						</li>
+					<li>
+				<a href="http://zhw-island.com/diary/party.html">聚会</a>
+						</li>
+					<li>
+				<a href="http://zhw-island.com/wordpress/island_dev.html">Island和Lazycat合并，以后统称为Island</a>
+						</li>
+					<li>
+				<a href="http://zhw-island.com/wordpress/wordpress-awaiting_comments.html">WordPress前端未审核留言提醒</a>
+						</li>
+					<li>
+				<a href="http://zhw-island.com/wordpress/wordpress-theme-owl.html">第四款主题&#8211;Owl</a>
+						</li>
+				</ul>
+		</div>		<div id="categories-4" class="widget widget_categories"><h2 class="widgettitle">分类目录</h2>
+		<ul>
+	<li class="cat-item cat-item-3"><a href="http://zhw-island.com/category/wordpress" >wordpress</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://zhw-island.com/category/code" >代码</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://zhw-island.com/category/share" >分享</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://zhw-island.com/category/diary" >日志</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://zhw-island.com/category/music" >音乐</a>
+</li>
+		</ul>
+</div>		
+			</div>
+		</section>
+				<div id="copyright">
+			<div class="copyright">
+			<!-- 版权信息 -->			
+			&copy; 2016 All Rights Reserved.	
+	
+			<!-- 你忍心删除我？ -->
+			<a href="http://zhw-island.com/" target="_blank"> Theme by Island</a>
+		
+			<!-- 统计代码 -->			
+			<script>var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256534129'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1256534129%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>			
+			</div>
+		</div>
+	</footer>
+						<!-- 音乐播放器 -->
+				<div class="cue-playlist-container fade out"><div class="is-closed cue-playlist" itemscope itemtype="http://schema.org/MusicPlaylist">
+	<meta itemprop="numTracks" content="3" />
+
+	<audio src="http://77g6f5.com1.z0.glb.clouddn.com/Brother-Sparrow.mp3" controls preload="none" class="cue-audio" style="width: 100%; height: auto"></audio>
+	<div class="cue-tracks">
+	<ol class="cue-tracks-list">
+					<li class="cue-track" itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+				<span class="cue-track-details cue-track-cell">
+					<span class="cue-track-title" itemprop="name">Brother Sparrow</span>
+					<span class="cue-track-artist" itemprop="byArtist">agnes obel</span>
+				</span>
+				<span class="cue-track-length cue-track-cell"></span>
+			</li>
+					<li class="cue-track" itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+				<span class="cue-track-details cue-track-cell">
+					<span class="cue-track-title" itemprop="name">Stay Alive</span>
+					<span class="cue-track-artist" itemprop="byArtist">José González</span>
+				</span>
+				<span class="cue-track-length cue-track-cell"></span>
+			</li>
+					<li class="cue-track" itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+				<span class="cue-track-details cue-track-cell">
+					<span class="cue-track-title" itemprop="name">Space Oddity</span>
+					<span class="cue-track-artist" itemprop="byArtist">David Bowie</span>
+				</span>
+				<span class="cue-track-length cue-track-cell"></span>
+			</li>
+			</ol>
+	</div>
+</div>
+		<script type="application/json" class="cue-playlist-data">{"thumbnail":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Brother-Sparrow1.jpg","tracks":[{"audioId":0,"audioUrl":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Brother-Sparrow.mp3","artist":"agnes obel","artworkId":3388,"artworkUrl":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Brother-Sparrow1.jpg","format":"","length":"","title":"Brother Sparrow","order":0,"mp3":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Brother-Sparrow.mp3","meta":{"artist":"agnes obel","length_formatted":""},"src":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Brother-Sparrow.mp3","thumb":{"src":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Brother-Sparrow1.jpg"}},{"audioId":0,"audioUrl":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Stay-Alive.mp3","artist":"Jos\u00e9 Gonz\u00e1lez","artworkId":3389,"artworkUrl":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Stay-Alive1.jpg","format":"","length":"","title":"Stay Alive","order":1,"mp3":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Stay-Alive.mp3","meta":{"artist":"Jos\u00e9 Gonz\u00e1lez","length_formatted":""},"src":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Stay-Alive.mp3","thumb":{"src":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Stay-Alive1.jpg"}},{"audioId":0,"audioUrl":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Space-Oddity.mp3","artist":"David Bowie","artworkId":3390,"artworkUrl":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Space-Oddity1.jpg","format":"","length":"","title":"Space Oddity","order":2,"mp3":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Space-Oddity.mp3","meta":{"artist":"David Bowie","length_formatted":""},"src":"http:\/\/77g6f5.com1.z0.glb.clouddn.com\/Space-Oddity.mp3","thumb":{"src":"http:\/\/zhw-island.com\/wp-content\/uploads\/2015\/06\/Space-Oddity1.jpg"}}]}</script>		</div>				
+			
+
+		
+
+			
+
+	<!-- 引入插件js -->
+	<link rel='stylesheet' id='mediaelement-css'  href='http://zhw-island.com/wp-includes/js/mediaelement/mediaelementplayer.min.css?ver=2.18.1' type='text/css' media='all' />
+<link rel='stylesheet' id='cue-css'  href='http://zhw-island.com/wp-content/plugins/cue/assets/css/cue.min.css?ver=1.0.0' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_var = {"url":"http:\/\/zhw-island.com\/wp-admin\/admin-ajax.php","nonce":"85b7ac8837"};
+var ajax_var = {"url":"http:\/\/zhw-island.com\/wp-admin\/admin-ajax.php","nonce":"85b7ac8837"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/themes/Island/js/plugins.js?ver=4.4.1'></script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/themes/Island/comments-ajax.js?ver=0.4'></script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/themes/Island/js/custom.js?ver=2.0'></script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/themes/Island/js/prettify.js?ver=0.3'></script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/themes/Island/js/circle.js?ver=0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mejsL10n = {"language":"zh-CN","strings":{"Close":"\u5173\u95ed","Fullscreen":"\u5168\u5c4f","Download File":"\u4e0b\u8f7d\u6587\u4ef6","Download Video":"\u4e0b\u8f7d\u89c6\u9891","Play\/Pause":"\u64ad\u653e\/\u6682\u505c","Mute Toggle":"\u5207\u6362\u9759\u97f3","None":"\u65e0","Turn off Fullscreen":"\u5173\u95ed\u5168\u5c4f","Go Fullscreen":"\u5168\u5c4f","Unmute":"\u53d6\u6d88\u9759\u97f3","Mute":"\u9759\u97f3","Captions\/Subtitles":"\u5b57\u5e55"}};
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://zhw-island.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=2.18.1'></script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/plugins/cue/assets/js/vendor/jquery.cue.min.js?ver=1.1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _cueSettings = {"l10n":{"nextTrack":"Next Track","previousTrack":"Previous Track","togglePlayer":"Toggle Player","togglePlaylist":"Toggle Playlist"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://zhw-island.com/wp-content/plugins/cue/assets/js/cue.min.js?ver=1.0.0'></script>
+<!-- 自定义js --><script></script>	<!-- 插件参数js -->
+	<script>	
+		
+	
+	jQuery(document).ready(function($) {	
+	
+		
+	
+		
+			
+	
+	$('.lightSlider').lightSlider({
+		mode: "fade",
+		auto: true,
+		loop: true,
+		item:1,
+		pause: 4000,
+		slideMargin:0,
+		currentPagerPosition:'left',
+		adaptiveHeight:true,
+	});  
+
+			// ajax加载			
+		var ias = $.ias({
+			container: ".posts",
+			item: ".post",
+			pagination: ".post-nav-inside",
+			next: ".post-nav-right a",
+		});
+
+		ias.extension(new IASTriggerExtension({
+			textPrev: ' ',
+			text: '加载更多',
+			offset: 2,
+		}));
+		ias.extension(new IASNoneLeftExtension({
+			text: '没有更多文章了',
+		}));
+		ias.extension(new IASSpinnerExtension());
+		ias.extension(new IASPagingExtension());
+		ias.extension(new IASHistoryExtension({
+			prev: '.post-nav-right a',
+		}));
+
+		// ajax函数	
+		ias.on('rendered', function(items) {
+			echo.init({
+				offset: 100,
+				throttle: 250,
+				unload: false,
+			});
+			$(".post-content a").fluidbox();
+			
+			if($(".audio-wrapper audio").length>0){
+				$('.audio-wrapper audio').mediaelementplayer();
+			}
+			
+			if($(".zancai").length>0){	
+				$(".zancai .jm-post-like .fa-heart").addClass("fa-thumbs-up").removeClass("fa-heart");
+				$(".zancai .jm-post-like .fa-heart-o").addClass("fa-thumbs-o-up").removeClass("fa-heart-o");
+			};				
+			
+		});	
+			
+	});
+	</script>
+			<canvas id="pixie"></canvas>
+			
+	
+</body>
+</html>
+<!-- Dynamic page generated in 0.604 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-01-28 17:24:23 -->
+
+<!-- super cache -->

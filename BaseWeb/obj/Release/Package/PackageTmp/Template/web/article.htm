@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SC--LuceneNet+盘古分词器</title>
+    
+</head>
+<body>
+    <form id="form1" runat="server" action="/home/t/">
+    <div>
+        <h1>LuceneNet+盘古分词器+关键字高亮</h1>
+        <hr />
+    </div>
+    <div id="SearchIndex">
+            标题：<input type="text" name="title" class="input_text" value="" />
+            内容：<input type="text" name="content" class="input_text" value="" />
+            <input type="submit" value="搜索"  onclick="doclick('SearchIndex')"/><input type="button" value="创建索引" onclick="doclick('CreateIndex')" />
+            是否覆盖索引：<input type="radio" checked="checked" id="isCover" name="cover" value="1" /><label style="margin-right:2px;" for="isCover">是</label><input type="radio" id="notCover" name="Cover" value="0" /><label for="notCover">否</label>
+    </div>
+    <div>
+    $list.Count
+        #foreach($item in $list2)
+        $item.article_title
+        #end
+
+        #foreach($item in $list)
+        $item.product_name
+        #end
+    </div>
+     <input type="hidden" name="action" id="action" value="default" />
+    </form>
+</body>
+</html>

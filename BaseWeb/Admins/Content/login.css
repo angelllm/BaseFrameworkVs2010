@@ -1,0 +1,51 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote,  td { margin: 0; padding: 0; }
+fieldset, img { border: 0; }
+img { display:inline-block; }
+:focus { outline: 0; }
+address, caption, cite, code, dfn, em, strong, th, var, optgroup { font-style: normal; font-weight: normal; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+abbr, acronym { border: 0; font-variant: normal; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+code, kbd, samp, tt { font-size:100%; }
+input, button, textarea, select { *font-size: 100%;
+}
+ol, ul { list-style: none outside none; }
+table { border-collapse: collapse; border-spacing: 0; }
+caption{ text-align: left; }
+sup, sub { font-size: 100%; vertical-align: baseline; }
+:link, :visited, ins { text-decoration: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+body { font-size:75%; color:#000; font-family:'Microsoft Yahei', Tahoma, Arial!important; font-family:'ËÎÌו', Tahoma, Arial;background: #014051; }
+
+a{color:#333333;}
+a:hover { text-decoration:underline; }
+button {white-space: nowrap;}
+
+.clear{clear:both;}
+.h10{height:10px;}
+.fl{float:left;}
+.fr{float:right;}
+.size12{font-size:12px;}
+.size16{font-size:16px;}
+.rec-list{display:block;line-height:22px;}
+.rec-list:hover{}
+
+#login-panel{display:block;position:absolute;top:20%;width:100%;margin:0 auto;left:0}
+#login-panel .login{display:block;width:380px;margin:0 auto;}
+#login-panel .login img{display:block;width:113px;float:left;margin:10px;border:2px solid #fff}
+#login-panel .login .form{display:block;width:200px;float:left;margin:10px;}
+#login-panel .login .form .name{border:0;background:#014051;color:#b0e2eb;width:160px;text-align:left;*margin-left:-10px;}
+#login-panel .login .form .panel{display:block;height:19px;line-height:19px;margin-top:20px; }
+#login-panel .login .form .panel .pwd{border:1px solid #b1c0c7;background:#dcd8d7;color:#061019;width:160px;float:left;display:block;*height:17px}
+#login-panel .login .form a{background:url(/admins/content/images/buttom_06.gif);float:left;width:19px;height:19px;}
+#login-panel .login .form a:hover{background:url(/admins/content/images/buttom_06_2.gif);}
+
+#login-panel .login .form .panel .msg{display:block;color:#ff0000;margin-top:30px;clear:both;}
+
+#l_footer{display:block;_position:absolute;width:100%;margin:0 auto;left:0;bottom:30px;position:fixed;}
+#l_footer .power{display:block;_position:absolute;width:25px;height:22px;margin:0 auto;bottom:30px;position:fixed;background:url(/admins/content/images/power_11.png);right:60px;}
+#l_footer .copy{display:block;width:200px;margin:0 auto;color:#b5c7d3;}
+
+

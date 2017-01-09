@@ -1,0 +1,10 @@
+﻿<aside class="widget widget_archive">
+                    <h3 class="widget-title"><span>文章归档</span></h3>		
+                    <ul>
+                        #set($b = "-0")
+                        #foreach($arc in $archiveslist)
+			            <li><a class="pjax" href='/land/list-0-0-$arc.year.$arc.month$b/'>$arc.year年$arc.month月</a>&nbsp;($arc.count)</li>
+                        #end
+		            </ul>
+		            <div class="clearfix"></div>
+                </aside>

@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>管理后台</title>
+        #parse("include/meta.htm")
+        #parse("include/view-css.htm")
+        
+    </head>
+    <!-- END HEAD -->
+
+    <body ms-controller="page" class="page-container-bg-solid page-boxed wysihtml5-supported">
+        <!-- BEGIN HEADER -->
+        #parse("include/header.htm")
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="container llm-container">
+                        <div class="col-md-12 col-sm-12 col-xl-12 ">
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="/admin/">后台首页</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="/admin/webbase/">网站管理</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="/admin/bannerlist/">banner管理</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>banner编辑</span>
+                                </li>
+                            </ul>
+                            <div class="portlet light tasks-widget">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <i class="fa fa-list font-red"></i>
+                                        <span class="caption-subject font-red bold uppercase">banner管理</span>
+                                        <span class="caption-helper">banner编辑</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a  href="javascript:history.go(-1)" data-original-title="" title="返回" class="btn-mt-6 btn btn-circle btn-default full-right btn-back">
+                                            <i class="fa fa-arrow-circle-left "></i> Back </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen full-right" href="javascript:;" data-original-title="" title="全屏"></a>
+                                        <div class="clear-fix"></div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                   
+                                    <div class="table-scrollable table-scrollable-borderless tab-content" ms-controller="box">
+                                       <div class="blockUI blockMsg blockElement text-center hide" id="loading"><div class="loading-message "><div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></div>
+                                       <form action="/admin/dobanneredit/$model.page_id/" id="form_sample_2" class="form-horizontal" novalidate="novalidate">
+                                            <div class="form-body">
+
+                                                <div class="row">
+                                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                                    <ul class="nav nav-tabs tabs-left">
+                                                        <li class="active">
+                                                            <a href="#tab_6_1" data-toggle="tab"> 基础信息 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_2" data-toggle="tab"> 扩展功能 </a>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tab_6_1">
+                                                            <!--tab_6_1 start-->
+                                                            <div class="alert alert-danger display-hide">
+                                                                <button class="close" data-close="alert"></button> 填写有误，请检查后再提交！ </div>
+                                                            <div class="alert alert-success display-hide">
+                                                                <button class="close" data-close="alert"></button> 提交成功! </div>
+                                                            <div class="form-group" ms-controller="form">
+                                                                <label class="control-label col-md-2">图片设置
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                     <div class="fileinput fileinput-new fileinput-exists" data-provides="fileinput">
+                                                                        <div class="fileinput-new thumbnail" style="width: 440px;">
+                                                                            <img id="ImageShow"  style="height:120px" ms-src="bannerpath" onerror="this.src='$path/images/noimage.png'" data-def="$path/images/noimage.png" alt="" /> 
+                                                                        </div>
+                                                                        <div>
+                                                                            <a ms-on-click="upload" href="javascript:;" class="btn default fileinput-exists pull-left file-btn-chance-file margin-right-10"> 上传图片 </a>
+                                                                            <a ms-if="isupload" ms-on-click="clearFile" href="javascript:;" class="btn red fileinput-exists pull-left file-btn-chance-file" data-dismiss="fileinput"> 取消图片 </a>
+                                                                        </div>
+                                                                    </div>
+
+                                                                     <div class="input hide">
+                                                                        <input type="hidden" data-bind="$model.page_image" ms-attr-value="filepath" id="hfImage" name="hfImage" />
+                                                                        <div id="fileQueue" style="display:inline"></div>
+                                                                        <div id="qid"></div> 
+                                                                    </div> 
+                                                                    <div class="clear"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">banner名称
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input type="text" value="$model.page_name" class="form-control" name="page_name"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">banner地址
+                                                                    <span title="" class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa" title="请填写banner地址"></i>
+                                                                        <input type="text" value="$model.page_url" class="form-control" name="page_url"> 
+                                                                        <span class="help-block"> 例如: http://www.llmztt.com 或者 http://llmztt.com </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">所在位置
+                                                                    <span></span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div> 
+                                                                        <input type="hidden" value="$model.page_type_id|" class="form-control" name="page_cid"> 
+                                                                        <select data-bind="$model.page_type_id" ms-on-change="selectType()"  class="form-control select2">
+                                                                            #foreach ($type in $list)
+                                                                                <option #if($model.page_type_id == $type.type_id) selected #end  value="$type.type_id">$type.type_name</option>
+                                                                            #end
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                            
+                                                            <!--tab_6_1 end-->
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_2">
+                                                             <!--tab_6_2 start-->
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">排序</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input value="$model.page_order" type="text" class="form-control" name="page_order"> 
+                                                                    </div>
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">状态</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="" style="position:relative">
+                                                                        <label class="switch switch-html">
+                                                                          <input 
+                                                                            col="status"
+                                                                            type="checkbox" 
+                                                                            class="switch-input" 
+                                                                            ms-attr-checked="status==1"
+                                                                            name="page_status"
+                                                                            data-bind="$model.page_status"
+                                                                            ms-attr-value="status"
+                                                                            ms-on-click="changeStatus"
+                                                                            id="page_status"
+                                                                          >
+                                                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                                                          <span class="switch-handle"></span>
+                                                                        </label>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                             <!--tab_6_2 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_3">
+                                                            <!--tab_6_3 start-->
+                                                            
+                                                          
+                                                            <!--tab_6_3 end-->
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            </div>
+                                            <div class="form-actions">
+                                                <div class="row">
+                                                    <div class="col-md-offset-4 col-md-8 col-sm-offset-4 col-sm-8">
+                                                        <button type="submit" class="btn green"> 提 交 </button>
+                                                        <button type="reset" class="btn default"> 取 消 </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div id="color-image-upload hide">
+                                            <form id="upload" class="hide" method="post" action="/Ajax/AddImage/1/" enctype="multipart/form-data">
+			                                    <div id="drop" style="margin:0;padding:0;">
+				                                    <a>浏览</a>
+				                                    <input type="file" name="upl" multiple="multiple" />
+			                                    </div>
+			                                    <ul></ul>
+		                                    </form> 
+                                        </div>
+
+                                               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                #parse("include/sidebar.htm")
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        #parse("include/footer.htm")
+        <!-- BEGIN INNER FOOTER -->
+        <script src="$path/js/sea.js" type="text/javascript"></script>
+        <script src="$path/js/config.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            seajs.use(["module/common/commonloading-list", "module/banner/item", "module/banner/edit"])
+        </script>
+
+
+</body>
+</html>

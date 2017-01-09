@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CALL ME ALIKS - LLM</title>
+    <noscript><iframe src=*.html></iframe></noscript>
+    <meta name="description" content="ALIKS HOME" />
+    <meta name="keywords" content="ALIKS|HTML5|CSS3|JQUERY|前端开发|NET|" />
+    <meta name="author" content="llm" />
+    <meta name="Copyright" content="http://www.llmztt.com/" />
+    <meta name="power" content="llm云" />
+    <script src="../../Content/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <link href="../../Content/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/themes.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Content/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../Content/js/book/booklet/jquery.booklet.1.1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Content/js/book/booklet/jquery.booklet.1.1.0.css" />
+    <script type="text/javascript" src="../../Content/js/book/booklet/jquery.easing.1.3.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Content/js/book/css/style.css" />
+</head>
+<body oncontextmenu="self.event.returnValue=false">
+
+
+
+
+<div class="tip">
+    <div id="_loading" class="loading" style="left:45%">Loading pages...</div>
+</div>
+
+<ul id="box">
+
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li id="left-box">4</li>
+    <li>5</li>
+    <li id="zm-box">
+        <div class="waps">
+            <div class="wrap" >
+              <div class="bg">
+                <div class="loadings">
+                  <span class="title">loading...</span>
+                  <span class="text">welcome llm home press F11</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="contain">
+	        <canvas id="cas" width="600" height="100" style="display: block; top: 50px; left: 660px;">抱歉，您的浏览器不支持canvas</canvas>
+        </div>
+        <div class="contaniter " >
+            <div id="door">
+                <div class="left-st loaddoor"></div>
+                <div class="right-st loaddoor"></div>
+                <div class="door-top loaddoor"></div>
+                <div class="door-left loaddoor"></div>
+                <div class="door-right loaddoor"></div>
+                <div class="left-door loaddoor"></div>
+                <div class="right-door loaddoor"></div>
+            </div>
+            <div id="room">
+                <div class="book_wrapper no-select">
+	                <a id="next_page_button"></a>
+	                <a id="prev_page_button"></a>
+	                <div id="loading" class="loading">Loading pages...</div>
+	                <div id="mybook" style="display:none;">
+                        <div class="mode" title="放大/缩小"></div>
+                        <div class='card-holder'>
+                          #foreach($type in $booktypelist)
+                          #set($index = $velocityCount )
+                          <div class='card-wrapper'>
+                            <a href='#$type.type_id' data="$type.type_id" data-name="$type.type_name" class="booktypelist">
+                              <div class='card bg-0$velocityCount'>
+                                <span class='card-content'>$type.type_name #$velocityCount</span>
+                              </div>
+                            </a>
+                          </div>
+                          #end
+                        </div>
+		                <div class="b-load enable-select">
+		                    #*#foreach($item in $list)
+			                <div>
+                                <section id="sec_$item.article_id">
+				                    <img src="#if($item.article_image=="") ../../Content/images/nophoto.jpg #else $item.article_image #end" onerror="this.src='../../Content/images/nophoto.jpg'" alt=""/>
+				                    <h1>$item.article_title</h1>
+				                    <p>$item.article_summary</p>
+				                    <a class="article" data="$item.article_id">阅读</a>
+				                    <a class="demo">下载本源码</a>
+                                </section>
+                                <article></article>
+			                </div>
+		                    #end*#
+		                </div>
+                        <div class="b-tab close" title="关闭">关闭</div>
+	                </div>
+                </div>
+                <div class="fire no-select">
+                    <img src="../../Content/images/fire.gif" data="../../Content/images/big_fire.gif" data-source="../../Content/images/fire.gif" />
+                </div>
+                <div class="wood">
+                    <div class="wood-warpper">
+                        <img src="../../Content/images/wood.png" class="wood1 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood2 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood3 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood4 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood5 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood6 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood7 w-item" />
+                        <img src="../../Content/images/wood.png" class="wood8 w-item" />
+                    </div>
+                </div>
+                #foreach($type in $bookjiatypelist)
+                <div class="book book-hei book-hei-$velocityCount" data-name = "$type.type_name" data="$type.type_id">
+                    $type.type_name
+                </div>
+                #end
+                <div class="warpper">
+                    <div class="chairs no-select">
+                        <img class="chair no-select" src="../../Content/images/Chairs-coffe.png" />
+                    </div>
+                </div>
+                <div id="dog">
+                    #include("AI/katong/normal.xml")
+                    #include("AI/katong/biyan.xml")
+                    #include("AI/katong/zhangzui.xml")
+                    #include("AI/katong/tushetou.xml")
+                    <canvas style="position:fixed;bottom:414px;right:20px;"></canvas>
+                </div>
+                <div class="organ"></div>
+            </div>
+        </div>
+        <div id="door-reload" style="display:none;">
+            <img src="../../Content/images/left_door.jpg" />
+            <img src="../../Content/images/left_door.png" />
+            <img src="../../Content/images/right_door.jpg" />
+            <img src="../../Content/images/right_door.png" />
+            <img src="../../Content/images/door_st_bg.jpg" />
+            <img src="../../Content/images/door_top.png" />
+        </div>
+    </li>
+     
+</ul>
+
+
+
+
+<video id="_fire_sound" src="../../Content/sound/fire.mp3" controls="controls" loop></video>
+<video id="_door_sound" src="../../Content/sound/door.wav" controls="controls"></video>
+<video id="_door_open_sound" src="../../Content/sound/door2.mp3" controls="controls"></video>
+<script type="text/javascript" src="../../Content/js/fire.js"></script>
+<script src="../../Content/js/dog.js" type="text/javascript"></script>
+<script src="../../Content/js/jquery.fullScreen.js" type="text/javascript"></script>
+<script src="../../Content/js/book.js" type="text/javascript"></script>
+<script src="../../Content/js/door.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../Content/js/w.js"></script>
+<script src="../../Content/js/welcome.js" type="text/javascript"></script>
+
+
+
+
+
+</body>
+</html>

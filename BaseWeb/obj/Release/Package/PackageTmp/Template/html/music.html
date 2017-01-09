@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+    <noscript><iframe src=*.html></iframe></noscript>
+    <meta charset="utf-8" />
+    #foreach($config in $tjson.tconfig("base"))
+    #foreach($c in $pjson.pconfig($config.type_id))
+    <title>Muisc - $c.page_title</title>
+    <meta name="description" content="Muisc $c.page_description" />
+    <meta name="keywords" content="Muisc $c.page_keywords" />
+    #end
+    #end
+    <meta name="author" content="llm" />
+    <meta name="Copyright" content="http://www.llmztt.com/index/" />
+    <meta name="power" content="llm云" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="$path/js/jPlayer/jplayer.flat.css" type="text/css" />
+    <link rel="stylesheet" href="$path/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="$path/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="$path/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="$path/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="$path/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="$path/css/app.css" type="text/css" />
+
+    <!--[if lt IE 9]>
+      <script src="$path/js/ie/html5shiv.js"></script>
+      <script src="$path/js/ie/respond.min.js"></script>
+      <script src="$path/js/ie/excanvas.js"></script>
+    <![endif]-->
+
+</head>
+<body class="">
+  <section class="vbox">
+      
+    #parse("include/header.htm")
+    
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        #parse("include/aside.htm")
+       
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+          <section class="w-f-md">
+            <section class="hbox stretch bg-black dker">
+              <!-- side content -->
+              <aside class="col-sm-5 no-padder" id="sidebar">
+                <section class="vbox animated fadeInUp">
+                  <section class="scrollable">
+                    <div class="m-t-n-xxs item pos-rlt" id="pos-rlt">
+                      <div class="top text-right">
+                        <span class="musicbar animate bg-success bg-empty inline m-r-lg m-t" style="width:25px;height:30px">
+                          <span class="bar1 a3 lter"></span>
+                          <span class="bar2 a5 lt"></span>
+                          <span class="bar3 a1 bg"></span>
+                          <span class="bar4 a4 dk"></span>
+                          <span class="bar5 a2 dker"></span>
+                        </span>
+                      </div>
+                      <div class="bottom gd bg-info wrapper-lg">
+                        <span class="pull-right text-sm">101,400 <br>Followers</span>
+                        <span class="h2 font-thin">Soph Ashe</span>
+                      </div>
+                      <img class="img-full" src="$path/images/m43.jpg" alt="...">
+                    </div>
+                    <ul id="rec-play-list" class="list-group list-group-lg no-radius no-border no-bg m-t-n-xxs m-b-none auto">
+                       
+                        #foreach($item in $paylist)
+                        <li class="list-group-item play-list-item" data-bind="$item.music_song_id">
+                        <div class="pull-right m-l">
+                          <a href="#" class="m-r-sm"><i class="icon-cloud-download"></i></a>
+                          <a href="#" class="m-r-sm"><i class="icon-plus"></i></a>
+                          <a href="#"><i class="icon-close"></i></a>
+                        </div>
+                        <a href="#" class="jp-play-me m-r-sm pull-left" data-bind="$velocityCount">
+                          <i class="icon-control-play text"></i>
+                          <i class="icon-control-pause text-active"></i>
+                        </a>
+                        <div class="clear text-ellipsis">
+                          <span>$item.music_title</span>
+                          <span class="text-muted"> -- </span>
+                        </div>
+                      </li>
+                      #end
+                    </ul>
+                  </section>
+                </section>
+              </aside>
+              <!-- / side content -->
+              <section class="col-sm-4 no-padder bg">
+                <section class="vbox">
+                  <section class="scrollable hover">
+                    <ul id="img-play-list" class="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
+                        #set($length = $paylist.Count)
+                        #foreach($item in $imglist) 
+                        #set($length = $length + 1)
+                        <li class="list-group-item clearfix play-list-item"  data-bind="$item.music_song_id">
+                            <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md" data-bind="$length">
+                                <i class="icon-control-play text"></i>
+                                <i class="icon-control-pause text-active"></i>
+                            </a>
+                            <a href="#" class="pull-left thumb-sm m-r">
+                                <img src="$item.music_image" alt="$item.music_title">
+                            </a>
+                            <a class="clear" href="#">
+                                <span class="block text-ellipsis">$item.music_title</span>
+                                <small class="text-muted">by $item.music_author</small>
+                            </a>
+                        </li>
+                        #end
+                    </ul>
+                  </section>
+                </section>
+              </section>
+              <section class="col-sm-3 no-padder lt">
+                <section class="vbox">
+                  <section class="scrollable hover">
+                    <div class="m-t-n-xxs">
+                      <div class="item pos-rlt">
+                        <a href="#" class="item-overlay active opacity wrapper-md font-xs">
+                          <span class="block h3 font-bold text-info">Find</span>
+                          <span class="text-muted">Search the music you like</span>
+                          <span class="bottom wrapper-md block">- <i class="icon-arrow-right i-lg pull-right"></i></span>
+                        </a>
+                        <a href="#">
+                          <img class="img-full" src="$path/images/m40.jpg" alt="...">
+                        </a>
+                      </div>
+                      <div class="item pos-rlt">
+                        <a href="#" class="item-overlay active opacity wrapper-md font-xs text-right">
+                          <span class="block h3 font-bold text-warning text-u-c">Listen</span>
+                          <span class="text-muted">Find the peace in your heart</span>
+                          <span class="bottom wrapper-md block"><i class="icon-arrow-right i-lg pull-left"></i> -</span>
+                        </a>
+                        <a href="#">
+                          <img class="img-full" src="$path/images/m41.jpg" alt="...">
+                        </a>
+                      </div>
+                      <div class="item pos-rlt">
+                        <a href="#" class="item-overlay active opacity wrapper-md font-xs">
+                          <span class="block h3 font-bold text-success text-u-c">Share</span>
+                          <span class="text-muted">Share the good songs with your loves</span>
+                          <span class="bottom wrapper-md block">- <i class="icon-arrow-right i-lg pull-right"></i></span>
+                        </a>
+                        <a href="#">
+                          <img class="img-full" src="$path/images/m42.jpg" alt="...">
+                        </a>
+                      </div>
+                      <div class="item pos-rlt">
+                        <a href="#" class="item-overlay active opacity wrapper-md font-xs text-right">
+                          <span class="block h3 font-bold text-white text-u-c">2014</span>
+                          <span class="text-muted">Find, Listen & Share</span>
+                          <span class="bottom wrapper-md block"><i class="icon-arrow-right i-lg pull-left"></i> -</span>
+                        </a>
+                        <a href="#">
+                          <img class="img-full" src="$path/images/m44.jpg" alt="...">
+                        </a>
+                      </div>
+                      <div class="item pos-rlt">
+                        <a href="#" class="item-overlay active opacity wrapper-md font-xs">
+                          <span class="block h3 font-bold text-danger-lter text-u-c">Top10</span>
+                          <span class="text-muted">Selected songs</span>
+                          <span class="bottom wrapper-md block">- <i class="icon-arrow-right i-lg pull-right"></i></span>
+                        </a>
+                        <a href="#">
+                          <img class="img-full" src="$path/images/m45.jpg" alt="...">
+                        </a>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+              </section>
+            </section>
+          </section>
+          <footer class="footer bg-success dker">
+            <div id="jp_container_N">
+                    <div class="jp-type-playlist">
+                      <div id="jplayer_N" class="jp-jplayer hide"></div>
+                      <div class="jp-gui">
+                        <div class="jp-video-play hide">
+                          <a class="jp-video-play-icon">play</a>
+                        </div>
+                        <div class="jp-interface">
+                          <div class="jp-controls">
+                            <div><a class="jp-previous"><i class="icon-control-rewind i-lg"></i></a></div>
+                            <div>
+                              <a class="jp-play"><i class="icon-control-play i-2x"></i></a>
+                              <a class="jp-pause hid"><i class="icon-control-pause i-2x"></i></a>
+                            </div>
+                            <div><a class="jp-next"><i class="icon-control-forward i-lg"></i></a></div>
+                            <div class="hide"><a class="jp-stop"><i class="fa fa-stop"></i></a></div>
+                            <div><a class="" data-toggle="dropdown" data-target="#playlist"><i class="icon-list"></i></a></div>
+                            <div class="jp-progress hidden-xs">
+                              <div class="jp-seek-bar dk">
+                                <div class="jp-play-bar bg">
+                                </div>
+                                <div class="jp-title text-lt">
+                                  <ul>
+                                    <li></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="hidden-xs hidden-sm jp-current-time text-xs text-muted"></div>
+                            <div class="hidden-xs hidden-sm jp-duration text-xs text-muted"></div>
+                            <div class="hidden-xs hidden-sm">
+                              <a class="jp-mute" title="mute"><i class="icon-volume-2"></i></a>
+                              <a class="jp-unmute hid" title="unmute"><i class="icon-volume-off"></i></a>
+                            </div>
+                            <div class="hidden-xs hidden-sm jp-volume">
+                              <div class="jp-volume-bar dk">
+                                <div class="jp-volume-bar-value lter"></div>
+                              </div>
+                            </div>
+                            <div>
+                              <a class="jp-shuffle" title="shuffle"><i class="icon-shuffle text-muted"></i></a>
+                              <a class="jp-shuffle-off hid" title="shuffle off"><i class="icon-shuffle text-lt"></i></a>
+                            </div>
+                            <div>
+                              <a class="jp-repeat" title="repeat"><i class="icon-loop text-muted"></i></a>
+                              <a class="jp-repeat-off hid" title="repeat off"><i class="icon-loop text-lt"></i></a>
+                            </div>
+                            <div class="hide">
+                              <a class="jp-full-screen" title="full screen"><i class="fa fa-expand"></i></a>
+                              <a class="jp-restore-screen" title="restore screen"><i class="fa fa-compress text-lt"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="jp-playlist dropup" id="playlist">
+                        <ul class="dropdown-menu aside-xl dker">
+                          <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+                          <li class="list-group-item"></li>
+                        </ul>
+                      </div>
+                      <div class="jp-no-solution hide">
+                        <span>Update Required</span>
+                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                      </div>
+                    </div>
+                  </div>
+          </footer>
+        </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>    
+  </section>
+  <script src="$path/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="$path/js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="$path/js/app.js"></script>  
+  <script src="$path/js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="$path/js/app.plugin.js"></script>
+  <script type="text/javascript" src="$path/js/jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="$path/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.source.js?skin=aero" type="text/javascript"></script>
+  <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+  <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+  <script type="text/javascript" src="$path/js/jPlayer/music.js"></script>
+</body>
+</html>

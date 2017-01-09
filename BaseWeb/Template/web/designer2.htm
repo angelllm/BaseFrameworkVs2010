@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Html前端可视化设计</title>
+    <script src="../../Content/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <link href="/Admins/Content/jquery-ui.css?r=123" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Admins/Content/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/Admins/Content/js/jquery.easing.1.3.js"></script>       
+    
+    <link href="../../Content/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/html.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="cursor: auto;">
+    <div class="rows w1198 ui-droppable ui-draggable ui-resizable ui-sortable ui-state-highlight" style="opacity: 1; left: 318px; top: 166px; position: absolute; width: 1216px; height: 197px;"><div class="r-title"><h6></h6></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="coll pser33 ui-draggable ui-resizable ui-sortable" style="opacity: 1; left: 4px; top: 31px;"><div class="r-title"><h6></h6></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div class="coll pser25 ui-draggable ui-resizable ui-sortable" style="opacity: 1; left: 422px; top: 31px;"><div class="r-title"><h6></h6></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div class="coll pser25 ui-draggable ui-resizable ui-sortable" style="opacity: 1; left: 736px; top: 31px;"><div class="r-title"><h6></h6></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div class="coll pser25 ui-draggable ui-resizable ui-sortable" style="opacity: 1; left: 1049px; top: 31px; position: absolute; width: 156px; height: 122px;"><div class="r-title"><h6></h6></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+
+    <div id="tool-menu">
+        <ul>
+            <li>
+                <a>添加列</a>
+                <div class="m-list" style="display: block;">
+                    <dl>
+                        <dd>50%</dd>
+                        <dd>33%</dd>
+                        <dd>25%</dd>
+                    </dl>
+                </div>
+            </li>
+            <li>
+                <a>添加行</a>
+                <div class="m-list" style="display: none;">
+                    <dl>
+                        <dd>全屏</dd>
+                        <dd>1198</dd>
+                        <dd>1000</dd>
+                        <dd>980</dd>
+                    </dl>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="../../Content/js/html.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery("div[style^=z-index]").remove();
+        jQuery("div").removeClass(function (index, oldclass) { 
+            return "ui-draggable ui-resizable ui-sortable ui-droppable ui-state-highlight";
+        });
+    </script>
+        
+
+</body>
+</html>

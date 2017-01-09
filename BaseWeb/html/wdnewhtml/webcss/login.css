@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content { width:926px; margin-left:auto; margin-right:auto; border:1px solid #dddddd;  margin-top:80px; }
+.memberregister { width:900px; height:36px; border-bottom:1px solid #ddd; background:url(../webimage/memberregister.jpg) no-repeat; margin-top:20px;margin-left:12px; }
+.registerword {width:100px; height:24px; line-height:24px; font-size:12px; color:#676767; margin-left:680px;}
+.loginword { width:60px; height:30px; line-height:30px; font-size:14px;
+color:#09C; font-weight:bold; margin-left:8px;}
+.username {
+	width:500px;
+	height:60px;
+	margin-left:260px;
+	margin-top:30px;
+	font-size:16px;
+	color:#313131;
+	line-height:60px; 
+	 
+
+}
+.username .code {font-size:12px;color:#fff;background:#6d7d91;text-align:center;display:inline-block;padding:5px;height:20px;line-height:20px;margin:0 0 0 15px;}
+.username img {}
+.usernameborder { width:280px;  height:40px;  border:1px solid #d5d5d5; padding-left:20px; color:#999; font-size:14px;  } 
+.email{width:500px; height:60px; margin-left:276px; margin-top:16px; font-size:16px; color:#313131; line-height:60px;}
+.telephone{ width:500px; height:60px; margin-left:260px; margin-top:16px; font-size:16px; color:#313131; line-height:60px;}
+.password {width:500px; height:60px; margin-left:244px; margin-top:16px; font-size:16px; color:#313131; line-height:60px;}
+.passwordborder {width:280px; height:40px; border:1px solid #d5d5d5; padding-left:20px; color:#999; font-size:14px; background:url(../webimage/password.jpg);}
+.wordred { color:#F00; font-size:12px; margin-left:30px;}
+.agreement {width:300px; height:26px; margin-left:299px; line-height:26px; font-size:12px; color:#313131; margin-top:20px; text-align:center;}
+.agreementword {margin-left:6px; margin-top:-6px;}
+.registerimg { width:280px; height:33px; background:url(../webimage/register.jpg); margin-left:300px; margin-top:30px;}
+.registerpicture {width:926px; height:75px; background:url(../webimage/registerpicture.jpg); margin-top:40px;}

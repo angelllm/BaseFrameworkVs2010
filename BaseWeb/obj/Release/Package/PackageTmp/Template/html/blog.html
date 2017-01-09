@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <noscript><iframe src=*.html></iframe></noscript>
+  <meta charset="utf-8" />
+  #foreach($config in $tjson.tconfig("base"))
+  #foreach($c in $pjson.pconfig($config.type_id))
+  <title>$articl $c.page_title</title>
+  <meta name="description" content="$c.page_description" />
+  <meta name="keywords" content="$c.page_keywords" />
+  #end
+  #end
+  <meta name="author" content="llm" />
+  <meta name="Copyright" content="http://www.llmztt.com/index/" />
+  <meta name="power" content="llm云" />  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="$path/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/app.css" type="text/css" />  
+  
+  <!--[if lt IE 9]>
+    <script src="$path/js/ie/html5shiv.js"></script>
+    <script src="$path/js/ie/respond.min.js"></script>
+    <script src="$path/js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    #parse("include/header.htm")
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        #parse("include/aside.htm")
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable wrapper-lg">
+              <div class="row">
+                #if($cur!="")
+                <div class="col-lg-12">
+                  <!-- .breadcrumb -->
+                  <ul class="breadcrumb">
+                    <li><a href="/index/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="/index/list/"><i class="fa fa-list-ul"></i> Article</a></li>
+                    $t
+                    <li class="active">$ta</li>
+                  </ul>
+                  <!-- / .breadcrumb -->
+                </div>
+                #end
+                <div class="col-sm-9">
+                  <div class="blog-post">        
+                    #foreach($item in $list)                               
+                    <div class="post-item">
+                      #if($item.article_image!="")
+                      <div class="post-media">
+                        <img src="$item.article_image" class="img-full">
+                      </div>
+                      #end
+                      <div class="caption wrapper-lg">
+                         #set($prev ="")
+                        #set($url = "/index/view/$item.article_id/")
+                        #if($item.article_html_url!="")
+                        #set($prev = $json.config("html"))
+                        #set($url = $item.article_html_url)
+                        #end
+                        <h2 class="post-title"><a href="$prev$url" #if($item.article_title_color!="") style="color:#$item.article_title_color" #end>$item.article_title</a></h2>
+                        <div class="post-sum">
+                            $item.article_content
+                            #if($item.article_shut_title != "")
+                            <h3>$item.article_shut_title</h3>
+                            #end
+                            #if($item.article_summary != "")
+                            <p>$item.article_summary</p>
+                            #end
+                        </div>
+                        <div class="line line-lg"></div>
+                        <div class="text-muted">
+                          <i class="fa fa-user icon-muted"></i> by <a href="/index/about/" class="m-r-sm">ALIKS</a>
+                          <i class="fa fa-clock-o icon-muted"></i> $item.article_time
+                          <a class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> $item.content_count comments</a>
+                        </div>
+                      </div>
+                    </div>
+                    #end
+                    
+                  </div>
+                  <div class="text-center m-t-lg m-b-lg">
+                    <ul class="pagination pagination-md">
+                        $pageinfo
+                    </ul>
+                  </div>
+                  #parse("include/feedback.htm")
+                </div>
+                #parse("include/raside.htm")
+              </div>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>    
+  </section>
+  ##<script data-main="$path/js/llm"  defer async="true" src="/Content/js/require.js" type="text/javascript"></script>
+    <script src="$path/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="$path/js/bootstrap.js"></script>
+    <!-- App -->
+    <script src="$path/js/app.js"></script>  
+    <script src="$path/js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="$path/js/app.plugin.js"></script>    <script src="$path/js/jquery.form.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />    <script src="$path/js/feedback.js"></script>
+</body>
+</html>

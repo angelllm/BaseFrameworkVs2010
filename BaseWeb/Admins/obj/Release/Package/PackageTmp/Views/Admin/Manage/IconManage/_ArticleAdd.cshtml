@@ -1,0 +1,363 @@
+﻿@{
+    ViewBag.Title = ViewBag.navTitle + ViewBag.llm;
+    Layout = null;
+}
+@model llm.Models.sys_article
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.source.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.config.js" type="text/javascript"></script>
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <script charset="utf-8"src="/Content/js/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+    <script src="/Content/js/colorpicker/js/colorpicker.js" type="text/javascript"></script>
+    <link href="/Content/js/colorpicker/css/colorpicker.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+<body>
+
+<div id="containter">
+    #parse("include/left.cshtml" )
+    <div id="right-containter">
+       #parse("include/top.cshtml" )
+       
+       <div id="temp-modify" >
+           <div id="edit-win">
+
+               
+                    <ul>
+		                <li><a href="#tabs-1">基础设置</a></li>
+		                <li><a href="#tabs-2">优化设置</a></li>
+		                <li><a href="#tabs-3">其他设置</a></li>
+	                </ul>
+	                <div id="tabs-1">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>文章标题:</font>
+                                    <div class="input title">
+                                        @Html.TextBoxFor(m => m.article_title, new { @class = "txt title" })
+                                        @Html.TextBoxFor(m => m.article_id, new { type = "hidden" })
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div id="customWidget">
+					                    <div id="colorSelector2"><div id="color-panel"></div></div>
+	                                    <div id="colorpickerHolder2">
+	                                    </div>
+				                    </div> 
+                                    @Html.TextBoxFor(m => m.article_title_color, new { type = "hidden", @Value = "0" })
+                                    <script src="/Content/js/color.js" type="text/javascript"></script>
+
+                                </div>
+                                <div class="row-item">
+                                    <font>标签:</font>
+                                    <div class="input title" style="width:400px;">
+
+                                        <select id="ddlTag"  multiple="multiple" class="chosen-select w350">
+                                                @foreach (var tag in ViewBag.tagList)
+                                                {
+                                                    <option value="@tag.tag_name">@tag.tag_name</option>
+                                                }
+                                        </select>
+                                        @Html.TextBoxFor(m => m.article_tag, new { type = "hidden" })
+                                    </div>
+                                    <i><a href="javascript:void()" class="tag-add">添加标签</a></i>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>分类:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType">
+                                                @foreach (var type in ViewBag.typeList)
+                                                {
+                                                    <option value="@type.type_id">@type.type_name</option>
+                                                }
+                                        </select>
+                                        @Html.TextBoxFor(m => m.article_type, new { type = "hidden", Value = "1" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                <div class="row-item">
+                                    <font>是否置顶:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          @Html.TextBoxFor(m => m.article_is_top, new { @class = "switch-input", type = "checkbox" }) 
+                                          @Html.TextBoxFor(m => m.article_is_top, new { type = "hidden", Value = "false" })
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          @Html.TextBoxFor(m => m.article_status, new { @class = "switch-input", type = "checkbox" }) 
+                                          @Html.TextBoxFor(m => m.article_status, new { type = "hidden", Value = "0" })
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>文章摘要:</font>
+                                    <div class="input title">
+                                        @Html.TextAreaFor(m => m.article_content)
+                                        <script type="text/javascript">
+                                            var editor_a = new baidu.editor.ui.Editor({ initialFrameWidth: 600 });
+                                            editor_a.render('article_content'); 
+                                        </script> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                            </div>
+       
+                       </div>
+                
+                    </div>
+	                <div id="tabs-2">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>摘要:</font>
+                                    <div class="input">
+                                        @Html.TextAreaFor(m => m.article_summary, new { @class = "area title" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>SEO KW:</font>
+                                    <div class="input">
+                                        @Html.TextAreaFor(m => m.article_seo_kw, new { @class = "area title" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> 
+                                <div class="row-item">
+                                    <font>SEO DES:</font>
+                                    <div class="input">
+                                        @Html.TextAreaFor(m => m.article_seo_desc, new { @class = "area title" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+	                <div id="tabs-3">
+                        <div class="edit-win">
+                            <div class="waper">
+                                
+                                <div class="row-item">
+                                    <font>短标题:</font>
+                                    <div class="input">
+                                        @Html.TextBoxFor(m => m.article_shut_title, new { @class = "txt title" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>标题颜色:</font>
+                                    <div class="input">
+                                        @Html.TextBoxFor(m => m.article_title_color, new { @class = "txt title" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>引用地址:</font>
+                                    <div class="input">
+                                        @Html.TextBoxFor(m => m.article_ref_url, new { @class = "txt title" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>来源:</font>
+                                    <div class="input">
+                                        @Html.TextBoxFor(m => m.article_source, new { @class = "txt title", @Value = "本站自创" })
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>加粗:</font>
+                                    
+                                    <div class="input ck radio">
+                                        <label class="switch">
+                                          @Html.TextBoxFor(m => m.article_is_bold, new { @class = "switch-input", type = "checkbox" }) 
+                                          @Html.TextBoxFor(m => m.article_is_bold, new { type = "hidden", Value = "false" })
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>是否斜体:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          @Html.TextBoxFor(m => m.article_is_italic, new { @class = "switch-input", type = "checkbox" }) 
+                                          @Html.TextBoxFor(m => m.article_is_italic, new { type = "hidden", Value = "false" })
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <input type="submit" value=" 提 交 " id="btnSub" />
+                    </div>
+               
+           </div>
+       </div>
+      
+       
+       
+       <script type="text/javascript">
+
+
+           $(function () {
+
+
+               $("#edit-win").tabs();
+               $("#btnSub").button();
+
+               $("#btnFile").live("click", function () {
+
+                   //$("#txtImage").click();
+
+               });
+
+               $("#txtImage").live("change", function () {
+
+                   //$("#filename").html($(this).val());
+
+               });
+
+
+
+               $(".tag-add").live("click", function () {
+
+                   art.dialog({
+                       title: '添加标签',
+                       id: "_win_tip",
+                       content: "<div style='margin:25px;'><div>标签名称:</div><input type='text' id='txtTagName' /><div>",
+                       resize: false,
+                       //follow: $this[0],
+                       lock: true,
+                       okVal: '添加标签',
+                       ok: function () {
+                           var flag = true;
+                           var tn = $("#txtTagName");
+                           if ($.trim(tn.val()) == "") {
+                               art.dialog.tips("请填写标签名称", 1);
+                               flag = false;
+                           } else {
+
+
+                               $.ajax({
+                                   type: "POST",
+                                   url: "/admin/Ajax/article_tag_add/",
+                                   async: false,
+                                   data: {
+                                       val: tn.val()
+                                   },
+                                   beforeSend: function () {
+
+                                   },
+                                   success: function (data) {
+
+                                       window.location.reload();
+
+
+                                   },
+                                   error: function () {
+                                       alert('error');
+                                   }
+                               })
+
+                           }
+
+                           return flag;
+                       }
+
+                   });
+
+               });
+
+
+           });
+
+
+       </script>
+       <script src="@Url.Content("~/Content/js/chosen.jquery.js")" type="text/javascript" charset="utf-8"></script>
+       <script src="@Url.Content("~/Content/js/prism.js")" type="text/javascript" charset="utf-8"></script>
+       <script type="text/javascript">
+           $(".chosen-select").chosen();
+
+           $(function () {
+
+               $('#ddlType').on('change', function (evt, params) {
+
+                   $("#article_type").val($(this).find("option:selected").val());
+
+               });
+
+               $('#ddlTag').on('change', function (evt, params) {
+
+                   if ($(this).find("option:selected").length == 0) {
+                       $("#article_tag").val("");
+                   } else {
+
+                       $.each($(this).find("option:selected"), function (index, item) {
+
+                           if (index == 0) {
+                               $("#article_tag").val($(item).val());
+                           } else {
+
+                               $("#article_tag").val($("#article_tag").val() + "," + $(item).val());
+                           }
+
+                       });
+
+                   }
+
+               });
+
+
+               $('.switch input:checkbox').not($("#article_status")).on('click', function (evt, params) {
+                   
+                   $(this).val($(this).val().toLowerCase() == "true" ? "false" : "true");
+                   $(this).next().val($(this).val());
+               });
+
+               $('#article_status').on('click', function (evt, params) {
+
+                   $(this).val($(this).val()== "1" ? "0" : "1");
+                   $(this).next().val($(this).val());
+               });
+
+
+           })
+       </script>
+
+        
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+#w-header-box {
+  height: 30px;
+}
+body {
+    background:#fff;
+}
+
+.content { width:955px; margin:0 auto;}
+.memberregister {  margin-top:20px;margin-left:12px; }
+.loginword { width:60px; height:30px; line-height:30px; font-size:14px;
+color:#09C; font-weight:bold; margin-left:8px;}
+ 
+.registerpicture {width:926px; height:75px;  margin-top:40px;}
+
+
+.info-warpper{margin:30px auto;line-height:60px;}
+.info-warpper p{margin:0 auto;text-align:center;color:#606060;position:relative;}
+.info-warpper p img {top:10px;position:absolute;}
+.info-warpper p label {margin-left:60px;display:inline-block;margin-top:5px;}
+
+.info-warpper p span {color:#ff5a00;margin:0 10px;}
+.info-warpper p a{color:#35887d;margin:0 0 0 20px;}
+.info-warpper .phone {padding-left:130px;}
+.info-warpper .code {width:234px;height:26px;line-height:26px;border:1px solid #d5d5d5;margin:0 10px;outline:none;padding-left:5px;}
+.info-warpper .btnCode{width:130px;height:32px;line-height:32px;background:#f5873a;border:1px solid #fbcfb0;text-align:center;color:#fff;cursor:pointer;
+-webkit-transition: background-color .2s ease-in;
+-moz-transition: background-color .2s ease-in;
+-o-transition: background-color .2s ease-in;
+transition: background-color .2s ease-in;
+border-radius:2px;
+outline:none;
+}
+.info-warpper .btnCode:hover{background:#f27720;}
+.info-warpper .btnGray{background:#c7c7c7;border:1px solid #dbdbdb;}
+.info-warpper .btnGray:hover{background:#c7c7c7;border:1px solid #dbdbdb;}
+.btnSend{width:280px;height:35px;line-height:35px;background:#f5873a;border:1px solid #fbcfb0;text-align:center;color:#fff;cursor:pointer;margin:30px auto;font-weight:bold;
+-webkit-transition: background-color .2s ease-in;
+-moz-transition: background-color .2s ease-in;
+-o-transition: background-color .2s ease-in;
+transition: background-color .2s ease-in;
+border-radius:2px;
+outline:none;
+}
+.btnSend:hover{background:#f27720;}
+
+.z_logo{border-bottom:2px solid #c40001; float:left; width:100%; margin:10px 0 25px 0;}
+.z_logo a.logo{margin-left:10px; float:left;margin-top: 25px;}
+.z_logo img.th{float:left; margin:25px 0 0 10px;}
+.memberregister {height:36px; margin-top:20px;margin-left:10px; font-size:12px;  color:#676767; clear:both;}
+.memberregister a{color:#c40001; font-weight:bold;}
+.memberregister a:hover{color:#48d9cc; text-decoration:underline;}
+.Notice{background:url(../webimage/lb.png) no-repeat left; text-indent:25px; display:inline-block;}
+.registerword {float:right; margin-right:55px;}
+.registerlist{border:1px solid #d5d5d5; padding:50px 0;}
+
+::-webkit-input-placeholder{color:#b1b1b1;}/* WebKit browsers */
+::-moz-placeholder{color:#b1b1b1;}/* Mozilla Firefox 19+ */
+:-moz-placeholder{color:#b1b1b1;}/* Mozilla Firefox 4 to 18 */
+:-ms-input-placeholder{color:#b1b1b1;}/* Internet Explorer 10+ */
+
+@media screen and (min-width:1197px){
+	.content { width:1150px; margin:0 auto;}
+	.logincon{margin-right:100px;}
+	.registerlist p.Safety{margin-left:465px;}
+	.registerimg{margin-left:465px;}
+}

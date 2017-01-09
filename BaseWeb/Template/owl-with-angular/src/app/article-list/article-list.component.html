@@ -1,0 +1,64 @@
+<div id="posts-box">
+    <div class="posts clearfix">
+        <article *ngFor="let art of list" class="post type-post status-publish format-standard sticky hentry category-wordpress tag-owl tag-wordpress">
+            <div class="post-wrap">
+                <!-- 置顶文章 -->
+                <div *ngIf="art.article_is_top" class="post-sticky with-tooltip " data-tooltip="置顶文章"></div>
+                <div class="post-inner">
+                    <div class="featured-box clearfix">
+                        <div class="featured-image">
+                            <a [routerLink]="'/view/'+art.article_id" [title]="art.article_title">
+                                <img [src]="'http://www.llmztt.com/'+art.article_image" [alt]="art.article_title" class="">
+                            </a>
+                        </div>
+                        
+                        <ul class="post_meta clearfix">
+                            <li class="mate-view"><i class="fa fa-eye"></i>{{art.article_pv}}</li>
+                            <li class="mate-com"><a [routerLink]="'/view/'+art.article_id+'/#comments-title'" title="comments"><i class="fa fa-comments-o"></i>{{art.commite_count}}</a></li>
+                            <li class="mate-edit fr"></li>
+                        </ul>
+                    </div>
+                    <div class="post-body">
+                        <header>
+                            <h2 class="entry-title"><a [routerLink]="'/view/'+art.article_id" [title]="art.article_title">{{art.article_title}}</a></h2>
+                        </header>
+                        <div class="post-content">
+                            <div class="content clearfix">
+                                <div [innerHTML]="art.article_content"></div> 
+                                <div class="read_more"><a [routerLink]="'/view/'+art.article_id">阅读更多</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="bottom_meta clearfix">
+                    <li class="mate-time fl"><i class="fa fa-clock-o"></i>{{art.article_guid}}前 ({{art.article_time }})</li>
+                    <li class="mate-cat fl">
+                        <i class="fa fa-bookmark"></i>
+                        <a [routerLink]="'/category/'+art.article_type_name+'/'" rel="category tag">{{art.article_type_name}}</a>
+                    </li>
+                    <li class="meta_tabs fl">
+                    <i class="fa fa-tags"></i>
+                        <a *ngFor="let tag of art.article_tag.split(',')" [routerLink]="'/tag/'+tag+'/'" rel="tag">{{tag}}</a>
+                    </li>
+                    <li class="meta_like fr"><a routerLink="/#" class="jm-post-like" title="Like"><i class="fa fa-heart-o"></i>{{art.article_like}}</a> </li>
+                </ul>
+            </div>
+            <div class="min_comments m_hide" *ngFor="let c of commite">
+                <ul *ngIf="art.article_id == c.commite_article_id">
+                    <li >
+                        <a [routerLink]="'/view/'+art.article_id" [title]="art.article_time">
+                        <figure class="avatar avatar-box avatar-xs"><img src="http://llmztt.com/assets/images/User-5S.png" class="avatar avatar-120 ajax_gif" height="120" width="120"></figure><span class="comment_box">{{c.commite_uname}}: {{c.commite_content}}</span></a>
+                    </li> 
+                </ul>
+            </div>
+        </article>  
+    </div>
+    <!-- 分页 -->
+    <div class="post-nav">
+        <div class="post-nav-inside clearfix" style="display: none;">
+            <div class="post-nav-left"></div>
+            <div class="post-nav-right"><a href="/page/2/">下一页</a></div>
+        </div>
+    </div>
+    
+</div>

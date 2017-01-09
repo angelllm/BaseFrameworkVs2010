@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>管理后台</title>
+        #parse("include/meta.htm")
+        #parse("include/view-css.htm")
+        
+    </head>
+    <!-- END HEAD -->
+
+    <body ms-controller="page" class="page-container-bg-solid page-boxed wysihtml5-supported">
+        <!-- BEGIN HEADER -->
+        #parse("include/header.htm")
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="container llm-container">
+                        <div class="col-md-12 col-sm-12 col-xl-12 ">
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="/admin/">后台首页</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="/admin/memberlist/">会员管理</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>会员添加</span>
+                                </li>
+                            </ul>
+                            <div class="portlet light tasks-widget">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <i class="fa fa-list font-red"></i>
+                                        <span class="caption-subject font-red bold uppercase">会员管理</span>
+                                        <span class="caption-helper">会员添加</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a  href="javascript:history.go(-1)" data-original-title="" title="返回" class="btn-mt-6 btn btn-circle btn-default full-right btn-back">
+                                            <i class="fa fa-arrow-circle-left "></i> Back </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen full-right" href="javascript:;" data-original-title="" title="全屏"></a>
+                                        <div class="clear-fix"></div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                   
+                                    <div class="table-scrollable table-scrollable-borderless tab-content" ms-controller="box">
+                                       <div class="blockUI blockMsg blockElement text-center hide" id="loading"><div class="loading-message "><div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></div>
+                                       <form action="/admin/domemberadd/" id="form_sample_2" class="form-horizontal" novalidate="novalidate">
+                                            <div class="form-body">
+
+                                                <div class="row">
+                                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                                    <ul class="nav nav-tabs tabs-left">
+                                                        <li class="active">
+                                                            <a href="#tab_6_1" data-toggle="tab"> 账号信息 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_2" data-toggle="tab"> 基础信息 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_3" data-toggle="tab"> 会员相关 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_5" data-toggle="tab"> 其他信息 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_6" data-toggle="tab"> 相关证书 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_4" data-toggle="tab"> 头像设置 </a>
+                                                        </li>
+                                                       
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tab_6_1">
+                                                            <!--tab_6_1 start-->
+                                                            <div class="alert alert-danger display-hide">
+                                                                <button class="close" data-close="alert"></button> 填写有误，请检查后再提交！ </div>
+                                                            <div class="alert alert-success display-hide">
+                                                                <button class="close" data-close="alert"></button> 提交成功! </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">会员名称
+                                                                    <span title="" class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa"></i>
+                                                                        <input type="text" class="form-control" name="member_name" id="member_name"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">密码
+                                                                    <span title="" class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa" title="请填写密码"></i>
+                                                                        <input type="text" class="form-control" name="member_pwd" id="member_pwd"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">再次输入密码
+                                                                    <span title="" class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa" title="请再次输入密码"></i>
+                                                                        <input type="text" class="form-control" name="member_pwd_2"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!--tab_6_1 end-->
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_2">
+                                                             <!--tab_6_2 start-->
+                                                             
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">真实姓名
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="真实姓名" name="member_real_name"> 
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">身份证号码
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="身份证号码" name="member_number"> 
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">手机
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="手机号码" name="member_phone"> 
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">电话
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="电话号码" name="member_tel"> 
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">邮箱
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="邮箱" name="member_email"> 
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">QQ
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="QQ" name="member_qq"> 
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">工作单位
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" placeholder="工作单位" name="member_work"> 
+                                                                </div>
+                                                             </div>
+                                                             <!--tab_6_2 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_3">
+                                                            <!--tab_6_3 start-->
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">会员类型
+                                                                    <span></span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div> 
+                                                                        <input type="hidden" value="" class="form-control" name="member_type"> 
+                                                                        <select ms-on-change="selectType()"  class="form-control select2">
+                                                                            <option  value="0"></option>
+                                                                            <option  value="buyer">我是买家</option>
+                                                                            <option  value="seller">我是卖家</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">会员级别
+                                                                    <span></span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div> 
+                                                                        <input type="hidden" value="" class="form-control" name="member_level"> 
+                                                                        <select ms-on-change="selectType()"  class="form-control select2">
+                                                                            <option data-bind=""  value="0"></option>
+                                                                            #foreach ($type in $list)
+                                                                                <option  value="$type.type_id">$type.type_name</option>
+                                                                            #end
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">会员积分</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa"></i>
+                                                                        <input placeholder="会员积分" type="text" value="0" class="form-control" name="member_integral" id="member_integral"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">密码找回</label>
+                                                                <div class="col-md-6">
+                                                                     <div> 
+                                                                        <input type="hidden" value="" class="form-control" name="member_zhaohui_q"> 
+                                                                        <select ms-on-change="selectType()"  class="form-control select2">
+                                                                            <option value="0"></option>
+                                                                            <option ms-repeat-ques="questionlist" ms-attr-value="ques.id">{{ques.question}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">密码找回答案</label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input placeholder="密码找回答案" type="text" class="form-control" name="member_zhaohui"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">会员状态</label>
+                                                                <div class="col-md-6">
+                                                                     <div> 
+                                                                        <input type="hidden" value="1" class="form-control" name="member_status"> 
+                                                                        <select ms-on-change="selectType()"  class="form-control select2">
+                                                                            <option value="1">正常激活</option>
+                                                                            <option  value="0">未验证</option>
+                                                                            <option  value="2">账号异常</option>
+                                                                            <option  value="3">多次输入密码未果</option>
+                                                                            <option  value="4">违规</option>
+                                                                            <option  value="-1">删除</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            
+                                                            <!--tab_6_3 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_4">
+                                                             <!--tab_6_4 start-->
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">会员头像
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="fileinput fileinput-new fileinput-exists" data-provides="fileinput">
+                                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;background:url($path/images/noimage.png)">
+                                                                            <img id="ImageShow" ms-src="filepath" onerror="this.src='$path/images/noimage.png'" data-def="$path/images/noimage.png" alt="" /> 
+                                                                        </div>
+                                                                        <div>
+                                                                            <a ms-on-click="upload(1)" href="javascript:;" class="btn default fileinput-exists pull-left file-btn-chance-file margin-right-10"> 上传图片 </a>
+                                                                            <a ms-if="isupload" ms-on-click="clearFile" href="javascript:;" class="btn red fileinput-exists pull-left file-btn-chance-file" data-dismiss="fileinput"> 取消图片 </a>
+                                                                        </div>
+                                                                    </div>
+                                                                     
+                                                                     <div class="input hide">
+                                                                        <input type="hidden" ms-attr-value="filepath" id="hfImage" name="member_face" />
+                                                                        <div id="fileQueue" style="display:inline"></div>
+                                                                        <div id="qid"></div> 
+                                                                    </div> 
+                                                                    <div class="clear"></div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!--tab_6_4 end-->
+
+                                                        </div>
+
+                                                        <div class="tab-pane fade" id="tab_6_5">
+                                                             <!--tab_6_4 start-->
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">毕业学校
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input placeholder="毕业学校" type="text" class="form-control" name="member_school"> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">出生年月
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <input type="hidden" class="form-control" id="birdthday" name="member_birthday" ms-attr-value="{{birdthday[0].yeartxt}}-{{birdthday[0].monthtxt}}-{{birdthday[0].daytxt}}" >
+                                                                        <div class="dropdown col-sm-2" style="margin-left:-15px;margin-right:10px;">
+                                                                            <button style="width:70px;" class="btn btn-default dropdown-toggle" type="button" id="btnyear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            {{birdthday[0].yeartxt}}
+                                                                            <input type="hidden" id="year" value="$year" />
+                                                                            <input type="hidden" id="month" value="$month" />
+                                                                            <input type="hidden" id="day" value="$day" />
+                                                                            <span class="caret"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu" aria-labelledby="btnyear" style="overflow-y:scroll;height:145px;min-width:65px;">
+                                                                            <li ms-repeat-year="birdthday[0].year" ms-on-click="selectYear"><a class="inline-block text-center active">{{year}}</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="dropdown col-sm-2">
+                                                                            <button class="btn btn-default dropdown-toggle" type="button" id="btnmonth" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            {{birdthday[0].monthtxt}}
+                                                                            <span class="caret"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu" aria-labelledby="btnmonth" style="overflow-y:scroll;height:145px;min-width:65px;">
+                                                                            <li ms-repeat-month="birdthday[0].month" ms-on-click="selectMonth"><a class="inline-block text-center">{{month}}</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="dropdown col-sm-2" style="margin-left:-16px;">
+                                                                            <button class="btn btn-default dropdown-toggle" type="button" id="btnday" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            {{birdthday[0].daytxt}}
+                                                                            <span class="caret"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu" aria-labelledby="btnday" style="overflow-y:scroll;height:145px;min-width:65px;">
+                                                                            <li ms-repeat-day="birdthday[0].day" ms-on-click="selectDay"><a class="inline-block text-center">{{day}}</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                     </div> 
+                                                                 </div>
+                                                              
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">自我描述
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea id="gongzuojingli" name="member_remark"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--tab_6_4 end-->
+                                                        </div>
+
+                                                        <div class="tab-pane fade" id="tab_6_6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">证书
+                                                                </label>
+                                                                <div class="col-md-10">
+                                                                    <div class="fileinput fileinput-new fileinput-exists" >
+                                                                        <span ms-repeat-item="imglist">
+                                                                            {{item|html}}
+                                                                        </span>
+                                                                        <div class="clear"></div>
+                                                                        <div>
+                                                                            <a ms-on-click="upload(2)" href="javascript:;" class="btn default fileinput-exists pull-left file-btn-chance-file margin-right-10"> 上传图片 </a>
+                                                                            <a ms-if="isupload_zhengshu" ms-on-click="clearZhengshu" href="javascript:;" class="btn red fileinput-exists pull-left file-btn-chance-file" > 取消图片 </a>
+                                                                            <div class="clear"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="input hide">
+                                                                        <input type="hidden" ms-attr-value="filepath_zhengshu" id="zhengshu" name="member_upload" /> 
+                                                                    </div> 
+                                                                    <div class="clear"></div>
+                                                                </div>
+                                                             </div>
+                                                             
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            </div>
+                                            <div class="form-actions">
+                                                <div class="row">
+                                                    <div class="col-md-offset-4 col-md-8 col-sm-offset-4 col-sm-8">
+                                                        <button type="submit" class="btn green"> 提 交 </button>
+                                                        <button type="reset" class="btn default"> 取 消 </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div id="color-image-upload hide">
+                                            <form id="upload" class="hide" method="post" action="/Ajax/AddImage/1/" enctype="multipart/form-data">
+			                                    <div id="drop" style="margin:0;padding:0;">
+				                                    <a>浏览</a>
+				                                    <input type="file" name="upl" multiple="multiple" />
+			                                    </div>
+			                                    <ul></ul>
+		                                    </form> 
+                                        </div>
+
+                                       
+                                               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                #parse("include/sidebar.htm")
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        #parse("include/footer.htm")
+        <!-- BEGIN INNER FOOTER -->
+        <script src="$path/js/sea.js" type="text/javascript"></script>
+        <script src="$path/js/config.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            seajs.use(["module/common/commonloading-list", "module/member/item"])
+        </script>
+
+
+</body>
+</html>

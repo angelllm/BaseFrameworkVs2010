@@ -1,0 +1,32 @@
+#sku-color-size table{width:100%;text-align:center;}
+/*#sku-color-size .table td:nth-child(2) table:nth-last-child(1) td{border:0}*/
+/*#sku-color-size .table .table-cell table:nth-last-child(1) td{}*/
+#sku-color-size .rows .table-first{border-bottom:1px solid #58626e;border-left:1px solid #58626e;width: 120px;text-align: left;}
+#sku-color-size .rows .table-cell{border-right:1px solid #58626e;border-bottom:1px solid #58626e;border-left:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1{}
+#sku-color-size .rows .table-cell .sku-area-1 .table-first{border-right:1px solid #58626e;border-bottom:1px solid #58626e;border-left:0px solid #58626e;text-align: center;width: 80px;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell{border-right:0px solid #58626e;border-bottom:0px solid #58626e;border-left:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1:nth-last-child(1) td{border-bottom:0px solid #58626e;text-align: center;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2{}
+#sku-color-size .rows .table-cell .sku-area-1:nth-last-child(1) .table-cell .sku-area-2:nth-last-child(1) td{border-bottom:0px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2 .table-first{border-right:1px solid #58626e;border-bottom:1px solid #58626e;border-left:0px solid #58626e;width: 80px;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2 .table-cell{border-right:0px solid #58626e;border-bottom:1px solid #58626e;border-left:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2 .table-first{border-right:1px solid #58626e;border-bottom:1px solid #58626e;border-left:0px solid #58626e;}
+
+
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-first{border-right:1px solid #58626e;border-bottom:1px solid #58626e;border-left:0px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-cell{border-right:1px solid #58626e;border-bottom:1px solid #58626e;border-left:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-price{width:68px;border-right:1px solid #58626e;border-bottom:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-count{width:68px;border-right:1px solid #58626e;border-bottom:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-sn{width:68px;border-right:1px solid #58626e;border-bottom:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-set{width:28px;border-bottom:1px solid #58626e;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-set .div-set{padding-top: 6px;height: 19px;position:relative;width: 30px;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-set .div-set a{cursor:pointer;background:url(/Admins/Content/images/set-icon.png) no-repeat 0 -16px;width:14px;height:14px;display: inline-block;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-set .div-set a:hover{text-decoration:none;background-position: 0 0}
+
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2   .table-price input{text-align:center;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-price .txts{width:50px;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-count .txts{width:50px;text-align:center;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2   .table-sn .txts{width:50px;text-align:center;}
+#sku-color-size .rows .table-cell .sku-area-1 .table-cell .sku-area-2  .table-set .txts{width:50px;text-align:center;}
+.error{border:1px solid #ff0000;}

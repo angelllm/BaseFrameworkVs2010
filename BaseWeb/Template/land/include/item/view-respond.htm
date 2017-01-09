@@ -1,0 +1,54 @@
+﻿                       <div id="respond" class="comment-respond">
+                            <h3 id="reply-title" class="comment-reply-title">
+                              发表评论<small><div id="cancel-comment-reply-link"><i class="icon-remove-sign"></i></div></small>
+                            </h3>
+                            <form action="/land/commite/$art.article_id/" method="post" id="commentform" class="comment-form">
+                              
+                              <p class="comment-form-comment">
+                                <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"  required="required"></textarea>
+                                <span class="error" style="display: none;">请填写评论</span>
+                              </p>
+                              <div id="loading" style="display: none;"><i class="fa fa-spinner fa-pulse"></i>正在提交, 請稍候...</div>
+                              <input type="hidden" name="commite_ref_id" value="0" />
+
+                              <p class="comment-form-author">
+                                <label for="commite_uname">姓名<span class="required">*</span></label>
+                                <input type="hidden" name="commite_uhead" value="$uface" />
+                                <input id="commite_uname" name="commite_uname" type="text" value="$uid" size="30" aria-required="true" required="required">
+                                <span class="error" style="display: none;"> 请填写姓名</span>
+                              </p>
+                              <p class="comment-form-email">
+                                <label for="commite_email">
+                                  电子邮件
+                                  <span class="required">
+                                    *
+                                  </span>
+                                </label>
+                                <input id="commite_email" name="commite_email" type="text" value="" size="30" aria-describedby="email-notes"
+                                aria-required="true" required="required">
+                                <span class="error" style="display: none;"> 请填写电子邮件</span>
+                              </p>
+                              <p class="comment-form-url">
+                                <label for="commite_url">
+                                  站点
+                                </label>
+                                <input id="commite_url" name="commite_url" type="text" value="" size="30">
+                              </p>
+                              <div class="unlock">
+                               
+                              </div>
+                              <p class="form-submit">
+                                <input name="submit" type="button" id="submit" class="submit"  value="发表评论" >
+                              </p> 
+                              <div id="loading-submit"><span><i class="fa fa-spinner fa-pulse"></i>Loading...</span></div>
+                            </form>
+                          </div>
+                          <div class="clearfix"></div>
+                          <div id="bulletin_box" class="commit-info hide">
+			                    <i class="fa fa-bell-o"></i>
+			                    <div id="bulletin">
+				                    <ul class="bulletin_list">
+                                        <li>评论已提交，请等待审核！</li>
+                                    </ul>	
+			                    </div>
+		                    </div>

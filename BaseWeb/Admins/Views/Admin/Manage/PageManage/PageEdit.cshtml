@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>添加网站修改 - 网站管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.source.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.config.js" type="text/javascript"></script>
+    <script charset="utf-8" src="/Content/js/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <script charset="utf-8"src="/Content/js/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+    <script src="/content/js/uploadify/jquery.uploadify-3.1.js" type="text/javascript"></script>
+    <link href="/content/js/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <script src="/Admins/Content/js/jquery.form.js" type="text/javascript"></script>
+</head>
+ 
+<body>
+
+<div id="containter">
+    #parse("include/PageLeft.cshtml" )
+    <div id="right-containter">
+       #parse("include/top.cshtml" )
+       <input type="hidden" id="hfTid" value="$id" />
+       <input type="hidden" id="hfBind" value="$val" />
+       <input type="hidden" id="hfTypeId" value="$ty.type_id" />
+       <div class="nav-menu">
+            <a href="/Admin/PageList/?t=$ty.type_id" id="btnAdd"> 返回列表 </a>
+       </div>
+       <form action='/Admin/PageEditDo/$model.page_id/' method="post" id="ajax-form">
+        <input type="hidden" id="page_type_id" name="page_type_id" value="$model.page_type_id" /> 
+        <input type="hidden" id="page_id" name="page_id" value="$model.page_id" /> 
+        <div class="ui-widget">
+	        <div class="ui-state-highlight ui-corner-all ui-waper">
+                 #if($ty.type_code =="base")
+		        <p><span class="ui-icon ui-icon-info ui-position"></span>
+		            <p class="ui-p-text">基础设置说明:此乃记录网站信息的唯一途径,不可删除,不可转换类型,有且只有一条记录!</br>
+                    1.填写域名的时候请以:http://www.开头 例如:<a href="http://www.llmztt.com" target="_blank">http://www.llmztt.com</a></br>
+                    2.名称可以随意修改,不影响网站运行,但您老人家自己能分清哪个是哪个就行!<br />
+                    3.网站标题保持在80字符以内(即:40个中文汉字80个英文字母空格也计算在内),网站介绍在100以内,关键字在200以内!<br />
+                    4.每个关键字请用 "," 或者 "|" 隔开,注意不要频繁修改关键字,会影响网站收录!<br />
+                    5.如果状态为灰色则网站头部不写入SEO信息
+                    </p>
+                    <div class="clear"></div>
+                </p>
+                #elseif($ty.type_code =="footer") 
+                <p><span class="ui-icon ui-icon-info ui-position"></span>
+		            <p class="ui-p-text">基础设置说明:此乃记录网站底部信息的唯一途径,不可删除,不可转换类型,有且只有一条记录!</br>
+                    1.假如复制过来的文字出现板式错乱可以在在粘贴前点击工具栏上的"T",复制过后选择"a" 最后选择"橡皮"清除格式 如下:
+                    <img src="/admins/Content/images/edit.png" /><br />
+                    2.状态为灰色时,不显示内容!
+                    </p>
+                    <div class="clear"></div>
+                </p>
+                #elseif($ty.type_code =="logo")
+                <p><span class="ui-icon ui-icon-info ui-position"></span>
+		            <p class="ui-p-text">基础设置说明:此乃记录网站Logo信息的唯一途径,不可删除,不可转换类型,有且只有一条记录!</br>
+                    1.图片可重复上传新的会覆盖旧的,点击保存后就能看到效果!<br />
+                    2.如需鼠标放上去logo上能看见一些文字说明,请在logo说明中填入文字!<br />
+                    3.状态为灰色时,不显示Logo!
+                    </p>
+                    <div class="clear"></div>
+                </p>
+                #elseif($ty.type_code =="friendlink")
+                <p><span class="ui-icon ui-icon-info ui-position"></span>
+		            <p class="ui-p-text">基础设置说明:可添加多条,可删除,可传图片!</br>
+                    1.填写链接的的时候请以:http://www.开头 例如:<a href="http://www.llmztt.com" target="_blank">http://www.llmztt.com</a></br>
+                    2.排序可调整友情链接的显示顺序,排序规则按数字排序0123456789,数字越小排的最前!<br />
+                    3.备注乃鼠标悬浮在连接上显示的文字说明!<br />
+                    4.可以添加图片作为图片友情链接!<br />
+                    5.链接后面有个"弹出"选项,勾选时(建议勾选),点击友链会跳出新的链接反之会在本站内打开!
+                    6.状态为灰色时,不显示此条友链!
+                    </p>
+                    <div class="clear"></div>
+                </p>
+                #elseif($ty.type_code =="banner")
+                <p><span class="ui-icon ui-icon-info ui-position"></span>
+		            <p class="ui-p-text">banner设置说明:此乃首页滚动大图设置,可添加多条,可删除!</br>
+                    1.填写链接的的时候请以:http://www.开头 例如:<a href="http://www.llmztt.com" target="_blank">http://www.llmztt.com</a></br>
+                    2.排序可调整banner的显示顺序,排序规则按数字排序0123456789,数字越小排的最前!<br />
+                    3.备注乃鼠标悬浮在图片上显示的文字说明!<br />  
+                    4.链接后面有个"弹出"选项,勾选时(建议勾选),点击友链会跳出新的链接反之会在本站内打开!<br />
+                    5.状态为灰色时,不显示此图片!<br />
+                    </p>
+                    <div class="clear"></div>
+                </p>
+                #end
+                <i class="ui-tip-close">关闭</i>
+	        </div>
+        </div>
+
+       <div id="temp-modify" style="position:relative;">
+           <div class="input-tip"><a>填写说明</a></div>
+           <div id="edit-win">
+                    <ul>
+                        #if($ty.type_code =="base")
+		                <li><a href="#tabs-1">SEO设置</a></li>
+                        #elseif($ty.type_code =="footer") 
+		                <li><a href="#tabs-2">底部内容</a></li>
+                        #elseif($ty.type_code =="logo")
+		                <li><a href="#tabs-3">Logo设置</a></li>
+                        #elseif($ty.type_code =="friendlink")
+		                <li><a href="#tabs-4">友情链接</a></li>
+                        <li><a href="#tabs-5">图片友链</a></li>
+                        #elseif($ty.type_code =="banner")
+		                <li><a href="#tabs-6">banner设置</a></li>
+                        #end
+	                </ul>
+                    #if($ty.type_code =="base")
+	                <div id="tabs-1">
+                        
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>类型:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType" disabled>
+                                            #foreach ($type in $typelist)
+                                                <option #if($type.type_id == $model.page_type_id) selected #end value="$type.type_id|$type.type_position">$type.type_name</option>
+                                            #end
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_name"  name="page_name" value="$model.page_name" class="txt title" />
+                                        
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                            </div> 
+                       </div> 
+                        
+                        <div class="edit-win" >
+                            
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>域名:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_url" name="page_url" class="txt title" value="$model.page_url"/> 
+                                    </div>   
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>网站标题:</font>
+                                    <div class="input title">
+                                        <textarea id="page_title" name="page_title" class = "area title">$model.page_title</textarea>
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                                <div class="row-item">
+                                    <font>网站介绍:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <textarea id="page_description"  name="page_description" class = "area title">$model.page_description</textarea>
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>网站关键词:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <textarea id="page_keywords" name="page_keywords" class = "area title">$model.page_keywords</textarea>
+                                    </div>  
+                                    <div class="clear"></div>
+                                </div> 
+                            </div> 
+                       </div>
+                     
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" id="cbkStatus" name="cbkStatus" #if($model.page_status == 1) checked #end class = "switch-input"/>
+                                          <input type="hidden" id="page_status" name="page_status" value="$model.page_status" />
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div> 
+                            </div>
+                        </div>
+
+                    </div> 
+                    #elseif($ty.type_code =="footer") 
+	                <div id="tabs-2">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>类型:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType" disabled>
+                                            #foreach ($type in $typelist)
+                                                <option #if($type.type_id == $model.page_type_id) selected #end value="$type.type_id|$type.type_position">$type.type_name</option>
+                                            #end
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_name"  name="page_name" value="$model.page_name" class="txt title" />
+                                        
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                            </div> 
+                       </div>
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>底部内容:</font>
+                                    <div class="input title">
+                                        <textarea id="page_content" name="page_content">$model.page_content</textarea>
+                                        <script type="text/javascript">
+                                            var editor_a = new baidu.editor.ui.Editor({ initialFrameWidth: 600,initialFrameHeight:300 });
+                                            editor_a.render('page_content'); 
+                                        </script> 
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                               <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" id="cbkStatus" name="cbkStatus" #if($model.page_status == 1) checked #end class = "switch-input"/>
+                                          <input type="hidden" id="page_status" name="page_status" value="$model.page_status" />
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    #elseif($ty.type_code =="logo")
+	                <div id="tabs-3">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>类型:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType" disabled>
+                                            #foreach ($type in $typelist)
+                                                <option #if($type.type_id == $model.page_type_id) selected #end value="$type.type_id|$type.type_position">$type.type_name</option>
+                                            #end
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div> 
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_name"  name="page_name" value="$model.page_name" class="txt title" />
+                                        
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                            </div>  
+                            <div class="waper">
+                                
+                                <div class="row-item">
+                                    <font>图片:</font>
+                                    <div class="input" style="width:auto;">
+                                        <input type="hidden" value="$model.page_image" id="hfImage" name="hfImage" />
+                                        <div id="fileQueue" style="display:inline"></div>
+                                        <input type="file" name="file_upload" id="file_upload" />
+                                        <div id="qid"></div> 
+                                        <span id="ImageShow" style="display:block">
+                                            #if($model.page_image!="")
+                                             <img  data='' style='margin:3px;padding:3px;border:1px solid #c1c1c1;max-width:120px' src='$model.page_image' /> <a style="cursor:pointer;" class='imgdel'>删除<a>
+                                            #end
+                                        </span>
+                                        <style type="text/css">
+                                            .uploadify-queue-item .cancel a {
+                                            background: url('/content/js/uploadify/uploadify-cancel.png') 0 0 no-repeat;
+                                            float: right;
+                                            height: 16px;
+                                            text-indent: -9999px;
+                                            width: 16px;
+                                            }
+                                        </style> 
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="row-item">
+                                    <font>logo说明:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_title"  name="page_title" class="txt title" value="$model.page_title"/> 
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+
+                               <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" id="cbkStatus" name="cbkStatus" #if($model.page_status == 1) checked #end class = "switch-input"/>
+                                          <input type="hidden" id="page_status" name="page_status" value="$model.page_status" />
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    #elseif($ty.type_code =="friendlink")
+	                <div id="tabs-4">
+                        
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>类型:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType" disabled>
+                                            #foreach ($type in $typelist)
+                                                <option #if($type.type_id == $model.page_type_id) selected #end value="$type.type_id|$type.type_position">$type.type_name</option>
+                                            #end
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                        
+                                <div class="row-item">
+                                    <font>名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_name"  name="page_name" value="$model.page_name" class="txt title" />
+                                        
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div>
+                           
+                                <div class="row-item">
+                                    <font>链接:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_url" name="page_url" class="txt title" value="$model.page_url"/> 
+                                    弹出
+                                    </div>  
+                                   
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" #if($model.page_url_type =="_blank") checked #end id="cbkIsTarget" name="cbkIsTarget"   class = "switch-input"/>
+                                          <input type="hidden" id="page_url_type" name="page_url_type" value='#if($model.page_url_type =="_blank") 1 #else 0 #end' /> 
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>排序:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_order"  name="page_order" class="txt title" value="$model.page_order"/> 
+                                    </div>  
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                <div class="row-item">
+                                    <font>备注:</font>
+                                    <div class="input">
+                                        <textarea id="page_remark" value="$model.page_remark" name="page_remark" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> 
+                                <div class="row-item">
+                                    <font>状态:</font>
+                                    <div class="input radio">
+                                        <label class="switch">
+                                            <input type="checkbox" id="cbkStatus" name="cbkStatus" #if($model.page_status == 1) checked #end class = "switch-input"/>
+                                            <input type="hidden" id="page_status" name="page_status" value="$model.page_status" />
+                                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                                            <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                     
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        
+                         
+                    </div>
+                    <div id="tabs-5">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>图片友联:</font>
+                                    <div class="input" style="width:auto;">
+                                        <input type="hidden" value="$model.page_image" id="hfImage" name="hfImage" />
+                                        <div id="fileQueue" style="display:inline"></div>
+                                        <input type="file" name="file_upload" id="file_upload" />
+                                        <div id="qid"></div> 
+                                        <span id="ImageShow" style="display:block">
+                                            #if($model.page_image!="")
+                                             <img  data='' style='margin:3px;padding:3px;border:1px solid #c1c1c1;max-width:120px' src='$model.page_image' /> <a style="cursor:pointer;" class='imgdel'>删除<a>
+                                            #end
+                                        </span>
+                                        <style type="text/css">
+                                            .uploadify-queue-item .cancel a {
+                                            background: url('/content/js/uploadify/uploadify-cancel.png') 0 0 no-repeat;
+                                            float: right;
+                                            height: 16px;
+                                            text-indent: -9999px;
+                                            width: 16px;
+                                            }
+                                        </style> 
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div> 
+                          
+                            </div>
+                        </div>
+                    </div>
+                    #elseif($ty.type_code =="banner")
+	                <div id="tabs-6"> 
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <font>类型:</font>
+                                    <div class="input">
+                                        <select class="chosen-select w350" id="ddlType" disabled>
+                                            #foreach ($type in $typelist)
+                                                <option #if($type.type_id == $model.page_type_id) selected #end value="$type.type_id|$type.type_position">$type.type_name</option>
+                                            #end
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            
+                                <div class="row-item">
+                                    <font>名称:</font>
+                                    <div class="input title">
+                                        <input type="text" id="page_name"  name="page_name" value="$model.page_name" class="txt title" />
+                                        
+                                    </div>
+                                    <div class="clear"></div> 
+                                </div> 
+                         
+                                <div class="row-item">
+                                    <font>链接:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_url" name="page_url" class="txt title" value="$model.page_url"/> 
+                                    弹出
+                                    </div>  
+                                    
+                                    <div class="input radio">
+                                        <label class="switch">
+                                          <input type="checkbox" #if($model.page_url_type =="_blank") checked #end id="cbkIsTarget" name="cbkIsTarget"   class = "switch-input"/>
+                                          <input type="hidden" id="page_url_type" name="page_url_type" value='#if($model.page_url_type =="_blank") 1 #else 0 #end' />
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                    </div> 
+                                    
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                    <font>排序:</font>
+                                    <div class="input title" style="width:400px;">
+                                        <input type="text" id="page_order"  name="page_order" class="txt title" value="$model.page_order"/> 
+                                    </div>  
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                <div class="row-item">
+                                    <font>备注:</font>
+                                    <div class="input">
+                                        <textarea id="page_remark" value="$model.page_remark" name="page_remark" class = "area title"></textarea>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> 
+                          
+                    
+                                <div class="row-item">
+                                    <font>图片:</font>
+                                    <div class="input" style="width:auto;">
+                                        <input type="hidden" value="$model.page_image" id="hfImage" name="hfImage" />
+                                        <div id="fileQueue" style="display:inline"></div>
+                                        <input type="file" name="file_upload" id="file_upload" />
+                                        <div id="qid"></div> 
+                                        <span id="ImageShow" style="display:block">
+                                            #if($model.page_image!="")
+                                             <img  data='' style='margin:3px;padding:3px;border:1px solid #c1c1c1;max-width:120px' src='$model.page_image' /> <a style="cursor:pointer;" class='imgdel'>删除<a>
+                                            #end
+                                        </span>
+                                        <style type="text/css">
+                                            .uploadify-queue-item .cancel a {
+                                            background: url('/content/js/uploadify/uploadify-cancel.png') 0 0 no-repeat;
+                                            float: right;
+                                            height: 16px;
+                                            text-indent: -9999px;
+                                            width: 16px;
+                                            }
+                                        </style> 
+                                    </div> 
+                                    <div class="clear"></div>
+                                </div> 
+                          
+                             <div class="row-item">
+                                <font>状态:</font>
+                                <div class="input radio">
+                                    <label class="switch">
+                                        <input type="checkbox" id="cbkStatus" name="cbkStatus" #if($model.page_status == 1) checked #end class = "switch-input"/>
+                                        <input type="hidden" id="page_status" name="page_status" value="$model.page_status" />
+                                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                                        <span class="switch-handle"></span>
+                                    </label>
+                                </div>
+                                     
+                                <div class="clear"></div>
+                            </div>
+
+                    </div>
+                    #end
+                    <div class="btn" >
+                        <input type="submit"  value="修改并返回" style="width:180px;height:60px;line-height:50px;display:block;" id="btnSave" />
+                    </div>
+               
+           </div>
+                    </div>    
+            </div>
+       </div>
+       </form>
+       
+       <script src="/Content/js/chosen.jquery.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Content/js/prism.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Admins/Content/js/page_edit.js" type="text/javascript"></script>
+       <script type="text/javascript">
+          
+
+       </script>
+
+        
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

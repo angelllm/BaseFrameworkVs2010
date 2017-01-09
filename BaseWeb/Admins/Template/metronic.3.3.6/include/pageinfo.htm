@@ -1,0 +1,18 @@
+﻿<ul class="pagination pagination-sm pull-right margin-top-20 margin-right-20">
+                                            <li ms-on-click="getlist({pageindex:options.pageindex - 1},options.pageindex - 1)">
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-angle-left"></i>
+                                                </a>
+                                            </li>
+                                            <li class="active" ms-on-click="getlist({pageindex:1},givepagecss(this))">
+                                                <a  href="javascript:;"> 1 </a>
+                                            </li>
+                                            <li ms-repeat-num="pages" ms-on-click="getlist({pageindex:num + 1},givepagecss(this))" >
+                                                <a href="javascript:;"> {{num + 1}} </a>
+                                            </li>
+                                            <li ms-on-click="getlist({pageindex:options.pageindex + 1},options.pageindex + 1)">
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>

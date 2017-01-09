@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>管理后台</title>
+        #parse("include/meta.htm")
+        #parse("include/view-css.htm")
+        
+    </head>
+    <!-- END HEAD -->
+
+    <body ms-controller="page" class="page-container-bg-solid page-boxed wysihtml5-supported">
+        <!-- BEGIN HEADER -->
+        #parse("include/header.htm")
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="container llm-container">
+                        <div class="col-md-12 col-sm-12 col-xl-12 ">
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="/admin/">后台首页</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    网站管理
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>基础信息编辑</span>
+                                </li>
+                            </ul>
+                            <div class="portlet light tasks-widget">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <i class="fa fa-list font-red"></i>
+                                        <span class="caption-subject font-red bold uppercase">网站管理</span>
+                                        <span class="caption-helper">基础信息编辑 </span>
+                                    </div>
+                                    <div class="actions">
+                                        ##<a href="/admin/newsadd/" class="btn-mt-6 btn btn-circle btn-default full-right"><i class="fa fa-plus"></i> Add </a>
+                                        <a  href="javascript:history.go(-1)" data-original-title="" title="返回" class="btn-mt-6 btn btn-circle btn-default full-right btn-back">
+                                            <i class="fa fa-arrow-circle-left "></i> Back </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default fullscreen full-right" href="javascript:;" data-original-title="" title="全屏"></a>
+                                        <div class="clear-fix"></div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                   
+                                    <div class="table-scrollable table-scrollable-borderless tab-content" ms-controller="box">
+                                       <div class="blockUI blockMsg blockElement text-center hide" id="loading"><div class="loading-message "><div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></div>
+                                       <form ms-controller="form" action="/admin/webbaseedit/" id="form_sample_2" class="form-horizontal" novalidate="novalidate">
+                                            <div class="form-body">
+                                                <div class="row">
+                                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                                    <ul class="nav nav-tabs tabs-left">
+                                                        <li class="active">
+                                                            <a href="#tab_6_1" data-toggle="tab"> 基础信息 </a>
+                                                        </li> 
+                                                        <li>
+                                                            <a href="#tab_6_3" data-toggle="tab"> 底部备案信息 </a>
+                                                        </li>
+                                                         <li>
+                                                            <a href="#tab_6_4" data-toggle="tab"> 网站Logo </a>
+                                                        </li> 
+                                                        <li>
+                                                            <a href="#tab_6_2" data-toggle="tab"> 关于我们 </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab_6_5" data-toggle="tab"> 联系我们 </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="tab_6_1">
+                                                            <!--tab_6_1 start-->
+                                                            <div class="alert alert-danger display-hide">
+                                                                <button class="close" data-close="alert"></button> 填写有误，请检查后再提交！ </div>
+                                                            <div class="alert alert-success display-hide">
+                                                                <button class="close" data-close="alert"></button> 提交成功! </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">网站标题
+                                                                    <span class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa" title="请填写网站标题"></i>
+                                                                        <input type="text" value="$model.page_title" class="form-control" name="page_title"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">网站网址
+                                                                    <span class="required" aria-required="true"> * </span>
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <div class="input-icon right">
+                                                                        <i class="fa" title=""></i>
+                                                                        <input  placeholder="http://www." type="text" value="$model.page_url" class="form-control" name="page_url"> 
+                                                                        <span class="help-block"> 例如: http://www.llmztt.com 或者 http://llmztt.com </span>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">网站优化关键字
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea name="page_keywords" class="form-control" maxlength="225" rows="2" placeholder="网站优化关键字">$model.page_keywords</textarea>
+                                                                </div>
+                                                             </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">网站优化说明
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea name="page_description" class="form-control" maxlength="225" rows="2" placeholder="网站优化说明">$model.page_description</textarea>
+                                                                </div>
+                                                             </div>
+                                                            
+                                                            
+                                                            <!--tab_6_1 end-->
+
+
+                                                        </div>
+                                                        
+                                                        <div class="tab-pane fade" id="tab_6_3">
+                                                            <!--tab_6_3 start-->
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">底部备案信息
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea id="page_footer" name="page_footer">$model.page_footer</textarea>
+                                                                </div>
+                                                            </div> 
+                                                            <!--tab_6_3 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_4">
+                                                             <!--tab_6_4 start-->
+                                                             <div class="fileinput fileinput-new fileinput-exists" data-provides="fileinput">
+                                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                    <img id="ImageShow"  ms-src="filepath" src="$model.page_image"  onerror="this.src='$path/images/noimage.png'" data-def="$path/images/noimage.png" alt="" /> 
+                                                                </div>
+                                                                <div>
+                                                                    <input type="file" name="file_upload" id="file_upload"  />
+                                                                    <a ms-if="filepath!=''" ms-on-click="clearFile" href="javascript:;" class="btn red fileinput-exists pull-left file-btn-chance-file" data-dismiss="fileinput"> 取消图片 </a>
+                                                                </div>
+                                                            </div>
+
+                                                             <div class="input hide">
+                                                                <input type="hidden" ms-attr-value="filepath" data-bind="$model.page_image" id="hfImage" name="hfImage" />
+                                                                <input type="hidden" value="filepath" />
+                                                                <div id="fileQueue" style="display:inline"></div>
+                                                                <div id="qid"></div> 
+                                                            </div> 
+                                                            <div class="clear"></div>
+                                                            <!--tab_6_4 end-->
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_2">
+                                                             <!--tab_6_2 start-->
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">简单介绍
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea name="page_remark" class="form-control" maxlength="225" rows="2" placeholder="网站简要说明">$model.page_remark</textarea>
+                                                                </div>
+                                                             </div>
+
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">网站介绍
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea id="page_content" name="page_content">$model.page_content</textarea>
+                                                                </div>
+                                                            </div> 
+                                                             <!--tab_6_2 end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tab_6_5">
+                                                             <!--tab_6_5 start-->
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-2">联系方式
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <textarea id="page_contact" name="page_contact">$model.page_contact</textarea>
+                                                                </div>
+                                                            </div> 
+                                                             <!--tab_6_5 end-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            </div>
+                                            <div class="form-actions">
+                                                <div class="row">
+                                                    <div class="col-md-offset-4 col-md-8 col-sm-offset-4 col-sm-8">
+                                                        <button type="submit" class="btn green"> 提 交 </button>
+                                                        <button type="reset" class="btn default"> 取 消 </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                       
+                                               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                #parse("include/sidebar.htm")
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        #parse("include/footer.htm")
+        <!-- BEGIN INNER FOOTER -->
+        <script src="$path/js/sea.js" type="text/javascript"></script>
+        <script src="$path/js/config.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            seajs.use(["module/common/commonloading-list", "module/web/item", "module/web/edit"])
+        </script>
+
+
+</body>
+</html>

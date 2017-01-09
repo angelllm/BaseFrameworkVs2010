@@ -1,0 +1,37 @@
+
+#kinMaxShow{visibility:hidden;width:100%; height:437px; overflow:hidden;}
+
+#kinMaxShow .KMSPrefix_kinMaxShow_button 
+{
+right: 555px;
+bottom: 22px;
+position: absolute;
+list-style: none;
+z-index: 2;
+overflow: hidden;
+_zoom: 1;
+}
+            
+#kinMaxShow .KMSPrefix_kinMaxShow_button li 
+{
+width: 18px;
+height: 18px;
+line-height: 18px;
+font-size: 10px;
+background: url(../webimage/banner/banner_bg_white.png) no-repeat; 
+color: #424242;
+text-align: center;
+margin-right: 8px;
+font-family: Verdana;
+float: left;
+border:0;
+cursor: pointer;
+-webkit-text-size-adjust: none;
+}
+
+#kinMaxShow .KMSPrefix_kinMaxShow_button li.KMSPrefix_kinMaxShow_focus {
+background: url(../webimage/banner/banner_bg_hover.png) no-repeat; 
+color: #fff;
+cursor: default;
+border:0;
+}

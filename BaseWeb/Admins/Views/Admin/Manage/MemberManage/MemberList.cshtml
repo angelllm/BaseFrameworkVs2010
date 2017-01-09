@@ -1,0 +1,108 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>会员管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.source.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/content/js/uploadify/jquery.uploadify-3.1.js" type="text/javascript"></script>
+    <link href="/content/js/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+<body style="overflow:hidden">
+
+<div id="containter">
+    
+    <div id="right-containter">
+
+        <link href="/Admins/Content/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+        <link href="/Admins/Content/menu.css" rel="stylesheet" type="text/css" />
+
+        <div class="nav">
+            <h1 style="width: 365px;">
+                <label ID="lblUrlTitle" runat="server" Text=""></label>
+                <a href="/admin/memberAdd/" id="btnAdd">新增会员</a> 
+                <a href="/admin/newslist/" id="newcenter">新闻中心</a> 
+            </h1>
+            <div class="login-panel" style="width:60px;">
+                
+                <div class="login-out" style="border-radius:5px;"><a href="/Admin/LoginOut/">退出</a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <script src="/Admins/Content/js/top.js" type="text/javascript"></script>
+
+      
+       <table class="tbl" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="bit">会员名</th>
+                    <th class="normal">手机</th>
+                    <th class="normal">会员卡 </th>
+                    <th class="normal">卡费</th>
+                    <th class="normal">总次数</th>
+                    <th class="normal">剩余次数</th>
+                    <th class="normal">大转盘</th>
+                    <th class="normal">免费次数</th>
+                    <th class="normal">注册时间</th>
+                    <th class="normal">到期时间</th>
+                    <th class="normal">状态</th>
+                    <th class="opear">操作</th>
+                </tr>
+             </thead>
+             <tbody>
+                #foreach ($item in $list)
+                    <tr class="data" data="$item.member_id" data-title="$item.member_name">
+                        <td class="bit">$item.member_name</td>
+                        <td class="normal">$item.member_phone</td>
+                        <td class="normal">$item.userCard.card_name</td>
+                        <td class="normal">$item.userCard.card_id</td>
+                        <td class="normal">$item.userCard.card_id</td>
+                        <td class="normal">$item.userCard.card_total_count - $item.userCard.card_ative_count</td>
+                        <td class="normal">#if($item.member_phone_last_four == 0) NO #else YES #end </td>
+                        <td class="normal">$item.userCard.card_id</td>
+                        <td class="normal"></td>
+                        <td class="normal" style="color:Red;">$item.userCard.card_end_time</td>
+                         <td class="normal">
+                            <label class="switch">
+                                  <input 
+                                    col="status"
+                                    data="$item.member_id"
+                                    type="checkbox" 
+                                    class="switch-input" 
+                                    #if ($item.member_status == 1)
+                                       checked="checked"
+                                    #end
+                                  >
+                                  <span class="switch-label" data-on="On" data-off="Off"></span>
+                                  <span class="switch-handle"></span>
+                                </label>
+                        </td>
+                        <td class="opear">
+                            <span>
+                                <label>操作</label>
+                                <div class="opear-control">
+                                    <a data="$item.member_id" class="control-del" href="javascript:void(0)"> 删 除 </a>
+                                </div>
+                            </span>
+                        </td>
+                    </tr> 
+                #end
+             </tbody>
+       </table>
+    <div class="pageinfo" id="pageinfo">$pageinfo</div>
+    <script type="text/javascript" src="/Admins/Content/js/member_list.js"></script>
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

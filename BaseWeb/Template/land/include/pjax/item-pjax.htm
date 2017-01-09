@@ -1,0 +1,34 @@
+﻿   <link href="/Content/js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"  rel="stylesheet" type="text/css" />
+   <div class="posts fade out">
+        <article class="post type-post status-publish format-aside has-post-thumbnail hentry category-code tag-ajax post_format-post-format-aside">
+            <div class="box-wrap">
+            #parse("include/item/view.htm")
+            #parse("include/item/view-control.htm") 
+            </div>
+        </article>
+        #parse("include/item/view-prevnext.htm") 
+    </div>
+
+ 
+    <div id="comment-jump" class="comments">
+        <div id="comments">
+            #parse("include/item/view-commentlist.htm")
+            #parse("include/item/view-respond.htm")
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        avalon.scan(document.getElementById("content"), avalon.vmodels["page"])
+        avalon.scan(document.getElementById("content"), avalon.vmodels["box"])
+        seajs.use(["module/item/item"])
+ 
+        if (avalon.vmodels["item"]) {
+            avalon.vmodels["item"].init()
+        }
+        setTimeout(function () {
+            $('audio,video').mediaelementplayer()
+        }, 1000)
+         
+    </script>

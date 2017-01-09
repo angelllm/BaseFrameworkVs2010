@@ -1,0 +1,86 @@
+﻿@charset "utf-8";
+#w-footer-box {
+    position:fixed;
+    bottom:0;
+}
+#w-header-box {
+  height: 30px;
+}
+body {
+    background:#fff;
+}
+
+.content { width:955px; margin:0 auto;}
+.z_logo{border-bottom:2px solid #03b4a3; float:left; width:100%; margin:10px 0 25px 0;}
+.z_logo a.logo{margin-left:10px; float:left;margin-top: 25px;}
+.z_logo img.th{float:left; margin:25px 0 0 10px;}
+.memberregister {height:36px; margin-top:20px;margin-left:10px; font-size:12px;  color:#676767; clear:both;}
+.memberregister a{color:#05aa9a; font-weight:bold;}
+.memberregister a:hover{color:#48d9cc; text-decoration:underline;}
+.Notice{background:url(../webimage/info.png) no-repeat left; text-indent:25px; display:inline-block;}
+.registerword {float:right; margin-right:55px;}
+.registerlist{border:1px solid #d5d5d5; padding:50px 0;}
+.registerlist p{margin-bottom:35px; margin-left:200px; position:relative;}
+.registerlist span{text-align:right; display:inline-block; width:100px; margin-right:15px; }
+.registerlist label{font-family:"宋体"; color:#fc0101; padding-right:10px;}
+.registerlist p input{width:280px; height:36px; font-size:14px; border:1px solid #d5d5d5; box-shadow:inset 0 0 1px rgba(0,0,0,0.3); text-indent:10px; outline:none;}
+
+
+
+.registerlist p input.codetext{width:115px;}
+.registerlist p input.checkbox{width:auto !important; border:none !important; height:auto !important;}
+.registerlist p input.errorborder{border:1px solid #ff6600; box-shadow:none;}
+.registerlist span.agreementword{width:auto !important; text-align:left !important; color:#666666; font-size:12px; line-height:18px;}
+.registerlist p input:focus{border:1px solid #2ccab7;}
+.registerlist span.errorinfo{width:282px; text-align:center; color:#FFF; font-size:12px; line-height:22px; background-color:#ff6600; display:block; position:absolute; left:115px; top:-30px;}
+.registerlist span.errorinfo i{display:block; position:absolute; background:url(../webimage/sj.jpg) no-repeat; width:10px; height:5px; left:25px;}
+.registerlist img{margin-left:15px;}
+.registerlist span.errorhide{display:none;}
+::-webkit-input-placeholder{color:#b1b1b1;}/* WebKit browsers */
+::-moz-placeholder{color:#b1b1b1;}/* Mozilla Firefox 19+ */
+:-moz-placeholder{color:#b1b1b1;}/* Mozilla Firefox 4 to 18 */
+:-ms-input-placeholder{color:#b1b1b1;}/* Internet Explorer 10+ */
+.registerlist input.code{font-size:12px;color:#fff; background:url(../webimage/but.png) -185px -128px no-repeat; width:102px;border:none; text-indent:0px; box-shadow:none; font-weight:bold; margin-left:15px; height:30px; position:absolute; margin-top:3px;}
+.registerlist input.btnGray{background:url(../webimage/but.png) -185px -166px no-repeat;}
+.registerlist .codeimg{position:absolute; margin-top:5px;}
+.registerimg{width:285px; height:43px; border:none; font-size:16px; background:url(../webimage/but.png) no-repeat -3px -2px; margin-left:315px; margin-top:30px; color:#FFF; font-weight:bold; text-align:center; line-height:43px;}
+.registerimg:hover{background:url(../webimage/but.png) no-repeat -3px -63px;}
+.registerlist p.Safety{font-size:12px; margin:-20px 0 30px 315px;}
+.registerlist p.Safety span{width:55px; background-color:#dddddd; color:#FFF; text-align:center; line-height:16px; margin-right:2px;}
+.registerlist p.Safety span.thissa{background-color:#ff7726;}
+
+.logincon{width:340px; float:right; border-top:5px solid #c40001; box-shadow:0 4px 3px rgba(0,0,0,0.2); padding:0 22px; position:relative;}
+.logincon h2{font-family:"黑体"; color:#696969; font-size:170%; margin:25px 0;}
+.logincon h2 span{font-size:12px; float:right; font-weight:100; font-family:"宋体"; margin-top:10px;}
+.logincon p.it{border:1px solid #cccbcb; height:36px; margin-bottom:24px; line-height:36px; color:#696969; text-indent:10px;}
+.logincon p.it input{height:34px; font-size:14px; margin-left:10px; text-indent:10px; border:none; width:270px;outline:none;}
+.logincon a{color:#c40001; font-size:12px;}
+.logincon a:hover{color:#fe8842; text-decoration:underline;}
+.logincon a.wp{margin:-10px 0 25px 10px; display:block;}
+.logincon .loginsub{width:100%;height:45px; font-family:"黑体"; margin-bottom:28px; border:none; font-size:22px;  color:#FFF; font-weight:bold; text-align:center;outline:none;cursor:pointer;background:#c40001;border-radius:2px;
+  -webkit-transition: background-color .2s ease-in;
+  -moz-transition: background-color .2s ease-in;
+  -o-transition: background-color .2s ease-in;
+  transition: background-color .2s ease-in;}
+.logincon .loginsub:hover{background:#ff0000;}
+.logindrops {
+	width:338px;
+	height:30px;
+	background:url(../images/logindrops.png);
+	background-repeat:no-repeat;
+	background-color:#fff9f6;
+	border:1px solid #ffcaa4;
+	margin-bottom:10px;
+	line-height:30px;
+	text-indent:40px;
+	color:#777;
+	font-size:12px;
+	display:none;
+}
+@media screen and (min-width:1197px){
+	.content { width:1150px; margin:0 auto;}
+	.logincon{margin-right:100px;}
+	.registerlist p{margin-left:350px;}
+	.registerlist p.Safety{margin-left:465px;}
+	.registerimg{margin-left:465px;}
+}

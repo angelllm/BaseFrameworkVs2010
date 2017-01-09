@@ -1,0 +1,91 @@
+﻿
+
+
+
+
+/**********footer**********/
+body{background:#0d70a7}
+#footer{width:100%;height:40px;background:url(/Admins/Content/images/win_tool_bar_bg.png) repeat-x;position:fixed;bottom:0;}
+#footer #tool-bar{width:inherit;height:inherit;position:relative;}
+#footer #tool-bar #windows{width:42px;height:inherit;+height:40px;position:absolute;background:url(/Admins/Content/images/window.png);left:10px;top: -7px; }
+#footer #tool-bar #windows:hover{background:url(/Admins/Content/images/window_hover.png) no-repeat -10px -6px }
+#footer #tool-bar #show-desk{width:14px;height:inherit;+height:40px;position:absolute;background:url(/Admins/Content/images/win_tool_bar_control.png) no-repeat;right:0px; }
+#footer #tool-bar #show-time{width:50px;height:inherit;+height:40px;position:absolute;right:18px; color: #fff;line-height: 40px;text-align: center;cursor:default;}
+#footer #tool-bar #show-time-info{width:65px;height:inherit;+height:40px;position:absolute;right:8px; color: #333;line-height: 20px;text-align: left;cursor:default;bottom:40px;background:#ffa;padding-left:5px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-radius: 2px;display:none;}
+#footer #tool-bar #menu{width:412px;height:658px;position:relative;background:url(/Admins/Content/images/menu.png) no-repeat;left:0;bottom:657px;display:none;}
+
+
+
+#desk{width:100%;position:absolute;left:0;top:0;z-index:-1;}
+
+.icon{width:76px;height:76px;display:block;margin:10px 15px  50px 15px;z-index:2;position:absolute;}
+.icon:hover{background:url(/Admins/Content/images/icon_bg.png) no-repeat 50% 50%;}
+.icon-hover{background:url(/Admins/Content/images/icon_bg.png) no-repeat 50% 50%;}
+/*********.icon postion**********/
+.icon-sys{left:10px;top:10px}
+.icon-set{left:10px;top:130px}
+/*******************************/
+.icon .item{width:inherit;height:48px;}
+.icon input{display:none;width:inherit;height:20px;border:0;margin-top:10px;}
+
+.icon span{color:#fff;text-align:center;margin-top:10px;width:inherit;display:block;}
+.icon span:hover{cursor:default}
+.icon .sys{background:url(/Admins/Content/images/icon/desk_white.png) no-repeat 50% 50%;}
+.icon .article{background:url(/Admins/Content/images/icon/list.ico) no-repeat 50% 50%;}
+.icon .article-add{background:url(/Admins/Content/images/icon/add.ico) no-repeat 50% 50%;}
+.icon .quips-img{background:url(/Admins/Content/images/icon/img.ico) no-repeat 50% 50%;}
+.icon .article-data{background:url(/Admins/Content/images/icon/data.ico) no-repeat 50% 50%;}
+.icon .article-type{background:url(/Admins/Content/images/icon/type.ico) no-repeat 50% 50%;}
+.icon .file-upload{background:url(/Admins/Content/images/icon/file.ico) no-repeat 50% 50%;}
+.icon .music{background:url(/Admins/Content/images/icon/music.ico) no-repeat 50% 50%;}
+
+.win{width:700px;height:300px;position:absolute;top:200px;left:30%}
+.win table{width:inherit;height:inherit;padding:0;margin:0;}
+.win .left_top{width:6px;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/left_t_fillet.png) no-repeat 50% 50%;}
+.win .right_top{width:6px;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/right_t_fillet.png) no-repeat 50% 50%;}
+.win .top{width:99%;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/top_bg.png) repeat-x;}
+.win .left_bottom{width:6px;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/left_b_fillet.png) no-repeat 50% 50%;}
+.win .right_bottom{width:6px;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/right_b_fillet.png) no-repeat 50% 50%;}
+.win .bottom{width:99%;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/bottom_bg.png) repeat-x;}
+
+.win .left_center{width:6px;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/left_bg.png) repeat-y;}
+.win .right_center{width:6px;height:6px;padding:0;margin:0;background:url(/Admins/Content/images/win/right_bg.png) repeat-y;}
+.win .center{width:99%;}
+
+
+.taskbar-pre{width:100px;height:40px;display:block;float:left;}
+.taskbar{width:145px;height:40px;line-height:40px;display:block;float:left;background:url(/Admins/Content/images/win/taskbar.png) no-repeat;text-align:left;color:#fff;cursor:default;margin-right:5px;padding-left:15px;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;  }
+.taskbar:hover{background-position:0 -44px}
+.taskbar img{width:20px;height:20px;margin:10px 5px 0 0;display:block;float:left;}
+.taskbar label{display:block;float:left;}
+
+#set-area{position:fixed;right:20px;top:10px;}
+.d-main{background: #313d4d;}
+.d-titleBar a{cursor:default;}
+#jqContextMenu{z-index:99999}
+#jqContextMenu ul{border:0;border-radius:3px;}
+#jqContextMenu ul li{position:relative;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;}
+#jqContextMenu ul li #skins-list{position:absolute;background-color: rgb(255, 255, 255);right:-71px;top:-1px;width:70px;text-align:center;z-index:999;border:0;border-radius:3px;}
+#jqContextMenu ul li #xinjian-list{position:absolute;background-color: rgb(255, 255, 255);right:-71px;top:-1px;width:70px;text-align:center;z-index:999;border:0;border-radius:3px;text-align:left;}
+#jqContextMenu ul li a:hover{text-decoration:none;}
+#jqContextMenu ul li:hover dl{display:inline-block;}
+.beijing{}
+.beijing h1{font-size:16px;color:#fff;margin: 10px 10px 0 10px;border-bottom: 1px solid #fff;}
+.beijing h1 a{display:inline-block;width:100px;height:25px;line-height:31px;margin-right:10px;text-align:center;padding: 0 0 5px 0;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;border-radius:2px 2px 0 0;cursor:default;}
+.beijing h1 a:hover{text-decoration:none;background:#f61050;}
+.beijing h1 .a-cur{background:#299be4;}
+.update-data{width: 200px;height: 50px;line-height: 50px;margin: 50px auto 0 auto;background: #15a4fa;display: block;text-align: center;color: #fff;font-weight: bold;font-size: 150%;}
+.update-data:hover {text-decoration: none;background: #f61050;}
+#bgImg{text-align:center;}
+#bgImg img{max-width:450px;margin-top:10px;}
+.img-del{display:inline-block;padding:10px;color:red;cursor:pointer;}
+.img-del:hover{color:#0d70a7;}
+
+/*********dir**********/
+.dir{width:76px;height:76px;display:block;margin:10px 15px  50px 15px;z-index:2;position:absolute;}
+.dir:hover{background:url(/Admins/Content/images/icon_bg.png) no-repeat 50% 50%;}
+.dir-hover{background:url(/Admins/Content/images/icon_bg.png) no-repeat 50% 50%;}
+.dir .item{width:inherit;height:48px;}
+.dir input{display:none;width:inherit;height:20px;border:0;margin-top:10px;}
+.dir span{color:#fff;text-align:center;margin-top:10px;width:inherit;display:block;}
+.dir span:hover{cursor:default}

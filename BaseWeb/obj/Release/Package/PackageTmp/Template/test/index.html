@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>avalonjs</title>
+    <link href="http://www.llmztt.com/Template/wp/css/theme.css" rel="stylesheet" />
+</head>
+<body  class="home blog" >
+
+    <section class="container">
+
+        <div class="content-wrap">
+            <div class="content" ms-controller="artcile">
+
+                <article  class="excerpt" ms-repeat-list="list">
+                    <header>
+                        <a class="label label-important" ms-href="/wp/View/{{list.article_id}}/">
+                            {{list.article_tag}}
+                            <i class="label-arrow">
+                            </i>
+                        </a>
+                        <h2>
+                            <a target="_blank" ms-href="/wp/View/{{list.article_id}}/" ms-attr-title="list.article_title">
+                                {{list.article_title}}
+                            </a>
+                        </h2>
+                    </header>
+                    <div class="focus" ms-if="list.article_image!=''">
+                        <a target="_blank" ms-href="/wp/View/{{list.article_id}}/">
+                            <img class="thumb" src="#" alt="list.article_title" />
+                        </a>
+                    </div>
+                    <span class="note">
+                        {{list.article_content | html}}
+                    </span>
+                    
+                </article>
+
+
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="js/sea.js"></script>
+
+    <script type="text/javascript">
+        seajs.config({
+            alias: {
+                'avalon': 'http://www.llmztt.com/template/wp/js/vendor/avalon.shim.js',
+            },
+            preload: [
+                this.avalon ? '' : 'avalon'
+            ]
+        }).use(["module/index/index"]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>留言、评论回复 - 网站管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.source.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+
+    <script src="/content/js/uploadify/jquery.uploadify-3.1.js" type="text/javascript"></script>
+    <link href="/content/js/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <script src="/Admins/Content/js/jquery.form.js" type="text/javascript"></script>
+</head>
+ 
+<body>
+
+    <div id="containter">
+        #parse("include/CommiteLeft.cshtml" )
+        <div id="right-containter">
+            #parse("include/top.cshtml" )
+            <div class="nav-menu">
+                <a href="/Admin/CommiteManage/" id="btnAdd"> 返回列表 </a>
+            </div>
+            <form action='/Admin/CommiteReplyDo/' method="post" id="ajax-form">
+                <input type="hidden" id="commite_ref_id" name="commite_ref_id" value="$model.commite_id" />
+                <div class="ui-widget">
+                    <div class="ui-state-highlight ui-corner-all ui-waper">
+                        <p><span class="ui-icon ui-icon-info ui-position"></span>
+                        <p class="ui-p-text">
+                            基础设置说明:此乃记录网站信息的唯一途径,不可删除,不可转换类型,有且只有一条记录!</br>
+                        </p>
+                        <div class="clear"></div>
+                        </p>
+                        <i class="ui-tip-close">关闭</i>
+                    </div>
+                </div>
+                <table class="tbl" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="bit">编号</th>
+                            <th class="normal">回复内容 </th>
+                            <th class="normal">状态</th>
+                            <th class="opear">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        #foreach ($item in $list)
+                        <tr class="data" data="$item.commite_id" data-title="$item.commite_uname">
+                            <td class="bit">$item.commite_id</td>
+                            <td class="normal">$item.commite_content</td>
+                            <td class="normal">
+                                <label class="switch">
+                                    <input col="status"
+                                           data="$item.commite_id"
+                                           type="checkbox"
+                                           class="switch-input"
+                                           #if ($item.commite_status==1)
+                                           checked="checked"
+                                           #end>
+                                    <span class="switch-label" data-on="On" data-off="Off"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </td>
+                            <td class="opear">
+                                <span>
+                                    <label>操作</label>
+                                    <div class="opear-control">
+                                        <a data="$item.commite_id" class="control-del" href="javascript:void(0)"> 删 除 </a>
+                                    </div>
+                                </span>
+                            </td>
+                        </tr>
+                        #end
+                    </tbody>
+                </table><br />
+                <div id="temp-modify" style="position:relative;">
+                    <div class="input-tip"><a>填写说明</a></div>
+                    <div id="edit-win">
+                        <ul>
+                            <li><a href="#tabs-1">基本设置</a></li>
+                        </ul>
+                        <div id="tabs-1">
+                            <div class="edit-win">
+                                <div class="waper">
+                                    <div class="row-item">
+                                        <font>名称:</font>
+                                        <div class="input title">
+                                            <input type="text" id="commite_name" name="commite_name" value="$model.commite_uname $model.commite_content" disabled class="txt title" />
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="row-item">
+                                        <font>回复:</font>
+                                        <div class="input">
+                                            <textarea id="commite_content" value="" name="commite_content" class="area title"></textarea>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="row-item">
+                                        <font>状态:</font>
+                                        <div class="input radio">
+                                            <label class="switch">
+                                                <input type="checkbox" id="cbkStatus" name="cbkStatus" checked class="switch-input" />
+                                                <input type="hidden" id="commite_status" name="commite_status" value="1" />
+                                                <span class="switch-label" data-on="On" data-off="Off"></span>
+                                                <span class="switch-handle"></span>
+                                            </label>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn">
+                            <input type="submit" value="回复并返回" style="width:180px;height:60px;line-height:50px;display:block;" id="btnSave" />
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+            
+            <script src="/Admins/Content/js/commite_reply.js" type="text/javascript"></script>
+            <script type="text/javascript">
+
+            </script>
+
+            <div class="clear"></div>
+        </div>
+</body>
+</html>
+
+
+

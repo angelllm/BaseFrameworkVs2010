@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <noscript><iframe src=*.html></iframe></noscript>
+  <meta charset="utf-8" />
+  #foreach($config in $tjson.tconfig("base"))
+  #foreach($c in $pjson.pconfig($config.type_id))
+  <title>$art.article_title - $c.page_title</title>
+  #end
+  #end
+  <meta name="description" content="$art.article_seo_desc" />
+  <meta name="keywords" content="$art.article_seo_kw" />
+  <meta name="author" content="llm" />
+  <meta name="Copyright" content="http://www.llmztt.com/index/" />
+  <meta name="power" content="llm云" />  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="$path/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/app.css" type="text/css" />  
+  
+  <!--[if lt IE 9]>
+    <script src="$path/js/ie/html5shiv.js"></script>
+    <script src="$path/js/ie/respond.min.js"></script>
+    <script src="$path/js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    #parse("include/header.htm")
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        #parse("include/aside.htm")
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable wrapper-lg">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- .breadcrumb -->
+                  <ul class="breadcrumb">
+                    <li><a href="/index/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="/index/list/"><i class="fa fa-list-ul"></i> Article</a></li>
+                    $t
+                    <li class="active">
+                        $art.article_title 
+                        <div class="col-md-3 col-sm-4" style="display:inline-block;width:auto;float:right;">
+                            <i class="icon-tag"></i> $tag 
+                        </div>
+                    </li> 
+                  </ul> 
+                  <!-- / .breadcrumb -->
+                </div>
+                <div class="col-sm-9">
+                  <div class="blog-post">        
+                      <div class="post-item">
+                          <div class="caption wrapper-lg">
+                            <center><h2 class="post-title">$art.article_title</h2></center>
+                            <div class="post-sum">
+                                #foreach($item in $list)
+                                <ul class="list-group gutter list-group-lg list-group-sp sortable">
+                                  <li class="list-group-item bg-primary" draggable="true">
+                                    <div class="clear text-white">
+                                      $item.content_title $item.content_order
+                                    </div>
+                                  </li> 
+                                </ul>
+                                $item.content_content
+                                #end
+                            </div>
+                            <div class="line line-lg"></div>
+                            <div class="text-muted">
+                              <i class="fa fa-user icon-muted"></i> by <a href="/index/about/" class="m-r-sm">ALIKS</a>
+                              <i class="fa fa-clock-o icon-muted"></i> $art.article_time
+                              <a class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> $count comments</a>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                  #parse("include/feedback.htm")
+                </div>
+                #parse("include/raside.htm")
+              </div>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+
+      </section>
+    </section>    
+  </section>
+  <script src="$path/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="$path/js/bootstrap.js"></script>
+  <!-- App -->
+    <script src="$path/js/app.js"></script>  
+    <script src="$path/js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="$path/js/app.plugin.js"></script>
+    <script src="$path/js/jquery.form.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="$path/js/feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <noscript><iframe src=*.html></iframe></noscript>
+  <meta charset="utf-8" />
+      <title>一个仿flash遮罩层闪动的css3特效 - CALL ME ALIKS - LLM</title>
+      <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="llm" />
+  <meta name="Copyright" content="http://www.llmztt.com/index/" />
+  <meta name="power" content="llm云" />  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="/Template/Html/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="/Template/Html/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/Template/Html/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="/Template/Html/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="/Template/Html/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="/Template/Html/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="/Template/Html/css/app.css" type="text/css" />  
+  
+  <!--[if lt IE 9]>
+    <script src="/Template/Html/js/ie/html5shiv.js"></script>
+    <script src="/Template/Html/js/ie/respond.min.js"></script>
+    <script src="/Template/Html/js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside bg-info dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="icon-list"></i>
+        </a>
+                                    <a href="http://www.llmztt.com"  class="navbar-brand text-lt">
+                    <i class="icon-earphones"></i>
+                    <img src="/Template/Html/images/logo.png" alt="CALL ME ALIKS - LLM" class="hide">
+                    <span class="hidden-nav-xs m-l-sm">ALIKS</span>
+                </a>
+                            
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+          <i class="icon-settings"></i>
+        </a>
+      </div>      
+      <ul class="nav navbar-nav hidden-xs">
+        <li>
+          <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
+            <i class="fa fa-indent text"></i>
+            <i class="fa fa-dedent text-active"></i>
+          </a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search" action="/index/search/">
+        <div class="form-group" style="width:500px;">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
+            </span>
+            <input style="width:50%" type="text" name="q" value="" class="form-control input-sm no-border rounded" placeholder="Search article...">
+            <div class="doc-buttons" style="height: 10px;">
+		        <a href="http://llmztt.com/home/" target="_blank" class="btn btn-s-md btn-info btn-rounded">进入高级版</a>
+		    </div>
+          </div>
+        </div>
+      </form>
+      <div class="navbar-right ">
+        <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="/Template/Html/images/head.jpg" alt="...">
+              </span>
+              LLM.ALIKS <b class="caret"></b>
+            </a>
+            
+          </li>
+        </ul>
+      </div>      
+    </header>    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-black dk aside hidden-print" id="nav">          
+    <section class="vbox">
+    <section class="w-f-md scrollable">
+        <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+        <!-- nav -->                 
+        <nav class="nav-primary hidden-xs">
+            <ul class="nav bg clearfix">
+            <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                Menu
+            </li>
+            <li>
+                <a href="/index/">
+                <i class="icon-home icon text-success "></i>
+                <span class="font-bold">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/list/">
+                <i class="icon-list icon text-info"></i>
+                <span class="font-bold">Article</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/about/">
+                <i class="icon-user icon text-primary-lter"></i>
+                <span class="font-bold">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/contact/">
+                <i class="icon-bubbles icon  text-info-dker"></i>
+                <span class="font-bold">Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/game/" data-target="#content" data-el="#bjax-el" data-replace="true">
+                <i class="icon-paper-plane icon  text-primary"></i>
+                <span class="font-bold">Game</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/music/" data-target="#content" data-el="#bjax-el" data-replace="true">
+                <i class="icon-playlist icon text-success-lter"></i>
+                <span class="font-bold">Music</span>
+                </a>
+            </li>
+            <li class="m-b hidden-nav-xs"></li>
+            </ul>
+            <ul class="nav" data-ride="collapse">
+            <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                Categories
+            </li>
+                                    <li >
+                <a href="javascript:;" class="auto">
+                <span class="pull-right text-muted">
+                    <i class="fa fa-angle-left text"></i>
+                    <i class="fa fa-angle-down text-active"></i>
+                </span>
+                <i class="icon-cursor icon"></i>
+                <span>Html</span>
+                </a>
+                <ul class="nav dk text-sm">
+                                                                                                                                                <li >
+                    <a href="/index/list/?t=44" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>Html4</span>
+                    </a>
+                </li> 
+                                                                <li >
+                    <a href="/index/list/?t=45" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>Html5</span>
+                    </a>
+                </li> 
+                                                                <li >
+                    <a href="/index/list/?t=46" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>CSS2</span>
+                    </a>
+                </li> 
+                                                                <li >
+                    <a href="/index/list/?t=47" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>CSS3</span>
+                    </a>
+                </li> 
+                                                                                                                                                                                                                                                </ul>
+            </li>
+                                                <li >
+                <a href="javascript:;" class="auto">
+                <span class="pull-right text-muted">
+                    <i class="fa fa-angle-left text"></i>
+                    <i class="fa fa-angle-down text-active"></i>
+                </span>
+                <i class="icon-cursor icon"></i>
+                <span>JS</span>
+                </a>
+                <ul class="nav dk text-sm">
+                                                                                                                                                                                                                                                                                <li >
+                    <a href="/index/list/?t=48" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>jQuery</span>
+                    </a>
+                </li> 
+                                                                <li >
+                    <a href="/index/list/?t=49" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>原生JS</span>
+                    </a>
+                </li> 
+                                                                                                                                                                                </ul>
+            </li>
+                                                <li >
+                <a href="javascript:;" class="auto">
+                <span class="pull-right text-muted">
+                    <i class="fa fa-angle-left text"></i>
+                    <i class="fa fa-angle-down text-active"></i>
+                </span>
+                <i class="icon-cursor icon"></i>
+                <span>.NET</span>
+                </a>
+                <ul class="nav dk text-sm">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li >
+                    <a href="/index/list/?t=53" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>Net</span>
+                    </a>
+                </li> 
+                                                </ul>
+            </li>
+                                                                                                                                                                                                <li >
+                <a href="javascript:;" class="auto">
+                <span class="pull-right text-muted">
+                    <i class="fa fa-angle-left text"></i>
+                    <i class="fa fa-angle-down text-active"></i>
+                </span>
+                <i class="icon-cursor icon"></i>
+                <span>Other</span>
+                </a>
+                <ul class="nav dk text-sm">
+                                                                                                                                                                                                                                                                                                                                                                                <li >
+                    <a href="/index/list/?t=51" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>Talk</span>
+                    </a>
+                </li> 
+                                                                <li >
+                    <a href="/index/list/?t=52" class="auto">                                                        
+                    <i class="fa fa-angle-right text-xs"></i>
+                    <span>Joke</span>
+                    </a>
+                </li> 
+                                                                                </ul>
+            </li>
+                                                                                                            </ul>
+                  
+        </nav>
+        <!-- / nav -->
+        </div>
+    </section>
+            
+    <footer class="footer hidden-xs no-padder text-center-nav-xs">
+        <div class="bg hidden-xs ">
+            <div class="dropdown dropup wrapper-sm clearfix">
+            <a  class="dropdown-toggle" data-toggle="dropdown">
+                <span class="thumb-sm avatar pull-left m-l-xs">                        
+                <img src="/Template/Html/images/sf.jpg" class="dker" alt="ALIKS">
+                <i class="on b-black"></i>
+                </span>
+                <span class="hidden-nav-xs clear">
+                <span class="block m-l">
+                    <strong class="font-bold text-lt">LLM.ALIKS</strong> 
+                    <b class="caret"></b>
+                </span>
+                <span class="text-muted text-xs block m-l">Art Forever</span>
+                </span>
+            </a>
+            
+            </div>
+        </div>            
+        </footer>
+    </section>
+</aside>        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable wrapper-lg">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- .breadcrumb -->
+                  <ul class="breadcrumb">
+                    <li><a href="/index/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="/index/list/"><i class="fa fa-list-ul"></i> Article</a></li>
+                    <li><a href='/index/list/?t=63'><i class="fa fa-list-ul"></i> 站内公告</a></li>
+                    <li class="active">
+                        一个仿flash遮罩层闪动的css3特效 
+                        <div class="col-md-3 col-sm-4" style="display:inline-block;width:auto;float:right;">
+                            <i class="icon-tag"></i> <a href='/index/list/?tag=css3'>css3<a/>,<a href='/index/list/?tag=html5'>html5<a/> 
+                        </div>
+                    </li> 
+                  </ul> 
+                  <!-- / .breadcrumb -->
+                </div>
+                <div class="col-sm-9">
+                  <div class="blog-post">        
+                      <div class="post-item">
+                          <div class="caption wrapper-lg">
+                            <center><h2 class="post-title">一个仿flash遮罩层闪动的css3特效</h2></center>
+                            <div class="post-sum">
+                                                                <ul class="list-group gutter list-group-lg list-group-sp sortable">
+                                  <li class="list-group-item bg-primary" draggable="true">
+                                    <div class="clear text-white">
+                                      一个仿flash遮罩层闪动的css3特效 $item.content_order
+                                    </div>
+                                  </li> 
+                                </ul>
+                                <pre class="brush:html;toolbar:false">&lt;style&gt;
+&nbsp;
+.ImageWrapper&nbsp;{
+&nbsp;&nbsp;display:&nbsp;block;
+&nbsp;&nbsp;overflow:&nbsp;hidden;
+&nbsp;&nbsp;position:&nbsp;relative;
+&nbsp;&nbsp;height:&nbsp;150px;
+}
+
+&nbsp;
+.ImageWrapper&nbsp;.ImageOverlayS&nbsp;{
+&nbsp;&nbsp;background:&nbsp;none&nbsp;repeat&nbsp;scroll&nbsp;0&nbsp;0&nbsp;rgba(255,&nbsp;255,&nbsp;255,&nbsp;0.2);
+&nbsp;&nbsp;height:&nbsp;100%;
+&nbsp;&nbsp;display:&nbsp;block;
+&nbsp;&nbsp;top:&nbsp;0;
+&nbsp;&nbsp;opacity:&nbsp;0;
+&nbsp;&nbsp;position:&nbsp;absolute;
+&nbsp;&nbsp;left:&nbsp;0;
+&nbsp;&nbsp;-webkit-transition:&nbsp;all&nbsp;0.3s&nbsp;ease&nbsp;0s;
+&nbsp;&nbsp;-moz-transition:&nbsp;all&nbsp;0.3s&nbsp;ease&nbsp;0s;
+&nbsp;&nbsp;-ms-transition:&nbsp;all&nbsp;0.3s&nbsp;ease&nbsp;0s;
+&nbsp;&nbsp;-o-transition:&nbsp;all&nbsp;0.3s&nbsp;ease&nbsp;0s;
+&nbsp;&nbsp;transition:&nbsp;all&nbsp;0.3s&nbsp;ease&nbsp;0s;
+&nbsp;&nbsp;width:&nbsp;100%;
+&nbsp;&nbsp;-webkit-transform:&nbsp;rotate(180deg)&nbsp;scale(0);
+&nbsp;&nbsp;-moz-transform:&nbsp;rotate(180deg)&nbsp;scale(0);
+&nbsp;&nbsp;-ms-transform:&nbsp;rotate(180deg)&nbsp;scale(0);
+&nbsp;&nbsp;-o-transform:&nbsp;rotate(180deg)&nbsp;scale(0);
+&nbsp;&nbsp;transform:&nbsp;rotate(180deg)&nbsp;scale(0);
+}
+
+&nbsp;
+.ImageWrapper:hover&nbsp;.ImageOverlayS&nbsp;{
+&nbsp;&nbsp;-webkit-transform:&nbsp;rotate(0deg)&nbsp;scale(1);
+&nbsp;&nbsp;-moz-transform:&nbsp;rotate(0deg)&nbsp;scale(1);
+&nbsp;&nbsp;-ms-transform:&nbsp;rotate(0deg)&nbsp;scale(1);
+&nbsp;&nbsp;-o-transform:&nbsp;rotate(0deg)&nbsp;scale(1);
+&nbsp;&nbsp;transform:&nbsp;rotate(0deg)&nbsp;scale(1);&nbsp;
+&nbsp;&nbsp;opacity:&nbsp;1;
+}
+
+
+.col-xs-9,&nbsp;.col-sm-9,&nbsp;.col-md-9{
+&nbsp;&nbsp;position:&nbsp;relative;
+&nbsp;&nbsp;min-height:&nbsp;1px;
+&nbsp;&nbsp;padding-left:&nbsp;10px;
+&nbsp;&nbsp;padding-right:&nbsp;10px;
+}
+
+.col-xs-9&nbsp;{
+&nbsp;&nbsp;float:&nbsp;left;
+}
+
+
+&lt;/style&gt;
+&nbsp;
+
+&lt;div&nbsp;class=&quot;col-md-9&nbsp;col-sm-9&nbsp;col-xs-9&nbsp;ImageWrapper&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;&quot;&nbsp;src=&quot;http://demo4leotheme.com/prestashop/leo_dress_store/themes/leo_dress_store/img/modules/leomanagewidgets/advhome-2.jpg&quot;&nbsp;alt=&quot;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;ImageOverlayS&quot;&gt;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre><p><br/></p>
+                                                            </div>
+                            <div class="line line-lg"></div>
+                            <div class="text-muted">
+                              <i class="fa fa-user icon-muted"></i> by <a href="/index/about/" class="m-r-sm">ALIKS</a>
+                              <i class="fa fa-clock-o icon-muted"></i> 2015/2/9 星期一 下午 15:50:24
+                              <a class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 1 comments</a>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                              <h4 class="m-t-lg m-b">1 Feedback</h4>
+                  <section class="comment-list block">
+
+                                        <article id="comment-id-19" data-bind="19" class="comment-item">
+                      <a class="pull-left thumb-sm">
+                          <img src="/Template/Html/images/a1.png" class="img-circle">
+                      </a>
+                      <section class="comment-body m-b">
+                        <header>
+                          <a><strong>是</strong></a>
+                          <label class="label bg-info m-l-xs">Editor</label> 
+                          <span class="text-muted text-xs block m-t-xs">
+                              2 minutes ago 
+                          </span>
+                        </header>
+                        <div class="m-t-sm">是</div>
+                      </section>
+                    </article>
+                
+                    <!-- .comment-reply -->
+                                                            
+                  </section>
+                  <h4 class="m-t-lg m-b">Leave a message</h4>
+                
+                  <form id="ajax-form" action="/index/feedback/"  method="post">
+                    <div class="form-group pull-in clearfix">
+                      <div class="col-sm-6">
+                        <label>Your name</label>
+                        <input type="text" name="name"  class="form-control" required placeholder="Name">
+                                                  <input type="hidden" name="aid" value="132">
+                                              </div>
+                      <div class="col-sm-6">
+                        <label >Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Message</label>
+                      <textarea class="form-control" name="content" required rows="5" placeholder="Type your comment"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" id="btnSub" class="btn btn-success">Submit comment</button>
+                    </div>
+                  </form>                </div>
+                <div class="col-sm-3">
+    <h5 class="font-bold">Categories</h5>
+    <ul class="list-group">
+            <li class="list-group-item">
+        <a href="/index/list/?t=41">
+        <span class="badge pull-right">5</span>
+        Html
+        </a>
+    </li> 
+                <li class="list-group-item">
+        <a href="/index/list/?t=42">
+        <span class="badge pull-right">10</span>
+        JS
+        </a>
+    </li> 
+                <li class="list-group-item">
+        <a href="/index/list/?t=43">
+        <span class="badge pull-right">18</span>
+        .NET
+        </a>
+    </li> 
+                                                                <li class="list-group-item">
+        <a href="/index/list/?t=50">
+        <span class="badge pull-right">20</span>
+        Other
+        </a>
+    </li> 
+                                    </ul>
+    <div class="tags m-b-lg l-h-2x">
+        <a href="/index/list/?tag=大数据" class="label bg-primary">大数据</a>
+        <a href="/index/list/?tag=前端应用" class="label bg-primary">前端应用</a>
+        <a href="/index/list/?tag=CSS框架" class="label bg-primary">CSS框架</a>
+        <a href="/index/list/?tag=CouchDB" class="label bg-primary">CouchDB</a>
+        <a href="/index/list/?tag=Javascript" class="label bg-primary">Javascript</a>
+        <a href="/index/list/?tag=云计算" class="label bg-primary">云计算</a>
+        <a href="/index/list/?tag=移动开发" class="label bg-primary">移动开发</a>
+        <a href="/index/list/?tag=数据库" class="label bg-primary">数据库</a>
+        <a href="/index/list/?tag=Windows Phone" class="label bg-primary">Windows Phone</a>
+        <a href="/index/list/?tag=Visual Basic" class="label bg-primary">Visual Basic</a>
+        <a href="/index/list/?tag=DirectX" class="label bg-primary">DirectX</a>
+        <a href="/index/list/?tag=响应式设计" class="label bg-primary">响应式设计</a>
+        <a href="/index/list/?tag=Java SE" class="label bg-primary">Java SE</a>
+        <a href="/index/list/?tag=MVC3" class="label bg-primary">MVC3</a>
+        <a href="/index/list/?tag=ASPNET" class="label bg-primary">ASPNET</a>
+        <a href="/index/list/?tag=json" class="label bg-primary">json</a>
+        <a href="/index/list/?tag=异常" class="label bg-primary">异常</a>
+        <a href="/index/list/?tag=年龄" class="label bg-primary">年龄</a>
+        <a href="/index/list/?tag=hack" class="label bg-primary">hack</a>
+        <a href="/index/list/?tag=css兼容" class="label bg-primary">css兼容</a>
+        <a href="/index/list/?tag=Jquery" class="label bg-primary">Jquery</a>
+        <a href="/index/list/?tag=减压压缩包" class="label bg-primary">减压压缩包</a>
+        <a href="/index/list/?tag=Liunx" class="label bg-primary">Liunx</a>
+        <a href="/index/list/?tag=Xshell" class="label bg-primary">Xshell</a>
+        <a href="/index/list/?tag=win8" class="label bg-primary">win8</a>
+        <a href="/index/list/?tag=win81" class="label bg-primary">win81</a>
+        <a href="/index/list/?tag=Visual Studio 2010" class="label bg-primary">Visual Studio 2010</a>
+        <a href="/index/list/?tag=windows" class="label bg-primary">windows</a>
+        <a href="/index/list/?tag=搞笑" class="label bg-primary">搞笑</a>
+        <a href="/index/list/?tag=音乐" class="label bg-primary">音乐</a>
+        <a href="/index/list/?tag=经典" class="label bg-primary">经典</a>
+        <a href="/index/list/?tag=小游戏" class="label bg-primary">小游戏</a>
+        <a href="/index/list/?tag=vb" class="label bg-primary">vb</a>
+        <a href="/index/list/?tag=ftp" class="label bg-primary">ftp</a>
+        <a href="/index/list/?tag=cookie" class="label bg-primary">cookie</a>
+        <a href="/index/list/?tag=Newtonsoft.json.dll" class="label bg-primary">Newtonsoft.json.dll</a>
+        <a href="/index/list/?tag=集成" class="label bg-primary">集成</a>
+        <a href="/index/list/?tag=托管模式" class="label bg-primary">托管模式</a>
+        <a href="/index/list/?tag=EF" class="label bg-primary">EF</a>
+        <a href="/index/list/?tag=程序员" class="label bg-primary">程序员</a>
+        </div>
+    <h5 class="font-bold">Recent Posts</h5>
+    <div>
+            <article class="media " >
+        <a class="pull-left thumb thumb-wrapper m-t-xs">
+        <img src="/Template/Html/images/m1.jpg">
+        </a>
+        <div class="media-body">                        
+        <a href="#" class="font-semibold">是</a>
+        <div class="text-xs block m-t-xs"><a>Travel</a> 2015/3/6 星期五 下午 15:19:07</div>
+        </div>
+    </article>
+        </div>
+</div>              </div>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+
+      </section>
+    </section>    
+  </section>
+  <script src="/Template/Html/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/Template/Html/js/bootstrap.js"></script>
+  <!-- App -->
+    <script src="/Template/Html/js/app.js"></script>  
+    <script src="/Template/Html/js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/Template/Html/js/app.plugin.js"></script>
+    <script src="/Template/Html/js/jquery.form.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/jquery.artDialog.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Template/Html/js/feedback.js"></script>
+</body>
+</html>

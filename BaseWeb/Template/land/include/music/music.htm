@@ -1,0 +1,64 @@
+﻿                    <div id="app"></div>
+                    #parse("include/home/music-banner.htm")
+                    <div class="posts fadeInDown animated" ms-class="class-{{$index + 1}}" ms-repeat-art="list">
+                     
+			            <article class="post type-post status-publish format-aside has-post-thumbnail sticky hentry category-wordpress tag-teahouse tag-wordpress post_format-post-format-aside">
+	                        
+                            <div class="box-wrap">
+		                        <div class="box">
+		                            <header>
+			                            <h2 class="entry-title">
+                                            <a class="pjax simptip-smooth simptip-movable simptip-position-right" ms-href="/land/view/{{art.article_id}}/" ms-data-tooltip="art.article_title" ms-css-color="{{art.article_title_color}}" >{{art.article_title}}</a>
+                                        </h2>
+		                            </header>		
+		                            <a class="featured-image pjax" ms-href="/land/view/{{art.article_id}}/" ms-attr-title="art.article_title">
+			                            <img width="150" height="150"  ms-attr-src="art.article_image==null?'/Template/wp/images/no-image.jpg':art.article_image" class="attachment-thumbnail size-thumbnail wp-post-image" />					
+                                    </a>	
+		                            <div class="post-content">
+			                            <ul class="top_meta">
+				                            <li class="mate-cat"><i class="fa fa-folder-open-o"></i><a class="pjax" ms-href="/land/list-0-{{art.article_type}}-0-0/" rel="category tag">{{art.article_type_name}}</a></li>
+				                            <li class="mate-time"><i class="fa fa-clock-o"></i>发表于{{art.article_guid}}前 ({{art.article_time | date("yyyy-MM-dd")}})</li>
+				                            <li class="mate-view"><i class="fa fa-eye"></i>{{art.article_pv}}次浏览</li>
+				                            <li class="mate-com"><i class="fa fa-comments-o"></i><a class="pjax" ms-href="/land/view/{{art.article_id}}/" title="comments">{{art.commite_count}}条评论</a></li>						
+				                            <li></li>									
+				                            <div class="clearfix"></div>
+			                            </ul>		
+			                            <div class="content">
+				                            {{art.article_content|html}}
+			                            </div>
+		                            </div>
+                                    <!-- post content -->	
+		                            <div class="clearfix"></div>
+                                    <div class="audio-wrapper">
+			                            <audio ms-attr-title="art.article_title" ms-if="art.article_ref_url!=''" width="100%" ms-attr-src="art.article_ref_url" type="audio/mp3" controls="controls"></audio>
+                                    </div>
+		                        </div>
+                                <!-- box -->
+					            <!-- 文章mate -->	
+		                        <ul class="bottom_meta">
+			                        <li class="meta_tabs">
+                                        {{art.article_tag | splitTag | html}}
+                                    </li>
+                                    <!-- 喜欢按钮 -->	
+			                        <li id="like_btn">
+				                        <a href="javascript:;" ms-on-click="addLive(art.article_id)" class="jm-post-like" title="Like"><i class="fa fa-heart-o"></i>&nbsp;{{art.article_like}}</a>							
+			                        </li>	
+			                        <div class="clearfix"></div>
+		                        </ul>	 
+		                        <div class="clearfix"></div>
+	                        </div>
+                            
+                            
+                        </article>		
+
+                     
+                    </div>
+                   
+<script src="$path/js/sea.js"></script>
+<script src="$path/js/config.js"></script>         
+<script type="text/javascript">
+    seajs.use(["module/common/common.min", "module/home/home.min", "module/music/jquery.music.min"], function (a, b, d) {
+        $(".fadeInDown").fadeIn(300)
+    })
+</script>
+                   

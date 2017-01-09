@@ -1,0 +1,15 @@
+.zm{width:100%;height:100%;z-index:9999;background:rgba(0,0,0,.8); position:fixed;left:0;top:0;display:none;}
+.zm .login{left:43%;top:200px;color:#fff;position:absolute;background:#fff;}
+
+.logincon{width:340px; float:right; border-top:5px solid #01b497; box-shadow:0 4px 3px rgba(0,0,0,0.2); padding:0 22px; position:relative;}
+.logincon h2{font-family:"ºÚÌå"; color:#696969; font-size:170%; margin:25px 0;position:relative;}
+.logincon h2 em{position:absolute;top:-20px;right:-15px;width:18px;height:18px;cursor:pointer;background:url(../webimage/new_theme/deleteicon1.png) no-repeat;-webkit-transition: -webkit-transform .3s linear;-moz-transition: -moz-transform .3s linear;-o-transition: -o-transform .3s linear;transition: transform .3s linear;}
+.logincon h2 em:hover{background:url(../webimage/new_theme/deleteicon2.png) no-repeat;transform: rotate(180deg);-ms-transform: rotate(180deg);-moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);}
+.logincon h2 span{font-size:12px; float:right; font-weight:100; font-family:"ËÎÌå"; margin-top:10px;}
+.logincon p.it{border:1px solid #cccbcb; height:36px; margin-bottom:24px; line-height:36px; color:#696969; text-indent:10px;}
+.logincon p.it input{height:34px; font-size:14px; margin-left:10px; text-indent:10px; border:none; width:270px;outline:none;}
+.logincon a{color:#01b497; font-size:12px;}
+.logincon a:hover{color:#fe8842; text-decoration:underline;}
+.logincon a.wp{margin:-10px 0 25px 10px; display:block;}
+.logincon .loginsub{width:100%;height:45px; font-family:"ºÚÌå"; margin-bottom:28px; border:none; font-size:22px; background:url(../webimage/but.png) no-repeat -3px -213px; color:#FFF; font-weight:bold; text-align:center;outline:none;cursor:pointer;}
+.logincon .loginsub:hover{background:url(../webimage/but.png) no-repeat -3px -261px;}

@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+.containter 
+{
+    _width:1000px;  
+    margin:0 auto;
+    min-width:1000px;
+	max-width:1000px;
+}
+.containter .main
+{
+    _width:1000px;  
+    margin:0 auto;
+    min-width:1000px;
+	max-width:1000px;
+	font-size:12px;
+}
+.pay_main{margin-bottom:50px;}
+ 
+ .containter .main .pay-nav
+{
+    margin:25px auto;text-align:right;border-bottom:3px solid #bababa;height:69px;line-height:79px;background:#f5f5f5;padding-right:15px;
+}
+ 
+ .containter .main .pay-nav label{font-size:200%;font-weight:800;color:#ff6600;}
+ .containter .main .pay-nav span{margin-left:5px;}
+ .containter .main .pay-nav font{margin-left:15px;color:#758ea1;}
+ .containter .main .pay-nav font a{color:#007fe5;}
+ .containter .main .pay-nav font a:hover{color:#ff0000;}
+ 
+ .containter .main .tip
+{
+    margin:0px auto 15px auto;
+}
+ 
+.containter .main .tip label 
+{
+   
+}
+.containter .main .tip label span
+{
+color:#ff6000;
+}
+
+ .containter .main .y-price
+{
+    margin:0px auto 15px auto;padding:5px 0 5px 10px;height:20px;line-height:20px;
+}
+.click_price{background:#f3f5fc;}
+.y-price b{color:#ff4800; font-size:14px;}
+ .containter .main .y-price  label
+{
+   display:block;
+}
+ .containter .main .y-price  input
+{
+   margin:5px 5px;float:left;
+}
+ .containter .main .y-price  .price
+{
+   float:left;
+}
+ .containter .main .y-price  .pay
+{
+   float:right;padding-right:15px;
+}
+ .containter .main .y-price  .pay span
+{
+   font-weight:800;color:#fd6600;margin:0 5px;
+}
+ .containter .main .y-price label b
+{
+   margin:0 10px;
+}
+
+
+  .containter .main .form
+{
+    margin:0px auto 15px auto;
+}
+  .containter .main .form label
+{
+    color:#bababa;
+}
+  .containter .main .form input
+{
+    display:block;margin-top:15px;
+}
+  .containter .main .form .txt
+{
+    color:#bababa;height:25px;width:180px;border:1px solid #ccc;display:inline-block;
+}
+  .containter .main .form span
+{
+    color:#ff4800;position:relative;margin-left:10px;
+}
+  .containter .main .form span a
+{
+    color:#565656;
+}
+ .containter .main .form span .rush
+{
+    cursor:pointer;display:inline-block;background:url(../webimage/rush.png) no-repeat;width:30px;height:39px;
+    position:absolute;right:-40px;top:-10px;
+}
+
+
+.btn
+{
+    color:#fff;background:#f59600;width:100px;height:35px;border:1px solid #f59600;border-bottom-color:#cc7832;font-weight:bold; margin-top:20px;
+}
+
+  .containter .main .pay-method
+{
+   border:1px solid #dfdede;
+}
+
+  .containter .main .pay-method .title
+{
+   border-bottom:1px solid #dfdede;height:36px;line-height:36px;padding-left:15px;background:#f6f6f6;
+}
+
+  .containter .main .pay-method .cont 
+{
+    padding:10px 0;background:#f4f6fc;
+}
+
+  .containter .main .pay-method .cont label
+{
+   display:block;margin:15px 0;padding-left:15px;
+}
+  .containter .main .pay-method .cont label span
+{
+   padding-left:15px;
+}
+  .containter .main .pay-method .cont label img
+{
+   padding-left:15px;
+}
+  .containter .main .pay-method .cont .btn
+{
+   color:#fff;background:#f59600;width:100px;height:35px;border:1px solid #f59600;border-bottom-color:#cc7832;font-weight:bold;margin-left:15px;margin-top:10px;margin-bottom:20px;
+}

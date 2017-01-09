@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>管理后台</title>
+        #parse("include/meta.htm")
+        #parse("include/css.htm")
+        <link href="$path/themes/error.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <!-- END HEAD -->
+
+    <body class="page-container-bg-solid page-boxed wysihtml5-supported">
+        <!-- BEGIN HEADER -->
+        #parse("include/header.htm")
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                     <div class="page-content-inner">
+                            <div class="row">
+                                <div class="col-md-12 page-500">
+                                    <div class=" number font-red"> 500 </div>
+                                    <div class=" details">
+                                        <h3>Oops! Something went wrong.</h3>
+                                        <p> We are fixing it! Please come back in a while.
+                                            <br> </p>
+                                        <p>
+                                            <a href="/Admin/" class="btn red btn-outline"> Return home </a>
+                                            <br> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+               
+                #parse("include/sidebar.htm")
+                
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        <div class=" page-footer-fixed ">
+        #parse("include/footer.htm")
+        </div>
+        <!-- BEGIN INNER FOOTER -->
+        <script src="$path/js/sea.js" type="text/javascript"></script>
+        <script src="$path/js/config.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            
+        </script>
+
+
+</body>
+</html>

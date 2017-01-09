@@ -1,0 +1,359 @@
+@charset "utf-8";
+/* CSS Document */
+
+.containter 
+{
+    _width:1000px;  
+    margin:0 auto;
+    min-width:1000px;
+	max-width:1000px;
+}
+ 
+.containter .main
+{
+    width:100%;border:1px solid #dddddd;
+}
+
+.containter .crumbs
+{
+    margin:20px 0 20px 10px; 
+}
+.containter .step 
+{
+     position:relative;height:25px;
+}
+.containter .step  label
+{
+   position:absolute;color:#9b9b9b;font-weight:bold;top:10px;
+}
+.containter .step  .step-cur
+{color:#f86e2f;}
+.containter .step  .step1
+{
+  left:40px;
+}
+.containter .step  .step2
+{
+  left:330px;
+}
+.containter .step  .step3
+{
+  left:632px;
+}
+  
+.containter .order-detail
+{
+    width:24.2%;float:left;height:100%;
+}
+
+.containter .order-detail h1
+{
+    font-size:120%;height:27px;line-height:27px;padding-left:10px;background:#f9f9f9;border-bottom:1px solid #dddddd;
+}
+.containter .order-detail .order
+{
+   padding:15px 0 30px 15px;line-height:22px;color:#989898;
+}
+.containter .order-detail .order label
+{
+   display:inline-block;text-align:right;width:60px;padding-right:5px;
+}
+.containter .order-detail .order p
+{
+   
+}
+.containter .order-detail .order p a
+{
+   color:#2d8ebb;
+}
+.containter .order-detail .order p span
+{
+   color:#666666;
+}
+.containter .order-detail .order p font
+{
+   color:#ff540c;font-weight:bold;padding-right:5px;
+}
+
+
+.containter .order-control
+{
+    width:75.7%;float:left;border-left:1px solid #dddddd;
+}
+
+.containter .order-control .select-type a
+{
+   display:inline-block;width:264px;height:130px;border:3px solid #eae5e1;background:#f7f5f6;margin-right:20px;
+   text-align:center;line-height:130px;font-weight:bold;overflow:hidden;
+}
+.containter .order-control .select-type a span
+{
+    font-weight:normal;font-size:12px;display:block;margin-top:-112px;
+}
+.containter .order-control .select-type a:hover
+{
+    background:#ff8b00;color:#fff;
+}
+.containter .order-control h1
+{
+    font-size:120%;height:27px;line-height:27px;padding-left:10px;background:#f9f9f9;border-bottom:1px solid #dddddd;
+}
+.containter .order-control .apply
+{
+    padding:20px;
+}
+.containter .order-control .select-type
+{
+  padding:5% 10%;
+}
+.containter .order-control .apply .row-item
+{
+    height:35px;
+}
+.containter .order-control .apply .row-item .info
+{
+    display:block;clear:both;color:#aeaeac;font-size:12px;padding-left:85px;padding-top:5px;
+}
+.containter .order-control .apply .hauto
+{
+    height:auto;margin-bottom:10px;
+}
+
+.containter .order-control .apply .row-item label
+{
+    display:inline-block;width:80px;text-align:right;padding-right:5px;float:left;
+}
+.containter .order-control .apply .row-item label span
+{
+    color:#e13801;margin:0 5px;font-weight:bold;font-size:120%;
+}
+.containter .order-control .apply .row-item font
+{
+    float:left;margin:0 5px;
+}
+.containter .order-control .apply .row-item .input
+{
+    display:inline-block;float:left;
+}
+.containter .order-control .apply .row-item .input .txt
+{
+   border:1px solid #7f9db5;width:145px;height:22px;
+}
+
+.containter .order-control .apply .row-item .input .btnSub
+{
+   width:113px;height:29px;line-height:29px;text-align:center;cursor:pointer;
+   font-weight:bold;color:#fff;background:#ff8441;border:1px solid #ff7c34;
+}
+.containter .order-control .apply .row-item .input .btnSub:hover
+{
+   background:#15a4fa;border:1px solid #15a4fa;
+}
+.containter .order-control .apply .row-item .input textarea
+{
+    width:415px;height:80px;border:1px solid #7f9db5;
+}
+
+.containter .order-control .apply .row-item .input .upfile
+{
+    display:none;
+}
+.containter .order-control .apply .row-item .input .upFileBtn
+{
+    width:79px;height:23px;line-height:23px;border:1px solid #cccccc;background:#fcfcfc;font-weight:bold;text-align:center;
+}
+
+
+
+
+.containter .order-control .apply .row-item .select-area
+{
+    border:1px solid #7e9eb7;
+}
+.containter .order-control .apply .row-item .select-area .select-item
+{
+    
+}
+.containter .order-control .apply .row-item .select-area .select-item .col
+{
+    float:left;margin-top:15px;margin-bottom:15px;
+}
+.containter .order-control .apply .row-item .select-area .select-item .select
+{
+   width:40px;text-align:center;
+}
+.containter .order-control .apply .row-item .select-area .select-item .goods
+{
+    width:260px;
+}
+.containter .order-control .apply .row-item .select-area .select-item .goods img
+{
+    width:50px;float:left;margin:0 4px;
+}
+
+.containter .order-control .apply .row-item .select-area .select-item .goods .pro
+{
+    width:200px;float:left;
+}
+.containter .order-control .apply .row-item .select-area .select-item .goods .pro label
+{
+    display:block;float:none;width:90%;padding-left:5px;text-align:left;line-height:20px;
+}
+.containter .order-control .apply .row-item .select-area .select-item .goods .pro label font
+{
+    color:#999999;margin:0;padding:0;
+}
+
+.containter .order-control .apply .row-item .select-area .select-item .count
+{
+    width:160px;
+}
+.containter .order-control .apply .row-item .select-area .select-item .count .waper
+{
+    margin-top:15px;
+}
+.containter .order-control .apply .row-item .select-area .select-item .count .waper a
+{
+    display: block;float: left;width: 20px;height: 21px;cursor: pointer;
+}
+.containter .order-control .apply .row-item .select-area .select-item .count .waper .prev
+{
+    background: url(../webimage/item/jian.gif) no-repeat;
+}
+.containter .order-control .apply .row-item .select-area .select-item .count .waper input
+{
+    display: block;float: left;width: 37px;height: 19px;line-height: 19px;text-align: center;border: 1px solid #bdbdbd;border-left:0;border-right:0;
+}
+
+.containter .order-control .apply .row-item .select-area .select-item .count .waper .next
+{
+    background: url(../webimage/item/jia.gif) no-repeat;
+}
+.containter .order-control .apply .row-item .select-area .select-item .count .waper font
+{
+    float:left;
+}
+
+
+.containter .refund-view
+{
+    width:75.7%;float:left;height:100%;
+}
+.containter .refund-view .refund-control
+{
+    padding:3% 4%;
+}
+.containter .refund-view .refund-control strong
+{
+    padding:3% 0;
+}
+.containter .refund-view .refund-control .block
+{
+    display:block;
+}
+.containter .refund-view .refund-control .order-control
+{
+    border:0;width:100%;
+}
+.containter .refund-view .refund-control .spli
+{
+    display:block;border-top:1px solid #ccc;padding-top:20px;margin-top:20px;
+}
+ 
+.containter .refund-view .refund-control li span
+{
+   font-weight:bold;color:#e13801;
+}
+.containter .refund-view .refund-control h1
+{
+   font-size:140%;
+}
+.containter .refund-view .refund-control ul
+{
+   line-height:22px;display:block;margin:10px 0;
+}
+.containter .refund-view .refund-control ul li
+{
+   list-style-type:disc;margin-left:20px;color:#6c6c6c;
+}
+.containter .refund-view .refund-control b
+{
+   border-top:1px solid #e7e7e7;margin:15px 0;height:1px;display:block;
+}
+.containter .refund-view .refund-control label
+{
+   display:block;color:#6c6c6c;
+}
+.containter .refund-view .refund-control label a
+{
+   color:#2d859b;
+}
+.containter .refund-view .refund-control label em
+{
+   margin:0 5px;
+}
+
+.containter .refund-order-info-area
+{
+    width:24.2%;float:left;height:100%;border-left:1px solid #e7e7e7;
+}
+.containter .refund-order-info
+{
+   padding:1%;font-size:12px;
+}
+
+.containter .refund-order-info h1
+{
+   font-size:120%;border-bottom:1px solid #e7e7e7;padding: 10px 0 10px 5px;
+}
+
+.containter .refund-order-info .refund-good-list
+{
+   padding:2%;line-height:20px;_padding:1% 0;
+}
+.containter .refund-order-info .refund-good-list img
+{
+   width:50px;float:left;
+}
+.containter .refund-order-info .refund-good-list .summary
+{
+   padding-left:10px;width:160px;float:left;
+}
+.containter .refund-order-info .refund-good-list .summary a
+{
+   color:#2d7d94;
+}
+.containter .refund-order-info .refund-good-list .summary label
+{
+   display:block;
+}
+
+.containter .refund-order-info label
+{
+   display:block;line-height:25px;color:#8e8e8e;
+}
+.containter .refund-order-info label img
+{
+   width:50px;
+}
+.containter .refund-order-info label span
+{
+   color:#f17015;font-weight:bold;
+}
+.containter .refund-order-info label font
+{
+   color:#f17015;
+}
+.containter .refund-order-info label i
+{
+   color:#363636;font-style:normal;
+}
+.containter .refund-order-info .info
+{
+   margin:20px 0 50px 10px;
+}
+
+.containter .ques{margin:50px 0 0 0;line-height:22px;}
+.containter .ques h3{padding-bottom:5px;border-bottom:1px solid #e4e4e4;margin-bottom: 20px;}
+.containter .ques strong{display:block;color:#666666;}
+.containter .ques p{margin-bottom:10px;display:block;color:#666666;}

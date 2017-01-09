@@ -1,0 +1,69 @@
+﻿.tab-pane.active {
+    display: table ;/**edit panel**/
+}
+.table.tab-pane.active{
+    display: none ;/****table list***/
+}
+.portlet.light .btn.btn-circle.btn-icon-only.btn-default {
+    margin-top: 7px;
+}
+.l-login{
+    margin-left:20px;font-weight:bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline:none;
+}
+.l-login:hover{
+    text-decoration:none; 
+}
+.margin-right-20{margin-right:20px;}
+
+.page-footer-fixed  {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    bottom: 0;
+}
+
+.container{
+    
+}
+.llm-container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.btn-mt-6{
+    margin-top:6px;
+}
+.tab-content{overflow-x:hidden}
+.input-icon.right>.form-control{padding-left: 30px;}
+.tab-pane{width:100%;}
+.zhengshu{width: 200px;height: 150px;margin-right:5px;}
+#file_upload_zhengshu{display:inline-block;height: 34px; width: 82px;float: left;margin-right:5px;}
+.bootstrap-tagsinput{width:100%;}
+.tag{margin-bottom:5px;}
+.btn.default:not(.btn-outline),.btn.btn-outline.default {
+    margin-bottom: 5px;
+}
+@media (min-width:  768px)
+{
+    .breadcrumb{
+       margin: 15px 0 0 0;
+    }
+   
+
+}
+
+@media (max-width: 991px){
+    .breadcrumb{
+        margin: 15px 0 0 0;
+    }
+}
+@media (min-width: 1198px){
+    .breadcrumb{
+        margin: 0 0 0 0;
+    }
+}

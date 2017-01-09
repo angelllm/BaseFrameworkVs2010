@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>$model.article_title</title>
+    <script src="../../Content/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="/Content/js/ueditor/third-party/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
+    <link href="../../Content/base.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+<h1 style="display:block;text-align:center;font-size:25px;margin:10px auto;">$model.article_title</h1>
+<article>
+#foreach($item in $list)
+<section>
+    $item.content_content
+</section>
+#end
+</article>
+<script>SyntaxHighlighter.all();</script>
+</body>
+</html>

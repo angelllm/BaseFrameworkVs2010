@@ -1,0 +1,25 @@
+﻿define(function (require, exports, module) {
+    require.async([
+        "btm",
+        "app",
+        "validation",
+        "bootbox",
+        "dropdown",
+        "date-picker",
+        "counterup",
+        "waypoints",
+        "slimscroll",
+        "blockui",
+        "uniform",
+        "switch",
+        "full",
+        "validate",
+        "methods",
+        "wysihtml5",
+        "bwysihtml5",
+        "markdown",
+        "bmarkdown", 
+        "layout",
+        "sidebar"
+    ])
+})

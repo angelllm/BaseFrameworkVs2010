@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <noscript><iframe src=*.html></iframe></noscript>
+  <meta charset="utf-8" />
+  #foreach($config in $tjson.tconfig("base"))
+  #foreach($c in $pjson.pconfig($config.type_id))
+  <title>$q - 搜索结果 - $c.page_title</title>
+  <meta name="description" content="$c.page_description" />
+  <meta name="keywords" content="$c.page_keywords" />
+  #end
+  #end
+  <meta name="author" content="llm" />
+  <meta name="Copyright" content="http://www.llmztt.com/index/" />
+  <meta name="power" content="llm云" />  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="$path/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/app.css" type="text/css" />  
+  
+  <!--[if lt IE 9]>
+    <script src="$path/js/ie/html5shiv.js"></script>
+    <script src="$path/js/ie/respond.min.js"></script>
+    <script src="$path/js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    #parse("include/header.htm")
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        #parse("include/aside.htm")
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable wrapper-lg">
+              <div class="row">
+                #if($cur!="")
+                <div class="col-lg-12">
+                  <!-- .breadcrumb -->
+                  <ul class="breadcrumb">
+                    <li><a href="/index/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="/index/list/"><i class="fa fa-list-ul"></i> Article</a></li>
+                    <li class="active"></li>
+                  </ul>
+                  <!-- / .breadcrumb -->
+                </div>
+                #end
+                <div class="col-sm-9">
+                  <div class="blog-post">        
+                    #foreach($item in $list)                               
+                    <div class="post-item">
+                    
+                      <div class="caption wrapper-lg">
+                        <h2 class="post-title"><a href="/index/view/$item.article_id/">$item.article_title</a></h2>
+                        <div class="post-sum">
+                            $item.article_content
+                        </div>
+                        <div class="line line-lg"></div>
+                        <div class="text-muted">
+                          <i class="fa fa-user icon-muted"></i> by <a href="/index/about/" class="m-r-sm">ALIKS</a>
+                          <i class="fa fa-clock-o icon-muted"></i> $item.article_time
+                        </div>
+                      </div>
+                    </div>
+                    #end
+                    
+                  </div>
+                  <div class="text-center m-t-lg m-b-lg">
+                    <ul class="pagination pagination-md">
+                    
+                    </ul>
+                  </div>
+                  ##parse("include/feedback.htm")
+                </div>
+                #parse("include/raside.htm")
+              </div>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>    
+  </section>
+  <script src="$path/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="$path/js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="$path/js/app.js"></script>  
+  <script src="$path/js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="$path/js/app.plugin.js"></script>
+</body>
+</html>

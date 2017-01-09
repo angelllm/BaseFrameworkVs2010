@@ -1,0 +1,130 @@
+<div class="mt-30">
+    <div class="posts">
+        <article class="post post-11 type-post status-publish format-aside has-post-thumbnail hentry category-wordpress tag-island tag-wordpress post_format-post-format-aside">
+            <div class="post-wrap">
+                <div class="post-inner">
+                    <div class="post-body">
+                        <header class="pl20">
+                            <h2 class="entry-title"><a href="#" title="自适应WordPress主题Island–付费主题–88元">{{art.article_title}}</a></h2>
+                        </header>
+                        <div class="post-contentp pl20">
+                            <div class="content clearfix">
+                                <blockquote [innerHTML]="art.article_content"></blockquote>
+                                <div *ngFor="let artlist of allList[1]" >
+                                    <div class="download-wrap m_hide content-title">
+                                        <div class="post-download dlview">
+                                            <div class="dl-title">{{artlist.content_title}}</div>
+                                        </div>
+                                    </div>
+                                    <div [innerHTML]="artlist.content_content"></div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-copyright m_hide">
+                   
+                </div>
+                <div class="post-related m_hide">
+                    <ul class="related_box clearfix">
+                        <li class="related_box" *ngFor="let item of allList[2]">
+                            <div class="r_pic">
+                                <a [routerLink]="'/view/'+item.article_id" [title]="item.article_title">
+                                    <img [src]="'http://www.llmztt.com'+item.article_image" [alt]="item.article_title" class="thumbnail">
+                                </a>
+                            </div>
+                            <div class="r_title"><a [routerLink]="'/view/'+item.article_id" [title]="item.article_title" rel="bookmark">{{item.article_title}}</a></div>
+                        </li>   
+                    </ul>
+                </div>
+                <ul class="bottom_meta clearfix">
+                    <li class="mate-time fl"><i class="fa fa-clock-o"></i>{{art.article_guid}} ({{art.article_time}})</li>
+                    <li class="mate-cat fl m_hide"><i class="fa fa-bookmark"></i><a [routerLink]="'/category/'+art.article_type_name" rel="category tag">{{art.article_type_name}}</a></li>
+                    <li class="meta_tabs fl m_hide"><i class="fa fa-tags"></i><a *ngFor="let tag of (art.article_tag+'').split(',')" [routerLink]="'/tag/'+tag+'/'" rel="tag">{{tag}}</a> </li>
+                    <li class="meta_like fr">
+                        <a href="javascript:;" class="jm-post-like"title="Like"><i class="fa fa-heart-o"></i>{{art.article_like}}</a> 
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <!-- <div id="comment-jump" class="comments">
+            <div id="comments" class="clearfix">
+                <h3 id="comments-title">10条评论</h3>
+                <div id="loading-comments" class="hide"><span><i class="fa fa-spinner fa-pulse"></i> Loading...</span></div>
+                <ul class="commentlist comdot">
+                    <li class="comment even thread-even depth-1 clearfix" id="li-comment-118">
+                        <div class="comment-block" id="comment-118">
+                            <div class="author-img"><img src="#" class="avatar avatar-100 ajax_gif" height="100" width="100"></div>
+                            <div class="comment-body clearfix">
+                                <div class="comment-name">
+                                    <span class="arrow left"></span>
+                                    <cite class="fn"><a href="http://www.liu16.com" rel="external nofollow" class="url">光的传人</a></cite> <span class="fr">-49楼</span>
+                                </div>
+                                <div class="comment-text">
+                                    <p>过来支持一下</p>
+                                </div>
+                                <div class="comment-info clearfix">
+                                    <span class="comment-date">
+                                        <a class="comment-time" href="2016/04/19/wordpress-theme-island/#comment-118">
+                                        04/23/2016 - 下午8:44
+                                        </a>
+                                    </span>
+                                    <span class="comment-reply">
+                                        <a rel="nofollow" class="comment-reply-link" href="2016/04/19/wordpress-theme-island/?replytocom=118#respond" onclick="return addComment.moveForm( &quot;comment-118&quot;, &quot;118&quot;, &quot;respond&quot;, &quot;11&quot; )" aria-label="回复给光的传人">回复</a>                 
+                                    </span>
+                                    <span class="comment-edit"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+        
+                     
+                    #comment-##
+                    <div class="clearfix"></div>
+                </ul>
+                <div id="respond" class="comment-respond">
+                    <h3 id="reply-title" class="comment-reply-title">发表评论 <small><div id="cancel-comment-reply-link" style="display:none;"><i class="icon-remove-sign"></i> </div></small></h3>
+                    <form action="wp-comments-post.php" method="post" id="commentform" class="comment-form">
+                        <p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p>
+                        <p class="comment-form-author">
+                            <label for="author">姓名 <span class="required">*</span></label>
+                            <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required">
+                        </p>
+                        <p class="comment-form-email">
+                            <label for="email">电子邮件 <span class="required">*</span></label>
+                            <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required">
+                        </p>
+                        <p class="comment-form-url">
+                            <label for="url">站点</label>
+                            <input id="url" name="url" type="text" value="" size="30" maxlength="200">
+                        </p>
+                        <div class="comment-form-comment">
+                            <label for="comment">评论</label>
+                            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>
+                            <div id="loading" class="comment-tip" style="display: none;"><i class="fa fa-spinner fa-pulse"></i>正在提交, 請稍候...</div>
+                            <div id="error" class="comment-tip" style="display: none;">#</div>
+                        </div>
+                        <div class="commentPlus clearfix">
+                            <div class="editor commentSmilies" data-editor="smile">
+                                <i class="fa fa-smile-o" aria-hidden="true"></i>
+                              
+                            </div>
+                            <div class="editor commentBold m_hide" data-editor="bold"><i class="fa fa-bold" aria-hidden="true"></i></div>
+                            <div class="editor commentItalic m_hide" data-editor="italic"><i class="fa fa-italic" aria-hidden="true"></i></div>
+                            <div class="editor commentUnderline m_hide" data-editor="underline"><i class="fa fa-underline" aria-hidden="true"></i></div>
+                            <div class="editor commentDel m_hide" data-editor="del"><i class="fa fa-strikethrough" aria-hidden="true"></i></div>
+                            <div class="editor commentImg m_hide" data-editor="img"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+                            <div class="editor commentClean m_hide" data-editor="clean"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+                        </div>
+                        <p class="form-submit">
+                            <input name="submit" type="submit" id="submit" class="submit" value="发表评论">
+                            <input type="hidden" name="comment_post_ID" value="11" id="comment_post_ID">
+                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                        </p>
+                    </form>
+                </div>
+                #respond
+            </div>
+        </div> -->
+    </div>
+</div>

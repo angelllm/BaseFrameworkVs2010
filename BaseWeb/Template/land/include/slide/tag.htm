@@ -1,0 +1,9 @@
+﻿<aside  class="widget widget_tag_cloud">
+                    <h3 class="widget-title"><span>标签</span></h3>
+                    <div class="tagcloud">
+                        #foreach($item in $tlist)
+                        <a class="pjax" href='/land/list-0-0-0-$item.tag_name/' title='' style='font-size: 13px;'>$item.tag_name</a>
+                        #end
+                    </div>
+                    <div class="clearfix"></div>
+                </aside>		

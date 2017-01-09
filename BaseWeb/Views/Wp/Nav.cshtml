@@ -1,0 +1,591 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Call me aliks</title>
+    <link type="text/css" media="all" href="/Template/wp/css/theme.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="/Template/wp/js/html5.js">
+        </script>
+        <script src="/Template/wp/js/selectivizr-min.js">
+        </script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <![endif]-->
+</head>
+
+<body class="home blog" ms-controller="web">
+    <header id="header" class="header">
+        <div class="container-inner">
+            <div class="yusi-logo">
+                <a href="/">
+                    <h1>
+                        <span class="yusi-mono">
+                            Call me aliks
+                        </span>
+                        <span class="yusi-bloger">
+                            &#8211; 关注前端！
+                        </span>
+                    </h1>
+                </a>
+            </div>
+        </div>
+        <div id="nav-header" class="navbar" ms-controller="header">
+            <ul class="nav">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
+                    <a href="/">
+                        首页
+                    </a>
+                </li>
+                <li ms-repeat="list" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                    <a href="/">
+                        {{el.type_name}}
+                    </a>
+                </li>
+
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                    <a href="http://yusi123.com/share">
+                        福利
+                    </a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-3301" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/share/free">
+                                免费资源
+                            </a>
+                        </li>
+                        <li id="menu-item-3302" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/share/funweb">
+                                趣站推荐
+                            </a>
+                        </li>
+                        <li id="menu-item-3303" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/share/software">
+                                软件工具
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                    <a href="http://yusi123.com/web">
+                        建站
+                    </a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-3298" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/web/seo">
+                                网站优化
+                            </a>
+                        </li>
+                        <li id="menu-item-3297" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/web/code">
+                                代码收藏
+                            </a>
+                        </li>
+                        <li id="menu-item-3296" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/web/webserver">
+                                Web服务器
+                            </a>
+                        </li>
+                        <li id="menu-item-3295" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="http://yusi123.com/web/asp-net">
+                                asp.net
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-3291">
+                    <a href="http://yusi123.com/design">
+                        前端
+                    </a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-3292" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3292">
+                            <a href="http://yusi123.com/design/html5css3">
+                                Html5+CSS3
+                            </a>
+                        </li>
+                        <li id="menu-item-3361" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3361">
+                            <a href="http://yusi123.com/design/javascript-jquery">
+                                Js+Jquery
+                            </a>
+                        </li>
+                        <li id="menu-item-3293" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3293">
+                            <a href="http://yusi123.com/design/material">
+                                设计素材
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-3288">
+                    <a href="http://yusi123.com/wordpress">
+                        WordPress
+                    </a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-3290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3290">
+                            <a href="http://yusi123.com/wordpress/tutorial">
+                                WP教程
+                            </a>
+                        </li>
+                        <li id="menu-item-3289" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3289">
+                            <a href="http://yusi123.com/wordpress/plugin">
+                                WP插件
+                            </a>
+                        </li>
+                        <li id="menu-item-3501" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3501">
+                            <a href="http://yusi123.com/wordpress/theme">
+                                WP主题
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-3306">
+                    <a href="http://yusi123.com/diary">
+                        随笔
+                    </a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-3304" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3304">
+                            <a href="http://yusi123.com/website">
+                                站长吐槽
+                            </a>
+                        </li>
+                        <li id="menu-item-3299" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3299">
+                            <a href="http://yusi123.com/search">
+                                搜索引擎
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3308">
+                    <a href="http://yusi123.com/guestbook">
+                        留言
+                    </a>
+                </li>
+                <li style="float:right;">
+                    <div class="toggle-search">
+                        <i class="fa fa-search">
+                        </i>
+                    </div>
+                    <div class="search-expand" style="display: none;">
+                        <div class="search-expand-inner">
+                            <form method="get" class="searchform themeform" onsubmit="location.href='http://yusi123.com/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;"
+                                  action="http://yusi123.com/">
+                                <div>
+                                    <input type="text" class="search" name="s" onblur="if(this.value=='')this.value='search...';"
+                                           onfocus="if(this.value=='search...')this.value='';" value="search...">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <section class="container">
+
+        <div class="content-wrap">
+            <div class="content">
+
+
+
+                <div class="hot-posts">
+                    <h2 class="title">
+                        本周热门排行
+                    </h2>
+                    <ul>
+                        <li>
+                            <p>
+                                <span class="post-comments">
+                                    评论 (6)
+                                </span>
+                                <span class="muted">
+                                    <a href="javascript:;" data-action="ding" data-id="3736" id="Addlike"
+                                       class="action">
+                                        <i class="fa fa-heart-o">
+                                        </i>
+                                        <span class="count">
+                                            16
+                                        </span>
+                                        喜欢
+                                    </a>
+                                </span>
+                            </p>
+                            <span class="label label-1">
+                                1
+                            </span>
+                            <a target="_blank" href="http://yusi123.com/3736.html" title="借贷宝注册绑定银行卡，即可提现20元，亲测可用">
+                                借贷宝注册绑定银行卡，即可提现20元，亲测可用
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <article class="excerpt">
+                    <header>
+                        <a class="label label-important" href="http://yusi123.com/money">
+                            网赚
+                            <i class="label-arrow">
+                            </i>
+                        </a>
+                        <h2>
+                            <a target="_blank" href="http://yusi123.com/3736.html" title="借贷宝注册绑定银行卡，即可提现20元，亲测可用">
+                                借贷宝注册绑定银行卡，即可提现20元，亲测可用
+                            </a>
+                        </h2>
+                    </header>
+                    <div class="focus">
+                        <a target="_blank" href="http://yusi123.com/3736.html">
+                            <img class="thumb" src="http://yusi123.com/wp-content/themes/yusi/timthumb.php?src=http://images.yusi123.com/wp-content/uploads/2015/08/jiedaibao.png&h=123&w=200&q=90&zc=1&ct=1"
+                                 alt="借贷宝注册绑定银行卡，即可提现20元，亲测可用" />
+                        </a>
+                    </div>
+                    <span class="note">
+                        借贷宝最近好像比较火了。。所以分享给大家，算是一个不错的赚零花钱的途径。人脉变钱脉，就能玩出钱！点击下面我的邀请注册链接，输入手机号，下载安装借贷宝，
+                        注册后绑定银行卡，绑定后即可提现20元。 提现完成如果不想使用软件的话，记得解除银行卡绑定。 亲测提现20元，1-2个工作日...
+                    </span>
+                    <p class="auth-span">
+                        <span class="muted">
+                            <i class="fa fa-clock-o">
+                            </i>
+                            2周前 (08-16)
+                        </span>
+                        <span class="muted">
+                            <i class="fa fa-eye">
+                            </i>
+                            1023℃
+                        </span>
+                        <span class="muted">
+                            <i class="fa fa-comments-o">
+                            </i>
+                            <a target="_blank" href="http://yusi123.com/3736.html#comments">
+                                6评论
+                            </a>
+                        </span>
+                        <span class="muted">
+                            <a href="javascript:;" data-action="ding" data-id="3736" id="Addlike"
+                               class="action">
+                                <i class="fa fa-heart-o">
+                                </i>
+                                <span class="count">
+                                    16
+                                </span>
+                                喜欢
+                            </a>
+                        </span>
+                    </p>
+                </article>
+
+
+                <div class="pagination">
+                    <ul>
+                        <li class="prev-page">
+                        </li>
+                        <li class="active">
+                            <span>
+                                1
+                            </span>
+                        </li>
+                        <li>
+                            <a href='http://yusi123.com/page/2'>
+                                2
+                            </a>
+                        </li>
+                        <li>
+                            <a href='http://yusi123.com/page/3'>
+                                3
+                            </a>
+                        </li>
+                        <li>
+                            <a href='http://yusi123.com/page/4'>
+                                4
+                            </a>
+                        </li>
+                        <li>
+                            <a href='http://yusi123.com/page/5'>
+                                5
+                            </a>
+                        </li>
+                        <li>
+                            <span>
+                                ...
+                            </span>
+                        </li>
+                        <li class="next-page">
+                            <a href="http://yusi123.com/page/2">
+                                下一页
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <aside class="sidebar">
+
+            <div class="widget d_subscribe">
+                <div class="title">
+                    <h2>邮件订阅</h2>
+                </div>
+                <form action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank"
+                      method="post">
+                    <p>
+                        填写您的邮件地址，订阅更多的精彩内容：
+                    </p>
+                    <input type="hidden" name="t" value="qf_booked_feedback" />
+                    <input type="hidden" name="id" value="55de1906a6c38440856581343616feb803dc76d6413d684e" />
+                    <input type="email" name="to" class="rsstxt" placeholder="your@email.com"
+                           value="" required />
+                    <input type="submit" class="rssbutton" value="订阅" />
+                </form>
+            </div>
+
+            <div class="widget d_textbanner">
+                <a class="style01" href="http://yusi123.com/3233.html">
+                    <div class="title">
+                        <h2>
+                            免费下载
+                        </h2>
+                    </div>
+                    <h3>
+                        本站主题：Yusi1.0(扁平化+响应式)
+                    </h3>
+                    <p>
+                        支持 WordPress 3.8 及以上最新版，兼容 IE9+、Chrome、Firefox 等主流浏览器！
+                    </p>
+                </a>
+            </div>
+
+            <div class="widget d_tag">
+                <div class="title">
+                    <h2>
+                        标签云
+                    </h2>
+                </div>
+                <div class="d_tags">
+                    <a title="32个话题" href="http://yusi123.com/tag/wordpress">
+                        WordPress (32)
+                    </a>
+                    <a title="29个话题" href="http://yusi123.com/tag/css3">
+                        CSS3 (29)
+                    </a>
+                    <a title="18个话题" href="http://yusi123.com/tag/wordpress%e6%95%99%e7%a8%8b">
+                        WordPress教程 (18)
+                    </a>
+                    <a title="15个话题" href="http://yusi123.com/tag/%e7%a8%8b%e5%ba%8f%e5%91%98">
+                        程序员 (15)
+                    </a>
+                    <a title="14个话题" href="http://yusi123.com/tag/wordpress%e4%bc%98%e5%8c%96">
+                        WordPress优化 (14)
+                    </a>
+                    <a title="11个话题" href="http://yusi123.com/tag/jquery">
+                        jQuery (11)
+                    </a>
+                    <a title="10个话题" href="http://yusi123.com/tag/html5">
+                        HTML5 (10)
+                    </a>
+                    <a title="9个话题" href="http://yusi123.com/tag/%e7%a6%8f%e5%88%a9">
+                        福利 (9)
+                    </a>
+                    <a title="9个话题" href="http://yusi123.com/tag/%e7%bd%91%e9%a1%b5%e8%ae%be%e8%ae%a1">
+                        网页设计 (9)
+                    </a>
+                    <a title="8个话题" href="http://yusi123.com/tag/wordpress%e5%8a%a0%e9%80%9f">
+                        WordPress加速 (8)
+                    </a>
+                    <a title="8个话题" href="http://yusi123.com/tag/%e8%ae%be%e8%ae%a1%e7%b4%a0%e6%9d%90">
+                        设计素材 (8)
+                    </a>
+                    <a title="8个话题" href="http://yusi123.com/tag/linux">
+                        Linux (8)
+                    </a>
+                    <a title="8个话题" href="http://yusi123.com/tag/%e7%ab%99%e9%95%bf%e5%b9%b3%e5%8f%b0">
+                        站长平台 (8)
+                    </a>
+                    <a title="7个话题" href="http://yusi123.com/tag/%e7%bc%96%e7%a8%8b">
+                        编程 (7)
+                    </a>
+                    <a title="7个话题" href="http://yusi123.com/tag/wordpress%e6%8f%92%e4%bb%b6">
+                        WordPress插件 (7)
+                    </a>
+                    <a title="6个话题" href="http://yusi123.com/tag/seo-2">
+                        SEO (6)
+                    </a>
+                    <a title="6个话题" href="http://yusi123.com/tag/wordpress%e5%87%bd%e6%95%b0">
+                        WordPress函数 (6)
+                    </a>
+                    <a title="6个话题" href="http://yusi123.com/tag/wordpress%e4%bb%a3%e7%a0%81">
+                        WordPress代码 (6)
+                    </a>
+                    <a title="6个话题" href="http://yusi123.com/tag/css3%e6%95%99%e7%a8%8b">
+                        CSS3教程 (6)
+                    </a>
+                    <a title="6个话题" href="http://yusi123.com/tag/css3%e5%8a%a8%e7%94%bb">
+                        CSS3动画 (6)
+                    </a>
+                </div>
+            </div>
+            <div class="widget d_postlist">
+                <div class="title">
+                    <h2>
+                        猜你喜欢
+                    </h2>
+                </div>
+                <ul>
+                    <li>
+                        <a href="http://yusi123.com/3736.html" title="借贷宝注册绑定银行卡，即可提现20元，亲测可用">
+                            <span class="thumbnail">
+                                <img src="http://yusi123.com/wp-content/themes/yusi/timthumb.php?src=http://images.yusi123.com/wp-content/uploads/2015/08/jiedaibao.png&h=64&w=100&q=90&zc=1&ct=1"
+                                     alt="借贷宝注册绑定银行卡，即可提现20元，亲测可用" />
+                            </span>
+                            <span class="text">
+                                借贷宝注册绑定银行卡，即可提现20元，亲测可用
+                            </span>
+                            <span class="muted">
+                                2015-08-16
+                            </span>
+                            <span class="muted" style="float: right;">
+                                6评论
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://yusi123.com/3734.html" title="限量阿里云推荐码一枚 首次购买ECS和RDS享原价9折优惠">
+                            <span class="thumbnail">
+                                <img src="http://yusi123.com/wp-content/themes/yusi/timthumb.php?src=http://images.yusi123.com/wp-content/uploads/2015/08/TB1.8loIFXXXXcOXpXXkDxZRXXX-798-356.png&h=64&w=100&q=90&zc=1&ct=1"
+                                     alt="限量阿里云推荐码一枚 首次购买ECS和RDS享原价9折优惠" />
+                            </span>
+                            <span class="text">
+                                限量阿里云推荐码一枚 首次购买ECS和RDS享原价9折优惠
+                            </span>
+                            <span class="muted">
+                                2015-08-10
+                            </span>
+                            <span class="muted" style="float: right;">
+                                1评论
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://yusi123.com/3617.html" title="分享 Smartisan T1 200 元黑色版 T1 折扣码一枚">
+                            <span class="thumbnail">
+                                <img src="http://yusi123.com/wp-content/themes/yusi/timthumb.php?src=http://images.yusi123.com/wp-content/uploads/2015/08/ttt.jpg&h=64&w=100&q=90&zc=1&ct=1"
+                                     alt="分享 Smartisan T1 200 元黑色版 T1 折扣码一枚" />
+                            </span>
+                            <span class="text">
+                                分享 Smartisan T1 200 元黑色版 T1 折扣码一枚
+                            </span>
+                            <span class="muted">
+                                2015-08-07
+                            </span>
+                            <span class="muted" style="float: right;">
+                                6评论
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://yusi123.com/3725.html" title="Windows 10正式版官方原版ISO镜像下载(合集整理)">
+                            <span class="thumbnail">
+                                <img src="http://yusi123.com/wp-content/themes/yusi/timthumb.php?src=http://images.yusi123.com/wp-content/uploads/2015/07/LaptopsHero_zh_CN.jpg&h=64&w=100&q=90&zc=1&ct=1"
+                                     alt="Windows 10正式版官方原版ISO镜像下载(合集整理)" />
+                            </span>
+                            <span class="text">
+                                Windows 10正式版官方原版ISO镜像下载(合集整理)
+                            </span>
+                            <span class="muted">
+                                2015-07-30
+                            </span>
+                            <span class="muted" style="float: right;">
+                                3评论
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://yusi123.com/3727.html" title="优衣库事件借势营销：如何热门事件引爆流量">
+                            <span class="thumbnail">
+                                <img src="http://yusi123.com/wp-content/themes/yusi/timthumb.php?src=http://images.yusi123.com/wp-content/uploads/2015/07/1436926340726.jpg&h=64&w=100&q=90&zc=1&ct=1"
+                                     alt="优衣库事件借势营销：如何热门事件引爆流量" />
+                            </span>
+                            <span class="text">
+                                优衣库事件借势营销：如何热门事件引爆流量
+                            </span>
+                            <span class="muted">
+                                2015-07-25
+                            </span>
+                            <span class="muted" style="float: right;">
+                                4评论
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget d_comment">
+                <div class="title">
+                    <h2>
+                        最新吐槽
+                    </h2>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#" title="分享 Smartisan T1 200 元黑色版 T1 折扣码一枚上的评论">
+                            <img alt='' src='#'
+                                 srcset='#'
+                                 class='avatar avatar-48 photo' height='48' width='48' />
+                            <div class="muted">
+                                <i>
+                                    主宰者
+                                </i>
+                                2天前说：啊快结束啦放假了啊
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="widget widget_links">
+                <div class="title">
+                    <h2>
+                        友情链接
+                    </h2>
+                </div>
+                <ul class='xoxo blogroll'>
+                    <li>
+                        <a href="http://llmztt.com/">
+                            aliks
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </aside>
+    </section>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="copyright pull-left">
+                <a href="http://llmztt.com/" title="aliks">
+                    aliks
+                </a>
+                版权所有，保留一切权利 !
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/Template/wp/js/sea.js"></script>
+    <script type="text/javascript">
+            seajs.config({
+                base: '/Template/wp/js',
+                alias: {
+                    'avalon': 'vendor/avalon.shim',
+                    'jq': 'vendor/jquery.min'
+                },
+                preload: [
+                    this.avalon ? '' : 'avalon'
+                ]
+            }).use(["module/index/index"]);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Color_003
+Ka 0.000000 0.000000 0.000000
+Kd 0.666667 0.666667 0.666667
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_008
+Ka 0.000000 0.000000 0.000000
+Kd 0.117647 0.117647 0.117647
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.400000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Wood_Cherry_Original.jpg
+
+newmtl Cladding_Siding_Tan
+Ka 0.000000 0.000000 0.000000
+Kd 0.349020 0.282353 0.133333
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Cladding_Siding_Tan.jpg
+
+newmtl _Wood_Cherry_Original_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.286275 0.160784 0.078431
+Ks 0.330000 0.330000 0.330000
+map_Kd home/_Wood_Cherry_Original_1.jpg
+
+newmtl Color_009
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Roofing_Shingles_Wood
+Ka 0.000000 0.000000 0.000000
+Kd 0.388235 0.219608 0.105882
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Roofing_Shingles_Wood.jpg
+
+newmtl dark_sketch_stone
+Ka 0.000000 0.000000 0.000000
+Kd 0.294118 0.294118 0.294118
+Ks 0.330000 0.330000 0.330000
+map_Kd home/dark_sketch_stone.jpg
+
+newmtl Roofing_Shingles_GAF_Estates
+Ka 0.000000 0.000000 0.000000
+Kd 0.400000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Roofing_Shingles_GAF_Estates.jpg
+
+newmtl Metal_Rusted
+Ka 0.000000 0.000000 0.000000
+Kd 0.721569 0.458824 0.356863
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Metal_Rusted.jpg
+
+newmtl Translucent_Glass_Sky_Reflection
+Ka 0.000000 0.000000 0.000000
+Kd 0.501961 0.501961 0.501961
+Ks 0.330000 0.330000 0.330000
+d 0.520000
+map_Kd home/Translucent_Glass_Sky_Reflection.jpg
+
+newmtl Translucent_Glass_Gray
+Ka 0.000000 0.000000 0.000000
+Kd 0.501961 0.501961 0.501961
+Ks 0.330000 0.330000 0.330000
+d 0.500000
+
+newmtl _Ivory_
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 0.941176
+Ks 0.330000 0.330000 0.330000
+
+newmtl _Wood__Floor_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.607843 0.411765 0.239216
+Ks 0.330000 0.330000 0.330000
+map_Kd home/_Wood__Floor_1.jpg
+
+newmtl _LightGray_
+Ka 0.000000 0.000000 0.000000
+Kd 0.662745 0.662745 0.662745
+Ks 0.330000 0.330000 0.330000
+
+newmtl Stone_Masonry_Multi
+Ka 0.000000 0.000000 0.000000
+Kd 0.713725 0.686275 0.643137
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Stone_Masonry_Multi.jpg
+
+newmtl _22
+Ka 0.000000 0.000000 0.000000
+Kd 0.294118 0.294118 0.294118
+Ks 0.330000 0.330000 0.330000
+map_Kd home/_22.jpg
+
+newmtl Wood__Floor
+Ka 0.000000 0.000000 0.000000
+Kd 0.266667 0.180392 0.105882
+Ks 0.330000 0.330000 0.330000
+map_Kd home/Wood__Floor.jpg
+
+newmtl _Wood_OSB_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.941176 0.764706 0.478431
+Ks 0.330000 0.330000 0.330000
+map_Kd home/_Wood_OSB_1.jpg
+
+newmtl Color_007
+Ka 0.000000 0.000000 0.000000
+Kd 0.227451 0.227451 0.227451
+Ks 0.330000 0.330000 0.330000
+

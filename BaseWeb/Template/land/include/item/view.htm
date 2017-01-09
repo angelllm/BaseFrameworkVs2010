@@ -1,0 +1,108 @@
+﻿                            <div class="box">
+                              <header style=" margin-bottom: 0px;">
+                                <h1 class="entry-title">
+                                  <a style="color:$art.article_title_color" class="pjax" href="/land/view/$art.article_id/" title="$art.article_title">
+                                    $art.article_title
+                                  </a>
+                                </h1>
+                                <ul class="top_meta" style="font-size: 12px;display: block;  padding: 0 20px; margin: 0 ! important;">
+                                  <li class="mate-cat">
+                                    <i class="fa fa-folder-open-o">
+                                    </i> 
+                                    $art.article_type_name
+                                  </li>
+                                  <li class="mate-time">
+                                    <i class="fa fa-clock-o">
+                                    </i>
+                                    发表于$art.article_guid前 ($art.article_time)
+                                  </li>
+                                  <li class="mate-view">
+                                    <i class="fa fa-eye">
+                                    </i>
+                                    $art.article_pv次浏览
+                                  </li>
+                                  <li class="mate-com">
+                                    <i class="fa fa-comments-o">
+                                    </i>
+                                    <a href="/land/view/$art.article_id/#$art.article_id" title="comments">
+                                      $art.commite_count条评论 
+                                    </a>
+                                  </li>
+                                  <li>
+                                  </li>
+                                  <div class="clearfix"></div>
+                                </ul>
+                              </header>
+                              <div class="post-content post-content-view">
+                                <div class="audio-wrapper content">
+                                  <div class="post-copyright post-copyright-title ">
+                                   文章摘要
+                                  </div>
+                                 
+                                  <blockquote>
+                                     $art.article_content
+                                  </blockquote>
+                                  <div class="post-copyright post-copyright-title ">
+                                   文章内容
+                                  </div>
+                                 
+                                  #if($art.article_ref_url!="")
+			                          <audio ms-attr-title="art.article_title"   width="100%" src="$art.article_ref_url" type="audio/mp3" controls="controls"></audio>
+                                      <br />
+                                  #end
+                                  #foreach($c int $clist)
+                                    <blockquote>
+                                     $c.content_title
+                                    </blockquote>
+                                    $c.content_content
+                                  #end
+                                <br />
+                                <br />
+                                </div>
+                              </div>
+                              <!-- post content -->
+                              <!-- 转载原创 -->
+                              <div class="post-copyright">
+                                转载原创文章请注明，转载自：
+                                <a class="pjax" href="http://llmztt.com/land/" title="纠结的狮子座">纠结的狮子座</a>
+                                »
+                                <a class="pjax" href="/land/view/$art.article_id/" title="$art.article_title">
+                                  $art.article_title
+                                </a>
+                              </div>
+                              <!-- 相关文章 -->
+                              <h3 class="related_title">
+                                相关文章
+                              </h3>
+                              <ul class="related_img">
+            
+                                #foreach($item in $alist)
+                                <li class="related_box">
+                                  <div class="r_pic">
+                                    <a  href="/land/view/$item.article_id/"  title="$item.article_title" class="content-img pjax">
+                                      <img src='#if($item.article_image == "") /Template/wp/images/no-image.jpg #else $item.article_image #end' alt="$item.article_title" class="thumbnail ajax_gif">
+                                    </a>
+                                  </div>
+                                  <div class="r_title">
+                                    <a href="/land/view/$item.article_id/"  title="$item.article_title" class="content-img pjax" rel="bookmark">
+                                      $item.article_title
+                                    </a>
+                                  </div>
+                                </li>
+                                #if($velocityCount % 5 == 0)
+                                <div class="clearfix"></div>
+                                #end
+                                #if($velocityCount   == 5)
+                                <div class="post-copyright">
+                                    <a ms-on-click="showmore">加载更多...</a>
+                                </div>
+                                <dl class="clearfix" id="readmore" style="display:none"> 
+                                #end
+
+                                #end
+
+                                </dl>
+                              </ul>
+                            </div>
+ 
+                            <link href="/Content/js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css"  rel="stylesheet" type="text/css" />

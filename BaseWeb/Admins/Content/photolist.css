@@ -1,0 +1,20 @@
+#photoList{width:100%;height:auto;padding-left:10px;}
+#photoList .photowarpper{width:160px;margin:0 10px 10px 0;float:left;position:relative;background-color: #265380;color:#fff;border-radius:2px;}
+#photoList .photowarpper .photo{width:140px;margin:0 auto;height:140px;overflow:hidden;margin-top:10px;}
+#photoList .photowarpper .photo img{width:140px;border-radius:2px 2px 0 0 ;}
+#photoList .photowarpper p{width:140px;overflow:hidden;margin-left:10px;margin-bottom:10px;}
+#photoList .photowarpper p label{font-size:18px;padding-left:10px;padding-top:10px;display:block;margin-bottom:10px;}
+#photoList .photowarpper p input{color: #262626;display: block;height: 18px;line-height: 18px;padding: 8px 0 8px 12px;border:0;width:100%;}
+#photoList .photowarpper i{position:absolute;right:20px;bottom:50px;font-size:18px;}
+#photoList .photowarpper em{position:absolute;right:15px;top:20px;width:18px;height:18px;background:url(/Admins/Content/images/photo-icon.png) no-repeat -0px -168px #fff;border-radius:2px;display:none; }
+#photoList .photowarpper em .em-warpper{position:relative;display:none;background: #fff;position:absolute;left: -112px;top: 17px;}
+#photoList .photowarpper:hover em{display:block;}
+
+#photoList .photowarpper em ul{width:130px;z-index:49;border-radius: 4px 0 4px 4px;box-shadow: 0 0 2px rgba(0,0,0,.15);}
+#photoList .photowarpper em ul li{padding: 2px 0;}
+#photoList .photowarpper em ul li label{color: #262626;display: block;height: 18px;line-height: 18px;padding: 8px 0 8px 12px;}
+#photoList .photowarpper em ul li label:hover{background: #5caae6;color: #fff;}
+#photoList .photowarpper em ul li label b{margin-right: 10px;vertical-align: -3px;background:url(/Admins/Content/images/photo-icon.png) no-repeat;display: inline-block;font-size: 0;width: 16px;height: 15px;}
+#photoList .photowarpper em ul li label .edit{background-position: -0px -34px;}
+#photoList .photowarpper em ul li label .del{background-position: -0px -119px;}
+

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>$title - $base.page_title</title>
+	<meta charset="UTF-8" />
+        <meta name="keywords" content="$base.page_keywords" />
+	<meta name="description" content="$base.page_description" /> 
+	#parse("include/base.htm")
+ </head>
+	
+<body class="home blog ajax_load loading_style1 wp_box leftbar_open" ms-controller="page">	
+		
+    
+	#parse("include/header.htm")
+    <div id="wp_box" class="container"  ms-important="box">  
+	    #parse("include/leftbar.htm")      
+	    <div id="wrapper" class="toggle-wrapper">
+		    <div id="main">
+		        ##parse("include/home/banner.htm")
+                ##parse("include/home/notice.htm")
+		        <!-- content -->		
+		        <div id="content">
+                    <div id="app"></div>
+                    <center>
+                        <img src="$path/images/loading-dian.gif" alt="loading" />
+                        <p>正在加载...</p>
+                    </center>
+		            #parse("include/posts/article-item.htm") 
+                    <nav id="comment-nav-below" role="navigation">
+			            <div class="nav-inside">
+                            <a ms-attr-title="文章列表第{{num + 1}}页" ms-href="/land/list-{{$index+1}}$url/" class="page-numbers pjax" ms-repeat-num="pages" ms-on-click="getlist({pageindex:num + 1,type:'list'},givepagecss(this))" >
+                                {{num + 1}}
+                            </a>
+			                <!--<span class="page-numbers current">1</span>-->
+                        </div>
+		            </nav>
+		        </div>
+                <!-- content -->
+	        </div>
+            <!-- main -->
+		    <!-- 右侧边栏 -->
+		    <div class="rightbar">
+			    #parse("include/rightbar.htm")
+		    </div>	
+	    </div><!-- wrapper -->
+	    <div class="clearfix"></div>
+    </div><!-- wp_box -->
+	#parse("include/footer.htm")
+    <input type="hidden" id="uri" value="$uri" />
+    <script src="$path/js/sea.js"></script>
+    <script src="$path/js/config.js"></script>
+    <script type="text/javascript"  charset="utf-8">
+        seajs.use(["module/common/common.min", "module/home/home.min"], function (a, b) {
+            b.initLoading()
+            b.initParama()
+            b.simpleInit()
+            
+         })
+    </script>
+					 
+
+			
+         
+	
+			
+	
+</body>
+</html>

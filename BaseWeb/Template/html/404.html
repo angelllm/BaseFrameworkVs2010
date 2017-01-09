@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  #foreach($config in $tjson.tconfig("base"))
+  #foreach($c in $pjson.pconfig($config.type_id))
+  <title>啊哦出错啦, $c.page_title</title>
+  <meta name="description" content="$c.page_description" />
+  <meta name="keywords" content="$c.page_keywords" />
+  #end
+  #end
+  <meta name="author" content="llm" />
+  <meta name="Copyright" content="http://www.llmztt.com/index/" />
+  <meta name="power" content="llm云" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="$path/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="$path/css/app.css" type="text/css" />  
+    <!--[if lt IE 9]>
+    <script src="$path/js/ie/html5shiv.js"></script>
+    <script src="$path/js/ie/respond.min.js"></script>
+    <script src="$path/js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="bg-light dk">
+    <section id="content">
+    <div class="row m-n">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="text-center m-b-lg">
+          <h1 class="h text-white animated fadeInDownBig">404</h1>
+        </div>
+        <div class="list-group auto m-b-sm m-b-lg">
+          <a href="/" class="list-group-item">
+            <i class="fa fa-chevron-right icon-muted"></i>
+            <i class="fa fa-fw fa-home icon-muted"></i> 回主页
+          </a>
+          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=574589608&site=llmztt.com&menu=yes" class="list-group-item">
+            <i class="fa fa-chevron-right icon-muted"></i>
+            <i class="fa fa-fw fa-question icon-muted"></i> QQ
+            <span class="badge bg-info lt">574589608</span>
+          </a>
+          <a href="mailto:574589608@qq.com" class="list-group-item">
+            <i class="fa fa-chevron-right icon-muted"></i>
+            <span class="badge bg-info lt">574589608@qq.com</span>
+            <i class="fa fa-fw fa-phone icon-muted"></i> 邮件
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer id="footer">
+    <div class="text-center padder clearfix">
+      <p>
+        <small>llm<br>&copy; 2015</small>
+      </p>
+    </div>
+  </footer>
+  <!-- / footer -->
+  <script src="$path/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="$path/js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="$path/js/app.js"></script>  
+  <script src="$path/js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="$path/js/app.plugin.js"></script>
+ 
+ 
+</body>
+</html>

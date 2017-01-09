@@ -1,0 +1,37 @@
+﻿<div class="col-sm-3">
+    <h5 class="font-bold">Categories</h5>
+    <ul class="list-group">
+    #foreach($item in $tjson.tconfig("article"))
+    #if($item.type_parent == 0)
+    <li class="list-group-item">
+        <a href="/index/list/?t=$item.type_id">
+        <span class="badge pull-right">$item.photo_count</span>
+        $item.type_name
+        </a>
+    </li> 
+    #end
+    #end 
+    </ul>
+    <div class="tags m-b-lg l-h-2x">
+    #foreach($item in $taglist)
+    <a href="/index/list/?tag=$item.tag_name" class="label bg-primary">$item.tag_name</a>
+    #end
+    </div>
+    <h5 class="font-bold">Recent Posts</h5>
+    <div>
+    #foreach($item int $clist)
+    #if($velocityCount>1)
+    <div class="line"></div>
+    #end
+    <article class="media #if($velocityCount>1)  m-t-none #end" >
+        <a class="pull-left thumb thumb-wrapper m-t-xs">
+        <img src="$path/images/m1.jpg">
+        </a>
+        <div class="media-body">                        
+        <a href="#" class="font-semibold">$item.commite_content</a>
+        <div class="text-xs block m-t-xs"><a>Travel</a> $item.commite_time</div>
+        </div>
+    </article>
+    #end 
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿
+		        
+                     
+                <div id="app"></div>
+		        #parse("include/posts/article-item.htm") 
+			      
+                <nav id="comment-nav-below" role="navigation">
+			        <div class="nav-inside">
+                        <a ms-attr-title="文章列表第{{num + 1}}页" ms-href="/land/list-{{$index+1}}$url/" class="page-numbers pjax" ms-repeat-num="pages" ms-on-click="getlist({pageindex:num + 1,type:'list'},givepagecss(this))" >
+                            {{num + 1}}
+                        </a>
+                    </div>
+		        </nav>
+		        <input type="hidden" id="uri" value="$uri" />
+                <!-- content -->
+                <script type="text/javascript">
+                    avalon.vmodels["box"].initLoading()
+                    avalon.vmodels["box"].initParama()
+                    avalon.vmodels["box"].simpleInit()
+                    //avalon.vmodels["box"].options.w='$w'
+                    avalon.scan(document.getElementById("content"), avalon.vmodels["box"])
+                    setTimeout(function () { $('audio,video').mediaelementplayer() }, 1000)
+                </script>

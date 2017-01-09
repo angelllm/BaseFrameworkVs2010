@@ -1,0 +1,21 @@
+﻿                    #parse("include/music/music.htm")
+                    <script src="$path/js/sea.js"></script>
+                    <script src="$path/js/config.js"></script>
+                    <script type="text/javascript">
+                        seajs.use(["module/common/common.min", "module/home/home.min", "module/music/jquery.music.min"], function (a, b, d) {
+                            MUSIC = d
+
+                            avalon.scan(document.getElementById("content"), avalon.vmodels["box"])
+                            avalon.vmodels["box"].MusicInit()
+                            setTimeout(function () {
+                                $('audio,video').mediaelementplayer({})
+                                //console.log(1111)
+                            }, 1000)
+
+                            $(".fadeInDown").fadeIn(300)
+                        })
+                    </script>
+                    
+                    
+                    
+                   

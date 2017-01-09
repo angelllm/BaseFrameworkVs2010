@@ -1,0 +1,58 @@
+﻿<header id="header" class="header">
+    <div class="container-inner">
+        <div class="yusi-logo">
+            <a href="/">
+                <h1>
+                    <span class="yusi-mono">
+                        Call me aliks
+                    </span>
+                    <span class="yusi-bloger">
+                        &#8211; 关注前端！
+                    </span>
+                </h1>
+            </a>
+        </div>
+    </div>
+    <div class="loading"></div>
+    <div loading="init" id="nav-header" class="navbar" ms-controller="headNav">
+        <ul class="nav" >
+            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            <li ms-repeat-nav="nav" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                <a ms-href="/index/list/?t={{nav.type_id}}" ms-if="nav.type_parent==0">
+                    {{nav.type_name}}
+                </a>
+
+                <ul class="sub-menu" ms-each-menu="menu">
+                    <li ms-if="menu.type_parent == nav.type_id" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <a ms-href="/index/list/?t={{menu.type_id}}">
+                            {{menu.type_name}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li style="float:right;">
+                <div class="toggle-search">
+                    <i class="fa fa-search">
+                    </i>
+                </div>
+                <div class="search-expand" style="display: none;">
+                    <div class="search-expand-inner">
+                        <form method="get" class="searchform themeform" onsubmit="location.href = 'http://llmztt.com/index/search/?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;"
+                              action="http://llmztt.com/index/search/">
+                            <div>
+                                <input type="text" class="search" name="q" onblur="if(this.value=='')this.value='search...';"
+                                       onfocus="if(this.value=='search...')this.value='';" value="search...">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</header>

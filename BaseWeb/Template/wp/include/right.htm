@@ -1,0 +1,99 @@
+﻿<aside ms-controller="aside" class="sidebar" >
+    <div class="widget d_subscribe">
+        <div class="title">
+            <h2>邮件订阅</h2>
+        </div>
+        <form action="" target="_blank"
+              method="post">
+            <p>
+                填写您的邮件地址，订阅更多的精彩内容：
+            </p>
+            <input type="email" name="to" class="rsstxt" placeholder="your@email.com"
+                   value="" required />
+            <input type="submit" class="rssbutton" value="订阅" />
+        </form>
+    </div>
+
+
+    <div class="widget d_tag">
+        <div class="title">
+            <h2>
+                标签云
+            </h2>
+        </div>
+        <div class="loading"></div>
+        <div class="d_tags" loading="init">
+            <a ms-repeat-tag="tag" ms-attr-title="{{tag.tag_name}}" target="_blank" ms-href="/index/list/?tag={{tag.tag_name}}">
+                {{tag.tag_name}}
+            </a>
+
+        </div>
+    </div>
+    <div class="widget d_postlist">
+        <div class="title">
+            <h2>
+                猜你喜欢
+            </h2>
+        </div>
+        <div class="loading"></div>
+        <ul class="like" loading="init">
+            <li ms-repeat-like="like">
+                <a ms-href="/wp/view/{{like.article_id | test}}/" ms-attr-title="{{like.article_title}}">
+                    <span class="thumbnail">
+                        <img src="/Template/wp/images/no-image.jpg"
+                             ms-attr-alt="{{like.article_title}}" />
+                    </span>
+                    <span class="text">
+                        {{like.article_title}}
+                    </span>
+                    <span class="muted">
+                        {{like.article_ttime | date("yyyy-MM-dd")}}
+                    </span>
+                    <span class="muted" style="float: right;">
+                        {{like.commite_count}}评论
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="widget d_comment">
+        <div class="title">
+            <h2>
+                最新吐槽
+            </h2>
+        </div>
+        <div class="loading"></div>
+        <ul class="commite" loading="init">
+            <li ms-repeat-commite="commite">
+                <a href="#" ms-attr-title="{{commite.commite_uname}}">
+                    <img ms-attr-alt='{{commite.commite_uname}}' src='/Template/Html/images/a1.png'
+                         class='avatar avatar-48 photo' height='48' width='48' />
+                    <div class="muted">
+                        <i>
+                            {{commite.commite_uname}}
+                        </i>
+                        {{commite.commite_uhead}} ago say：{{commite.commite_content | html}}
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="widget widget_links">
+        <div class="title">
+            <h2>
+                友情链接
+            </h2>
+        </div>
+        <ul class='xoxo blogroll'>
+            <li>
+                <a href="http://llmztt.com/">
+                    aliks
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</aside>

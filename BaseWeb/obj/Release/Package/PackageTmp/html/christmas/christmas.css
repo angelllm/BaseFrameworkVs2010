@@ -1,0 +1,12 @@
+
+ 
+
+.christmas-area{position:absolute;right:100px;top:100px;z-index:99999;-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+.christmas{position:relative;}
+.christmas .welcome{top:10px;left:153px;position:absolute;}
+.christmas .gift{top:10px;left:153px;position:absolute;}
+#gifts{display:none;}
+#gift-area div{padding:10px;position:absolute;border:0px dotted brown;color:#FF0000;cursor:pointer;z-index:99999}
+ 
+ #container{}
+ #container p{font-size:55px;margin:0;padding-top:50px;}

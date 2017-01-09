@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.Diverrorcontent{width:1000px; margin:115px auto;}
+.errorImage{width:570px; margin:0px 0px 53px 196px;}
+.errorFont{width:570px; margin:0px 0px 200px 196px;}
+
+.divnoapplication{width:646px; height:349px; margin:0px 170px 80px; float:left; background:url(../images/noApplication.jpg) no-repeat;}
+.divnoapplication a{display:block; color:#ff8c3f; margin:187px 0px 0px 292px; font-size:12px; font-weight:bold; text-decoration:underline;}

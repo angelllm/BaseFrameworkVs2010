@@ -1,0 +1,188 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>分页属性管理 - 网站管理</title>
+    <script src="/Admins/Content/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/artDialog.js?skin=aero" type="text/javascript"></script>
+    <script src="/Admins/Content/js/artDialog4.1.7/plugins/iframeTools.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/artDialog4.1.7/skins/base.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <script src="/Admins/Content/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <link href="/Admins/Content/js/jquery-ui-1.10.3.custom/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="/Admins/Content/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="/Admins/Content/checkbox_list.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+<body>
+
+<div id="containter">
+    #parse("include/left.cshtml" )
+    <div id="right-containter">
+       #parse("include/top.cshtml" )
+       
+       <div class="nav-menu">
+            <a href="/Admin/TypeAttrManage/" id="btnAdd2"> 返回属性列表 </a>
+            <a href="/Admin/TypeList/" id="btnAdd"> 返回分类列表 </a>
+       </div>
+       <div id="temp-modify" style="position:relative;">
+            <div class="ui-widget">
+	            <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;height:30px;line-height:30px;">
+		            <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;margin-top:0.5em;"></span>
+		               高级产品应用需要添加分类属性及其属性默认值!还有使用时候请用高级浏览器浏览!
+                    </p>
+	            </div>
+            </div>
+           <div id="edit-win">
+                    <ul>
+		                <li><a href="#tabs-1">基础设置</a></li>
+	                </ul>
+	                <div id="tabs-1">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    <input type="text" style="" disabled="disabled" id="TypeName" value="$model.type_name" />
+                                </div>
+                                <div class="row-item">
+                                   <label class="attr">新增属性</label> 
+                                   <div class="clear"></div>
+                                   <p>
+                                   <select style="margin-left:5px;" id="attr_type_id">
+                                      <option value="1">文本</option>
+                                      <option value="2">下拉</option>
+                                      <option value="3">多选</option>
+                                      <option value="4">单选</option>
+                                   </select>
+                                   属性类型
+                                   </p>
+                                   <p>
+                                        <label class="switch" id="c_attr_status">
+                                          <input type="checkbox" checked="checked" id="attr_status" name="attr_status" class = "switch-input"/>
+                                          <span class="switch-label" data-on="On" data-off="Off"></span>
+                                          <span class="switch-handle"></span>
+                                        </label>
+                                   属性状态
+                                   </p>
+                                   <div class="clear"></div>
+                                   <input type="text" id="attr_code_name" class="txt"  placeholder="请键入属性代码" />
+                                   <div class="clear"></div>
+                                   
+                                   <div class="clear"></div>
+                                   
+                                   <input type="text" id="TypeAttrName"  placeholder="请键入属性名"  />
+                                   <label id="attr-add" title="添加/修改" alt="添加/修改"></label>
+                                   <div class="clear"></div>
+                                </div>
+                                <div class="row-item">
+                                   <h4>属性列表</h4> 
+                                </div>
+                                <div class="row-item attr-list" id="attr-list">
+
+                                    #foreach($item in $list)
+                                        <div class="attr-warpper">
+                                            <a class="dels"  onclick="dels(this)">删除</a>
+                                            <input type="text" data="$item.attr_id" data2="$item.attr_name" onblur="minModify(this)"  class="attr-item" value="$item.attr_name" />
+                                            <label class="drop" title="下拉查看属性默认值" alt="下拉查看属性默认值" onclick="dropToogle(this)"></label>
+                                            <label class="kill modify" title="修改" alt="修改" onclick="modify(this)" id="attr_$item.attr_id"  data="$item.attr_id"></label>
+                                            <div class="clear"></div>
+                                            <div class="attr-def-value">
+                                                #set($glist = $gv.getAttrValues($item.attr_id))
+                                                #foreach($val in $glist)
+                                                    <span class="attr-value-add-input attr-value-add-info">
+                                                        <input type="text" value="$val.value_name" onblur="mini(this,$val.value_id)"/>
+                                                        <em class="attr-close"  onclick="del(this,$val.value_id)"></em>
+                                                        <b class=""></b>
+                                                        <div class="clear"></div>
+                                                    </span>
+                                                   
+                                                #end
+                                                 #if($glist.Count>0)
+                                                    <div id="split" style="border-top:1px solid #d9d8d8;"></div>
+                                                #end
+
+                                                <span class="attr-value-add" onclick="attrShowAdd(this)">新增属性值</span>
+                                                <span class="attr-value-add-input">
+                                                    <input type="text" placeholder="请键入属性值" />
+                                                    <em class="attr-save" data="$item.attr_id"  onclick="save(this)"></em>
+                                                    <div class="clear"></div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    #end
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="row-item">
+                                   <h4>查看相似分类属性值</h4> 
+                                   #foreach($type in $typelist)
+                                        <a title="点击查看分页属性与属性值" href="/Admin/TypeAttrAdd/$type.type_id"  class="xs-type">$type.type_name</a>
+                                   #end
+                                </div>
+
+                                <div class="row-item">
+                                   <h4>复制相似分类属性值</h4> 
+                                   #foreach($type in $typelist)
+                                        <a title="点击复制此分页属性与属性值" curr-data="$model.type_id" data="$type.type_id" class="xs-type type-copy">$type.type_name</a>
+                                   #end
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+	                <div id="tabs-2">
+                        <div class="edit-win">
+                            <div class="waper">
+                                <div class="row-item">
+                                    
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+	                <div class="clear"></div>
+                    #*<div class="btn fix-btn">
+                        <input type="button" value=" 保 存 " id="btnSave" style="" class="g-btn" />
+                    </div>*#
+               
+           </div>
+       </div>
+       
+        <input type="hidden" id="hfTypeId" value="$model.type_id" />
+       
+       <script type="text/template" id="attr-temp">
+            <div class="attr-warpper">
+                    <a class="dels" onclick="dels(this)">删除</a>
+                    <input type="text" data="{1}" data="{0}" onblur="minModify(this)" class="attr-item" value="{0}" />
+                    <label class="drop"  title="下拉查看属性默认值" alt="下拉查看属性默认值" onclick="dropToogle(this)"></label>
+                    <label class="kill modify"  title="修改" alt="修改" id="attr_{1}" data="{1}"></label>
+                    <div class="clear"></div>
+                    <div class="attr-def-value">
+                        
+                        
+                        <span class="attr-value-add" onclick="attrShowAdd(this)">新增属性值</span>
+                        <span class="attr-value-add-input">
+                            <input type="text" placeholder="请键入属性值" />
+                            <em class="attr-save"  data="{1}"  onclick="save(this)"></em>
+                            <div class="clear"></div>
+                        </span>
+                    </div>
+                </div>
+
+       </script>
+       <script type="text/template" id="attr-item-temp">
+            <span class="attr-value-add-input attr-value-add-info">
+                <input type="text" value="{0}" onblur="mini(this,{1})"/>
+                <em class="attr-close" onclick="del(this,{1})"></em>
+                <b class=""></b>
+                <div class="clear"></div>
+            </span>
+       </script>
+       <script src="/Admins/Content/js/TypeAttrAdd.js" type="text/javascript"></script>
+       <link href="/Admins/Content/typeAttrAdd.css" rel="stylesheet" type="text/css" />
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
+
+
+

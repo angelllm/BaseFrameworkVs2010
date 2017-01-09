@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>$model.product_name</title>
+    <script src="/Content/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <link href="/Content/base.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .clear{clear:both;}
+        #product-warpper{margin:20px auto 0 auto;}
+        #product-warpper .image-warpper{float:left;}
+        #product-warpper .image-warpper .large{width:400px;height:400px;overflow:hidden;display:table-cell;text-align:center;vertical-align:middle;}
+        #product-warpper .image-warpper .large img{height:400px;}
+        #product-warpper #sku{float:left;margin-left:20px;}
+        #product-warpper #sku h2{font-size:18px;font-weight:bold;}
+        #product-warpper #sku dl{clear:both;margin-bottom:10px;display:block;height:46px;}
+        #product-warpper #sku dl dd{display:inline-block;height:43px;line-height:43px;float:left;margin-right:10px;}
+        #product-warpper #sku .sku-size dd{line-height:31px;}
+        #product-warpper #sku .sku-price{height:31px;overflow:hidden;}
+        #product-warpper #sku .sku-price dt{line-height:40px;color: #c40000;font-size: 24px;font-family: Arial;font-weight: bolder;padding-left: 23px;}
+        #product-warpper #sku .sku-price dt em{font-size: 18px;padding-right:5px;vertical-align: middle;}
+        #product-warpper #sku dl dt{display:inline-block;float:left;}
+        #product-warpper #sku dl dt ul{display:inline-block;}
+        #product-warpper #sku dl dt ul li{display:inline-block;height:43px;width:53px;}
+        #product-warpper #sku .sku-size dt ul li{display:inline-block;height:43px;width:46px;}
+        #product-warpper #sku dl dt ul li span{padding:0 5px;height:25px;line-height:25px;display:inline-block;}
+        #product-warpper #sku dl dt ul li a{display:inline-block;position:relative;padding:2px;border:1px solid #b8b7bd;}
+        #product-warpper #sku dl dt ul li a:hover{border:2px solid #be0106;cursor:default;text-decoration:none;margin:-1px;}
+        #product-warpper #sku dl dt ul li a img{width:40px;}      
+        #product-warpper #sku dl dt ul li a label{padding:0 5px;display:table-cell;vertical-align:middle;height:29px;}  
+        #product-warpper #sku dl dt ul li a i{position: absolute;bottom: 0;right: 0;width: 12px;height: 12px;overflow: hidden;text-indent: -99em;display: none;background-repeat: no-repeat;background-position: -62px -16px;background-image:url(/Template/web/select-sku.png)}
+        #product-warpper #sku dl dt ul .tb-select{border:2px solid #be0106;margin:-1px;}
+        #product-warpper #sku dl dt ul .tb-select i{display:inline-block;}
+        #product-warpper .small-list {margin-top:15px;text-align:center;}
+        #product-warpper .small-list img{width:58px;padding:2px}
+        #product-warpper .small-list a{border:2px solid #ccc;display:inline-block;margin-right:5px;position:relative;}
+        #product-warpper .small-list a:hover{border-color:#be0106;}
+        #product-warpper .small-list .img-select{border-color:#be0106;}
+        #product-warpper .small-list a i{position: absolute;bottom: 0;right: 0;width: 12px;height: 12px;overflow: hidden;text-indent: -99em;background-repeat: no-repeat;background-position: -62px -16px;background-image:url(/Template/web/select-sku.png);}
+    </style>
+
+</head>
+<body>
+
+
+<div id="product-warpper">
+    <div class="image-warpper">
+        <div class="large">
+            <img src="$model.product_image" />
+        </div>
+        <div class="small-list"></div>
+    </div>
+    <div id="sku">
+        <h2>$model.product_name</h2> 
+        <dl class="sku-price">
+            <dd>价格</dd>
+            <dt>
+                <em class="yen">¥</em><label data="$model.product_min_price - $model.product_max_price">$model.product_min_price - $model.product_max_price</label>
+            </dt>
+        </dl>
+        <dl class="sku-color">
+            <dd>机身颜色</dd>
+            <dt>
+                <ul></ul>
+            </dt>
+        </dl>
+        <dl class="sku-size">
+            <dd>机身内存</dd>
+            <dt>
+                <ul></ul>
+            </dt>
+        </dl>
+        
+    </div>
+    <div class="clear"></div>
+    <input type="hidden" id="hfSku" value="$model.product_sku_path" />
+    <input type="hidden" id="hfImageList" value="$model.product_image_list" />
+    <script type="text/javascript">
+        var list = new Array();
+        #foreach($item in $list)
+        list.push("$item.sku_code");
+        #end
+    </script>
+</div>
+<script src="/Template/web/pitem.js" type="text/javascript"></script>
+</body>
+</html>

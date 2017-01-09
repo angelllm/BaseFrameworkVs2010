@@ -1,0 +1,368 @@
+@charset "utf-8";
+/* CSS Document */
+
+.containter 
+{
+    _width:980px;  
+    margin:0 auto;
+    min-width:980px;
+	max-width:980px;
+	font-size:12px;
+} 
+
+.containter .no-address-tip
+{
+   border:2px solid #ff8256;margin-top:30px;
+   text-align:center;color:#ff4605;line-height:50px; padding:20px 0px;
+}
+ .containter .no-address-tip p.addinfo span{background:url(../images/icon_2.jpg) no-repeat 0 15px #ffffff; text-indent:30px; display:inline-block;}
+.containter .no-address-tip a
+{
+    font-weight:bold;margin: 0 10px;color:#ff4605;
+}
+.containter .address-list
+{
+   background:#f1f1f1;border:1px solid #eeeeee;margin-top:30px;
+}
+.containter .address-list .tag
+{
+   width:90px;height:55px;background:url(../webimage/order-menu.png) no-repeat;float:left;
+}
+.containter .address-list .list-waper
+{
+   float:left;
+   width:888px;height:auto;background:#fff;
+}
+ 
+.containter .address-list .list-waper .address-item
+{ 
+    margin:25px 0 15px 20px;position:relative;width:268px;height:130px;display:block;
+    background:url() #fff;border:1px solid #eeeeee;float:left;cursor:pointer;
+}
+.containter .address-list .list-waper .address-item:hover
+{ 
+    border:1px solid #d2e6f0;
+}
+.containter .address-list .list-waper .address-item:active
+{ 
+    border:1px solid #dbbe78;
+}
+
+.containter .address-list .list-waper .address-item:link .setinfo
+{ 
+    display:none;
+}
+.containter .address-list .list-waper .address-item:link .contr
+{ 
+    display:none;
+}
+.containter .address-list .list-waper .address-item:hover .setinfo
+{ 
+    display:block;
+}
+.containter .address-list .list-waper .address-item:hover .contr
+{ 
+    display:block;
+}
+.containter .address-list .list-waper .deft
+{  
+   border:0;cursor:default;
+   background:url(../webimage/address_item_bg.png) no-repeat;
+}
+.containter .address-list .list-waper .deft:hover
+{  
+   border:0;
+}
+.containter .address-list .list-waper .address-item p
+{ 
+    margin:10px 0 0 20px;padding-left:25px;
+}
+ 
+.containter .address-list .list-waper .address-item .name
+{ 
+    padding-top:15px;background:url(../webimage/address_linkman.png) no-repeat bottom left;
+}
+.containter .address-list .list-waper .address-item .phone
+{ 
+    background:url(../webimage/address_phone.png) no-repeat top left;
+}
+.containter .address-list .list-waper .address-item .address-detail
+{ 
+    background:url(../webimage/address_location.png) no-repeat top left;
+}
+.containter .address-list .list-waper .address-item .modify
+{ 
+    position:absolute;bottom:-22px;right:10px;height:20px;line-height:20px;width:40px;border:1px solid #ddd;background:#eeeeee;text-align:center;cursor:pointer;
+}
+.containter .address-list .list-waper .address-item .setinfo
+{ 
+    position:absolute;bottom:0px; right:0; height:20px;line-height:20px;width:108px;font-weight:bold;color:#63a2c0;display:none;
+}
+
+.containter .address-list .list-waper .address-item .contr
+{ 
+    position:absolute;bottom:-22px;right:-1px;height:20px;line-height:20px;width:165px;border:1px solid #ddd;background:#eeeeee;text-align:center;display:none;
+}
+
+.containter .address-list .list-waper .more
+{ 
+    display:none;
+}
+
+.containter .address-list .list-waper .showall
+{ 
+    background:url(../webimage/address_show_all.png) no-repeat ;
+    width:93px;height:13px;margin:30px 0 30px 20px;cursor:pointer;
+}
+.containter .address-list .list-waper .hidesame
+{ 
+    background:url(../webimage/address_slideup.png) no-repeat ;
+   
+}
+
+/**************************/
+.containter .order-info
+{ 
+    position:relative;margin:30px 0;height:20px;    
+}
+.containter .order-info label
+{ 
+    position:absolute; left:0;top:10px;font-weight:bold;   
+}
+.containter .order-info label
+{ 
+    position:absolute; left:0;top:10px;font-weight:bold; font-size:14px; 
+}
+.containter .order-info .postage
+{ 
+    position:absolute; right:0;top:10px; 
+}
+.containter .order-info .postage span
+{ 
+    margin-right:5px;
+}
+
+
+.containter .order-title
+{ 
+	margin-top:30px;
+	border-bottom:3px solid #00c3b2;
+	height:35px;line-height:35px;
+	
+}
+
+.containter .order-title div{float:left;text-align:center;}
+
+.containter .order-title .select label
+{
+    margin-left:5px;
+}
+
+ 
+.containter .order-title .pro-name
+{
+    width:50%;
+}
+.containter .order-title .size
+{
+    width:15%;
+}
+.containter .order-title .price
+{
+    width:15%;
+}
+.containter .order-title .count
+{
+    width:8%;
+}
+.containter .order-title .sum
+{
+    width:12%;
+}
+
+.containter .order-waper
+{ 
+	margin-top:15px;
+}
+
+.containter .order-waper .order-item
+{ 
+	margin-top:15px;
+}
+.containter .order-waper .order-item .order-item-waper
+{ 
+	margin-bottom:15px;
+}
+.containter .order-waper .order-item .col
+{ 
+	float:left;text-align:center;
+}
+.containter .order-waper .order-item .pro-name
+{
+    width:50%;
+}
+.containter .order-waper .order-item .pro-name .pro
+{
+    
+}
+.containter .order-waper .order-item .pro-name .pro img
+{
+    width:90px;height:90px;border:1px solid #ccc;float:left;
+}
+.containter .order-waper .order-item .pro-name .pro label
+{
+    width:75%;display:block;float:left;padding-left:10px;margin-top:0px;line-height:20px; text-align:left;
+}
+.containter .order-waper .order-item .pro-name .pro label a
+{
+    color:#285a81;
+}
+.containter .order-waper .order-item .pro-name .pro label a:hover
+{
+    color:#ff0000;
+}
+.containter .order-waper .order-item .size
+{
+    width:15%;
+}
+.containter .order-waper .order-item .size label
+{
+    display:block;margin-left:27%;margin-top:5px;color:#adadad;text-align:left;
+}
+
+.containter .order-waper .order-item .price
+{
+    width:15%;
+}
+.containter .order-waper .order-item .price label
+{
+   color:#808080;font-weight:bold;
+}
+.containter .order-waper .order-item .count
+{
+    width:8%;
+}
+.containter .order-waper .order-item .count label
+{
+    color:#808080;font-weight:bold;
+}
+.containter .order-waper .order-item .sum
+{
+    width:12%;
+}
+.containter .order-waper .order-item .sum label
+{
+   color:#f9671e;font-weight:bold;
+}
+
+.containter .order-waper .msg
+{
+   background:#fff7f3;border:1px dashed #ffae8b;border-left:0;border-right:0;padding:10px 0;margin-top:15px;
+}
+.containter .order-waper .msg label
+{
+   display:block;float:left;width:70px;margin:0px 0  0 10px;
+}
+.containter .order-waper .msg textarea
+{
+   display:block;float:left;width:43%;border:1px solid #ff9e75; resize:none;
+}
+
+.containter .order-footer-info
+{
+   margin:50px 0;float:left;width:100%; border-top:1px dashed #aaaaaa;
+}
+.containter .order-footer-info .submit
+{
+   width:500px;height:138px;background:url(../webimage/order_info_bg.png) no-repeat; float:right; margin-top:30px;
+}
+
+.containter .order-footer-info .submit .submit-waper
+{
+   margin-left:30px;_margin-left:30px; float:left; margin-top:25px; height:45px;
+}
+.containter .order-footer-info .submit .submit-waper .d{display:none;}
+.containter .order-footer-info .submit .submit-waper .cbk-score
+{
+   margin-right:5px;
+}
+.containter .order-footer-info .submit .submit-waper .txt-score
+{
+   width:50px;border:1px solid #cac9c9;margin-right:5px; display:none; margin-top:-1px; text-align:center;
+}
+.containter .order-footer-info .submit .submit-waper .lbl-price
+{
+  margin-left:5px; display:none;
+}
+.containter .order-footer-info .submit .submit-waper .lbl-price span
+{
+   color:#fd0202;font-size:110%;
+}
+.containter .order-footer-info .submit .submit-waper .lbl-price font
+{
+   color:#404065;font-weight:bold;margin-left:5px;
+}
+
+.containter .order-footer-info .submit .submit-waper .mark
+{
+  margin-left:65px;color:#999999;margin-top:3px;margin-bottom:15px; display:none;
+}
+.containter .order-footer-info .submit .score-info
+{
+  text-align:right;color:#999; float:right; margin-top:-6px;
+}
+.containter .order-footer-info .submit .score-info .total
+{
+  display:block;margin-right:22px;color:#656565;padding-top:10px;text-align:right;
+}
+.containter .order-footer-info .submit .score-info .total font
+{
+  font-weight:bold;
+}
+.containter .order-footer-info .submit .score-info .total span
+{
+  font-weight:bold;font-size:280%;margin-left:10px;color:#f45c00;
+}
+.containter .order-footer-info .submit .score-info .getscore
+{
+	float:right; margin-right:43px;
+}
+.containter .order-footer-info .submit .sub-detail{
+	width:100%; float:left; margin-top:5px;
+}
+
+.containter .order-footer-info .submit .sub-detail .sub-info
+{
+  display:block;height:20px;margin-top:8px;color:#adadad;margin-left:50px;
+}
+
+.containter .order-footer-info .submit .sub-detail .sub-info font
+{
+  margin-left:10px;color:#656565;_font-size:100%;
+}
+
+.containter .order-footer-info .sub-infos 
+{
+  text-align:right;margin-top:30px; width:100%; clear:both; float:left;
+}
+.containter .order-footer-info .sub-infos  .goback-cart
+{
+   width:100px;font-size:14px;font-weight:bold; margin-right:10px;
+}
+.containter .order-footer-info .sub-infos  .goback-cart:hover{color:#ff4200;}
+.containter .order-footer-info .sub-infos input
+{
+  width:230px;height:42px;line-height:42px;text-align:center;color:#fff;background:#f45c00;border:0;cursor:pointer;font-size:160%;
+}
+.containter .order-footer-info .sub-infos input:hover{background:#ff4200;}
+.RefreshPage{color:#7e7e7e;}
+.RefreshPage p{line-height:28px;}
+.RefreshPage a{color:#7e7e7e !important; background:url(../webimage/2116095104978qct.png) no-repeat right; text-align:left; width:110px; display:inline-block;}
+.RefreshPage a:hover{color:#C00 !important;}
+
+@media screen and (min-width:1197px){
+	.containter{width:1198px; min-width:1198px; max-width:1198px;}
+	.containter .address-list .list-waper{width:1106px;}
+	.containter .address-list .list-waper .address-item{width:340px;}
+	.containter .address-list .list-waper .deft{background:url(../webimage/address_item_bg2.png) no-repeat;}
+}
