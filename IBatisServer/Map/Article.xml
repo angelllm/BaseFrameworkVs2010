@@ -132,6 +132,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
         <resultMap class="article" id="GetByPageUseTopModel">
             <result column="article_id" property="article_id" />
             <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_shut_title" property="article_shut_title" nullValue="" />
             <result column="article_pv" property="article_pv" />
             <result column="article_remark" property="article_remark" />
             <result column="article_type" property="article_type" />
@@ -147,6 +148,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
         <resultMap class="article" id="GetByPageUseTopModelForLand">
             <result column="article_id" property="article_id" />
             <result column="article_title" property="article_title" nullValue="" />
+            <result column="article_shut_title" property="article_shut_title" nullValue="" />
             <result column="article_pv" property="article_pv" />
             <result column="article_remark" property="article_remark" />
             <result column="article_type" property="article_type" />
@@ -212,11 +214,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
         <select id="GetPrevNext" resultMap="GetPrevNextModel" parameterClass="int">
             <![CDATA[
                 select top 1 -1 as article_pv,article_id,article_title from (select top 1 article_id,article_title 
-                from sys_article where  article_id < $article_id$ order by article_id desc) as t1   
+                from sys_article where  article_id < $article_id$ and article_status = 1 order by article_id desc) as t1   
                 union
                 select * from (
                 select top 1 1 as article_pv,article_id,article_title from sys_article where  article_id > $article_id$
-                order by article_id asc
+                and article_status = 1 order by article_id asc
                 ) as t2
             ]]>
         </select>

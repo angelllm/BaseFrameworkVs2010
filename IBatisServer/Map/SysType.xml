@@ -154,6 +154,21 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
 		WHERE  $strWhere$
         ]]>
         </select>
+
+        <select id="GetlListWithArticleTypeListCount" resultMap="GetlListWithArticleCountModel" parameterClass="System.String" >
+            <![CDATA[
+            SELECT 
+            (
+	            select count(1) 
+	            from sys_article 
+	            where article_shut_title like '%'+convert(varchar(20),type_id)+'|%'  and article_status = 1
+            ) 
+            as article_count, [type_id],[type_name] 
+            FROM [sys_type]
+            as ty
+		    WHERE  $strWhere$
+            ]]>
+        </select>
         
         <select id="GetModelListByPageUseTop" resultMap="GetByPageUseTopModel" parameterMap="PageSplitParam" >
             <![CDATA[

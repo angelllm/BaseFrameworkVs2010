@@ -23,6 +23,12 @@ namespace IBatisServer
         }
 
 
+        public IList<sys_type> GetlListWithArticleTypeListCount(string strWhere)
+        {
+            IList<sys_type> list = SqlMap.QueryForList<sys_type>("sys_type.GetlListWithArticleTypeListCount", strWhere);
+            return list;
+        }
+
         public IList<sys_type> GetlListWithArticleCount(string strWhere)
         {
             IList<sys_type> list = SqlMap.QueryForList<sys_type>("sys_type.GetlListWithArticleCount", strWhere);
